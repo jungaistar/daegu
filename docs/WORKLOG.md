@@ -44,11 +44,22 @@
 - `docs/CURRICULUM.md` — 2개 과정 · 8교시 · 실습 사례 24건 전체 (예시 프롬프트 원문 포함).
 - `docs/WORKLOG.md` — 이 문서.
 
-### 4. 빌드 · 배포
+### 4. 빌드 · 배포 (실행 결과)
 
-- `npm install` → `npm run build` (tsc -b + vite build) 통과.
-- `npm run deploy` (gh-pages) 로 `dist/` 를 `gh-pages` 브랜치에 배포.
-- 커스텀 도메인은 `CNAME` = `daegu.dreamitbiz.com`.
+- `npm install` (Node 24.18.0 / npm 11.16.0) → `npm run build` (tsc -b + vite build) 통과.
+- 로컬 `npm run preview` 로 `/instructor`, `/about` 렌더링을 브라우저에서 직접 확인.
+- `npm run deploy` → `dist/` 를 `gh-pages` 브랜치에 Published.
+- GitHub Pages: `gh-pages` 브랜치 / 루트 경로에서 서비스. 커스텀 도메인 `CNAME` = `daegu.dreamitbiz.com`.
+
+### 5. 기록을 두는 곳
+
+작업 기록은 저장소 안에 둔다 — 로컬 `D:\DEV\daegu\docs\` 와 GitHub `jungaistar/daegu` 가 같은 파일이다.
+README 의 "기록 문서" 절에서 두 문서로 바로 갈 수 있게 링크를 걸었다.
+
+| 두는 곳 | 파일 |
+|---|---|
+| 전 과정 기록 | `docs/CURRICULUM.md` (자동 생성 — `npm run docs:curriculum`) |
+| 작업 기록 | `docs/WORKLOG.md` (이 문서, 손으로 추가) |
 
 ### 남은 것 / 확인 필요
 
