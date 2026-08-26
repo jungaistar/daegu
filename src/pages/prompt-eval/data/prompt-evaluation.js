@@ -113,51 +113,51 @@ export default {
 | 제약 조건 | 범위, 길이, 톤 등 명시 | 주요 제약 포함 | 일부 제약 있음 | 제약 부족 | 제약 없음 |
 | 예시 & 참고 | 구체적 예시 + 참고자료 | 예시 포함 | 간단한 참고 | 예시 부족 | 예시 없음 |
 
-### Copilot 환경별 특화 기준
+### 도구별 특화 기준
 
-**GitHub Copilot (코드)**
-
-| 항목 | 평가 내용 | 비중 |
-|------|----------|------|
-| 주석 품질 | 함수 목적, 매개변수, 반환값 설명 | 25% |
-| 네이밍 | 의미 있는 함수명/변수명 사용 | 20% |
-| 컨텍스트 파일 | 관련 파일/타입 import 유무 | 20% |
-| 테스트 케이스 | 엣지 케이스 포함 여부 | 15% |
-| 단계적 분해 | 복잡한 작업의 단계 구분 | 20% |
-
-**M365 Copilot (업무)**
+**문서 업무 (ChatGPT · Claude)**
 
 | 항목 | 평가 내용 | 비중 |
 |------|----------|------|
-| 작업 목적 | 문서/분석의 목적 명시 | 25% |
-| 대상 독자 | 결과물의 수신자/활용자 | 20% |
-| 톤 & 스타일 | 공식/비공식, 전문적/친근 | 15% |
-| 분량 & 형식 | 길이, 구조, 시각적 요소 | 20% |
-| 참고 자료 | 활용할 데이터/문서 명시 | 20% |
+| 작업 목적 | 문서의 목적과 근거 명시 | 25% |
+| 수신 대상 | 누가 읽는 문서인지 지정 | 20% |
+| 어투 & 형식 | 공문체/시민 친화 등 톤과 문서 구조 | 20% |
+| 분량 제약 | 문단 수·글자 수 등 범위 지정 | 15% |
+| 사실 근거 | 참고할 자료 제시, 미확인 정보 표시 요구 | 20% |
+
+**데이터·자동화 (ChatGPT 데이터분석 · Apps Script)**
+
+| 항목 | 평가 내용 | 비중 |
+|------|----------|------|
+| 데이터 구조 | 시트명·열 구성·기간 등 데이터 형태 설명 | 30% |
+| 산출물 지정 | 표/차트/코드 등 원하는 결과와 위치 | 25% |
+| 단계 분해 | 복잡한 작업을 번호로 나눠 지시 | 20% |
+| 실행 안내 요구 | 설치·사용 방법을 함께 요청했는지 | 15% |
+| 개인정보 처리 | 민감 정보 제거·가명화를 명시했는지 | 10% |
 
 ### 채점 예시
 
-**프롬프트**: "React로 할 일 목록 앱 만들어줘"
+**프롬프트**: "공문 하나 써줘"
 
 | 평가 기준 | 점수 | 이유 |
 |----------|------|------|
-| 구체성 (S) | 8/20 | 기본 요구만 있고 세부 기능 미지정 |
-| 맥락 (C) | 4/20 | 프로젝트 배경, 사용 환경 미제공 |
-| 출력지정 (O) | 6/20 | "앱"이라는 큰 범위만 지정 |
+| 구체성 (S) | 4/20 | 무슨 공문인지, 어떤 내용인지 전혀 없음 |
+| 맥락 (C) | 2/20 | 수신 대상·상황·근거 미제공 |
+| 출력지정 (O) | 4/20 | "공문"이라는 큰 범위만 지정 |
 | 역할부여 (R) | 0/20 | 역할 미지정 |
-| 효과성 (E) | 8/20 | 기본 기능만 생성 가능 |
-| **총점** | **26/100** | **등급: D (부족)** |
+| 효과성 (E) | 6/20 | 되묻거나 엉뚱한 초안이 나올 가능성이 큼 |
+| **총점** | **16/100** | **등급: D (부족)** |
 
-**개선된 프롬프트**: "시니어 React 개발자로서, TypeScript + Zustand 상태관리를 사용한 할 일 목록 앱을 만들어줘. 기능: 추가/삭제/완료처리/필터(전체·미완료·완료). localStorage 영속성 포함. 컴포넌트는 TodoInput, TodoList, TodoItem, FilterBar로 분리해줘."
+**개선된 프롬프트**: "너는 대구광역시청 행정 담당자야. 7월 15일(화) 14:00 시청 별관 대강당에서 열리는 '생성형 AI 업무활용 특강'을 본청·구청 공무원에게 알리는 안내 공문을 작성해줘. 형식은 제목·수신·본문·붙임 순, 본문은 3문단 이내, 정중하고 간결한 공공기관 공문체로. 확인되지 않은 정보는 [확인 필요]로 표시해줘."
 
 | 평가 기준 | 점수 | 이유 |
 |----------|------|------|
-| 구체성 (S) | 18/20 | 기능, 컴포넌트 구조까지 명확 |
-| 맥락 (C) | 14/20 | 기술 스택 명시 (배경은 약간 부족) |
-| 출력지정 (O) | 16/20 | 컴포넌트 구조 지정 |
-| 역할부여 (R) | 18/20 | 시니어 React 개발자 역할 |
-| 효과성 (E) | 17/20 | 원하는 결과를 높은 확률로 달성 |
-| **총점** | **83/100** | **등급: A (우수)** |
+| 구체성 (S) | 18/20 | 행사명·일시·장소·대상이 모두 명확 |
+| 맥락 (C) | 16/20 | 발신 주체와 안내 상황이 드러남 |
+| 출력지정 (O) | 18/20 | 문서 구조와 분량을 직접 지정 |
+| 역할부여 (R) | 16/20 | 시청 행정 담당자 역할 부여 |
+| 효과성 (E) | 18/20 | 미확인 정보 표시 요구로 사실 오류 위험까지 차단 |
+| **총점** | **86/100** | **등급: A (우수)** |
 
 > 같은 주제라도 프롬프트 품질에 따라 결과물의 수준이 극적으로 달라집니다.`,
       contentEn: `Ready-to-use prompt evaluation rubrics and scoring sheets for practical use.
@@ -172,51 +172,51 @@ export default {
 | Constraints | Scope, length, tone specified | Key constraints included | Some constraints | Few constraints | No constraints |
 | Examples & Refs | Specific examples + references | Examples included | Simple references | Lacking examples | No examples |
 
-### Environment-Specific Criteria
+### Tool-Specific Criteria
 
-**GitHub Copilot (Code)**
-
-| Item | Evaluation Content | Weight |
-|------|-------------------|--------|
-| Comment Quality | Function purpose, params, return value | 25% |
-| Naming | Meaningful function/variable names | 20% |
-| Context Files | Related file/type imports | 20% |
-| Test Cases | Edge case coverage | 15% |
-| Step Decomposition | Breaking complex tasks into steps | 20% |
-
-**M365 Copilot (Business)**
+**Document Work (ChatGPT · Claude)**
 
 | Item | Evaluation Content | Weight |
 |------|-------------------|--------|
-| Task Purpose | Document/analysis purpose specified | 25% |
-| Target Audience | Result recipients/users | 20% |
-| Tone & Style | Formal/informal, professional/friendly | 15% |
-| Volume & Format | Length, structure, visual elements | 20% |
-| References | Data/documents to use | 20% |
+| Task Purpose | Purpose and basis of the document stated | 25% |
+| Audience | Who will read the document | 20% |
+| Tone & Format | Official vs citizen-friendly tone, document structure | 20% |
+| Length Constraint | Paragraph or character limits | 15% |
+| Factual Basis | Source material given, unverified info flagged | 20% |
+
+**Data & Automation (ChatGPT Data Analysis · Apps Script)**
+
+| Item | Evaluation Content | Weight |
+|------|-------------------|--------|
+| Data Structure | Sheet name, columns, period described | 30% |
+| Output Spec | Desired result (table/chart/code) and destination | 25% |
+| Step Decomposition | Complex work numbered into steps | 20% |
+| Usage Guidance | Installation/usage requested alongside | 15% |
+| Personal Data | Removal or pseudonymization stated | 10% |
 
 ### Scoring Example
 
-**Prompt**: "Make a to-do list app with React"
+**Prompt**: "Write a document"
 
 | Criterion | Score | Reason |
 |-----------|-------|--------|
-| Specificity (S) | 8/20 | Only basic request, no detailed features |
-| Context (C) | 4/20 | No project background or environment |
-| Output (O) | 6/20 | Only "app" as broad scope |
+| Specificity (S) | 4/20 | No indication of what document or content |
+| Context (C) | 2/20 | No audience, situation, or basis |
+| Output (O) | 4/20 | Only "document" as broad scope |
 | Role (R) | 0/20 | No role assigned |
-| Effectiveness (E) | 8/20 | Only basic functionality possible |
-| **Total** | **26/100** | **Grade: D (Poor)** |
+| Effectiveness (E) | 6/20 | Likely to return questions or an off-target draft |
+| **Total** | **16/100** | **Grade: D (Poor)** |
 
-**Improved Prompt**: "As a senior React developer, create a to-do list app using TypeScript + Zustand state management. Features: add/delete/complete/filter (all·incomplete·complete). Include localStorage persistence. Separate components into TodoInput, TodoList, TodoItem, FilterBar."
+**Improved Prompt**: "You are an administrative officer at Daegu City Hall. Draft an announcement for city and district officials about the 'Generative AI at Work' lecture on July 15 (Tue) 2pm at the City Hall Annex Hall. Format: title, recipient, body, attachments; body within 3 paragraphs; courteous, concise public-sector style. Mark unverified information as [needs verification]."
 
 | Criterion | Score | Reason |
 |-----------|-------|--------|
-| Specificity (S) | 18/20 | Features and component structure clear |
-| Context (C) | 14/20 | Tech stack specified (background slightly lacking) |
-| Output (O) | 16/20 | Component structure specified |
-| Role (R) | 18/20 | Senior React developer role |
-| Effectiveness (E) | 17/20 | High probability of achieving desired result |
-| **Total** | **83/100** | **Grade: A (Great)** |
+| Specificity (S) | 18/20 | Event, time, place, audience all clear |
+| Context (C) | 16/20 | Sender and announcement situation evident |
+| Output (O) | 18/20 | Document structure and length specified |
+| Role (R) | 16/20 | City administrative officer role assigned |
+| Effectiveness (E) | 18/20 | Verification flag blocks factual-error risk |
+| **Total** | **86/100** | **Grade: A (Great)** |
 
 > Even with the same topic, the quality of results dramatically changes based on prompt quality.`,
     },

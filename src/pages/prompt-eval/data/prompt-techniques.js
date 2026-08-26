@@ -7,7 +7,7 @@ export default {
     {
       title: '핵심 프롬프트 기법',
       titleEn: 'Core Prompt Techniques',
-      content: `AI에서 효과적으로 사용되는 핵심 프롬프트 기법들을 소개합니다.
+      content: `공무원 업무에서 효과가 큰 핵심 프롬프트 기법들을 소개합니다.
 
 ### 주요 프롬프트 기법 비교
 
@@ -22,45 +22,65 @@ export default {
 
 ### 1. Zero-shot 프롬프팅
 
-예시 없이 직접 지시하는 가장 기본적인 기법입니다.
+예시 없이 직접 지시하는 가장 기본적인 기법입니다. 단순하고 정형화된 업무에 적합합니다.
 
 | 상황 | 프롬프트 |
 |------|---------|
-| 번역 | "다음 문장을 영어로 번역해주세요: 오늘 회의 자료를 준비했습니다" |
-| 분류 | "다음 이메일이 스팸인지 정상인지 분류해주세요: ..." |
-| 요약 | "다음 기사를 3줄로 요약해주세요: ..." |
+| 요약 | "다음 보도자료를 3줄로 요약해줘: ..." |
+| 분류 | "다음 민원 내용이 어느 부서 소관인지 분류해줘: ..." |
+| 변환 | "이 보도자료를 시민이 읽기 쉬운 카드뉴스 문구로 바꿔줘: ..." |
 
 ### 2. Few-shot 프롬프팅
 
-예시를 제공하여 패턴을 학습시키는 기법입니다.
+예시 2~3개를 먼저 보여주면 AI가 우리 부서의 형식을 그대로 따라갑니다. **기존 공문 양식을 지키게 하는 데 가장 효과적인 기법**입니다.
 
 | 구분 | 내용 |
 |------|------|
-| 예시 1 | 입력: "이 제품 정말 좋아요!" → 감정: 긍정 |
-| 예시 2 | 입력: "배송이 너무 느려요" → 감정: 부정 |
-| 예시 3 | 입력: "보통이에요, 그냥 그래요" → 감정: 중립 |
-| **실제 요청** | 입력: "가격 대비 품질이 뛰어납니다" → 감정: ? |
+| 예시 1 | 민원: "가로등이 깜빡입니다" → 유형: 시설물 유지보수 / 소관: 도로과 |
+| 예시 2 | 민원: "주차 단속이 과합니다" → 유형: 단속 이의 / 소관: 교통과 |
+| 예시 3 | 민원: "청년 지원금 신청 방법이 궁금합니다" → 유형: 제도 문의 / 소관: 청년정책과 |
+| **실제 요청** | 민원: "공원 벤치가 파손됐습니다" → 유형: ? / 소관: ? |
+
+> 우리 부서의 지난 공문 2건을 붙여넣고 "이 형식 그대로 새 공문을 써줘"라고 하는 것이 Few-shot입니다.
 
 ### 3. Chain-of-Thought (CoT)
 
-단계별 사고 과정을 명시적으로 유도하는 기법입니다.
+단계별 사고 과정을 명시적으로 유도하는 기법입니다. 판단이 필요한 업무에서 결과 품질이 크게 올라갑니다.
 
 | 일반 프롬프트 | CoT 프롬프트 |
 |-------------|------------|
-| "이 코드의 버그를 찾아줘" | "이 코드를 분석해줘: 1) 먼저 각 함수의 역할을 파악하고, 2) 데이터 흐름을 추적하고, 3) 잠재적 에러 포인트를 식별하고, 4) 버그의 원인과 해결책을 제시해줘" |
-| "마케팅 전략을 세워줘" | "마케팅 전략을 단계별로 수립해줘: 1) 현재 시장 상황 분석, 2) 목표 고객 정의, 3) 경쟁사 대비 차별점 도출, 4) 채널별 전략 수립, 5) KPI 설정" |
+| "이 데이터 분석해줘" | "예산 집행 데이터를 분석해줘: 1) 부서별 집행률을 계산하고, 2) 평균보다 낮은 부서를 추리고, 3) 낮은 이유로 추정되는 점을 항목별로 정리하고, 4) 보고서에 쓸 요약 문장 3개를 만들어줘" |
+| "홍보 계획 세워줘" | "청년 일자리 사업 홍보 계획을 단계별로 세워줘: 1) 전달 대상 정의, 2) 대상이 주로 쓰는 채널 파악, 3) 채널별 메시지 톤 결정, 4) 콘텐츠 형식 배분, 5) 성과 지표 설정" |
+| "이 스크립트 왜 안 되는지 봐줘" | "이 Apps Script를 점검해줘: 1) 각 함수가 하는 일을 설명하고, 2) 시트 데이터가 어떻게 흐르는지 짚고, 3) 오류가 날 수 있는 지점을 찾고, 4) 원인과 고친 전체 코드를 보여줘" |
 
 ### 4. Role Prompting
 
 | 역할 | 프롬프트 시작 | 효과 |
 |------|-------------|------|
-| 코드 리뷰어 | "당신은 10년 경력의 시니어 개발자입니다" | 코드 품질, 보안, 성능 관점의 리뷰 |
-| 비즈니스 컨설턴트 | "당신은 McKinsey 출신 경영 컨설턴트입니다" | 전략적, 구조화된 비즈니스 분석 |
-| UX 디자이너 | "당신은 사용자 중심 설계 전문가입니다" | 사용성, 접근성 관점의 피드백 |
-| 데이터 사이언티스트 | "당신은 통계학 박사 데이터 분석가입니다" | 데이터 기반의 인사이트 도출 |
+| 행정 담당자 | "너는 대구광역시청 행정 담당자야" | 공문 형식과 공공기관 어투 유지 |
+| 공보 담당자 | "너는 시청 대변인실 보도자료 담당자야" | 헤드라인·리드문 중심의 보도자료 문체 |
+| 데이터 분석가 | "너는 행정 데이터를 다루는 분석가야" | 수치 근거 중심의 해석과 시사점 |
+| 감사 담당자 | "너는 문서를 검토하는 감사 담당자야" | 사실 오류·근거 누락·표현 위험을 짚어냄 |
+| 시민 | "너는 이 안내문을 처음 읽는 60대 시민이야" | 어려운 표현·불친절한 안내를 발견 |
 
-> 상황에 따라 여러 기법을 조합하면 더 좋은 결과를 얻을 수 있습니다.`,
-      contentEn: `Introducing core prompt techniques effectively used with AI.
+> 마지막 "시민 역할"은 완성된 안내문을 검토할 때 특히 유용합니다. 작성용 역할과 검토용 역할을 나눠 쓰세요.
+
+### 5. Template Prompting
+
+자주 하는 업무는 빈칸만 바꿔 쓰는 틀로 만들어 두면 매번 처음부터 쓰지 않아도 됩니다.
+
+| 항목 | 채울 내용 |
+|------|----------|
+| 역할 | "너는 대구광역시청 [부서명] 담당자야" |
+| 상황 | "[배경 설명]" |
+| 지시 | "아래 정보로 [문서 종류]를 작성해줘" |
+| 대상 | "[수신 대상]" |
+| 형식 | "[제목/수신/본문/붙임 등]" |
+| 어투 | "[공공기관 공문체 / 시민 친화적]" |
+| 분량 | "[○○자 이내]" |
+
+> 상황에 따라 여러 기법을 조합하면 더 좋은 결과를 얻을 수 있습니다. 역할 부여(Role) + 기존 공문 예시(Few-shot) + 형식 지정(Template)을 함께 쓰는 식입니다.`,
+      contentEn: `Core prompt techniques that work well in public-sector tasks.
 
 ### Major Prompt Techniques Comparison
 
@@ -75,162 +95,179 @@ export default {
 
 ### 1. Zero-shot Prompting
 
-The most basic technique — direct instruction without examples.
+Direct instruction without examples — suited to simple, routine tasks.
 
 | Situation | Prompt |
 |-----------|--------|
-| Translation | "Translate the following sentence to Korean: I prepared today's meeting materials" |
-| Classification | "Classify whether this email is spam or legitimate: ..." |
-| Summarization | "Summarize this article in 3 sentences: ..." |
+| Summarize | "Summarize this press release in 3 lines: ..." |
+| Classify | "Which department should handle this complaint: ..." |
+| Convert | "Rewrite this press release as citizen-friendly card news copy: ..." |
 
 ### 2. Few-shot Prompting
 
-Provide examples to teach patterns.
+Showing 2-3 examples makes the AI follow your department's existing format — the most effective way to preserve official document conventions.
 
 | Type | Content |
 |------|---------|
-| Example 1 | Input: "I love this product!" → Sentiment: Positive |
-| Example 2 | Input: "Shipping is too slow" → Sentiment: Negative |
-| Example 3 | Input: "It's okay, nothing special" → Sentiment: Neutral |
-| **Actual Request** | Input: "Excellent quality for the price" → Sentiment: ? |
+| Example 1 | Complaint: "The streetlight is flickering" → Type: Facility maintenance / Dept: Roads |
+| Example 2 | Complaint: "Parking enforcement is excessive" → Type: Enforcement appeal / Dept: Traffic |
+| Example 3 | Complaint: "How do I apply for the youth grant?" → Type: Program inquiry / Dept: Youth Policy |
+| **Actual Request** | Complaint: "A park bench is damaged" → Type: ? / Dept: ? |
 
 ### 3. Chain-of-Thought (CoT)
 
-Explicitly guide step-by-step reasoning.
+Explicitly guide step-by-step reasoning — quality rises sharply on judgment-heavy tasks.
 
 | Regular Prompt | CoT Prompt |
 |---------------|-----------|
-| "Find the bug in this code" | "Analyze this code: 1) First identify each function's role, 2) Trace the data flow, 3) Identify potential error points, 4) Present the bug cause and solution" |
-| "Create a marketing strategy" | "Develop a marketing strategy step by step: 1) Current market analysis, 2) Define target customers, 3) Identify differentiators vs competitors, 4) Channel-specific strategies, 5) Set KPIs" |
+| "Analyze this data" | "Analyze the budget execution data: 1) Compute execution rates by department, 2) List departments below average, 3) Organize likely causes, 4) Write 3 summary sentences for the report" |
+| "Plan the PR" | "Plan PR for the youth jobs program step by step: 1) Define the audience, 2) Identify their channels, 3) Decide tone per channel, 4) Allocate content formats, 5) Set performance metrics" |
+| "Why doesn't this script work?" | "Review this Apps Script: 1) Explain each function, 2) Trace how sheet data flows, 3) Find failure points, 4) Show the cause and the corrected full code" |
 
 ### 4. Role Prompting
 
 | Role | Prompt Start | Effect |
 |------|-------------|--------|
-| Code Reviewer | "You are a senior developer with 10 years of experience" | Review focusing on quality, security, performance |
-| Business Consultant | "You are a McKinsey management consultant" | Strategic, structured business analysis |
-| UX Designer | "You are a user-centered design expert" | Usability and accessibility feedback |
-| Data Scientist | "You are a PhD statistician and data analyst" | Data-driven insights |
+| Administrative officer | "You are an administrative officer at Daegu City Hall" | Keeps official format and public-sector tone |
+| Press officer | "You are a press officer at the city spokesperson's office" | Headline-and-lead press release style |
+| Data analyst | "You are an analyst working with administrative data" | Evidence-based interpretation |
+| Auditor | "You are an auditor reviewing this document" | Surfaces factual errors and missing basis |
+| Citizen | "You are a 60-year-old citizen reading this notice for the first time" | Finds unclear or unfriendly wording |
 
-> Combining multiple techniques based on the situation yields better results.`,
+### 5. Template Prompting
+
+| Item | Fill In |
+|------|---------|
+| Role | "You are an officer in the [department] of Daegu City Hall" |
+| Situation | "[background]" |
+| Instruction | "Write a [document type] from the information below" |
+| Audience | "[recipients]" |
+| Format | "[title/recipient/body/attachments]" |
+| Tone | "[official / citizen-friendly]" |
+| Length | "[under N characters]" |
+
+> Combining techniques — Role + Few-shot + Template — yields the best results.`,
     },
     {
-      title: 'Copilot 환경별 기법',
-      titleEn: 'Copilot-Specific Techniques',
-      content: `각 Copilot 환경에 최적화된 프롬프트 작성 기법입니다.
+      title: '도구별 프롬프트 기법',
+      titleEn: 'Tool-Specific Techniques',
+      content: `이 과정에서 쓰는 네 가지 도구는 잘 하는 일이 서로 다릅니다. 도구에 맞는 프롬프트를 써야 합니다.
 
-### GitHub Copilot 프롬프트 기법
+### 도구 선택 기준
 
-**1. 주석 기반 코드 생성**
+| 업무 유형 | 추천 도구 | 이유 |
+|----------|----------|------|
+| 공문·보도자료·회의록 | ChatGPT · Claude | 긴 문서의 구조와 어투를 안정적으로 유지 |
+| 엑셀 데이터 집계·차트 | ChatGPT 데이터 분석 | 파일을 직접 올려 계산·시각화까지 한 번에 |
+| 시트 반복작업 자동화 | Claude → Apps Script | 코드 생성 품질이 높고 오류 수정 설명이 친절 |
+| 카드뉴스·숏폼·홍보물 | Opal · Canva | 문구와 디자인을 함께 뽑아냄 |
 
-| 기법 | 예시 |
+### 1. ChatGPT · Claude — 문서 업무 기법
+
+| 목적 | 프롬프트 패턴 |
+|------|-------------|
+| 문서 초안 | "[수신 대상]에게 [목적]을 알리는 [문서 유형]을 [어투]로 작성해줘" |
+| 문서 요약 | "이 문서를 [대상]이 이해할 수 있도록 [분량]으로 요약해줘. [핵심 관점] 중심으로" |
+| 문서 개선 | "이 문서의 [측면]을 개선해줘. [구체적 지시]를 적용해서" |
+| 형식 변환 | "이 [원본 형식]을 [목표 형식]으로 바꿔줘. [플랫폼] 특성에 맞게" |
+
+**긴 문서를 다룰 때**
+
+| 상황 | 방법 |
 |------|------|
-| 함수 목적 주석 | \`// 이메일 형식 유효성 검사 함수\` |
-| JSDoc 스타일 | \`/** @param {string} email @returns {boolean} */\` |
-| 단계별 주석 | \`// Step 1: 이메일 형식 검증 → Step 2: 도메인 확인 → Step 3: 결과 반환\` |
-| TODO 활용 | \`// TODO: 에러 핸들링 추가 - try/catch로 네트워크 에러 처리\` |
+| 회의록이 너무 길다 | 먼저 "결정사항만 뽑아줘" → 그 결과로 "담당자별 할 일 표로" 2단계 진행 |
+| 첨부가 여러 개다 | 한 번에 다 넣지 말고 하나씩 요약 → 요약본들을 모아 최종 정리 |
+| 형식을 꼭 지켜야 한다 | 기존 문서 1~2건을 먼저 붙여넣고 "이 형식 그대로" 지시 (Few-shot) |
 
-**2. Chat 슬래시 명령어 활용**
+### 2. ChatGPT 데이터 분석 — 자연어 분석 기법
 
-| 명령어 | 용도 | 예시 |
-|--------|------|------|
-| /explain | 코드 설명 요청 | "/explain 이 정규식의 동작 원리" |
-| /fix | 버그 수정 요청 | "/fix TypeError가 발생하는 원인과 해결책" |
-| /tests | 테스트 생성 | "/tests 이 함수의 유닛 테스트 작성" |
-| /doc | 문서화 | "/doc 이 클래스의 JSDoc 문서 생성" |
-
-### M365 Copilot 프롬프트 기법
-
-**Word에서의 효과적 프롬프트**
-
-| 목적 | 프롬프트 패턴 |
-|------|-------------|
-| 문서 초안 | "[대상]을 위한 [목적]에 대한 [문서 유형]을 [톤]으로 작성해줘" |
-| 문서 요약 | "이 문서를 [대상]이 이해할 수 있도록 [길이]로 요약해줘. [핵심 관점] 중심으로" |
-| 문서 개선 | "이 문서의 [측면]을 개선해줘. [구체적 지시]를 적용하여" |
-
-**Excel에서의 효과적 프롬프트**
-
-| 목적 | 프롬프트 패턴 |
-|------|-------------|
-| 데이터 분석 | "[데이터]에서 [분석 목표]를 [방법]으로 분석해줘" |
-| 수식 생성 | "[조건]을 만족하는 [계산]을 수행하는 수식을 만들어줘" |
-| 차트 생성 | "[데이터 범위]를 [차트 유형]으로 시각화해줘. [강조 포인트] 중심으로" |
-
-**PowerPoint에서의 효과적 프롬프트**
-
-| 목적 | 프롬프트 패턴 |
-|------|-------------|
-| 프레젠테이션 생성 | "[주제]에 대한 [슬라이드 수]장의 프레젠테이션을 만들어줘. 대상: [청중]" |
-| 슬라이드 디자인 | "이 슬라이드를 [스타일]로 재디자인해줘. [레이아웃 지시]" |
-| 발표 노트 | "각 슬라이드에 [시간]분 분량의 발표 노트를 추가해줘" |
-
-### Power Platform 프롬프트 기법
-
-| 도구 | 프롬프트 패턴 | 예시 |
+| 목적 | 프롬프트 패턴 | 예시 |
 |------|-------------|------|
-| Power Automate | "[트리거] 시 [액션]을 수행하는 플로우" | "새 이메일 수신 시 첨부파일을 SharePoint에 저장하는 플로우를 만들어줘" |
-| Power Apps | "[기능]을 가진 [대상]용 앱" | "영업팀이 고객 방문 기록을 입력하고 조회할 수 있는 모바일 앱을 만들어줘" |
-| Copilot Studio | "[목적]을 수행하는 봇" | "직원들의 연차/경조사 신청을 처리하는 HR 봇을 만들어줘" |
+| 집계 | "[데이터]에서 [기준]별 [지표]를 계산해줘" | "민원 데이터에서 유형별·월별 건수를 계산해줘" |
+| 추세 | "[기간] 동안의 [지표] 변화를 그래프로 그려줘" | "최근 12개월 민원 접수 추이를 꺾은선 그래프로" |
+| 해석 | "이 결과에서 눈에 띄는 점을 [분량]으로 설명해줘" | "집행률이 낮은 부서 3곳과 추정 원인을 한 문단으로" |
+| 보고서화 | "이 분석 결과로 [문서]의 [섹션]을 써줘" | "이 집계로 월간 보고서의 '주요 수치' 절을 작성해줘" |
 
-> 각 환경의 고유한 기능과 제약을 이해하면 더 효과적인 프롬프트를 작성할 수 있습니다.`,
-      contentEn: `Prompt writing techniques optimized for each Copilot environment.
+> 파일을 올리기 전에 **개인정보 열은 반드시 지우거나 가명으로 바꾸세요.** 이름·연락처·주소·주민번호가 든 원본은 올리지 않습니다.
 
-### GitHub Copilot Prompt Techniques
+### 3. Claude → Google Apps Script — 바이브코딩 기법
 
-**1. Comment-Based Code Generation**
+코드를 몰라도 됩니다. 다만 **무엇을·어디서·어떻게 되기를 원하는지**를 정확히 말해야 합니다.
 
-| Technique | Example |
-|-----------|---------|
-| Function purpose comment | \`// Email format validation function\` |
-| JSDoc style | \`/** @param {string} email @returns {boolean} */\` |
-| Step-by-step comments | \`// Step 1: Validate email format → Step 2: Check domain → Step 3: Return result\` |
-| TODO usage | \`// TODO: Add error handling - handle network errors with try/catch\` |
+| 단계 | 프롬프트 |
+|------|---------|
+| ① 생성 | "구글 시트에 [데이터 설명]이 있어. [원하는 결과]를 만들어주는 Google Apps Script를 작성하고, 설치 방법을 단계별로 알려줘" |
+| ② 실행 확인 | "스크립트를 붙여넣고 실행했더니 [상황]이야. 정상인지 확인해줘" |
+| ③ 오류 수정 | "아래 코드를 실행하니 에러가 났어. 원인을 쉽게 설명하고, 고친 전체 코드를 다시 보여줘. (코드와 에러 메시지 붙여넣기)" |
+| ④ 사용 설명 | "이 도구를 동료가 쓸 수 있도록 비전문가용 사용 설명서를 단계별로 작성해줘" |
 
-**2. Chat Slash Commands**
+**시트 작업을 지시할 때 꼭 넣을 정보**
 
-| Command | Purpose | Example |
-|---------|---------|---------|
-| /explain | Request code explanation | "/explain how this regex works" |
-| /fix | Request bug fix | "/fix the cause and solution for this TypeError" |
-| /tests | Generate tests | "/tests write unit tests for this function" |
-| /doc | Documentation | "/doc generate JSDoc documentation for this class" |
+| 항목 | 예시 |
+|------|------|
+| 시트 이름 | "'집행현황' 시트에서" |
+| 열 구조 | "A열 부서명, B열 예산액, C열 집행액" |
+| 원하는 결과 위치 | "새 시트 '요약'에 표로" |
+| 실행 방법 | "메뉴에 버튼을 만들어 누르면 실행되게" |
 
-### M365 Copilot Prompt Techniques
+### 4. Opal · Canva — 홍보 콘텐츠 기법
 
-**Effective Prompts in Word**
+| 목적 | 프롬프트 패턴 | 예시 |
+|------|-------------|------|
+| 카드뉴스 | "[사업]을 알리는 [장수]장 카드뉴스 문구. 각 장 한 줄 헤드라인 + 두 줄 설명" | "청년 일자리 지원사업 5장 카드뉴스 문구를 시민에게 친근한 어투로" |
+| 플랫폼 변환 | "이 보도자료를 [플랫폼]용으로 바꿔줘" | "인스타그램 게시물 / 카카오채널 메시지 / 블로그 도입부로 각각" |
+| 숏폼 | "[정책]을 알리는 [초]초 영상 스크립트. 장면별 자막 + 나레이션 + 화면 설명" | "30초 숏폼 스크립트로" |
+
+> AI가 만든 홍보물은 **저작권·초상권**을 반드시 확인하세요. 생성 이미지에 실존 인물·상표가 들어가지 않았는지 점검한 뒤 게시합니다.`,
+      contentEn: `The four tools used in this course are good at different things. Match the prompt to the tool.
+
+### Choosing a Tool
+
+| Task Type | Recommended Tool | Why |
+|-----------|-----------------|-----|
+| Documents, press releases, minutes | ChatGPT · Claude | Holds long-document structure and tone |
+| Spreadsheet aggregation and charts | ChatGPT Data Analysis | Upload the file; compute and visualize in one pass |
+| Repetitive sheet automation | Claude → Apps Script | Strong code generation with friendly error explanations |
+| Card news, short-form, PR assets | Opal · Canva | Produces copy and design together |
+
+### 1. ChatGPT · Claude — Document Work
 
 | Purpose | Prompt Pattern |
 |---------|---------------|
-| Draft document | "Write a [document type] about [purpose] for [audience] in [tone]" |
-| Summarize | "Summarize this document in [length] for [audience] to understand, focusing on [key perspective]" |
-| Improve | "Improve the [aspect] of this document by applying [specific instructions]" |
+| Draft | "Write a [document type] informing [audience] of [purpose] in [tone]" |
+| Summarize | "Summarize this in [length] for [audience], focusing on [perspective]" |
+| Improve | "Improve the [aspect] of this document by applying [instructions]" |
+| Convert | "Convert this [source format] to [target format] for [platform]" |
 
-**Effective Prompts in Excel**
+### 2. ChatGPT Data Analysis
 
-| Purpose | Prompt Pattern |
-|---------|---------------|
-| Data analysis | "Analyze [data] for [analysis goal] using [method]" |
-| Formula creation | "Create a formula that performs [calculation] satisfying [conditions]" |
-| Chart creation | "Visualize [data range] as [chart type], focusing on [emphasis points]" |
+| Purpose | Prompt Pattern | Example |
+|---------|---------------|---------|
+| Aggregate | "Compute [metric] by [dimension] from [data]" | "Count complaints by type and month" |
+| Trend | "Chart the change in [metric] over [period]" | "Line chart of the last 12 months of complaints" |
+| Interpret | "Explain what stands out in [length]" | "Three departments with low execution and likely causes, one paragraph" |
+| Report | "Write the [section] of [document] from this result" | "Draft the 'key figures' section of the monthly report" |
 
-**Effective Prompts in PowerPoint**
+> Remove or pseudonymize personal-data columns before uploading any file.
 
-| Purpose | Prompt Pattern |
-|---------|---------------|
-| Create presentation | "Create a [slide count]-slide presentation about [topic]. Audience: [audience]" |
-| Slide design | "Redesign this slide in [style]. [Layout instructions]" |
-| Speaker notes | "Add [time]-minute speaker notes to each slide" |
+### 3. Claude to Google Apps Script (Vibe Coding)
 
-### Power Platform Prompt Techniques
+| Step | Prompt |
+|------|--------|
+| 1. Generate | "A Google Sheet has [data]. Write an Apps Script that produces [result], and explain installation step by step" |
+| 2. Verify | "I pasted and ran the script and got [situation]. Is this correct?" |
+| 3. Fix | "Running this code raised an error. Explain the cause simply and show the corrected full code. (paste code and error)" |
+| 4. Document | "Write a non-technical step-by-step user guide for this tool" |
 
-| Tool | Prompt Pattern | Example |
-|------|---------------|---------|
-| Power Automate | "A flow that performs [action] when [trigger]" | "Create a flow that saves attachments to SharePoint when a new email is received" |
-| Power Apps | "An app for [audience] with [features]" | "Create a mobile app for the sales team to log and view customer visit records" |
-| Copilot Studio | "A bot that performs [purpose]" | "Create an HR bot that handles employee leave and event requests" |
+### 4. Opal · Canva — PR Content
 
-> Understanding each environment's unique features and constraints helps write more effective prompts.`,
+| Purpose | Prompt Pattern | Example |
+|---------|---------------|---------|
+| Card news | "[N]-slide card news copy for [program]: one-line headline + two-line description each" | "5-slide card news for the youth jobs program, friendly tone" |
+| Platform conversion | "Convert this press release for [platform]" | "Instagram post / KakaoTalk channel message / blog intro" |
+| Short-form | "[N]-second video script: per-scene captions + narration + visuals" | "30-second short-form script" |
+
+> Always check copyright and portrait rights on AI-generated PR assets before publishing.`,
     },
     {
       title: '고급 프롬프트 전략',
@@ -249,27 +286,26 @@ AI에게 프롬프트 자체를 개선하도록 요청하는 전략입니다.
 
 ### 페르소나 체이닝
 
-여러 전문가 역할을 순차적으로 활용하는 전략입니다.
+여러 역할을 순차적으로 활용해 문서 한 건을 완성도 있게 만드는 전략입니다.
 
 | 단계 | 페르소나 | 작업 |
 |------|---------|------|
-| 1단계 | 비즈니스 분석가 | 요구사항 정의 및 범위 설정 |
-| 2단계 | 시스템 아키텍트 | 기술 구조 및 설계 결정 |
-| 3단계 | 시니어 개발자 | 코드 구현 및 최적화 |
-| 4단계 | QA 엔지니어 | 테스트 케이스 및 검증 |
-| 5단계 | 테크니컬 라이터 | 문서화 및 가이드 작성 |
+| 1단계 | 기획 담당자 | 문서의 목적·대상·핵심 메시지 정의 |
+| 2단계 | 행정 담당자 | 공문 형식에 맞춘 초안 작성 |
+| 3단계 | 공보 담당자 | 시민에게 전달될 표현으로 다듬기 |
+| 4단계 | 감사 담당자 | 사실 오류·근거 누락·표현 위험 점검 |
+| 5단계 | 시민 | 처음 읽는 사람 입장에서 이해되는지 확인 |
 
 ### 제약 기반 프롬프팅
-
-의도적으로 제약 조건을 추가하여 결과 품질을 높이는 전략입니다.
 
 | 제약 유형 | 예시 | 효과 |
 |----------|------|------|
 | 길이 제약 | "200자 이내로 작성" | 핵심만 추출 |
 | 난이도 제약 | "중학생이 이해할 수준으로" | 명확한 설명 |
 | 형식 제약 | "반드시 표 형식으로만" | 구조화된 결과 |
-| 금지 제약 | "전문 용어 사용 금지" | 접근성 향상 |
-| 시간 제약 | "5분 안에 발표할 수 있는 분량" | 핵심 압축 |
+| 금지 제약 | "행정 용어·한자어 사용 금지" | 시민 접근성 향상 |
+| 시간 제약 | "5분 안에 보고할 수 있는 분량" | 핵심 압축 |
+| 근거 제약 | "확인되지 않은 수치는 쓰지 말고 [확인 필요]로 표시" | 허위 정보 차단 |
 
 ### 반복 정제 (Iterative Refinement)
 
@@ -282,91 +318,108 @@ AI에게 프롬프트 자체를 개선하도록 요청하는 전략입니다.
 
 ### 프롬프트 템플릿 라이브러리
 
-**코드 리뷰 템플릿**
+**공문 작성 템플릿**
 
 | 항목 | 내용 |
 |------|------|
-| 역할 | "시니어 [언어/프레임워크] 개발자로서" |
-| 관점 | "보안, 성능, 가독성, 유지보수성 관점에서" |
-| 형식 | "각 항목별로 심각도(높/중/낮)와 개선 코드를 제시하고" |
-| 제약 | "긍정적 피드백도 1개 이상 포함해줘" |
+| 역할 | "대구광역시청 [부서] 행정 담당자로서" |
+| 구조 | "제목 → 수신 → 본문 → 붙임 순서로" |
+| 형식 | "본문은 3문단 이내, 각 문단 3줄 이내" |
+| 어투 | "정중하고 간결한 공공기관 공문체로" |
+| 제약 | "확인되지 않은 일정·금액은 [확인 필요]로 표시해줘" |
 
-**비즈니스 보고서 템플릿**
+**행정 보고서 템플릿**
 
 | 항목 | 내용 |
 |------|------|
-| 역할 | "[산업] 분야의 비즈니스 애널리스트로서" |
-| 구조 | "Executive Summary → 현황 분석 → 핵심 발견 → 제안 → 다음 단계" |
-| 형식 | "각 섹션별 2-3문장, 핵심 수치는 볼드 처리" |
-| 톤 | "경영진 대상, 전문적이지만 이해하기 쉽게" |
+| 역할 | "행정 데이터를 다루는 분석 담당자로서" |
+| 구조 | "개요 → 주요 수치 → 시사점 → 건의사항" |
+| 형식 | "각 섹션 2-3문장, 핵심 수치는 볼드 처리" |
+| 톤 | "간부 보고용, 전문적이지만 이해하기 쉽게" |
+| 제약 | "추정과 사실을 문장에서 구분해서 써줘" |
+
+**AI 결과물 검토 템플릿**
+
+| 항목 | 내용 |
+|------|------|
+| 역할 | "문서를 검토하는 감사 담당자로서" |
+| 관점 | "사실 확인, 개인정보 포함 여부, 보안, 어투 네 가지 관점에서" |
+| 형식 | "항목별로 위험도(높/중/낮)와 수정안을 제시하고" |
+| 제약 | "문제가 없는 항목도 '이상 없음'으로 명시해줘" |
 
 > 고급 전략은 기본 기법을 충분히 익힌 후 활용하면 더욱 효과적입니다.`,
       contentEn: `Expert-level advanced prompt strategies.
 
 ### Meta Prompting
 
-A strategy where you ask AI to improve the prompt itself.
-
 | Step | Meta Prompt |
-|------|------------|
-| Analysis Request | "Analyze the following prompt I wrote: [prompt]" |
-| Improvement Request | "Find 3 weaknesses in this prompt and write an improved version" |
-| Comparison Request | "Explain the expected result differences between original and improved versions" |
+|------|-------------|
+| Analysis | "Analyze the following prompt I wrote: [prompt]" |
+| Improvement | "Find 3 weaknesses in this prompt and write an improved version" |
+| Comparison | "Explain the expected result differences between the original and improved versions" |
 
 ### Persona Chaining
 
-A strategy that sequentially utilizes multiple expert roles.
-
 | Step | Persona | Task |
 |------|---------|------|
-| Step 1 | Business Analyst | Define requirements and scope |
-| Step 2 | System Architect | Technical structure and design decisions |
-| Step 3 | Senior Developer | Code implementation and optimization |
-| Step 4 | QA Engineer | Test cases and verification |
-| Step 5 | Technical Writer | Documentation and guide creation |
+| 1 | Program planner | Define purpose, audience, key message |
+| 2 | Administrative officer | Draft in official document format |
+| 3 | Press officer | Refine into citizen-facing language |
+| 4 | Auditor | Check factual errors, missing basis, risky wording |
+| 5 | Citizen | Confirm a first-time reader understands it |
 
 ### Constraint-Based Prompting
 
-A strategy that intentionally adds constraints to improve result quality.
-
 | Constraint Type | Example | Effect |
-|----------------|---------|--------|
+|-----------------|---------|--------|
 | Length | "Write within 200 characters" | Extract essentials only |
 | Difficulty | "At a level a middle schooler can understand" | Clear explanation |
 | Format | "Must be in table format only" | Structured results |
-| Prohibition | "No technical jargon" | Improved accessibility |
-| Time | "Content suitable for a 5-minute presentation" | Core compression |
+| Prohibition | "No bureaucratic jargon" | Improved citizen accessibility |
+| Time | "Content suitable for a 5-minute briefing" | Core compression |
+| Evidence | "Mark unverified figures as [needs verification]" | Blocks fabricated information |
 
 ### Iterative Refinement
 
 | Round | Prompt Strategy | Purpose |
 |-------|----------------|---------|
-| 1st | Request broad draft | Understand overall structure |
-| 2nd | Request specifics for weak areas | Depth reinforcement |
-| 3rd | Focus on improving specific sections | Quality enhancement |
-| 4th | Request overall consistency review | Final refinement |
+| 1 | Request a broad draft | Grasp overall structure |
+| 2 | Request detail on weak parts | Add depth |
+| 3 | Focused improvement of one section | Raise quality |
+| 4 | Request a consistency review | Final polish |
 
 ### Prompt Template Library
 
-**Code Review Template**
+**Official Document Template**
 
 | Item | Content |
 |------|---------|
-| Role | "As a senior [language/framework] developer" |
-| Perspective | "From security, performance, readability, maintainability perspectives" |
-| Format | "Present severity (high/medium/low) and improved code for each item" |
-| Constraint | "Include at least 1 positive feedback" |
+| Role | "As an administrative officer of [department], Daegu City Hall" |
+| Structure | "Title → recipient → body → attachments" |
+| Format | "Body within 3 paragraphs, each under 3 lines" |
+| Tone | "Courteous, concise official public-sector style" |
+| Constraint | "Mark unverified dates or amounts as [needs verification]" |
 
-**Business Report Template**
+**Administrative Report Template**
 
 | Item | Content |
 |------|---------|
-| Role | "As a business analyst in the [industry] field" |
-| Structure | "Executive Summary → Current Analysis → Key Findings → Recommendations → Next Steps" |
-| Format | "2-3 sentences per section, bold key figures" |
-| Tone | "For executives, professional but easy to understand" |
+| Role | "As an analyst working with administrative data" |
+| Structure | "Overview → key figures → implications → recommendations" |
+| Format | "2-3 sentences per section, key figures in bold" |
+| Tone | "For executive briefing — professional but easy to follow" |
+| Constraint | "Distinguish estimates from facts in the wording" |
 
-> Advanced strategies are most effective when applied after mastering fundamental techniques.`,
+**AI Output Review Template**
+
+| Item | Content |
+|------|---------|
+| Role | "As an auditor reviewing this document" |
+| Perspective | "Fact-check, personal data, security, tone" |
+| Format | "Per item, give a risk level (high/medium/low) and a fix" |
+| Constraint | "State 'no issue' explicitly for clean items" |
+
+> Advanced strategies work best once the basics are solid.`,
     },
   ],
 };

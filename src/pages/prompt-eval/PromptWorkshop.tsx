@@ -8,7 +8,6 @@ import PromptEvalNav from '../../components/PromptEvalNav';
 import { scoreCriteria } from './data/quiz-questions';
 import '../../styles/practice.css';
 
-/* ── 시나리오 데이터 ── */
 const SCENARIOS = [
   {
     id: 'free',
@@ -20,53 +19,53 @@ const SCENARIOS = [
   },
   {
     id: 's1',
-    title: '마케팅 콘텐츠 작성',
-    titleEn: 'Marketing Content',
-    desc: '신제품 출시를 위한 SNS 홍보 문구를 작성하는 프롬프트를 만드세요.',
-    descEn: 'Create a prompt to write SNS promotional copy for a new product launch.',
-    icon: 'fa-bullhorn',
-    hint: '제품 정보, 타깃 고객층, 톤앤매너, 채널, 글자수 제한 등을 포함해보세요.',
-    hintEn: 'Include product info, target audience, tone, channel, and character limits.',
+    title: '안내 공문 작성',
+    titleEn: 'Official Announcement',
+    desc: '행사·정책을 알리는 안내 공문 초안을 만드는 프롬프트를 작성하세요.',
+    descEn: 'Create a prompt that drafts an official announcement for an event or policy.',
+    icon: 'fa-file-lines',
+    hint: '발신 주체 역할, 행사명·일시·장소·대상, 문서 형식(제목·수신·본문·붙임), 어투, 분량을 포함해보세요.',
+    hintEn: 'Include the sender role, event details, document format, tone, and length.',
   },
   {
     id: 's2',
-    title: '코드 리뷰 요청',
-    titleEn: 'Code Review Request',
-    desc: '작성한 코드에 대한 리뷰를 AI에게 요청하는 프롬프트를 만드세요.',
-    descEn: 'Create a prompt asking AI to review your code.',
-    icon: 'fa-code',
-    hint: '언어, 코드 목적, 리뷰 관점(성능/보안/가독성), 출력 형식 등을 포함해보세요.',
-    hintEn: 'Include language, code purpose, review focus (performance/security/readability), output format.',
+    title: '시정 보도자료',
+    titleEn: 'City Press Release',
+    desc: '시정 사업을 알리는 보도자료 초안을 만드는 프롬프트를 작성하세요.',
+    descEn: 'Create a prompt that drafts a press release for a city program.',
+    icon: 'fa-bullhorn',
+    hint: '헤드라인·리드문(육하원칙)·본문 문단 수·담당부서 연락처 등 보도자료 구조와 공공기관 톤을 지정해보세요.',
+    hintEn: 'Specify headline, 5W1H lead, body paragraphs, department contact, and public-institution tone.',
   },
   {
     id: 's3',
-    title: '학습 자료 생성',
-    titleEn: 'Learning Material',
-    desc: '특정 주제에 대한 교육 자료를 만드는 프롬프트를 작성하세요.',
-    descEn: 'Create a prompt to generate educational material on a specific topic.',
-    icon: 'fa-graduation-cap',
-    hint: '학습 대상, 수준, 분량, 형식(슬라이드/문서/퀴즈), 핵심 내용 등을 포함해보세요.',
-    hintEn: 'Include target learners, level, length, format, and key content areas.',
+    title: '엑셀 자동화 요청',
+    titleEn: 'Spreadsheet Automation',
+    desc: '구글 시트 반복작업을 자동화하는 Apps Script를 요청하는 프롬프트를 작성하세요.',
+    descEn: 'Create a prompt requesting an Apps Script that automates repetitive sheet work.',
+    icon: 'fa-table',
+    hint: '시트 이름, 열 구성, 원하는 계산, 결과를 넣을 위치, 실행 방법(버튼 등), 설치 안내 요청을 포함해보세요.',
+    hintEn: 'Include sheet name, columns, desired computation, result destination, how to run it, and setup guidance.',
   },
   {
     id: 's4',
-    title: '데이터 분석 요청',
-    titleEn: 'Data Analysis',
-    desc: '데이터를 분석하고 인사이트를 도출하는 프롬프트를 만드세요.',
-    descEn: 'Create a prompt for data analysis and insight extraction.',
+    title: '민원·예산 데이터 분석',
+    titleEn: 'Administrative Data Analysis',
+    desc: '행정 데이터를 분석하고 보고서 문장까지 얻는 프롬프트를 작성하세요.',
+    descEn: 'Create a prompt that analyzes administrative data and produces report-ready sentences.',
     icon: 'fa-chart-bar',
-    hint: '데이터 유형, 분석 목적, 시각화 방법, 핵심 지표, 보고서 형식 등을 포함해보세요.',
-    hintEn: 'Include data type, analysis purpose, visualization, key metrics, and report format.',
+    hint: '분석 기간, 계산할 지표, 원하는 산출물(표·그래프·요약문), 개인정보 제거 여부, 추정과 사실의 구분 요구를 포함해보세요.',
+    hintEn: 'Include the period, metrics, deliverables, personal-data handling, and a fact-versus-estimate constraint.',
   },
   {
     id: 's5',
-    title: '이메일 작성',
-    titleEn: 'Email Writing',
-    desc: '비즈니스 이메일을 작성하는 프롬프트를 만드세요.',
-    descEn: 'Create a prompt to write a business email.',
-    icon: 'fa-envelope',
-    hint: '수신자, 목적, 톤, 핵심 내용, 길이, 포함할 항목 등을 포함해보세요.',
-    hintEn: 'Include recipient, purpose, tone, key points, length, and items to include.',
+    title: '정책 홍보 콘텐츠',
+    titleEn: 'Policy PR Content',
+    desc: '카드뉴스·숏폼 등 시민 대상 홍보 콘텐츠 문구를 만드는 프롬프트를 작성하세요.',
+    descEn: 'Create a prompt for citizen-facing PR copy such as card news or short-form video.',
+    icon: 'fa-image',
+    hint: '사업 내용, 전달 대상, 채널(인스타·카카오채널·블로그), 장수·초수, 장당 문구 구성, 어투를 포함해보세요.',
+    hintEn: 'Include the program, audience, channel, slide/second count, per-slide copy structure, and tone.',
   },
 ];
 
@@ -362,8 +361,8 @@ export default function PromptWorkshop() {
             <textarea
               className="workshop-textarea"
               placeholder={isKo
-                ? '여기에 프롬프트를 작성하세요...\n\n예) 당신은 10년 경력의 마케팅 전문가입니다. 20대 여성을 타깃으로 한 화장품 신제품 "글로우업 세럼"의 인스타그램 홍보 문구를 5개 작성해주세요. 각 문구는 50자 이내, 해시태그 3개씩 포함해주세요.'
-                : 'Write your prompt here...\n\nExample: You are a marketing expert with 10 years of experience. Write 5 Instagram promotional copies for a new cosmetics product "GlowUp Serum" targeting women in their 20s. Each copy should be under 50 words with 3 hashtags.'}
+                ? '여기에 프롬프트를 작성하세요...\n\n예) 너는 대구광역시청 행정 담당자야. 7월 15일(화) 14:00 시청 별관 대강당에서 열리는 "생성형 AI 업무활용 특강"을 본청·구청 공무원에게 알리는 안내 공문을 작성해줘. 형식은 제목·수신·본문·붙임 순, 본문은 3문단 이내, 정중하고 간결한 공공기관 공문체로.'
+                : 'Write your prompt here...\n\nExample: You are an administrative officer at Daegu City Hall. Draft an announcement for city and district officials about the "Generative AI at Work" lecture on July 15 (Tue) 2pm at the City Hall Annex Hall. Format: title, recipient, body, attachments; body within 3 paragraphs; courteous, concise public-sector style.'}
               value={promptText}
               onChange={e => { setPromptText(e.target.value); }}
             />
