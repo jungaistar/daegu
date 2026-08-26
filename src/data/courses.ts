@@ -1,0 +1,284 @@
+/**
+ * ============================================================
+ *  DAEGU 대구광역시 공무원 AI 실무 교육 — 과정/커리큘럼 데이터
+ *  도구: ChatGPT · Claude · Google Apps Script · Opal/Canva
+ *  구성: 2개 과정(중급·고급) × 각 2일(8시간), 실습 위주
+ * ============================================================
+ */
+
+/** 실습 사례 — ChatGPT/Claude에 그대로 입력해볼 수 있는 예시 프롬프트 */
+export interface PracticeCase {
+  scenario: string; // 실습 상황 / 미션
+  prompt: string;   // 예시 프롬프트
+}
+
+/** 교시(세션) 단위 커리큘럼 */
+export interface CurriculumSession {
+  period: string;            // 예: '1·2교시'
+  time: string;              // 예: '13:00 ~ 15:00'
+  title: string;
+  goal: string;              // 학습 목표
+  topics: string[];          // 다루는 내용
+  practices: PracticeCase[]; // 실습 사례 (실습 위주)
+}
+
+/** 하루(4시간) 단위 */
+export interface CurriculumDay {
+  day: number;       // 1 | 2
+  badge: string;     // 'Day 1'
+  theme: string;     // 그날의 주제
+  themeEn: string;
+  sessions: CurriculumSession[];
+}
+
+/** 과정(2일 8시간) */
+export interface Program {
+  id: string;
+  order: number;
+  nameKo: string;
+  nameEn: string;
+  tagline: string;       // 한 줄 소개
+  descKo: string;
+  descEn: string;
+  audience: string;      // 추천 대상
+  duration: string;      // '2일 · 8시간'
+  level: string;
+  icon: string;
+  color: string;
+  highlights: string[];  // 핵심 키워드 태그
+  curriculum: CurriculumDay[];
+}
+
+/* ── 공통 시간표 (각 일자 4시간 / 2개 세션 × 2시간) ── */
+const S1 = '13:00 ~ 15:00';
+const S2 = '15:00 ~ 17:00';
+
+export const PROGRAMS: Program[] = [
+  /* ════════════════════════════════════════════════════
+     1. 중급 — AI 기반 업무자동화 실무
+     ════════════════════════════════════════════════════ */
+  {
+    id: 'intermediate',
+    order: 1,
+    nameKo: '중급 · AI 기반 업무자동화 실무',
+    nameEn: 'Intermediate — AI Workflow Automation',
+    tagline: '문서·엑셀·데이터 업무를 AI로 직접 자동화',
+    descKo: 'ChatGPT·Claude·Google Apps Script로 공문·보고서·엑셀 집계·데이터 분석 등 반복 업무를 직접 자동화합니다. 2시간이 걸리던 작업을 몇 분으로 줄이는 실습 중심 과정입니다.',
+    descEn: 'Automate documents, spreadsheets and data work directly with ChatGPT, Claude and Google Apps Script — a hands-on, two-day course for public officials.',
+    audience: '대구광역시 공무원 (AI 도구 기본 사용 경험자)',
+    duration: '2일 · 8시간',
+    level: '중급',
+    icon: 'fa-bolt',
+    color: '#0F8B8D',
+    highlights: ['AI 문서 자동화', '엑셀 매크로 자동생성', 'ChatGPT 데이터분석', '바이브코딩 입문', '업무 자동화 흐름 설계'],
+    curriculum: [
+      {
+        day: 1,
+        badge: 'Day 1',
+        theme: 'AI 문서·엑셀 업무 자동화',
+        themeEn: 'Document & Spreadsheet Automation',
+        sessions: [
+          {
+            period: '1·2교시',
+            time: S1,
+            title: 'AI 문서 자동화 ① — 보고서 작성',
+            goal: '공문·보도자료·회의록 초안을 AI로 5분 만에 완성하고, 재사용 가능한 프롬프트 템플릿을 만든다.',
+            topics: [
+              'AI 문서 자동화 실습 시나리오 작성',
+              '공문·보도자료·회의록 초안 5분 완성',
+              'Claude·Google Docs AI로 문서 자동 구조 설정',
+              '문서 유형별 재사용 프롬프트 템플릿 3종 완성',
+            ],
+            practices: [
+              { scenario: '시정 행사 안내 공문 초안 만들기', prompt: '너는 대구광역시청 행정 담당자야. 다음 정보로 정중하고 간결한 안내 공문을 작성해줘.\n행사명: 생성형 AI 업무활용 특강\n일시: 7월 15일(화) 14:00\n장소: 시청 별관 대강당\n대상: 본청·구청 공무원\n형식: 제목 / 수신 / 본문 / 붙임 순.' },
+              { scenario: '보도자료 초안 자동 작성', prompt: '아래 핵심 내용으로 시정 보도자료 초안을 작성해줘. 형식: 헤드라인 → 리드문(육하원칙) → 본문 3문단 → 담당부서 연락처. 어투는 공공기관 보도자료 톤으로.\n[핵심 내용 붙여넣기]' },
+              { scenario: '회의록을 결정사항·할 일로 정리', prompt: '아래 회의록을 (1) 결정사항 3가지 (2) 담당자별 할 일을 표(담당자/할 일/기한)로 정리해줘.\n[회의록 텍스트 붙여넣기]' },
+            ],
+          },
+          {
+            period: '3·4교시',
+            time: S2,
+            title: 'AI 문서 자동화 ② — 엑셀 업무 자동화',
+            goal: '바이브코딩으로 Apps Script를 자동 생성해 엑셀(스프레드시트) 집계·서식·오류 점검을 자동화한다.',
+            topics: [
+              '2시간 걸리던 집계표를 3분 만에 완성',
+              '바이브코딩으로 시트 서식 자동 생성',
+              'ChatGPT·Claude → Apps Script 자동생성 → Sheets 실행',
+              '매크로 버튼 설정 / QUERY·조건부서식으로 오류 즉시 식별',
+            ],
+            practices: [
+              { scenario: '집계 자동화 Apps Script 만들기', prompt: '구글 시트에 부서별·월별 예산 집행액이 들어있어. 부서별 합계와 집행률을 자동 계산해서 새 시트에 요약표로 만들어주는 Google Apps Script를 작성하고, 사용법을 단계별로 알려줘.' },
+              { scenario: '조건부 서식으로 오류 식별', prompt: '구글 시트에서 집행률이 90%를 넘으면 빨강, 50% 미만이면 노랑으로 칸 색을 자동으로 칠하는 조건부 서식 규칙을 설정하는 방법을 단계별로 알려줘.' },
+              { scenario: '버튼 한 번으로 보고서 시트 생성', prompt: '시트 상단에 버튼을 만들고, 누르면 현재 데이터로 "월간 집행 현황" 요약 시트를 새로 만드는 Apps Script와 버튼 연결 방법을 알려줘.' },
+            ],
+          },
+        ],
+      },
+      {
+        day: 2,
+        badge: 'Day 2',
+        theme: 'AI 데이터 분석과 내 업무 자동화',
+        themeEn: 'AI Data Analysis & Automation',
+        sessions: [
+          {
+            period: '1·2교시',
+            time: S1,
+            title: 'ChatGPT 활용 데이터 분석',
+            goal: '엑셀 데이터를 업로드해 AI가 차트와 인사이트를 자동 생성하게 하고, 자연어로 분석을 명령한다.',
+            topics: [
+              'ChatGPT 데이터 분석 실습 시나리오 작성',
+              '엑셀 업로드 → AI 차트 자동생성 → 문장 자동완성',
+              '데이터 분석·차트 작성을 10분 만에 완성',
+              'ChatGPT Data Analysis 자연어 명령 연습',
+            ],
+            practices: [
+              { scenario: '민원 데이터 자동 분석', prompt: '월별 민원 접수 현황 엑셀 파일을 올릴게. (1) 가장 많은 민원 유형 5가지 (2) 월별 추이 그래프 (3) 눈에 띄는 변화에 대한 한 문단 분석을 만들어줘.' },
+              { scenario: '예산 집행 데이터 인사이트', prompt: '부서별 예산 집행 데이터를 분석해서 집행률이 낮은 부서 3곳과 그 원인으로 추정되는 점, 그리고 보고서에 쓸 수 있는 요약 문장 3개를 만들어줘.' },
+              { scenario: '시트 차트 vs AI 분석 비교', prompt: '같은 데이터를 구글 시트 자체 차트로 그릴 때와 ChatGPT 분석으로 볼 때 각각의 장단점을 표로 정리하고, 어떤 상황에 무엇을 쓰면 좋은지 알려줘.' },
+            ],
+          },
+          {
+            period: '3·4교시',
+            time: S2,
+            title: '내 업무 자동화 구현',
+            goal: '배운 도구를 모아 실제 내 업무 자동화 흐름을 완성하고, AI 결과물의 오류·보안을 점검하는 루틴을 만든다.',
+            topics: [
+              '1~6차시 습득 도구로 업무 자동화 흐름 완성',
+              'AI 생성물 오류·보안 위험 검토 루틴 만들기',
+              '교육 수료 후 3주 실행계획 작성',
+              '자동화할 업무 12가지 + 사용 도구 + 예상 절감시간 정리',
+            ],
+            practices: [
+              { scenario: '내 업무 자동화 흐름 설계', prompt: '내가 매주 반복하는 업무를 알려줄게. 이 중 AI로 자동화할 수 있는 단계를 찾아, "현재 방식 → 자동화 방식 → 사용 도구 → 예상 절감시간"을 표로 정리해줘.\n[반복 업무 설명 붙여넣기]' },
+              { scenario: 'AI 결과물 검토 체크리스트', prompt: 'AI가 만든 공문·보고서를 그대로 쓰기 전에 점검해야 할 항목(사실 확인, 개인정보, 보안, 어투)을 공무원용 체크리스트로 만들어줘.' },
+              { scenario: '3주 실행계획 만들기', prompt: '오늘 배운 AI 업무자동화를 실제 업무에 적용하기 위한 3주 실행계획을 주차별 목표·할 일·점검 항목으로 표를 만들어줘.' },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  /* ════════════════════════════════════════════════════
+     2. 고급 — AI 기반 데이터 분석 및 활용
+     ════════════════════════════════════════════════════ */
+  {
+    id: 'advanced',
+    order: 2,
+    nameKo: '고급 · AI 기반 데이터 분석 및 활용',
+    nameEn: 'Advanced — AI Data Analysis & Application',
+    tagline: '바이브코딩 자동화 도구부터 정책 홍보 콘텐츠까지',
+    descKo: '바이브코딩으로 반복 행정업무를 자동화하는 도구를 직접 만들고, 데이터 분석을 심화한 뒤 AI로 정책 홍보 콘텐츠까지 제작합니다. 부서에 바로 적용할 AI 도입 전략을 설계하는 심화 과정입니다.',
+    descEn: 'Build automation tools with vibe coding, go deeper into AI data analysis, and create policy PR content with AI — an advanced course for public officials.',
+    audience: '대구광역시 공무원 (중급 과정 수료 또는 업무자동화 경험자)',
+    duration: '2일 · 8시간',
+    level: '고급',
+    icon: 'fa-chart-line',
+    color: '#4F46E5',
+    highlights: ['바이브코딩 도구 제작', '디버깅 루틴', '데이터 분석 심화', 'AI 정책 홍보 콘텐츠', 'AI 도입 전략 설계'],
+    curriculum: [
+      {
+        day: 1,
+        badge: 'Day 1',
+        theme: '바이브코딩 자동화 도구와 데이터 분석 심화',
+        themeEn: 'Vibe Coding & Advanced Analysis',
+        sessions: [
+          {
+            period: '1·2교시',
+            time: S1,
+            title: '바이브 코딩 자동화 도구 제작',
+            goal: '바이브코딩으로 반복 행정업무를 버튼 1클릭 도구로 만들고, 오류 발생 시 AI로 디버깅하는 루틴을 익힌다.',
+            topics: [
+              '바이브 코딩 개념과 반복 행정업무 자동화',
+              '수기로 30분 걸리던 작업을 1클릭으로 단축',
+              'AI가 Apps Script 자동생성 → Sheets 붙여넣기 → 실행 확인',
+              '오류 메시지 AI 입력 → 자동수정 → 재실행 디버깅 루틴',
+            ],
+            practices: [
+              { scenario: '반복 업무를 1클릭 도구로', prompt: '매번 수기로 30분 걸리는 작업이 있어: 여러 부서가 제출한 시트를 하나로 합치고 중복을 제거하는 일이야. 버튼 한 번으로 처리하는 Google Apps Script를 만들어주고, 설치 방법을 알려줘.' },
+              { scenario: '에러 자동 디버깅', prompt: '아래 Apps Script를 실행하니 에러가 났어. 원인을 쉽게 설명하고, 고친 전체 코드를 다시 보여줘.\n[코드와 에러 메시지 붙여넣기]' },
+              { scenario: '도구 사용 설명서 자동 생성', prompt: '방금 만든 자동화 도구를 동료 공무원이 쓸 수 있도록, 비전문가용 사용 설명서를 단계별 안내 형식으로 작성해줘.' },
+            ],
+          },
+          {
+            period: '3·4교시',
+            time: S2,
+            title: 'AI 데이터 분석 심화',
+            goal: '데이터가 스스로 보고서가 되도록 ChatGPT 분석과 Apps Script·QUERY를 연동한다.',
+            topics: [
+              'AI 데이터 분석 심화와 Sheets 자동화 연동',
+              'ChatGPT Data Analysis 심화 + Apps Script 연동',
+              '복수 시트 데이터 비교·원인 분석 자연어 명령',
+              'Sheets QUERY + AI 인사이트 문장 조합으로 보고서 초안 자동완성',
+            ],
+            practices: [
+              { scenario: '복수 시트 비교 분석', prompt: '작년과 올해 분기별 실적 시트 두 개를 비교해서, 증감이 큰 항목 5가지와 그 원인으로 추정되는 점, 보고서용 요약 문장을 만들어줘.' },
+              { scenario: 'QUERY로 자동 집계표', prompt: '구글 시트에서 원본 데이터를 부서별·항목별로 자동 집계하는 QUERY 함수를 작성하고, 각 인자가 무슨 의미인지 설명해줘.' },
+              { scenario: '데이터가 보고서로', prompt: '아래 집계 결과를 바탕으로 Claude가 보고서 초안(개요·주요 수치·시사점·건의)을 자동으로 작성하게 하는 프롬프트를 만들어줘.\n[집계 결과 붙여넣기]' },
+            ],
+          },
+        ],
+      },
+      {
+        day: 2,
+        badge: 'Day 2',
+        theme: 'AI 정책 홍보 콘텐츠와 통합 활용',
+        themeEn: 'AI PR Content & Integration',
+        sessions: [
+          {
+            period: '1·2교시',
+            time: S1,
+            title: 'AI 정책 홍보 콘텐츠 제작',
+            goal: '시정 주요 사업을 카드뉴스·숏폼으로 자동 제작하고, 플랫폼별 최적 포맷으로 변환한다.',
+            topics: [
+              '시정 주요 사업 보도자료 실습 시나리오 작성',
+              'Opal 카드뉴스·숏폼 자동 생성 → Canva 디자인 완성',
+              'ChatGPT로 카드뉴스 문구 자동 생성',
+              '인스타그램·카카오채널·블로그 등 플랫폼별 포맷 자동 변환',
+              'AI 생성 홍보물 저작권·초상권 유의사항',
+            ],
+            practices: [
+              { scenario: '카드뉴스 문구 자동 생성', prompt: '대구시 청년 일자리 지원사업을 홍보하는 5장짜리 카드뉴스 문구를 만들어줘. 각 장: 한 줄 헤드라인 + 두 줄 설명. 어투는 시민에게 친근하게.' },
+              { scenario: '플랫폼별 포맷 변환', prompt: '아래 보도자료를 (1) 인스타그램 게시물 (2) 카카오채널 메시지 (3) 블로그 글 도입부로 각각 변환해줘. 각 플랫폼 특성에 맞게 길이와 어투를 조정해줘.\n[보도자료 붙여넣기]' },
+              { scenario: '숏폼 영상 스크립트', prompt: '위 정책을 알리는 30초 숏폼 영상 스크립트를 만들어줘. 장면별 자막 + 나레이션 + 화면 설명 형식으로.' },
+            ],
+          },
+          {
+            period: '3·4교시',
+            time: S2,
+            title: 'AI 통합 활용 실습',
+            goal: '배운 도구를 통합해 부서에 필요한 결과물을 만들고, 개인·부서 AI 도입 로드맵을 설계한다.',
+            topics: [
+              '1~6차시 습득 도구로 우리 부서에 필요한 콘텐츠 제작',
+              '업무 유형별 AI 도구 선택 기준표 작성',
+              'ChatGPT·Claude·Opal/Canva·Apps Script 활용 비교',
+              'AI 도입 장벽(보안·인식·비용) 분석과 대응 방안',
+              '개인별 AI 활용 로드맵 설계',
+            ],
+            practices: [
+              { scenario: '도구 선택 기준표 만들기', prompt: '공무원 업무 유형(문서작성·데이터분석·홍보·반복작업)별로 ChatGPT·Claude·Opal/Canva·Apps Script 중 무엇을 쓰면 좋은지 기준표를 만들어줘. 선택 이유도 한 줄씩.' },
+              { scenario: 'AI 도입 장벽 대응', prompt: '부서에 AI를 도입할 때 예상되는 장벽(보안 우려·직원 인식·비용)을 정리하고, 각각에 대한 현실적인 대응 방안을 표로 제안해줘.' },
+              { scenario: '개인 AI 활용 로드맵', prompt: '내 업무를 알려줄게. 앞으로 3개월간 AI를 단계적으로 도입하는 개인 로드맵을 월별 목표·도구·기대효과로 설계해줘.\n[내 업무 설명 붙여넣기]' },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+];
+
+/* ── 하위호환 별칭 & 헬퍼 ── */
+/** 기존 컴포넌트 호환용: 과정 목록(=프로그램) */
+export const COURSE_CATEGORIES = PROGRAMS;
+
+export function getProgramById(id: string): Program | undefined {
+  return PROGRAMS.find(p => p.id === id);
+}
+
+/** 전체 교시(세션) 수 — 통계 표시용 */
+export function getTotalSessions(): number {
+  return PROGRAMS.reduce(
+    (sum, p) => sum + p.curriculum.reduce((s, d) => s + d.sessions.length, 0),
+    0,
+  );
+}
