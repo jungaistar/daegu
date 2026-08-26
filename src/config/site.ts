@@ -62,6 +62,7 @@ const site: SiteConfig = {
   menuItems: [
     { path: '/courses/intermediate', activePath: '/courses/intermediate', labelKey: 'site.nav.progIntermediate' },
     { path: '/courses/advanced', activePath: '/courses/advanced', labelKey: 'site.nav.progAdvanced' },
+    { path: '/automation', activePath: '/automation', labelKey: 'site.nav.automation' },
     { path: '/prompt-eval', activePath: '/prompt-eval', labelKey: 'site.nav.promptPractice' },
     { path: '/appendix', activePath: '/appendix', labelKey: 'site.nav.appendix' },
     { path: '/xmonster', activePath: '/xmonster', labelKey: 'site.nav.xmonster' },
