@@ -27,7 +27,7 @@ const site: SiteConfig = {
     ]
   },
 
-  themeColor: '#0F8B8D',
+  themeColor: '#0E6BA8',
 
   company: {
     name: '드림아이티비즈(DreamIT Biz)',
@@ -52,7 +52,7 @@ const site: SiteConfig = {
 
   // 기본 컬러셋 = daegu(중급 teal + 고급 indigo). 나머지는 후보 컬러셋
   colors: [
-    { name: 'daegu', color: '#0F8B8D' },     // 대구 틸+인디고 (기본)
+    { name: 'daegu', color: '#0E6BA8' },     // 대구 하늘 청색 (기본)
     { name: 'research', color: '#14B8A6' },  // 딥네이비+틸
     { name: 'academic', color: '#C8A04A' },  // 네이비+골드
     { name: 'vibe', color: '#6D28D9' },      // 모던 바이올렛

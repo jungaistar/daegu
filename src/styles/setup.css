@@ -1,17 +1,17 @@
 /* ============================================
    따라하기 가이드 (setup)
-   40~50대 교육생 기준 — 글자 크게, 눌러야 할 곳은 주황으로.
+   40~50대 교육생 기준 — 글자 크게, 눌러야 할 곳은 하늘 청색으로.
    ============================================ */
 
 :root {
-  --setup-accent: #ea6a1e;          /* 주황 — 눌러야 할 곳 */
-  --setup-accent-soft: #fff2e8;
-  --setup-ink: #16233a;             /* 짙은 남색 — 목업 배경 */
-  --setup-ink-2: #1f3355;
+  --setup-accent: #1793E6;          /* 하늘 청색 — 눌러야 할 곳 */
+  --setup-accent-soft: #e8f4fd;
+  --setup-ink: #0d2740;             /* 짙은 하늘 청색 — 목업 배경 */
+  --setup-ink-2: #123a5a;
 }
 
 [data-theme="dark"] {
-  --setup-accent-soft: rgba(234, 106, 30, 0.14);
+  --setup-accent-soft: rgba(23, 147, 230, 0.16);
 }
 
 .setup-page {
@@ -142,7 +142,7 @@
   display: flex; flex-direction: column; gap: 6px;
   padding: 18px 16px; border-radius: var(--radius-md, 12px);
   color: #fff;
-  /* 남색 → 주황 그라디언트: 진행할수록 밝아진다 */
+  /* 짙은 청색 → 밝은 하늘 그라디언트: 진행할수록 밝아진다 */
   background: color-mix(in srgb, var(--setup-ink) calc(100% - var(--i) * 22%), var(--setup-accent));
 }
 
@@ -264,7 +264,7 @@
   font-size: 12.5px; line-height: 1.7; white-space: pre-wrap; word-break: break-all;
 }
 
-/* 주황 번호 핀 */
+/* 번호 핀 */
 .mk-pin {
   position: absolute; z-index: 3;
   width: 26px; height: 26px; border-radius: 50%;
@@ -300,7 +300,7 @@
 .setup-goal-label {
   display: block; margin-bottom: 6px;
   font-size: 11px; font-weight: 800; letter-spacing: 0.14em;
-  color: #ffb987; text-transform: uppercase;
+  color: #8FD8FF; text-transform: uppercase;
 }
 .setup-goal p { margin: 0; font-size: 16px; font-weight: 600; line-height: 1.65; word-break: keep-all; }
 

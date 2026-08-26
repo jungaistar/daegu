@@ -5,7 +5,7 @@ import type { ReactNode, ReactElement } from 'react';
    따라하기 가이드 부품 모음
    40~50대 교육생이 강의를 놓쳐도 혼자 끝까지 갈 수 있게 만드는 것이 목적.
    - 단계마다 체크박스, 진도는 브라우저에 저장되어 다음날에도 남는다
-   - 화면 목업 위에 주황 번호를 찍고, 오른쪽 설명 번호와 맞춘다
+   - 화면 목업 위에 파란 번호를 찍고, 오른쪽 설명 번호와 맞춘다
    - 붙여넣을 것은 손으로 치지 않게 복사 버튼을 준다
    - 단계마다 "이 화면이 안 나오면?" 분기를 둔다
    ============================================================ */
@@ -164,14 +164,14 @@ export function Mockup({ kind = 'browser', addressBar, caption, flow, children }
   );
 }
 
-/** 목업 위에 찍는 주황 번호 — 오른쪽 설명의 같은 번호와 짝이다 */
+/** 목업 위에 찍는 파란 번호 — 오른쪽 설명의 같은 번호와 짝이다 */
 export function Pin({ n, top, left, right, bottom }: {
   n: number; top?: string; left?: string; right?: string; bottom?: string;
 }): ReactElement {
   return <span className="mk-pin" style={{ top, left, right, bottom }}>{n}</span>;
 }
 
-/** 목업에서 눌러야 할 자리를 감싸는 주황 테두리 */
+/** 목업에서 눌러야 할 자리를 감싸는 파란 테두리 */
 export function Hot({ children, className = '' }: { children: ReactNode; className?: string }): ReactElement {
   return <span className={`mk-hot ${className}`}>{children}</span>;
 }

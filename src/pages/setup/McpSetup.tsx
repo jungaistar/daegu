@@ -10,7 +10,7 @@ const LAW = 'https://mcp.gomdori.app/law';
 
 /**
  * Claude 에 공공데이터(MCP) 연결하기 — 따라하기 전용 페이지.
- * hufs26 환경설정 가이드 방식(화면 목업 + 주황 번호)을 따르고,
+ * hufs26 환경설정 가이드 방식(화면 목업 + 번호 핀)을 따르고,
  * 40~50대 교육생을 위해 단계 체크·진도 저장·"안 나오면" 분기를 붙였다.
  */
 export default function McpSetup(): ReactElement {
@@ -26,7 +26,7 @@ export default function McpSetup(): ReactElement {
         <SetupHero
           kicker="SETUP · MCP 연결"
           title="Claude에 공공데이터 연결하기"
-          lead="법제처·KOSIS 같은 공공데이터를 Claude가 직접 찾아보게 만듭니다. 화면 그림의 주황색 번호와 오른쪽 순서 번호가 같습니다. 그대로만 따라오시면 됩니다."
+          lead="법제처·KOSIS 같은 공공데이터를 Claude가 직접 찾아보게 만듭니다. 화면 그림의 파란 번호와 오른쪽 순서 번호가 같습니다. 그대로만 따라오시면 됩니다."
           badges={['소요 시간 약 15분', '비용 0원', '코딩 필요 없음', '단계마다 체크']}
         />
 

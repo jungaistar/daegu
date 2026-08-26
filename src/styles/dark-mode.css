@@ -25,6 +25,17 @@
     --highlight-gradient: linear-gradient(135deg, #F0DCA8 0%, #E0C078 50%, #FFF4DA 100%);
 }
 
+/* 색상셋 선택자(html[data-color=…], 0-1-1)가 [data-theme="dark"](0-1-0)를 이겨
+   다크모드에서 배경·테두리가 밝은 값으로 남던 문제를 되돌린다.
+   [data-theme="dark"][data-color](0-2-0) 로 모든 색상셋을 한 번에 덮는다. */
+[data-theme="dark"][data-color] {
+    --bg-white: #0F1419;
+    --bg-light-gray: #161B24;
+    --bg-medium-gray: #222838;
+    --border-light: #2A3142;
+    --border-medium: #3A4253;
+}
+
 [data-theme="dark"] .hero,
 [data-theme="dark"] .carousel-slide {
     background: var(--hero-bg-dark);
@@ -43,14 +54,14 @@
 }
 
 [data-theme="dark"][data-color="daegu"] {
-    --primary-blue: #3FB3B5;
-    --primary-blue-dark: #0F8B8D;
-    --primary-blue-light: #7DD3D4;
-    --accent: #818CF8;
-    --accent-dark: #4F46E5;
-    --accent-light: #A5B4FC;
-    --primary-gradient: linear-gradient(135deg, #0F8B8D 0%, #3FB3B5 100%);
-    --highlight-gradient: linear-gradient(135deg, #A5B4FC 0%, #818CF8 50%, #C7D2FE 100%);
+    --primary-blue: #58B4EE;
+    --primary-blue-dark: #0E6BA8;
+    --primary-blue-light: #8FD1F5;
+    --accent: #7ACBFF;
+    --accent-dark: #38B6FF;
+    --accent-light: #B3E3FF;
+    --primary-gradient: linear-gradient(135deg, #0E6BA8 0%, #58B4EE 100%);
+    --highlight-gradient: linear-gradient(135deg, #B3E3FF 0%, #7ACBFF 50%, #DDF2FF 100%);
 }
 
 [data-theme="dark"][data-color="vibe"] {

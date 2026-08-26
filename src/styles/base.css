@@ -88,23 +88,27 @@ html[data-color="research"] {
     --highlight-gradient: linear-gradient(135deg, #5EEAD4 0%, #14B8A6 50%, #CFFAF2 100%);
 }
 
-/* 대구 (Teal + Indigo) — 중급 teal · 고급 indigo */
+/* 대구 하늘 청색 (Daegu Sky Blue) — 짙은 하늘 primary · 밝은 하늘 accent */
 html[data-color="daegu"] {
-    --primary-blue: #0F8B8D;
-    --primary-blue-dark: #0A5F61;
-    --primary-blue-light: #3FB3B5;
-    --accent: #4F46E5;
-    --accent-dark: #3730A3;
-    --accent-light: #818CF8;
-    --bg-light-gray: #F4F8F8;
-    --bg-medium-gray: #E5F3F3;
-    --border-light: #DCEAEA;
-    --border-medium: #C2D8D8;
-    --primary-gradient: linear-gradient(135deg, #0F8B8D 0%, #3FB3B5 100%);
-    --accent-gradient: linear-gradient(135deg, #3730A3 0%, #4F46E5 50%, #818CF8 100%);
-    --hero-bg: linear-gradient(135deg, #0F8B8D 0%, #0A5F61 55%, #3730A3 100%);
-    --hero-bg-dark: linear-gradient(135deg, #0A4F50 0%, #073A3B 55%, #1E1B4B 100%);
-    --highlight-gradient: linear-gradient(135deg, #818CF8 0%, #4F46E5 50%, #C7D2FE 100%);
+    --primary-blue: #0E6BA8;
+    --primary-blue-dark: #084D7C;
+    --primary-blue-light: #3E9BD8;
+    --accent: #38B6FF;
+    --accent-dark: #1793E6;
+    --accent-light: #8FD8FF;
+    --bg-light-gray: #F5FAFE;
+    --bg-medium-gray: #E3F1FB;
+    --border-light: #D7E9F7;
+    --border-medium: #B6D5EC;
+    --primary-gradient: linear-gradient(135deg, #0E6BA8 0%, #3E9BD8 100%);
+    --accent-gradient: linear-gradient(135deg, #1793E6 0%, #38B6FF 50%, #8FD8FF 100%);
+    --hero-bg: linear-gradient(135deg, #0E6BA8 0%, #084D7C 55%, #1793E6 100%);
+    --hero-bg-dark: linear-gradient(135deg, #0A3F66 0%, #06304F 55%, #0E5C93 100%);
+    --highlight-gradient: linear-gradient(135deg, #8FD8FF 0%, #38B6FF 50%, #D9EEFF 100%);
+    --shadow-sm: 0 1px 3px rgba(14, 107, 168, 0.08);
+    --shadow-md: 0 4px 6px rgba(14, 107, 168, 0.09), 0 2px 4px rgba(14, 107, 168, 0.05);
+    --shadow-lg: 0 10px 25px rgba(14, 107, 168, 0.11), 0 4px 10px rgba(14, 107, 168, 0.06);
+    --shadow-xl: 0 20px 40px rgba(14, 107, 168, 0.14), 0 8px 16px rgba(14, 107, 168, 0.08);
 }
 
 /* 모던 바이올렛 (Violet + Blue) */

@@ -18,8 +18,8 @@ html[data-color="research"] {
   --accent-soft: rgba(20, 184, 166, 0.12);
 }
 html[data-color="daegu"] {
-  --primary-light: rgba(15, 139, 141, 0.07);
-  --accent-soft: rgba(79, 70, 229, 0.12);
+  --primary-light: rgba(14, 107, 168, 0.08);
+  --accent-soft: rgba(56, 182, 255, 0.14);
 }
 html[data-color="vibe"] {
   --primary-light: rgba(109, 40, 217, 0.07);

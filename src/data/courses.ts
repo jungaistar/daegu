@@ -69,7 +69,7 @@ export const PROGRAMS: Program[] = [
     duration: '2일 · 8시간',
     level: '중급',
     icon: 'fa-bolt',
-    color: '#0F8B8D',
+    color: '#1793E6',
     highlights: ['AI 문서 자동화', '엑셀 매크로 자동생성', 'ChatGPT 데이터분석', '바이브코딩 입문', '업무 자동화 흐름 설계'],
     curriculum: [
       {
@@ -174,7 +174,7 @@ export const PROGRAMS: Program[] = [
     duration: '2일 · 8시간',
     level: '고급',
     icon: 'fa-chart-line',
-    color: '#4F46E5',
+    color: '#0A4F86',
     highlights: ['바이브코딩 도구 제작', '디버깅 루틴', '데이터 분석 심화', 'AI 정책 홍보 콘텐츠', 'AI 도입 전략 설계'],
     curriculum: [
       {

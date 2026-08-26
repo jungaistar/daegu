@@ -7,7 +7,7 @@ export const BOARDS = [
     nameEn: 'Intermediate · Workflow Automation',
     descKo: '중급(업무자동화 실무) 과정 수강생들이 자료·질문·후기를 나누는 게시판입니다.',
     descEn: 'For learners of the Intermediate · Workflow Automation program.',
-    color: '#0F8B8D',
+    color: '#1793E6',
   },
   {
     id: 'advanced',
@@ -16,7 +16,7 @@ export const BOARDS = [
     nameEn: 'Advanced · Data Analysis & Application',
     descKo: '고급(데이터분석 및 활용) 과정 수강생들의 자료·질문·토론 공간입니다.',
     descEn: 'For learners of the Advanced · Data Analysis & Application program.',
-    color: '#4F46E5',
+    color: '#0A4F86',
   },
 ];
 
