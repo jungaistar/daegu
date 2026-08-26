@@ -1682,6 +1682,7 @@
 }
 
 /* ─── 가이드 본문 이미지 (매뉴얼 화면 캡처) ─── */
+.markdown-body img.guide-figure,
 .guide-figure {
   display: block;
   /* 원본보다 키우지 않는다 — 작은 세로 캡처가 늘어나 보이는 것을 막는다 */
@@ -1696,6 +1697,7 @@
 }
 
 /* 캡션 — 이미지 바로 뒤 이탤릭 문단 */
+.markdown-body img.guide-figure + p em,
 .guide-figure + p em {
   display: block;
   margin-top: -2px;
