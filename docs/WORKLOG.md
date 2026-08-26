@@ -67,3 +67,31 @@ README 의 "기록 문서" 절에서 두 문서로 바로 갈 수 있게 링크�
   노출되는 공개용이라 유출은 아니지만, 해당 키가 레거시 JWT 형식이라 아직 유효한지 확인이 필요하다.
   정상 운영에는 `.env` 의 `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY` 를 쓰는 것이 맞다.
 - `doc/` 자료를 사이트 학습자료로 노출할지는 미정 (현재 저장소에 없음).
+
+### 6. 배포 URL 관련 — 확인 필요 (미해결)
+
+`npm run deploy` 는 성공했고 `jungaistar/daegu` 의 Pages 는 `gh-pages` 브랜치에서 built 상태다.
+다만 **이 저장소의 Pages 주소로는 화면이 뜨지 않는다.**
+
+| 확인한 것 | 결과 |
+|---|---|
+| `jungaistar/daegu` Pages URL | `https://jungaistar.github.io/daegu/` — HTML 200 |
+| 그 HTML 이 참조하는 자산 | `/assets/index-*.js` → **404** (실제 위치는 `/daegu/assets/...`) |
+| `vite.config.ts` 의 `base` | `'/'` — 루트 도메인 전제. 하위경로(`/daegu/`)에서는 자산 경로가 어긋난다 |
+| `jungaistar/daegu` 의 Pages `cname` | `null` — 커스텀 도메인이 붙어 있지 않다 |
+| `daegu.dreamitbiz.com` 현재 응답 | 200, `server: cloudflare` + `x-github-request-id` → Cloudflare 프록시 뒤 **GitHub Pages**, `last-modified: 2026-08-18` |
+| `jungaistar` 계정의 어느 저장소가 이 도메인을 소유? | **없음** (`lms` → `lms.miraejob.co.kr` 뿐) |
+
+즉 `daegu.dreamitbiz.com` 은 **jungaistar 가 아닌 다른 GitHub 계정의 저장소**가 잡고 있고,
+그쪽이 2026-08-18 자 빌드를 서비스 중이다. 한 도메인은 GitHub Pages 저장소 하나만 소유할 수 있다.
+
+선택지 (오너 결정 필요):
+
+1. **도메인을 이 저장소로 옮긴다** — 기존 저장소에서 커스텀 도메인을 떼고 `jungaistar/daegu` 에 붙인다.
+   운영 사이트가 잠시 끊길 수 있고, 기존 저장소 소유 계정의 조작이 필요하다.
+2. **이 저장소를 소스 보관용으로만 쓴다** — 배포는 기존 저장소가 계속 맡고,
+   여기서는 `gh-pages` 배포를 하지 않는다.
+3. **github.io 하위경로에서도 뜨게 한다** — `vite.config.ts` 의 `base` 를 `'/daegu/'` 로 바꾼다.
+   단, 그렇게 하면 커스텀 도메인 루트 배포와는 맞지 않으므로 1번과 병행할 수 없다.
+
+정해지기 전까지는 아무것도 건드리지 않았다 — 운영 도메인·기존 저장소는 그대로다.
