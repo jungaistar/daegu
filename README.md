@@ -41,3 +41,28 @@ VITE_SUPABASE_ANON_KEY=...
 - 학습자료: `src/data/materials.ts`
 - 실습 따라하기: `src/data/handsOn.ts`
 - 사이트 설정: `src/config/site.ts`
+- 강사 소개: `src/data/instructor.ts`
+
+## 기록 문서 (`docs/`)
+
+작업한 내용은 이 저장소 안에 남긴다. 로컬(`D:\DEV\daegu\docs\`)과 GitHub 양쪽에서 같은 파일을 본다.
+
+| 문서 | 내용 |
+|------|------|
+| [`docs/CURRICULUM.md`](docs/CURRICULUM.md) | 대구 전 과정 기록 — 2개 과정 · 8교시 · 실습 사례 24건 (예시 프롬프트 원문 포함) |
+| [`docs/WORKLOG.md`](docs/WORKLOG.md) | 작업 기록 — 무엇을 왜 했는지, 날짜순 |
+
+`docs/CURRICULUM.md` 는 `src/data/courses.ts` 에서 자동 생성한다. 커리큘럼을 고쳤다면:
+
+```bash
+npm run docs:curriculum
+```
+
+## 배포
+
+```bash
+npm run deploy      # predeploy(build) → gh-pages -d dist
+```
+
+- 배포 브랜치: `gh-pages` · 커스텀 도메인: `CNAME` = `daegu.dreamitbiz.com`
+- SPA 라우팅은 `public/404.html` + `index.html` 의 리다이렉트 스크립트로 처리한다.
