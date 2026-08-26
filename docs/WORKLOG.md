@@ -128,3 +128,32 @@ gh api -X PUT repos/jungaistar/daegu/pages -f cname=daegu.dreamitbiz.com
 | `package.json` | `build:domain` / `deploy:domain` 추가 (base `/` + CNAME 동봉) |
 
 배포 후 GitHub Pages CDN 은 `max-age=600` 이라 최대 10분간 이전 빌드가 보인다.
+
+### 8. 막혔던 지점 — Pages 소스 브랜치가 `main` 으로 돌아가 있었다
+
+`gh-pages` 로 배포해도 사이트가 계속 소스 `index.html`(2808 bytes, `/src/main.tsx` 참조)을
+내보냈다. 커스텀 404.html 도 무시되고 GitHub 기본 404 가 떴다. 원인은 캐시가 아니라 설정이었다.
+
+```
+gh api repos/jungaistar/daegu/pages
+→ "source": { "branch": "main", "path": "/" },  "custom_404": false
+```
+
+커스텀 도메인 등록(`PUT /pages -f cname=...`)이 400 으로 실패하면서 소스가 `main` 으로
+초기화된 것으로 보인다. 되돌린 뒤 **빌드를 명시적으로 요청**해야 반영된다 —
+소스 브랜치를 바꿔도 자동 재빌드가 걸리지 않는다.
+
+```bash
+gh api -X PUT  repos/jungaistar/daegu/pages -f "source[branch]=gh-pages" -f "source[path]=/"
+gh api -X POST repos/jungaistar/daegu/pages/builds     # 이 줄이 없으면 이전 빌드가 계속 뜬다
+```
+
+**확인한 최종 상태** — https://jungaistar.github.io/daegu/
+
+| 검증 | 결과 |
+|---|---|
+| Pages 소스 | `gh-pages` / `/`, `custom_404: true` |
+| `index.html` 자산 | `/daegu/assets/index-*.js`, `*.css` → 200 |
+| 커스텀 `404.html` | 서비스됨 (`pathSegmentsToKeep` 스크립트 포함) |
+| 딥링크 `/daegu/instructor` | 브라우저에서 강사 소개 페이지 정상 렌더 (404 → 클라이언트 리다이렉트) |
+| 홈 `/daegu/` | 정상 렌더 |
