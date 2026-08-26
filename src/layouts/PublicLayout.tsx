@@ -28,6 +28,8 @@ const CourseCategory = lazy(() => import('../pages/courses/CourseCategory'));
 const LearningMaterials = lazy(() => import('../pages/materials/LearningMaterials'));
 const Appendix = lazy(() => import('../pages/appendix/Appendix'));
 const AutomationCourse = lazy(() => import('../pages/automation/AutomationCourse'));
+const McpSetup = lazy(() => import('../pages/setup/McpSetup'));
+const AppsScriptSetup = lazy(() => import('../pages/setup/AppsScriptSetup'));
 const XMonsterGuide = lazy(() => import('../pages/xmonster/XMonsterGuide'));
 const ReferenceSites = lazy(() => import('../pages/reference/ReferenceSites'));
 const About = lazy(() => import('../pages/About'));
@@ -89,6 +91,8 @@ const PublicLayout = (): ReactElement => {
 
             {/* 부록 */}
             <Route path="/automation" element={<AutomationCourse />} />
+            <Route path="/setup/mcp" element={<McpSetup />} />
+            <Route path="/setup/apps-script" element={<AppsScriptSetup />} />
             <Route path="/appendix" element={<Appendix />} />
 
             {/* 엑스몬스터 매뉴얼 · 참고사이트 */}

@@ -53,7 +53,11 @@ export default {
     {
       title: '2단계 · AI에 MCP 도구 연결하기',
       titleEn: 'Step 2 — Connect MCP Tools to Your AI',
-      content: `여기가 이 사례의 핵심입니다. **MCP(Model Context Protocol)** 는 AI에게 바깥 도구를 붙여주는 규격입니다. 연결해 두면 Claude 같은 AI가 **법제처·KOSIS·KIPRIS 같은 공공 데이터를 직접 조회**해서 답합니다.
+      content: `> ### 화면 그림을 보며 따라 하시려면
+> **[▶ Claude에 공공데이터 연결하기 — 따라하기](/setup/mcp)** 로 가세요.
+> 앱 설치부터 첫 질문까지 **7단계**를, 화면 그림 위의 주황색 번호를 짚어가며 안내합니다. 단계마다 체크하면 어디까지 했는지 저장되고, "이 화면이 안 나오면" 대응도 단계마다 붙어 있습니다.
+
+아래는 요약입니다. **MCP(Model Context Protocol)** 는 AI에게 바깥 도구를 붙여주는 규격입니다. 연결해 두면 Claude 같은 AI가 **법제처·KOSIS·KIPRIS 같은 공공 데이터를 직접 조회**해서 답합니다.
 
 ### 무엇이 달라지나
 
