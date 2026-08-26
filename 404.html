@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
   <head>
     <meta charset="utf-8">
-    <title>CNU AI-Edu</title>
+    <title>대구 공무원 AI 실무 교육 | DreamIT Biz</title>
     <script type="text/javascript">
-      var pathSegmentsToKeep = 0;
+      // GitHub Pages 는 SPA 딥링크를 모르므로 404 를 받아 쿼리로 바꿔 index.html 로 넘긴다.
+      // 저장소 Pages(https://<user>.github.io/<repo>/...) 에서는 첫 경로 세그먼트가
+      // 저장소 이름이라 그대로 남겨야 하고, 커스텀 도메인 루트에서는 남길 것이 없다.
       var l = window.location;
+      var pathSegmentsToKeep = /\.github\.io$/.test(l.hostname) ? 1 : 0;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
         l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
