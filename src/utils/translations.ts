@@ -245,6 +245,7 @@ export const translations: Record<string, Record<string, unknown>> = {
         promptStep: '실습하기',
         promptEval: '평가하기',
         appendix: '부록',
+        instructor: '강사 소개',
         recommended: '추천사이트',
       },
       home: {
@@ -514,6 +515,7 @@ export const translations: Record<string, Record<string, unknown>> = {
         promptStep: 'Practice',
         promptEval: 'Evaluate',
         appendix: 'Appendix',
+        instructor: 'Instructor',
         recommended: 'Recommended',
       },
       home: {

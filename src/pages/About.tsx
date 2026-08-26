@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SEOHead from '../components/SEOHead';
 import type { ReactElement } from 'react';
@@ -83,6 +84,10 @@ export default function About(): ReactElement {
                   <p><i className="fa-solid fa-envelope" /> aebon@dreamitbiz.com</p>
                   <p><i className="fa-solid fa-globe" /> www.dreamitbiz.com</p>
                 </div>
+                <Link className="about-more-link" to="/instructor">
+                  {language === 'ko' ? '강사 소개 자세히 보기' : 'View full instructor profile'}
+                  <i className="fa-solid fa-arrow-right" />
+                </Link>
               </div>
             </div>
           </div>

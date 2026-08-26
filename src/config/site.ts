@@ -71,6 +71,7 @@ const site: SiteConfig = {
     { path: '/courses', labelKey: 'nav.education' },
     { path: '/prompt-eval', labelKey: 'site.nav.promptPractice' },
     { path: '/community', labelKey: 'nav.community' },
+    { path: '/instructor', labelKey: 'site.nav.instructor' },
     { path: '/about', labelKey: 'nav.about' },
   ],
 

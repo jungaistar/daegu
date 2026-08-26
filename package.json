@@ -10,7 +10,8 @@
     "typecheck": "tsc -b",
     "og-image": "node scripts/generate-og-image.mjs",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "docs:curriculum": "node --experimental-strip-types scripts/export-curriculum.mjs"
   },
   "dependencies": {
     "@portone/browser-sdk": "^0.1.3",

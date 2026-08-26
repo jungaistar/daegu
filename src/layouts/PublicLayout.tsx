@@ -28,6 +28,7 @@ const CourseCategory = lazy(() => import('../pages/courses/CourseCategory'));
 const LearningMaterials = lazy(() => import('../pages/materials/LearningMaterials'));
 const Appendix = lazy(() => import('../pages/appendix/Appendix'));
 const About = lazy(() => import('../pages/About'));
+const Instructor = lazy(() => import('../pages/Instructor'));
 
 // AI 도구
 const AIToolsPage = lazy(() => import('../pages/ai-tools/AIToolsPage'));
@@ -119,6 +120,7 @@ const PublicLayout = (): ReactElement => {
 
             {/* 소개 */}
             <Route path="/about" element={<About />} />
+            <Route path="/instructor" element={<Instructor />} />
 
             {/* Auth */}
             {site.features.auth && (

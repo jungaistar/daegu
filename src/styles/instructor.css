@@ -1,0 +1,352 @@
+/* ============================================
+   강사 소개 (/instructor)
+   nonghyup instructor.html 의 문서형 레이아웃을
+   대구 사이트 토큰(--primary / --accent)으로 옮긴 것.
+   ============================================ */
+
+.instructor-page {
+  max-width: 920px;
+}
+
+/* ─── 페이지 헤더 위 작은 라벨 ─── */
+.page-header__eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: var(--text-white);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ─── 프로필 카드 ─── */
+.inst-profile {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px;
+  margin-bottom: 32px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.inst-profile__avatar {
+  flex-shrink: 0;
+  width: 88px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background: var(--primary-gradient);
+  color: var(--text-white);
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.inst-profile__body {
+  min-width: 0;
+}
+
+.inst-profile__body h2 {
+  margin: 0 0 2px;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+}
+
+.inst-profile__en {
+  margin: 0 0 8px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--text-light);
+}
+
+.inst-profile__role {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.inst-profile__mail {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.inst-profile__mail:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.inst-profile__mail i {
+  color: var(--accent);
+}
+
+/* ─── 소개 문단 ─── */
+.inst-para {
+  margin: 0 0 14px;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  word-break: keep-all;
+}
+
+/* ─── 섹션 제목 (번호 배지 + 제목) ─── */
+.inst-sec-h {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 48px 0 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border-color);
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+
+.inst-sec-h__n {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: var(--primary);
+  color: var(--text-white);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.inst-sub-h {
+  margin: 26px 0 12px;
+  padding-left: 12px;
+  border-left: 3px solid var(--accent);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ─── 요약표 / 저서표 ─── */
+.inst-table-wrap {
+  overflow-x: auto;
+  margin: 20px 0 8px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.inst-kv {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  background: var(--card-bg);
+}
+
+.inst-kv th,
+.inst-kv td {
+  padding: 13px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: top;
+}
+
+.inst-kv tr:last-child th,
+.inst-kv tr:last-child td {
+  border-bottom: 0;
+}
+
+.inst-kv th {
+  width: 140px;
+  white-space: nowrap;
+  background: var(--bg-light-gray);
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.inst-kv td {
+  color: var(--text-secondary);
+}
+
+/* ─── 학력 타임라인 ─── */
+.inst-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.inst-timeline li {
+  display: flex;
+  gap: 18px;
+  padding: 11px 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.inst-timeline li:last-child {
+  border-bottom: 0;
+}
+
+.inst-timeline b {
+  flex-shrink: 0;
+  width: 78px;
+  color: var(--primary);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.inst-timeline span {
+  color: var(--text-secondary);
+  font-size: 15px;
+  word-break: keep-all;
+}
+
+/* ─── 불릿 목록 ─── */
+.inst-bullets {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.inst-bullets li {
+  position: relative;
+  padding: 7px 0 7px 20px;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.75;
+  word-break: keep-all;
+}
+
+.inst-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 17px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.inst-bullets--tight li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+}
+
+/* ─── 자격 카드 그리드 ─── */
+.inst-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.inst-card {
+  padding: 22px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.inst-card h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ─── VISION ─── */
+.inst-vision {
+  margin: 44px 0 8px;
+  padding: 26px 28px;
+  border-radius: var(--radius-md);
+  background: var(--primary-gradient);
+  color: var(--text-white);
+}
+
+.inst-vision b {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent-light);
+}
+
+.inst-vision p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  word-break: keep-all;
+}
+
+/* ─── 반응형 ─── */
+@media (max-width: 768px) {
+  .inst-profile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 22px;
+  }
+
+  .inst-profile__avatar {
+    width: 68px;
+    height: 68px;
+    font-size: 30px;
+  }
+
+  .inst-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inst-sec-h {
+    margin-top: 36px;
+    font-size: 19px;
+  }
+
+  .inst-kv th {
+    width: 96px;
+    padding: 11px 12px;
+  }
+
+  .inst-kv td {
+    padding: 11px 12px;
+  }
+
+  .inst-timeline li {
+    flex-direction: column;
+    gap: 2px;
+  }
+}
+
+/* 소개 페이지 → 강사 소개 페이지 링크 */
+.about-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.about-more-link:hover {
+  gap: 12px;
+  text-decoration: underline;
+}
+
+.about-more-link i {
+  font-size: 12px;
+  transition: var(--transition-base);
+}
