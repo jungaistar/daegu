@@ -1,5 +1,13 @@
 export const translations: Record<string, Record<string, unknown>> = {
   ko: {
+    // ─── AI 업무 도구 (t('tools.*')) ───
+    tools: {
+      officialDoc: '공문 생성기',
+      pressRelease: '보도자료 생성기',
+      minutes: '회의록 정리',
+      civilReply: '민원 답변 초안',
+      docReview: '문서 검토',
+    },
     // ─── 공용 키 (본사이트와 동일) ───
     nav: {
       home: '홈',
@@ -273,6 +281,13 @@ export const translations: Record<string, Record<string, unknown>> = {
   },
 
   en: {
+    tools: {
+      officialDoc: 'Official Document Generator',
+      pressRelease: 'Press Release Generator',
+      minutes: 'Minutes Organizer',
+      civilReply: 'Civil Reply Drafter',
+      docReview: 'Document Reviewer',
+    },
     nav: {
       home: 'Home',
       itServices: 'IT Services',

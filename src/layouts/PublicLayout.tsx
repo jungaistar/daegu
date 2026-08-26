@@ -34,11 +34,11 @@ const Instructor = lazy(() => import('../pages/Instructor'));
 
 // AI 도구
 const AIToolsPage = lazy(() => import('../pages/ai-tools/AIToolsPage'));
-const SyllabusGenerator = lazy(() => import('../pages/ai-tools/SyllabusGenerator'));
-const RubricBuilder = lazy(() => import('../pages/ai-tools/RubricBuilder'));
-const AssignmentGenerator = lazy(() => import('../pages/ai-tools/AssignmentGenerator'));
-const FeedbackGenerator = lazy(() => import('../pages/ai-tools/FeedbackGenerator'));
-const StudentEvaluator = lazy(() => import('../pages/ai-tools/StudentEvaluator'));
+const OfficialDocGenerator = lazy(() => import('../pages/ai-tools/OfficialDocGenerator'));
+const PressReleaseGenerator = lazy(() => import('../pages/ai-tools/PressReleaseGenerator'));
+const MinutesOrganizer = lazy(() => import('../pages/ai-tools/MinutesOrganizer'));
+const CivilReplyDrafter = lazy(() => import('../pages/ai-tools/CivilReplyDrafter'));
+const DocumentReviewer = lazy(() => import('../pages/ai-tools/DocumentReviewer'));
 
 // 프롬프트 실습
 const PromptEvalHub = lazy(() => import('../pages/prompt-eval/PromptEvalHub'));
@@ -95,11 +95,11 @@ const PublicLayout = (): ReactElement => {
 
             {/* AI 도구 */}
             <Route path="/tools" element={<AIToolsPage />} />
-            <Route path="/tools/syllabus" element={<AuthGuard><SyllabusGenerator /></AuthGuard>} />
-            <Route path="/tools/rubric" element={<AuthGuard><RubricBuilder /></AuthGuard>} />
-            <Route path="/tools/assignment" element={<AuthGuard><AssignmentGenerator /></AuthGuard>} />
-            <Route path="/tools/feedback" element={<AuthGuard><FeedbackGenerator /></AuthGuard>} />
-            <Route path="/tools/evaluator" element={<AuthGuard><StudentEvaluator /></AuthGuard>} />
+            <Route path="/tools/official-doc" element={<AuthGuard><OfficialDocGenerator /></AuthGuard>} />
+            <Route path="/tools/press-release" element={<AuthGuard><PressReleaseGenerator /></AuthGuard>} />
+            <Route path="/tools/minutes" element={<AuthGuard><MinutesOrganizer /></AuthGuard>} />
+            <Route path="/tools/civil-reply" element={<AuthGuard><CivilReplyDrafter /></AuthGuard>} />
+            <Route path="/tools/doc-review" element={<AuthGuard><DocumentReviewer /></AuthGuard>} />
 
             {/* 프롬프트 실습 */}
             <Route path="/prompt-eval" element={<PromptEvalHub />} />

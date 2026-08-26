@@ -1058,3 +1058,26 @@
 @media (max-width: 560px) {
     .ai-two-column { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* 도구 목록 아래 개인정보 주의 배너 */
+.ai-tools-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 900px;
+  margin: 28px auto 0;
+  padding: 16px 20px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-left: 4px solid var(--accent, #c8a04a);
+  border-radius: 10px;
+  background: var(--card-bg, #fff);
+  color: var(--text-secondary, #4b5563);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.ai-tools-notice i {
+  margin-top: 3px;
+  color: var(--accent, #c8a04a);
+  flex-shrink: 0;
+}

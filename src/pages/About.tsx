@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SEOHead from '../components/SEOHead';
+import { AI_TOOLS } from '../config/site';
 import type { ReactElement } from 'react';
 
 export default function About(): ReactElement {
@@ -17,8 +18,8 @@ export default function About(): ReactElement {
         <div className="container">
           <h1>{language === 'ko' ? '대구광역시 생성형 AI 교육' : 'DAEGU Generative AI Education'}</h1>
           <p>{language === 'ko'
-            ? '교수자·직원·조교를 위한 맞춤형 AI 교육 프로그램'
-            : 'Customized AI education program for faculty, staff, and TAs'}</p>
+            ? '대구광역시 공무원을 위한 AI 업무자동화·데이터분석 실무 교육'
+            : 'Practical AI automation and data analysis training for Daegu public officials'}</p>
         </div>
       </section>
 
@@ -29,7 +30,7 @@ export default function About(): ReactElement {
               <h2><i className="fa-solid fa-bullseye" /> {language === 'ko' ? '교육 목표' : 'Educational Goals'}</h2>
               <ul>
                 <li>{language === 'ko' ? '생성형 AI의 원리와 활용법 이해' : 'Understanding generative AI principles and applications'}</li>
-                <li>{language === 'ko' ? 'AI 기반 교수학습 혁신 역량 강화' : 'Strengthening AI-based teaching innovation capabilities'}</li>
+                <li>{language === 'ko' ? '반복 행정업무를 AI로 자동화하는 역량 강화' : 'Automating repetitive administrative work with AI'}</li>
                 <li>{language === 'ko' ? '실무 중심의 AI 도구 활용 능력 배양' : 'Developing practical AI tool utilization skills'}</li>
                 <li>{language === 'ko' ? '프롬프트 엔지니어링 역량 개발' : 'Developing prompt engineering competencies'}</li>
               </ul>
@@ -39,19 +40,19 @@ export default function About(): ReactElement {
               <h2><i className="fa-solid fa-users" /> {language === 'ko' ? '교육 대상' : 'Target Audience'}</h2>
               <div className="about-targets">
                 <div className="target-item">
-                  <i className="fa-solid fa-chalkboard-user" />
-                  <h4>{language === 'ko' ? '교수자' : 'Faculty'}</h4>
-                  <p>{language === 'ko' ? '강의계획서, 루브릭, 과제 설계 등 교수학습 혁신' : 'Syllabus, rubric, assignment design for teaching innovation'}</p>
+                  <i className="fa-solid fa-file-lines" />
+                  <h4>{language === 'ko' ? '문서·기획 담당' : 'Documents & Planning'}</h4>
+                  <p>{language === 'ko' ? '공문·보도자료·회의록 초안을 AI로 빠르게' : 'Draft official documents, press releases and minutes with AI'}</p>
                 </div>
                 <div className="target-item">
-                  <i className="fa-solid fa-briefcase" />
-                  <h4>{language === 'ko' ? '직원' : 'Staff'}</h4>
-                  <p>{language === 'ko' ? '문서 자동화, 데이터 분석, 업무 효율화' : 'Document automation, data analysis, workflow optimization'}</p>
+                  <i className="fa-solid fa-table" />
+                  <h4>{language === 'ko' ? '데이터·집계 담당' : 'Data & Reporting'}</h4>
+                  <p>{language === 'ko' ? '엑셀 집계·민원 분석·보고서 자동화' : 'Spreadsheet aggregation, complaint analysis, report automation'}</p>
                 </div>
                 <div className="target-item">
-                  <i className="fa-solid fa-user-graduate" />
-                  <h4>{language === 'ko' ? '조교' : 'Teaching Assistants'}</h4>
-                  <p>{language === 'ko' ? 'AI 채점, 피드백 생성, 학습자료 제작' : 'AI grading, feedback generation, material creation'}</p>
+                  <i className="fa-solid fa-bullhorn" />
+                  <h4>{language === 'ko' ? '홍보 담당' : 'Public Relations'}</h4>
+                  <p>{language === 'ko' ? '카드뉴스·숏폼 등 정책 홍보 콘텐츠 제작' : 'Card news, short-form and policy PR content' }</p>
                 </div>
               </div>
             </div>
@@ -59,15 +60,19 @@ export default function About(): ReactElement {
             <div className="about-card">
               <h2><i className="fa-solid fa-wand-magic-sparkles" /> {language === 'ko' ? 'AI 도구' : 'AI Tools'}</h2>
               <p>{language === 'ko'
-                ? '5가지 AI 교수학습 도구를 활용하여 교수학습 업무를 혁신합니다.'
-                : 'Innovate teaching tasks with 5 AI teaching tools.'}</p>
+                ? '행정 업무에 바로 쓰는 AI 도구 5종입니다. 본인 API 키를 등록하면 사이트에서 바로 사용할 수 있습니다.'
+                : 'Five AI tools for administrative work — usable on-site once you register your own API key.'}</p>
               <div className="about-tools">
-                <span className="about-tool-tag"><i className="fa-solid fa-calendar-days" /> {language === 'ko' ? '강의계획서 생성기' : 'Syllabus Generator'}</span>
-                <span className="about-tool-tag"><i className="fa-solid fa-table-cells" /> {language === 'ko' ? '루브릭 생성기' : 'Rubric Builder'}</span>
-                <span className="about-tool-tag"><i className="fa-solid fa-file-pen" /> {language === 'ko' ? '과제 생성기' : 'Assignment Generator'}</span>
-                <span className="about-tool-tag"><i className="fa-solid fa-comments" /> {language === 'ko' ? '피드백 생성기' : 'Feedback Generator'}</span>
-                <span className="about-tool-tag"><i className="fa-solid fa-check-double" /> {language === 'ko' ? '학생 과제 평가' : 'Student Evaluator'}</span>
+                {AI_TOOLS.map(tool => (
+                  <Link key={tool.id} to={tool.path} className="about-tool-tag">
+                    <i className={`fa-solid ${tool.icon}`} /> {language === 'ko' ? tool.nameKo : tool.nameEn}
+                  </Link>
+                ))}
               </div>
+              <Link className="about-more-link" to="/tools">
+                {language === 'ko' ? 'AI 도구 전체 보기' : 'See all AI tools'}
+                <i className="fa-solid fa-arrow-right" />
+              </Link>
             </div>
 
             <div className="about-card">

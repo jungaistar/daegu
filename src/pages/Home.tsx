@@ -41,7 +41,7 @@ export default function Home(): ReactElement {
   const prep = [
     { no: '1', title: isKo ? 'ChatGPT 계정' : 'ChatGPT account', desc: isKo ? '본인 계정으로 ChatGPT 로그인이 되는지 미리 확인해 주세요.' : 'Make sure you can log in to ChatGPT in advance.' },
     { no: '2', title: isKo ? '노트북 지참' : 'Bring a laptop', desc: isKo ? '실습용 노트북을 지참하세요. 크롬(Chrome) 브라우저 사용을 권장합니다.' : 'Bring a laptop; Chrome browser recommended.' },
-    { no: '3', title: isKo ? '내 업무·연구 자료' : 'Your own material', desc: isKo ? '실제로 다뤄볼 본인 업무 문서나 연구 데이터를 1~2건 준비하면 효과가 큽니다.' : 'Prepare 1–2 real work/research files to practice on.' },
+    { no: '3', title: isKo ? '내 업무 자료' : 'Your own material', desc: isKo ? '실제로 다뤄볼 본인 업무 문서나 데이터를 1~2건 준비하면 효과가 큽니다.' : 'Prepare 1-2 real work files to practice on.' },
     { no: '4', title: isKo ? '사전 설문' : 'Pre-survey', desc: isKo ? '직무와 관심 분야 사전 설문에 응답하면 과정이 맞춤형으로 운영됩니다.' : 'Complete the short pre-survey so we can tailor the session.' },
   ];
 
@@ -58,7 +58,7 @@ export default function Home(): ReactElement {
       { k: isKo ? '플랫폼' : 'Platform', v: isKo ? 'ChatGPT · Claude' : 'ChatGPT · Claude' },
     ] },
     { kicker: 'Class', rows: [
-      { k: isKo ? '담당 교수' : 'Instructors', v: isKo ? '이애본' : 'Aebon Lee' },
+      { k: isKo ? '담당 강사' : 'Instructor', v: isKo ? '이애본' : 'Aebon Lee' },
       { k: isKo ? '자료열람' : 'Access', v: isKo ? '회원가입·로그인 후' : 'After sign-up & login' },
       { k: isKo ? '문의' : 'Contact', v: 'aebon@dreamitbiz.com' },
     ] },
@@ -189,10 +189,10 @@ export default function Home(): ReactElement {
           <div className="overview-grid">
             <div className="overview-intro" data-aos="fade-up">
               <div className="overview-eyebrow">Overview</div>
-              <h2>{isKo ? '학과를 막론한\n실습 중심 교육' : 'Hands-on training\nfor every department'}</h2>
+              <h2>{isKo ? '부서를 막론한\n실습 중심 교육' : 'Hands-on training\nfor every department'}</h2>
               <p>{isKo
-                ? '전 학과 교직원과 연구자가 자신의 업무·연구에 곧바로 적용할 수 있도록, 난이도를 낮춘 단계별 실습으로 설계했습니다.'
-                : 'Designed as step-by-step practice so faculty, staff, and researchers in any field can apply it to their own work right away.'}</p>
+                ? '어느 부서에서 일하든 자신의 담당 업무에 곧바로 적용할 수 있도록, 난이도를 낮춘 단계별 실습으로 설계했습니다.'
+                : 'Designed as step-by-step practice so officials in any division can apply it to their own work right away.'}</p>
             </div>
             <div className="overview-cards">
               {features.map((f, i) => (
