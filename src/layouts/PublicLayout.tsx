@@ -27,6 +27,8 @@ const CourseCatalog = lazy(() => import('../pages/courses/CourseCatalog'));
 const CourseCategory = lazy(() => import('../pages/courses/CourseCategory'));
 const LearningMaterials = lazy(() => import('../pages/materials/LearningMaterials'));
 const Appendix = lazy(() => import('../pages/appendix/Appendix'));
+const XMonsterGuide = lazy(() => import('../pages/xmonster/XMonsterGuide'));
+const ReferenceSites = lazy(() => import('../pages/reference/ReferenceSites'));
 const About = lazy(() => import('../pages/About'));
 const Instructor = lazy(() => import('../pages/Instructor'));
 
@@ -86,6 +88,10 @@ const PublicLayout = (): ReactElement => {
 
             {/* 부록 */}
             <Route path="/appendix" element={<Appendix />} />
+
+            {/* 엑스몬스터 매뉴얼 · 참고사이트 */}
+            <Route path="/xmonster" element={<XMonsterGuide />} />
+            <Route path="/reference" element={<ReferenceSites />} />
 
             {/* AI 도구 */}
             <Route path="/tools" element={<AIToolsPage />} />

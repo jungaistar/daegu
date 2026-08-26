@@ -45,6 +45,13 @@ const markdownComponents = {
     if (!inline && !match && String(children).includes('\n')) return <CodeBlock code={String(children).replace(/\n$/, '')} language="" />;
     return <code className="inline-code" {...props}>{children}</code>;
   },
+  // '~/' 로 시작하는 이미지는 public/ 기준 — base 가 '/' 든 '/daegu/' 든 따라간다
+  img({ src, alt, ...props }: any) {
+    const url = typeof src === 'string' && src.startsWith('~/')
+      ? import.meta.env.BASE_URL + src.slice(2)
+      : src;
+    return <img className="guide-figure" src={url} alt={alt || ''} loading="lazy" {...props} />;
+  },
   table({ children }: any) { return <div className="table-responsive"><table>{children}</table></div>; },
   blockquote({ children }: any) { return <TipBox type="tip">{children}</TipBox>; },
   a({ href, children, ...props }: any) {

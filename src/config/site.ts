@@ -64,7 +64,9 @@ const site: SiteConfig = {
     { path: '/courses/advanced', activePath: '/courses/advanced', labelKey: 'site.nav.progAdvanced' },
     { path: '/prompt-eval', activePath: '/prompt-eval', labelKey: 'site.nav.promptPractice' },
     { path: '/appendix', activePath: '/appendix', labelKey: 'site.nav.appendix' },
+    { path: '/xmonster', activePath: '/xmonster', labelKey: 'site.nav.xmonster' },
     { path: '/recommended', labelKey: 'site.nav.recommended' },
+    { path: '/reference', activePath: '/reference', labelKey: 'site.nav.reference' },
   ],
 
   footerLinks: [

@@ -1680,3 +1680,26 @@
     text-align: center;
   }
 }
+
+/* ─── 가이드 본문 이미지 (매뉴얼 화면 캡처) ─── */
+.guide-figure {
+  display: block;
+  /* 원본보다 키우지 않는다 — 작은 세로 캡처가 늘어나 보이는 것을 막는다 */
+  width: auto;
+  max-width: min(100%, 640px);
+  height: auto;
+  margin: 18px 0 8px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+}
+
+/* 캡션 — 이미지 바로 뒤 이탤릭 문단 */
+.guide-figure + p em {
+  display: block;
+  margin-top: -2px;
+  font-size: 13px;
+  font-style: normal;
+  color: var(--text-light, #6b7280);
+}
