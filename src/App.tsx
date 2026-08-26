@@ -20,7 +20,9 @@ function App(): ReactElement {
           <SubscriptionProvider>
             <ToastProvider>
               <ShopWrapper>
-                <Router>
+                {/* base 가 하위경로(/daegu/)일 수 있으므로 라우터에 알려준다.
+                    import.meta.env.BASE_URL 은 vite base 를 그대로 받는다. */}
+                <Router basename={import.meta.env.BASE_URL}>
                   <div className="App">
                     <Routes>
                       <Route path="*" element={<PublicLayout />} />

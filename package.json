@@ -11,7 +11,9 @@
     "og-image": "node scripts/generate-og-image.mjs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "docs:curriculum": "node --experimental-strip-types scripts/export-curriculum.mjs"
+    "docs:curriculum": "node --experimental-strip-types scripts/export-curriculum.mjs",
+    "build:domain": "tsc -b && vite build --base=/ && node -e \"require('fs').copyFileSync('CNAME','dist/CNAME')\"",
+    "deploy:domain": "npm run build:domain && gh-pages -d dist"
   },
   "dependencies": {
     "@portone/browser-sdk": "^0.1.3",

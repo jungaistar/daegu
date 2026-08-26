@@ -64,5 +64,11 @@ npm run docs:curriculum
 npm run deploy      # predeploy(build) → gh-pages -d dist
 ```
 
-- 배포 브랜치: `gh-pages` · 커스텀 도메인: `CNAME` = `daegu.dreamitbiz.com`
+```bash
+npm run deploy:domain   # 커스텀 도메인이 이 저장소로 넘어온 뒤 (base / + CNAME 동봉)
+```
+
+- 배포 브랜치: `gh-pages`
+- 지금 서비스되는 주소: https://jungaistar.github.io/daegu/ (`base` = `/daegu/`)
+- `daegu.dreamitbiz.com` 은 아직 **다른 계정 저장소**가 소유 중이라 이 저장소에 붙일 수 없다. 자세한 사정은 `docs/WORKLOG.md` 참고
 - SPA 라우팅은 `public/404.html` + `index.html` 의 리다이렉트 스크립트로 처리한다.

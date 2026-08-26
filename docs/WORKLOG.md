@@ -95,3 +95,36 @@ README 의 "기록 문서" 절에서 두 문서로 바로 갈 수 있게 링크�
    단, 그렇게 하면 커스텀 도메인 루트 배포와는 맞지 않으므로 1번과 병행할 수 없다.
 
 정해지기 전까지는 아무것도 건드리지 않았다 — 운영 도메인·기존 저장소는 그대로다.
+
+### 7. 배포 주소 조치 (선택 1 + 3 병행)
+
+**선택 1 — 도메인 이전: GitHub 이 거부했다 (오너 조치 필요)**
+
+```
+PUT /repos/jungaistar/daegu/pages   cname=daegu.dreamitbiz.com
+→ 400 Invalid cname
+  "The custom domain `daegu.dreamitbiz.com` is already taken."
+```
+
+도메인을 쥐고 있는 저장소는 **jungaistar 계정 밖**에 있다. GitHub 은 한 도메인을
+저장소 하나에만 허용하므로, 그쪽에서 커스텀 도메인을 떼기 전까지 이 저장소는 붙일 수 없다.
+운영 사이트(daegu.dreamitbiz.com, 2026-08-18 빌드)는 **건드리지 않았다**.
+
+해제되면 여기서 할 일은 두 줄이다:
+
+```bash
+npm run deploy:domain                                   # base '/' 로 빌드 + CNAME 동봉
+gh api -X PUT repos/jungaistar/daegu/pages -f cname=daegu.dreamitbiz.com
+```
+
+**선택 3 — 저장소 Pages 주소에서 뜨게 했다**
+
+| 바꾼 것 | 내용 |
+|---|---|
+| `vite.config.ts` | `base` 를 `'/daegu/'` 로. 자산이 `/daegu/assets/...` 를 가리킨다 |
+| `src/App.tsx` | `<Router basename={import.meta.env.BASE_URL}>` — 라우터가 하위경로를 안다. base 가 `/` 든 `/daegu/` 든 그대로 따라간다 |
+| `public/404.html` | 호스트가 `*.github.io` 면 첫 경로 세그먼트를 유지(`pathSegmentsToKeep = 1`), 아니면 0. 두 배포 형태를 한 파일로 처리한다. 제목도 CNU → 대구로 정정 |
+| `public/CNAME` | **삭제**. 모든 빌드에 딸려가 하위경로 배포에서 404 처리를 방해했다. 루트 `CNAME` 은 그대로 두고 `build:domain` 이 빌드 후 `dist/` 에 넣는다 |
+| `package.json` | `build:domain` / `deploy:domain` 추가 (base `/` + CNAME 동봉) |
+
+배포 후 GitHub Pages CDN 은 `max-age=600` 이라 최대 10분간 이전 빌드가 보인다.
