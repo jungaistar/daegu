@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 756" width="1000" height="756" role="img" aria-label="공유·피드백 흐름 — 3분 발표 구성과 피드백을 개선사항·계획서로 옮기는 순서">
+  <title>공유·피드백 흐름 — 3분 발표 구성과 피드백을 개선사항·계획서로 옮기는 순서</title>
+  <rect width="1000" height="756" fill="#FFFFFF"/>
+
+  <text x="60" y="56" font-size="14" fill="#084D7C" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">발표 3분 구성</text>
+  
+  <rect x="60" y="76" width="144" height="52" rx="9" fill="#B45309"/>
+  <text x="132" y="98" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">30초</text>
+  <text x="132" y="146" font-size="12" fill="#4B5563" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">어떤 업무가</text><text x="132" y="163" font-size="12" fill="#4B5563" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">왜 불편했나</text>
+  <rect x="210" y="76" width="294" height="52" rx="9" fill="#0E6BA8"/>
+  <text x="357" y="98" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">60초</text>
+  <text x="357" y="146" font-size="12" fill="#4B5563" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">실제로 돌려 보이기</text><text x="357" y="163" font-size="12" fill="#4B5563" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">(화면 공유)</text>
+  <rect x="510" y="76" width="294" height="52" rx="9" fill="#38B6FF"/>
+  <text x="657" y="98" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">60초</text>
+  <text x="657" y="146" font-size="12" fill="#4B5563" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">무엇이 얼마나</text><text x="657" y="163" font-size="12" fill="#4B5563" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">줄었나 (숫자)</text>
+  <rect x="810" y="76" width="124" height="52" rx="9" fill="#166534"/>
+  <text x="872" y="98" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">30초</text>
+  <text x="872" y="146" font-size="12" fill="#4B5563" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">다음에</text><text x="872" y="163" font-size="12" fill="#4B5563" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">무엇을 할까</text>
+  <rect x="56" y="70" width="888" height="64" rx="10" fill="none" stroke="#F97316" stroke-width="2" stroke-dasharray="7 5"/>
+  
+  <circle cx="30" cy="102" r="12" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="30" y="107" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">1</text>
+  
+  <rect x="150" y="208" width="800" height="62" rx="12" fill="#FFFFFF" stroke="#D9DDE3" stroke-width="1.5"/>
+  <rect x="150" y="208" width="6" height="62" rx="3" fill="#0E6BA8"/>
+  <text x="176" y="236" font-size="14.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">동료 질문을 받는다</text>
+  <text x="176" y="256" font-size="12.5" fill="#6B7280" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">"우리 과 자료는 열이 다른데 되나요?" 같은 질문이 개선점이다</text>
+  
+  <circle cx="108" cy="239" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="108" y="244" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">2</text>
+  <path d="M500 270 v22" stroke="#B6C0CC" stroke-width="2"/>
+  <path d="M494 286 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="150" y="292" width="800" height="62" rx="12" fill="#FFFFFF" stroke="#D9DDE3" stroke-width="1.5"/>
+  <rect x="150" y="292" width="6" height="62" rx="3" fill="#38B6FF"/>
+  <text x="176" y="320" font-size="14.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">강사 피드백을 적는다</text>
+  <text x="176" y="340" font-size="12.5" fill="#6B7280" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">고칠 것 · 지금은 두어도 될 것 · 다음에 할 것 셋으로 나눠 적는다</text>
+  
+  <circle cx="108" cy="323" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="108" y="328" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">3</text>
+  <path d="M500 354 v22" stroke="#B6C0CC" stroke-width="2"/>
+  <path d="M494 370 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="150" y="376" width="800" height="62" rx="12" fill="#FFFFFF" stroke="#D9DDE3" stroke-width="1.5"/>
+  <rect x="150" y="376" width="6" height="62" rx="3" fill="#B45309"/>
+  <text x="176" y="404" font-size="14.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">개선사항 3개를 고른다</text>
+  <text x="176" y="424" font-size="12.5" fill="#6B7280" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">다 고치려 하지 않는다. 오늘 안에 되는 것 3개만</text>
+  
+  <circle cx="108" cy="407" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="108" y="412" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">4</text>
+  <path d="M500 438 v22" stroke="#B6C0CC" stroke-width="2"/>
+  <path d="M494 454 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="150" y="460" width="800" height="62" rx="12" fill="#FFFFFF" stroke="#D9DDE3" stroke-width="1.5"/>
+  <rect x="150" y="460" width="6" height="62" rx="3" fill="#166534"/>
+  <text x="176" y="488" font-size="14.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">적용계획서를 갱신한다</text>
+  <text x="176" y="508" font-size="12.5" fill="#6B7280" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">개선사항과 확산 계획을 반영해 최종본으로 만든다</text>
+  
+  <circle cx="108" cy="491" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="108" y="496" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">5</text>
+  <line x1="14" y1="570" x2="986" y2="570" stroke="#E6E8EC" stroke-width="1.5"/>
+
+  <circle cx="34" cy="600" r="12" fill="#F97316"/>
+  <text x="34" y="605" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">1</text>
+  <text x="56" y="605" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">3분을 이 비율로 나눈다 — 절반이 시연이다. 설명만 하면 무엇이 좋아졌는지 전달되지 않는다</text>
+  <circle cx="34" cy="630" r="12" fill="#F97316"/>
+  <text x="34" y="635" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">2</text>
+  <text x="56" y="635" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">동료의 "우리 과는 다른데요" 질문이 가장 값지다. 그게 곧 확산할 때 부딪힐 문제다</text>
+  <circle cx="34" cy="660" r="12" fill="#F97316"/>
+  <text x="34" y="665" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">3</text>
+  <text x="56" y="665" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">피드백은 셋으로 나눠 적는다 — 고칠 것 / 지금은 둘 것 / 다음에 할 것</text>
+  <circle cx="34" cy="690" r="12" fill="#F97316"/>
+  <text x="34" y="695" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">4</text>
+  <text x="56" y="695" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">오늘 안에 되는 개선 3개만 고른다. 다 고치려 하면 하나도 못 끝낸다</text>
+  <circle cx="34" cy="720" r="12" fill="#F97316"/>
+  <text x="34" y="725" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">5</text>
+  <text x="56" y="725" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">마지막에 적용계획서를 갱신해 최종본으로 만든다. 이것이 오늘의 최종 산출물이다</text>
+</svg>

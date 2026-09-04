@@ -132,5 +132,179 @@ Blank rows mid-data, "-" in a number cell, whitespace around names, inconsistent
 
 Insert → Drawing → draw a rectangle with a label → Save → click the image → ⋮ → Assign script → enter the function name. Buttons beat menus when handing the tool to a colleague.`,
     },
+    {
+      title: '따라하기 실습 · 기능 시험과 오류 대응 루틴',
+      titleEn: 'Hands-on — Testing Features and the Error Routine',
+      content: `**소요 55분 · 준비물: 4교시에서 만든 1차 템플릿**
+**산출물: 작동 가능한 자동화 도구 초안**
+
+만든 도구를 **일부러 괴롭혀서** 실제 업무에 견디는지 확인합니다. 오류는 실패가 아니라 **정상적인 절차**입니다.
+
+그림의 **주황 번호가 STEP 번호**입니다.
+
+![오류 대응 루프 — 하나씩 실행, 오류는 통째로 전달, 고쳐질 때까지 반복, 결과 대조와 예외 시험](~/automation/auto-error-loop.svg)
+
+---
+
+### STEP 1 · 기능을 하나씩 실행합니다
+
+**여러 개를 한꺼번에 돌리지 마세요.** 어느 기능이 틀렸는지 못 찾습니다.
+
+붙여 둔 기능을 표로 만들고 하나씩 눌러 봅니다.
+
+| 기능 | 실행 결과 | 결과가 맞나 |
+|------|----------|------------|
+| 부서별 집계 | | |
+| 명단 정리 | | |
+| 금액대 분류 | | |
+| 보고문 만들기 | | |
+
+**✅ 확인** — 네 칸이 다 채워질 때까지 다음으로 넘어가지 않습니다.
+
+---
+
+### STEP 2 · 오류가 나면 문장을 통째로 복사합니다
+
+**요약하지 말고, 고쳐 쓰지 말고, 그대로** 복사합니다. **줄 번호와 오류 이름이 해결의 열쇠**입니다.
+
+\`\`\`text
+TypeError: Cannot read properties of null (reading 'getDataRange')
+    at 부서별집계_만들기(코드:4:31)
+\`\`\`
+
+**✅ 확인** — 빨간 글씨 전체를 드래그해 복사했나요? 첫 줄만 복사하면 AI가 어디인지 모릅니다.
+
+---
+
+### STEP 3 · AI에게 붙여넣고 "전체를 다시" 요청합니다
+
+\`\`\`text
+실행했더니 이런 오류가 났어.
+무슨 뜻이고 어떻게 고치면 되는지 알려 주고,
+고친 코드 전체를 다시 줘.
+
+(오류 문장 그대로 붙여넣기)
+\`\`\`
+
+**✅ 확인** — **"전체를 다시 줘"** 를 꼭 넣으세요. 부분만 받으면 어디를 바꿔야 할지 모릅니다.
+
+받은 코드를 다시 붙여넣고 → 저장 → 다시 실행. **고쳐질 때까지 이 고리를 돕니다.** 보통 두세 번이면 끝납니다.
+
+**자주 나오는 오류 세 가지**
+
+| 오류 문구에 보이는 말 | 대개 이런 뜻 | 이렇게 답하면 빨리 끝난다 |
+|---------------------|------------|------------------------|
+| \`null\`, \`getSheetByName\` | 시트 이름이 다르다 | "시트 이름은 정확히 \`신청접수\` 야" |
+| \`NaN\`, \`Number\` | 숫자 칸에 문자가 섞였다 | "숫자가 아닌 값은 0으로 처리해 줘" |
+| \`out of range\`, \`length\` | 데이터가 없거나 행이 모자란다 | "데이터가 0건일 때도 오류 없이 끝나게 해 줘" |
+
+---
+
+### STEP 4 · 오류가 없어도 결과를 대조합니다
+
+**오류가 안 났다고 맞는 게 아닙니다.** 조용히 틀린 결과가 가장 위험합니다.
+
+| 대조 항목 | 방법 |
+|-----------|------|
+| 행 개수 | 결과 행 수 = 원본 행 수 − 제외한 행 수 인가 |
+| 합계 | 결과 합계 = 원본 금액 열의 합인가 (원본에서 \`=SUM()\` 으로 직접 계산) |
+| 빠진 항목 | 5개 과가 모두 나왔는가 |
+| 경계값 | 정확히 10,000인 행이 어느 구분으로 갔는가 |
+
+**✅ 확인** — 네 가지 중 **하나라도 어긋나면 그 기능은 아직 못 씁니다.** 어긋난 내용을 그대로 AI에게 알려 고칩니다.
+
+---
+
+### STEP 5 · 예외 상황을 일부러 넣어 봅니다 — 이 실습의 핵심
+
+실제 업무 자료에는 **늘 예외가 있습니다.** 연습 시트를 복사해서 아래를 하나씩 넣고 돌려 보세요.
+
+| # | 넣어 볼 예외 | 기대하는 동작 | 나쁜 동작 |
+|---|-------------|-------------|----------|
+| 1 | 중간에 **빈 행** 한 줄 | 건너뛰고 계속 | 거기서 멈춤 |
+| 2 | 접수번호 **중복** 2건 | 규칙대로 하나만 남김 | 둘 다 세어 합계가 늘어남 |
+| 3 | 금액 칸에 **"미정"** 이라고 입력 | 0으로 보거나 \`[확인 필요]\` 표시 | 오류로 멈춤 |
+| 4 | 데이터가 **0건**(제목 행만) | "처리할 자료가 없습니다" 안내 | 오류 메시지 |
+| 5 | 행이 **1,000줄** | 조금 느려도 끝까지 완료 | 중간에 끊김 |
+| 6 | 부서 이름에 **띄어쓰기 차이**(\`복지정책과\` / \`복지 정책과\`) | 같은 부서로 묶이거나, 최소한 따로 표시 | 조용히 둘로 나뉨 |
+
+**✅ 확인** — 나쁜 동작이 나온 항목은 **그대로 AI에게 알립니다.**
+
+\`\`\`text
+빈 행이 중간에 있으면 거기서 멈춰. 빈 행은 건너뛰고 계속 처리하도록
+고친 코드 전체를 다시 줘.
+\`\`\`
+
+> 6번(띄어쓰기 차이)은 실제 부서 취합에서 **가장 자주 사고가 나는 곳**입니다. 반드시 시험하세요.
+
+---
+
+### STEP 6 · 동료에게 넘길 수 있게 다듬습니다
+
+\`\`\`text
+지금 도구를 처음 쓰는 동료가 읽고 그대로 따라 할 수 있게
+사용 설명을 5줄 이내로 만들어 줘.
+어디에 붙여넣고, 무엇을 누르고, 결과를 어디서 보고,
+무엇을 확인해야 하는지 순서로.
+\`\`\`
+
+**✅ 확인** — 그 5줄을 **시트의 새 탭(\`사용법\`)에 붙여 넣으세요.** 도구와 설명이 같은 파일에 있어야 인수인계가 됩니다.
+
+---
+
+### 완성 점검표 — 작동 가능한 자동화 도구 초안
+
+| # | 항목 | 확인 |
+|---|------|------|
+| 1 | 모든 기능을 하나씩 실행해 봤다 | |
+| 2 | 오류가 났을 때 문장 전체를 복사해 해결했다 | |
+| 3 | 행 개수·합계를 원본과 대조했다 | |
+| 4 | 경계값을 직접 확인했다 | |
+| 5 | 예외 6가지를 넣어 돌려 봤다 | |
+| 6 | 나쁜 동작을 고쳐 다시 시험했다 | |
+| 7 | \`사용법\` 탭에 5줄 설명을 넣었다 | |
+
+> 7개가 채워지면 **작동 가능한 자동화 도구 초안 완성**입니다. 6교시에서 보안과 검토 절차를 붙입니다.`,
+      contentEn: `**55 minutes · You need the Session 4 template**
+**Deliverable: a working draft automation tool**
+
+Deliberately stress the tool to see whether it survives real work. **Errors are procedure, not failure.**
+
+![Error-handling loop](~/automation/auto-error-loop.svg)
+
+**STEP 1 · Run one feature at a time.** Running several at once hides which one broke. Fill a table: feature / result / is it correct.
+
+**STEP 2 · Copy the error text whole** — don't summarize or rewrite. The line number and error name are the key.
+
+**STEP 3 · Paste it back and ask for the whole corrected file.**
+
+| Words in the error | Usually means | Fastest reply |
+|---|---|---|
+| \`null\`, \`getSheetByName\` | The sheet name differs | "The sheet name is exactly 신청접수" |
+| \`NaN\`, \`Number\` | Text in a numeric column | "Treat non-numeric values as 0" |
+| \`out of range\`, \`length\` | No data / too few rows | "Finish without error when there are 0 records" |
+
+**STEP 4 · Reconcile even when there is no error.** A quietly wrong result is the dangerous one — row count, totals (compute \`=SUM()\` yourself on the source), missing categories, boundary values.
+
+**STEP 5 · Inject exceptions on purpose — the point of this session**
+
+| # | Inject | Expected | Bad |
+|---|---|---|---|
+| 1 | A blank row in the middle | Skip and continue | Stops there |
+| 2 | Two duplicate keys | Keeps one per the rule | Counts both |
+| 3 | "TBD" in a number field | Treats as 0 or flags it | Crashes |
+| 4 | 0 records (header only) | "No data to process" | Error |
+| 5 | 1,000 rows | Slower but completes | Cuts off |
+| 6 | Same department spelled with/without a space | Grouped together, or at least flagged | **Silently split in two** |
+
+> #6 is where real departmental consolidation goes wrong most often. Always test it.
+
+**STEP 6 · Make it handover-ready.** Ask for a five-line usage note and **paste it into a \`사용법\` tab** in the same file. A tool and its instructions must live together.
+
+### Completion checklist
+Each feature run individually · errors resolved by pasting them whole · counts and totals reconciled · boundaries verified · six exceptions injected · bad behavior fixed and retested · usage tab added.
+
+> That is your **working draft tool.** Session 6 adds security and the review procedure.`,
+    },
   ],
 };

@@ -145,5 +145,187 @@ Ask for a one-page, jargon-free, numbered guide for a colleague who is not comfo
 
 Never paste raw personal data; describe structure not data; check results before external release; always work on a copy; stop immediately if totals disagree; ship the guide with the tool.`,
     },
+    {
+      title: '따라하기 실습 · 보안 판정과 검토 절차 설계',
+      titleEn: 'Hands-on — Security Screening and the Review Procedure',
+      content: `**소요 55분 · 준비물: 5교시에서 만든 도구 초안, 실제 업무 자료 1건**
+**산출물: 오류 대응 체크리스트 및 보안 유의사항**
+
+지금까지는 **연습용 가짜 자료**로 만들었습니다. 이제 실제 자료를 넣기 전에 **관문 세 개**를 통과시킵니다.
+
+---
+
+## 1부 · 입력 자료 보안 판정 (STEP 1~4)
+
+그림의 **주황 번호가 STEP 번호**입니다.
+
+![자료 입력 판정 흐름 — 고유식별정보, 이름·연락처, 대외비 세 관문과 각 조치](~/automation/auto-security-gate.svg)
+
+---
+
+### STEP 1 · 첫 관문 · 고유식별정보
+
+실제 업무 파일을 열고 **열 이름을 하나씩** 봅니다.
+
+| 찾을 것 | 예 |
+|---------|-----|
+| 주민등록번호 | 신청자 명부, 지급 대상자 |
+| 외국인등록번호 | 외국인 주민 관련 |
+| 운전면허번호·여권번호 | 자격 확인 자료 |
+
+**✅ 확인 · 판정**
+
+| 상태 | 조치 |
+|------|------|
+| 없음 | STEP 2로 |
+| 있는데 **업무에 불필요** | 해당 열을 **삭제한 복사본**으로 진행 |
+| 있고 **업무의 본질** | **이 업무는 자동화 대상에서 뺀다.** 다른 업무로 바꾼다 |
+
+> 고유식별정보는 **가명 처리로도 안 됩니다.** 지우거나, 못 지우면 멈춥니다.
+
+---
+
+### STEP 2 · 둘째 관문 · 이름·연락처·주소
+
+**✅ 확인 · 판정** — 이건 대부분 **가명 처리로 해결됩니다.**
+
+| 원래 | 바꾼 뒤 | 집계 결과 |
+|------|---------|----------|
+| 홍길동 | 민원인A | **똑같음** |
+| 010-1234-5678 | (열 삭제) | **똑같음** |
+| 대구시 ○○구 ○○동 | ○○구 (구 단위만) | **똑같음** |
+
+**실무 요령** — 시트에서 이름 열을 선택하고 \`A1\`, \`A2\`… 로 바꾸는 데 1분이면 됩니다. 원본은 따로 두고 **복사본에서** 작업하세요.
+
+---
+
+### STEP 3 · 셋째 관문 · 대외비·직무상 비밀
+
+| 판정 | 조치 |
+|------|------|
+| 공개 자료이거나 내부 통계 | 진행 |
+| **대외비 표시**, 미공개 감사자료, 진행 중 수사·심의 | **외부 AI를 쓰지 않는다** |
+| 애매하다 | **상급자에게 묻는다** — 혼자 판단하지 않는다 |
+
+**✅ 확인** — 애매할 때 혼자 결정하지 않는 것이 이 관문의 전부입니다.
+
+---
+
+### STEP 4 · 기관 지침을 확인합니다
+
+**✅ 확인** — 소속 기관에 생성형 AI 이용 지침이 있는지 찾아보고, 있으면 **그 지침이 이 문서보다 우선**합니다. 없다면 위 세 관문을 기준으로 삼습니다.
+
+---
+
+## 2부 · 담당자 검토 절차 설계 (STEP 5~6)
+
+도구가 낸 결과를 **사람이 무엇을 보고 통과시킬지** 정합니다. 이게 없으면 "AI가 만든 거라 못 믿겠다"로 끝납니다.
+
+---
+
+### STEP 5 · 검토 항목을 숫자로 만듭니다
+
+\`\`\`text
+아래는 내가 만든 자동화 도구야.
+(도구가 하는 일과 결과 형태를 3~4줄로 설명)
+
+이 결과를 담당자가 검토할 때 볼 항목을 만들어 줘.
+조건은 이렇게.
+1. 각 항목은 숫자로 맞는지 틀리는지 판정할 수 있어야 한다.
+2. "잘 됐는지 본다" 같은 애매한 표현은 쓰지 마.
+3. 3분 안에 끝낼 수 있는 분량으로, 5개 이내.
+4. 각 항목마다 틀렸을 때 무엇을 해야 하는지 함께 써 줘.
+\`\`\`
+
+**✅ 확인** — 이런 형태가 나오면 성공입니다.
+
+| 검토 항목 | 통과 기준 | 틀렸을 때 |
+|-----------|----------|----------|
+| 결과 행 개수 | 원본 행 수 − 제외 행 수 와 같다 | 원본에서 제외 규칙을 다시 확인 |
+| 총 금액 | 원본 금액 열 \`=SUM()\` 값과 같다 | **결과를 쓰지 말고** 담당자에게 알림 |
+| 부서 개수 | 5개 과가 모두 나온다 | 빠진 과의 원본 자료 확인 |
+| \`[확인 필요]\` 건수 | 0건이거나, 있으면 목록으로 확인 | 해당 과에 회신 요청 |
+
+---
+
+### STEP 6 · 사용 안내문 한 장을 만듭니다
+
+\`\`\`text
+이 도구를 처음 쓰는 동료를 위한 안내문을 한 장으로 만들어 줘.
+아래 순서로, 각 항목은 세 줄 이내로.
+
+1. 이 도구가 하는 일
+2. 쓰기 전에 반드시 지울 정보
+3. 실행 방법 (어디를 눌러 어디서 결과를 보는지)
+4. 결과를 믿기 전에 확인할 것 (위 검토 항목)
+5. 오류가 났을 때 할 일
+6. 담당자가 바뀌면 누구에게 물어볼지
+
+행정 문서 어투로, 어려운 용어는 괄호로 풀어 써 줘.
+\`\`\`
+
+**✅ 확인** — 안내문을 **시트의 \`사용법\` 탭에 붙여넣고**, 검토 항목 표는 \`검토표\` 탭에 넣습니다. 도구·설명·검토표가 **한 파일 안에** 있어야 인수인계가 됩니다.
+
+---
+
+### 완성 점검표 — 오류 대응 체크리스트 및 보안 유의사항
+
+| # | 항목 | 확인 |
+|---|------|------|
+| 1 | 실제 자료에서 고유식별정보 유무를 확인했다 | |
+| 2 | 이름·연락처를 가명 처리하거나 열을 삭제했다 | |
+| 3 | 대외비 여부를 판정했다 (애매하면 물었다) | |
+| 4 | 기관의 AI 이용 지침을 확인했다 | |
+| 5 | 검토 항목이 **숫자로 판정 가능**하다 | |
+| 6 | 각 검토 항목에 "틀렸을 때 할 일"이 있다 | |
+| 7 | 사용 안내문을 \`사용법\` 탭에 넣었다 | |
+| 8 | 검토표를 \`검토표\` 탭에 넣었다 | |
+| 9 | **원본이 아닌 복사본**에서 작업했다 | |
+
+> 9개가 채워지면 **오류 대응 체크리스트 및 보안 유의사항 완성**입니다.
+
+> **한 줄 요약** — 넣지 말 것을 넣지 않고, 나온 것을 사람이 숫자로 확인하면 대부분의 사고는 막힙니다. 도구를 만든 사람이 아니라 **그 결과로 결재를 올리는 사람이 책임**을 집니다.`,
+      contentEn: `**55 minutes · You need the Session 5 draft tool and one real work file**
+**Deliverable: an error checklist and security notes**
+
+Until now you used dummy data. Before real data goes in, pass **three gates.**
+
+## Part 1 · Screening the input
+![Input screening flow](~/automation/auto-security-gate.svg)
+
+**STEP 1 · Gate one — national identifiers.** Resident/foreigner registration, licence, passport numbers.
+
+| State | Action |
+|---|---|
+| None | Go to STEP 2 |
+| Present but unnecessary | Work from a **copy with that column deleted** |
+| Present and *essential to the task* | **Drop this task from automation.** Pick another |
+
+> National identifiers cannot be pseudonymized away. Delete, or stop.
+
+**STEP 2 · Gate two — names, contacts, addresses.** These are solved by pseudonymization: 홍길동 → Citizen A, phone column deleted, address truncated to district. **The aggregate result is identical.** Always work on a copy.
+
+**STEP 3 · Gate three — confidential material.** Confidential markings, unpublished audits, ongoing investigations → **do not use an external AI.** If unsure, **ask your supervisor** — never decide alone.
+
+**STEP 4 · Check your organization's policy.** It takes precedence over this page.
+
+## Part 2 · Designing the review procedure
+
+**STEP 5 · Make review items numeric.** Ask the AI for at most five items, each verifiable as pass/fail by a number, each with what to do when it fails, finishable in three minutes.
+
+| Item | Pass | On failure |
+|---|---|---|
+| Result row count | Source rows − excluded rows | Re-check the exclusion rule |
+| Total amount | Equals \`=SUM()\` on the source | **Do not use the result**; notify |
+| Department count | All five appear | Check the missing one's source file |
+| \`[TO VERIFY]\` count | Zero, or listed and confirmed | Request a reply from that division |
+
+**STEP 6 · Write a one-page user guide** — what it does, what to strip first, how to run it, what to verify, what to do on error, who to ask after handover. **Paste it into a \`사용법\` tab and the review table into a \`검토표\` tab.** Tool, instructions and checklist must live in one file.
+
+### Completion checklist
+Identifiers checked · names pseudonymized · confidentiality judged (asked when unsure) · organizational policy checked · review items numerically verifiable · each with a failure action · guide tab · checklist tab · **worked on a copy, not the original.**
+
+> **In one line** — don't put in what shouldn't go in, and have a person verify the output numerically. The accountability sits with whoever submits the result, not whoever built the tool.`,
+    },
   ],
 };

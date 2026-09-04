@@ -196,5 +196,219 @@ That is the right behavior — answer with the exact sheet name, header row, dup
 
 Do not start over — ask it to change only the specific part and show the whole code again.`,
     },
+    {
+      title: '따라하기 실습 · 코드를 받아 시트에 붙이기',
+      titleEn: 'Hands-on — Get the Code and Put It in the Sheet',
+      content: `**소요 55분 · 준비물: 3교시에서 만든 요구사항 명세서, 구글 계정**
+**산출물: 1차 자동화 템플릿**
+
+3교시 명세서를 AI에게 건네 코드를 받고, **실제 시트에서 돌아가게** 만듭니다. 코드는 한 줄도 직접 쓰지 않습니다.
+
+---
+
+## 1부 · 코드 받기 (STEP 1~3)
+
+그림의 **주황 번호가 STEP 번호**입니다.
+
+![자동화 코드 받기 화면 — 명세서 붙여넣기, 되물음에 답하기, 완성 코드 한 덩어리 수령](~/automation/auto-code-gen.svg)
+
+---
+
+### STEP 1 · 명세서를 통째로 붙여넣고, 코드보다 먼저 질문을 받습니다
+
+ChatGPT나 Claude에 **새 대화**를 열고, 3교시 명세서 전체를 붙여넣은 뒤 이어서 보냅니다.
+
+\`\`\`text
+위 명세서로 코드를 만들기 전에,
+애매하거나 빠진 조건이 있으면 질문 목록으로 먼저 알려 줘.
+질문이 없으면 "질문 없음"이라고만 답해 줘.
+\`\`\`
+
+**✅ 확인**
+
+| 답 | 뜻 | 다음 |
+|----|-----|------|
+| 질문 2~3개 | **정상** — 명세서가 구체적이라 진짜 빈틈만 짚었다 | STEP 2로 |
+| "질문 없음" | 명세서가 충분하다 | 바로 STEP 3으로 |
+| 질문 10개 이상 | 명세서가 아직 성글다 | **3교시로 돌아가** 다시 채운다 |
+
+---
+
+### STEP 2 · 되물음에 답합니다
+
+\`\`\`text
+1번 — 있으면 내용을 지우고 다시 채워 줘.
+2번 — 0으로 계산해 줘.
+\`\`\`
+
+**✅ 확인** — 답한 내용을 **명세서에도 적어 두세요.** 다음 달에 다시 만들 때 같은 질문을 안 받습니다.
+
+---
+
+### STEP 3 · 코드를 받습니다
+
+\`\`\`text
+이제 Google Apps Script 코드를 만들어 줘.
+
+- 붙여넣고 바로 실행되는 완성된 코드로
+- 각 줄 위에 무슨 일을 하는지 한글 주석
+- 함수 이름은 부서별집계_만들기
+- 원본 "신청접수" 시트는 절대 수정하지 마
+- 시트 상단에 "자동화" 메뉴를 만들고 그 안에 실행 항목을 넣어 줘
+\`\`\`
+
+**✅ 확인** — \`function\` 으로 시작하는 코드가 **한 덩어리로** 나오면 성공입니다. 코드를 이해할 필요는 없습니다. **한 글자도 고치지 마세요.**
+
+---
+
+## 2부 · 시트에 적용하기 (STEP 4~6)
+
+![시트 적용 결과 화면 — 자동화 메뉴 생성, 메뉴 실행, 결과 탭과 원본 탭 확인](~/automation/auto-sheet-apply.svg)
+
+---
+
+### STEP 4 · 붙여넣고 저장합니다
+
+1. 시트에서 **[확장 프로그램] → [Apps Script]**
+2. 편집기 내용을 **모두 지우고** 받은 코드를 붙여넣기
+3. **저장**(💾)
+4. **시트로 돌아가 브라우저를 새로고침**(F5)
+
+**✅ 확인** — 상단 메뉴에 **\`자동화\`** 가 새로 생겼나요? 안 생겼다면 ① 저장을 안 했거나 ② 새로고침을 안 한 것입니다.
+
+---
+
+### STEP 5 · 메뉴에서 실행합니다
+
+**[자동화] → [부서별 집계 실행]**
+
+첫 실행에는 권한 창이 뜹니다 — **고급 → 프로젝트로 이동 → 허용**.
+
+**✅ 확인** — 이제 **동료도 코드를 몰라도 메뉴만 누르면 됩니다.** 이것이 "도구"가 된 순간입니다.
+
+---
+
+### STEP 6 · 결과와 원본을 둘 다 확인합니다
+
+**✅ 확인** — 두 가지를 모두 봅니다.
+
+| 봐야 할 것 | 통과 기준 |
+|-----------|----------|
+| 결과 탭 | \`부서별집계\` 탭이 새로 생기고 표가 채워졌다 |
+| **원본 탭** | \`신청접수\` 탭의 내용이 **하나도 바뀌지 않았다** |
+| 합계 행 | 마지막 행 합계가 원본을 더한 값과 같다 |
+
+> **원본 확인을 빠뜨리지 마세요.** 결과가 잘 나와도 원본을 건드렸다면 그 도구는 못 씁니다.
+
+---
+
+## 3부 · 예제 세 가지로 넓혀 보기 (STEP 7)
+
+집계 하나가 돌았다면, 같은 방식으로 **다른 기능을 덧붙입니다.** 아래 세 가지를 각각 새 요청으로 보내세요.
+
+### ① 신청자 명단 정리
+
+\`\`\`text
+"자동화" 메뉴에 "명단 정리" 항목을 추가해 줘.
+
+- "신청접수" 시트에서 접수번호가 중복이면 나중 행만 남긴다.
+- 접수번호가 비어 있는 행은 제외한다.
+- 부서 → 접수번호 순으로 정렬한다.
+- 결과를 "정리명단" 시트에 넣는다. 원본은 수정하지 마.
+\`\`\`
+
+**✅ 확인** — 원본 행 수보다 결과 행 수가 **적거나 같아야** 정상입니다. 많아졌다면 중복 제거가 반대로 된 것입니다.
+
+### ② 데이터 분류
+
+\`\`\`text
+"자동화" 메뉴에 "금액대 분류" 항목을 추가해 줘.
+
+- 금액이 10,000천원 이상이면 "대규모",
+  3,000 이상 10,000 미만이면 "중규모", 그 미만이면 "소규모"로 분류한다.
+- 금액이 비어 있으면 "확인필요"로 분류한다.
+- 결과를 "분류결과" 시트에 접수번호·부서·금액·구분 네 열로 넣는다.
+\`\`\`
+
+**✅ 확인** — **경계값을 직접 확인하세요.** 정확히 10,000인 행이 "대규모"로 갔는지, 3,000인 행이 "중규모"로 갔는지. 경계에서 틀리는 일이 가장 잦습니다.
+
+### ③ 보고 문장 생성
+
+\`\`\`text
+"자동화" 메뉴에 "보고문 만들기" 항목을 추가해 줘.
+
+- "부서별집계" 시트의 숫자를 읽어 보고용 문장 한 문단을 만든다.
+- 문장에는 총 건수, 총 금액, 가장 많은 부서만 넣는다.
+- 시트에 없는 숫자는 절대 만들어 넣지 마.
+- 결과를 "보고문" 시트 A1 칸에 넣는다.
+\`\`\`
+
+**✅ 확인** — 나온 문장의 **모든 숫자가 집계표에 있는 숫자인지** 눈으로 대조합니다. 없는 숫자가 하나라도 있으면 그 기능은 쓰지 마세요.
+
+---
+
+### 완성 점검표 — 1차 자동화 템플릿
+
+| # | 항목 | 확인 |
+|---|------|------|
+| 1 | 시트 상단에 \`자동화\` 메뉴가 생겼다 | |
+| 2 | 메뉴에서 실행하면 결과 탭이 채워진다 | |
+| 3 | 원본 시트가 수정되지 않았다 | |
+| 4 | 합계·행 개수를 원본과 대조했다 | |
+| 5 | 예제 3가지 중 최소 1개를 더 붙였다 | |
+| 6 | 받은 코드를 별도 문서에도 보관했다 | |
+| 7 | 되물음에 답한 내용을 명세서에 반영했다 | |
+
+> 7개가 채워지면 **1차 자동화 템플릿 완성**입니다. 5교시에서 이걸 본격적으로 시험합니다.`,
+      contentEn: `**55 minutes · You need the Session 3 spec and a Google account**
+**Deliverable: a first automation template**
+
+Hand your spec to the AI, get code, and make it run in a real sheet. You will not write a line of code.
+
+## Part 1 · Getting the code
+![Code-generation screen](~/automation/auto-code-gen.svg)
+
+**STEP 1 · Paste the whole spec, ask for questions before code.**
+
+| Answer | Meaning | Next |
+|---|---|---|
+| 2–3 questions | **Healthy** — only real gaps remain | STEP 2 |
+| "No questions" | The spec is sufficient | STEP 3 |
+| 10+ questions | The spec is still loose | **Go back to Session 3** |
+
+**STEP 2 · Answer them** — and record the answers in the spec so you never get asked again.
+
+**STEP 3 · Request the code** — complete and paste-and-run, Korean comments per line, a named function, never modify the source sheet, and add an "자동화" menu to the sheet.
+**✅ Check** — one block starting with \`function\`. You don't need to understand it. **Change nothing.**
+
+## Part 2 · Putting it in the sheet
+![Sheet application screen](~/automation/auto-sheet-apply.svg)
+
+**STEP 4 · Paste, save, refresh the sheet.**
+**✅ Check** — a new \`자동화\` menu appears. If not, you skipped the save or the refresh.
+
+**STEP 5 · Run it from the menu.** Approve the permission prompt once.
+**✅ Check** — a colleague who knows no code can now use it. That is the moment it became a *tool*.
+
+**STEP 6 · Check the result **and** the source.**
+
+| Check | Pass |
+|---|---|
+| Result tab | A new tab appeared and is filled |
+| **Source tab** | The original is **completely unchanged** |
+| Total row | Matches the sum of the source |
+
+> Never skip the source check. A correct result from a tool that modified the original is still unusable.
+
+## Part 3 · Three more examples (STEP 7)
+Add each as a new request: **① applicant-list cleanup** (deduplicate, drop blanks, sort), **② data classification** (bands by amount, "needs checking" for blanks), **③ report-sentence generation** (only numbers present in the sheet).
+
+**✅ Checks** — for ①, result rows must be fewer than or equal to the source. For ②, verify the **boundary values** yourself. For ③, confirm every number in the sentence appears in the table.
+
+### Completion checklist
+Menu created · runs from the menu · source untouched · totals reconciled · at least one extra example added · code saved elsewhere · answers folded into the spec.
+
+> Seven checks make your **first automation template.** Session 5 puts it under real testing.`,
+    },
   ],
 };
