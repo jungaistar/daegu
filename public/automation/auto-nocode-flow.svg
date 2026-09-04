@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 676" width="1000" height="676" role="img" aria-label="노코드 자동화 흐름 — 트리거 하나, 조건 하나, 동작 순서대로. 켜기 전 시험 실행">
+  <title>노코드 자동화 흐름 — 트리거 하나, 조건 하나, 동작 순서대로. 켜기 전 시험 실행</title>
+  <rect width="1000" height="676" fill="#FFFFFF"/>
+
+  <rect x="14" y="14" width="972" height="516" rx="14" fill="#FFFFFF" stroke="#D9DDE3" stroke-width="1.5"/>
+  <path d="M14 28 a14 14 0 0 1 14 -14 h944 a14 14 0 0 1 14 14 v26 h-972 z" fill="#F3F5F8"/>
+  <circle cx="40" cy="40" r="6" fill="#FF5F57"/>
+  <circle cx="60" cy="40" r="6" fill="#FEBC2E"/>
+  <circle cx="80" cy="40" r="6" fill="#28C840"/>
+  <rect x="340" y="28" width="320" height="24" rx="12" fill="#E7EAEF"/>
+  <text x="500" y="45" font-size="13" fill="#6B7280" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">노코드 자동화 도구 — 흐름 편집</text>
+
+
+  <rect x="150" y="96" width="700" height="70" rx="12" fill="#FFFFFF" stroke="#D9DDE3" stroke-width="1.5"/><rect x="150" y="96" width="6" height="70" rx="3" fill="#0E6BA8"/><rect x="172" y="110" width="60" height="22" rx="11" fill="#0E6BA8"/><text x="202" y="126" font-size="11.5" fill="#FFFFFF" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">트리거</text><text x="246" y="128" font-size="14" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">폼 응답이 제출되면</text><text x="172" y="152" font-size="12.5" fill="#6B7280" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">경로당 보수 신청 접수 · 새 응답</text><path d="M500 166 v24" stroke="#B6C0CC" stroke-width="2"/><path d="M494 184 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round"/><rect x="150" y="190" width="700" height="70" rx="12" fill="#FFFFFF" stroke="#D9DDE3" stroke-width="1.5"/><rect x="150" y="190" width="6" height="70" rx="3" fill="#B45309"/><rect x="172" y="204" width="60" height="22" rx="11" fill="#B45309"/><text x="202" y="220" font-size="11.5" fill="#FFFFFF" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">조건</text><text x="246" y="222" font-size="14" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">금액이 10,000천원을 넘으면</text><text x="172" y="246" font-size="12.5" fill="#6B7280" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">넘으면 아래로, 아니면 건너뜀</text><path d="M500 260 v24" stroke="#B6C0CC" stroke-width="2"/><path d="M494 278 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round"/><rect x="150" y="284" width="700" height="70" rx="12" fill="#FFFFFF" stroke="#D9DDE3" stroke-width="1.5"/><rect x="150" y="284" width="6" height="70" rx="3" fill="#166534"/><rect x="172" y="298" width="60" height="22" rx="11" fill="#166534"/><text x="202" y="314" font-size="11.5" fill="#FFFFFF" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">동작</text><text x="246" y="316" font-size="14" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">담당 과장에게 메일 보내기</text><text x="172" y="340" font-size="12.5" fill="#6B7280" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">제목: [검토요청] {{부서}} {{항목}}</text><path d="M500 354 v24" stroke="#B6C0CC" stroke-width="2"/><path d="M494 372 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round"/><rect x="150" y="378" width="700" height="70" rx="12" fill="#FFFFFF" stroke="#D9DDE3" stroke-width="1.5"/><rect x="150" y="378" width="6" height="70" rx="3" fill="#166534"/><rect x="172" y="392" width="60" height="22" rx="11" fill="#166534"/><text x="202" y="408" font-size="11.5" fill="#FFFFFF" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">동작</text><text x="246" y="410" font-size="14" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">검토대장 시트에 한 줄 추가</text><text x="172" y="434" font-size="12.5" fill="#6B7280" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">접수번호 · 부서 · 금액 · 접수일시</text>
+  <rect x="150" y="470" width="150" height="32" rx="8" fill="#0E6BA8"/>
+  <text x="225" y="491" font-size="13" fill="#FFFFFF" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">흐름 켜기</text>
+  <text x="320" y="491" font-size="12.5" fill="#6B7280" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">켜 두면 사람이 손대지 않아도 계속 돌아갑니다</text>
+
+  <rect x="146" y="92" width="708" height="78" rx="14" fill="none" stroke="#F97316" stroke-width="2" stroke-dasharray="7 5"/>
+  <rect x="146" y="186" width="708" height="78" rx="14" fill="none" stroke="#F97316" stroke-width="2" stroke-dasharray="7 5"/>
+  <rect x="146" y="466" width="708" height="40" rx="8" fill="none" stroke="#F97316" stroke-width="2" stroke-dasharray="7 5"/>
+  
+  <circle cx="44" cy="131" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="44" y="136" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">1</text>
+  
+  <circle cx="44" cy="225" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="44" y="230" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">2</text>
+  
+  <circle cx="44" cy="486" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="44" y="491" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">3</text>
+
+
+  <line x1="14" y1="550" x2="986" y2="550" stroke="#E6E8EC" stroke-width="1.5"/>
+
+  <circle cx="34" cy="580" r="12" fill="#F97316"/>
+  <text x="34" y="585" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">1</text>
+  <text x="56" y="585" font-size="14.5" fill="#1F2937" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">트리거는 하나만 — "무슨 일이 생기면 시작할지" 를 정한다 (폼 제출, 특정 시각, 파일 추가 등)</text>
+  <circle cx="34" cy="610" r="12" fill="#F97316"/>
+  <text x="34" y="615" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">2</text>
+  <text x="56" y="615" font-size="14.5" fill="#1F2937" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">조건은 되도록 하나만 둔다. 조건이 두 개를 넘어가면 흐름이 아니라 사람 판단이 필요한 일이다</text>
+  <circle cx="34" cy="640" r="12" fill="#F97316"/>
+  <text x="34" y="645" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">3</text>
+  <text x="56" y="645" font-size="14.5" fill="#1F2937" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">흐름을 켜기 전에 반드시 시험용 데이터로 한 번 돌려 본다 — 실제 민원인에게 메일이 나갈 수 있다</text>
+</svg>

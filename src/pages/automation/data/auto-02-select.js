@@ -132,5 +132,224 @@ Paste the definition and ask whether it suits automation, what is missing, what 
 
 All nine fields filled, steps numbered, reviewer criteria written, monthly saving calculated, personal data resolved.`,
     },
+    {
+      title: '따라하기 실습 · 자동화 대상 업무 정의서 채우기',
+      titleEn: 'Hands-on — Fill In the Task Definition',
+      content: `**소요 40분 · 산출물: 자동화 대상 업무 정의서 1부**
+
+앞에서 고른 업무 하나를 **문서 한 장으로 확정**합니다. 이 정의서가 3교시 설계와 4교시 코드 요청의 재료가 됩니다.
+
+> **여기서 대충 적으면 오후 내내 헤맵니다.** 반대로 여기가 정확하면 나머지는 거의 자동으로 굴러갑니다.
+
+---
+
+### STEP 1 · 표를 그대로 옮겨 적습니다
+
+빈 문서나 시트를 열고 아래 표를 **그대로 만듭니다.** 오른쪽 칸은 비워 둡니다.
+
+| 항목 | 내가 적을 것 |
+|------|-------------|
+| ① 업무 이름 | |
+| ② 얼마나 자주 | |
+| ③ 한 번에 걸리는 시간 | |
+| ④ 들어오는 자료(입력) | |
+| ⑤ 처리 과정 | |
+| ⑥ 나오는 결과(출력) | |
+| ⑦ 담당자 검토 기준 | |
+| ⑧ 개인정보 | |
+| ⑨ 자동화 후 예상 시간 | |
+
+**✅ 확인** — 아홉 칸짜리 빈 표가 만들어졌으면 다음으로.
+
+---
+
+### STEP 2 · ④ 들어오는 자료를 아주 구체적으로
+
+가장 많이 대충 적는 칸입니다. **"엑셀 파일"** 이라고만 쓰면 안 됩니다.
+
+| 적어야 할 것 | 나쁜 예 | 좋은 예 |
+|-------------|---------|---------|
+| 파일 형태 | 엑셀 | \`.xlsx\` 파일 3개 (과별 1개씩) |
+| 어디서 오나 | 각 과 | 매월 5일까지 메일로 수신 |
+| 몇 건 | 많음 | 과당 30~80행, 합계 약 200행 |
+| 열 이름 | 여러 개 | 접수번호 / 부서 / 항목 / 금액 / 처리상태 |
+| 서식이 같은가 | — | **다름** — 과마다 열 순서가 제각각 |
+
+**✅ 확인** — 열 이름을 **하나도 빠짐없이** 적었나요? 열 이름이 곧 AI에게 줄 항목 이름입니다.
+
+---
+
+### STEP 3 · ⑤ 처리 과정을 번호로 쪼갭니다
+
+머릿속으로 하던 일을 **한 줄에 하나씩** 번호로 적습니다. "정리한다" 같은 뭉뚱그린 표현은 쪼갭니다.
+
+**나쁜 예**
+
+\`\`\`text
+1. 파일들을 정리해서 합친다
+2. 보고서를 만든다
+\`\`\`
+
+**좋은 예**
+
+\`\`\`text
+1. 과별 파일 3개를 연다.
+2. 열 순서를 접수번호 / 부서 / 항목 / 금액 / 처리상태 로 통일한다.
+3. 세 파일의 데이터를 한 시트 아래로 이어 붙인다.
+4. 접수번호가 같은 행이 있으면 나중 것만 남긴다.
+5. 부서별로 묶어 건수와 금액 합계를 낸다.
+6. 금액이 비어 있는 행은 0으로 본다.
+7. 결과를 "부서별집계" 시트에 표로 넣는다.
+\`\`\`
+
+**✅ 확인** — 아래 세 가지를 점검하세요.
+
+| 점검 | 뜻 |
+|------|-----|
+| 한 줄에 동작이 하나뿐인가 | "합치고 정리한다" 는 두 줄로 쪼갠다 |
+| 예외 처리가 들어 있나 | 빈 값·중복·오타를 어떻게 할지 (위의 4·6번) |
+| 순서를 바꾸면 결과가 달라지나 | 그렇다면 순서가 맞게 적힌 것이다 |
+
+> **예외 처리가 없는 정의서는 반쪽입니다.** 실제 업무가 막히는 곳은 늘 예외입니다.
+
+---
+
+### STEP 4 · ⑦ 담당자 검토 기준 — 가장 자주 빠지는 칸
+
+자동화의 결과를 **사람이 무엇을 보고 믿을지** 정합니다. 이게 없으면 "AI가 만든 거라 못 믿겠다"로 끝납니다.
+
+\`\`\`text
+검토 기준 (예)
+- 합계 행의 총액이 원본 세 파일의 총액과 같은가
+- 결과 행 개수가 원본 행 수에서 중복 제거분을 뺀 수와 같은가
+- 부서 이름이 5개 과 모두 나왔는가 (빠진 과가 없는가)
+- [확인 필요] 로 표시된 항목이 몇 건인가
+\`\`\`
+
+**✅ 확인** — 검토 기준은 **숫자로 확인 가능한 문장**이어야 합니다. "잘 됐는지 본다"는 기준이 아닙니다.
+
+---
+
+### STEP 5 · ⑧ 개인정보를 판정합니다
+
+| 판정 | 조건 | 조치 |
+|------|------|------|
+| **그대로 가능** | 이름·연락처·고유번호가 아예 없다 | 그대로 진행 |
+| **가명 처리 후 가능** | 이름은 있지만 없어도 일이 된다 | 이름 열을 A·B·C로 바꾼 뒤 진행 |
+| **이 업무는 부적합** | 개인정보가 업무의 본질이다 | **다른 업무로 바꾼다** |
+
+**✅ 확인** — 세 번째에 해당하면 **지금 업무를 바꾸세요.** 오후에 가서 바꾸면 하루를 버립니다.
+
+---
+
+### STEP 6 · 자동화 전/후를 비교합니다
+
+\`\`\`text
+자동화 전 — 월 1회 × 3시간 = 연 36시간
+자동화 후 — 월 1회 × 20분(붙여넣기 + 검토) = 연 4시간
+절감 — 연 32시간
+
+줄어드는 오류
+- 복사·붙여넣기 중 행이 밀리는 실수
+- 과별 열 순서를 잘못 맞춘 실수
+- 중복 접수건을 두 번 센 실수
+\`\`\`
+
+**✅ 확인** — 시간은 **연 단위**로 계산하세요. "월 3시간"은 작아 보이지만 "연 36시간"은 결재선을 설득합니다.
+
+---
+
+### STEP 7 · AI에게 정의서를 검토시킵니다
+
+다 채웠으면 스스로 점검하지 말고 AI에게 시킵니다.
+
+\`\`\`text
+아래는 내가 작성한 자동화 대상 업무 정의서야.
+자동화 도구를 만들기에 정보가 충분한지 검토해 줘.
+
+1. 빠진 정보가 있으면 무엇을 더 물어봐야 하는지 목록으로
+2. 처리 과정 중 애매해서 사람마다 다르게 해석할 문장이 있으면 지적
+3. 예외 상황(빈 값·중복·오타) 처리가 빠진 곳이 있으면 지적
+
+--- 정의서 ---
+(위에서 채운 아홉 칸을 붙여넣기)
+\`\`\`
+
+**✅ 확인** — 지적받은 항목을 **정의서에 반영해 고칩니다.** 보통 2~3개가 나옵니다. 고치고 나면 이 정의서로 3교시에 들어갑니다.
+
+---
+
+### 완성 점검표
+
+| # | 항목 | 확인 |
+|---|------|------|
+| 1 | 아홉 칸이 모두 채워졌다 | |
+| 2 | 입력 자료의 **열 이름**이 빠짐없이 적혔다 | |
+| 3 | 처리 과정이 한 줄에 동작 하나로 번호가 매겨졌다 | |
+| 4 | 빈 값·중복·오타 처리가 들어 있다 | |
+| 5 | 검토 기준이 **숫자로 확인 가능한** 문장이다 | |
+| 6 | 개인정보 판정이 끝났다 | |
+| 7 | 절감 시간이 **연 단위**로 계산됐다 | |
+| 8 | AI 검토 지적사항을 반영했다 | |
+
+> 8개가 다 채워지면 **자동화 대상 업무 정의서 완성**입니다. 이 문서를 저장해 두세요 — 3교시와 4교시에서 계속 씁니다.`,
+      contentEn: `**40 minutes · Deliverable: one Task Definition document**
+
+Lock down the task you picked into **a single page.** This document is the raw material for the Session 3 design and the Session 4 code request.
+
+> **Sloppy here means a lost afternoon.** Precise here and the rest almost rolls itself.
+
+### STEP 1 · Draw the nine-row table
+Nine rows: task name, frequency, time per run, input, processing, output, reviewer criteria, personal data, expected time after automation. Leave the right column blank.
+
+### STEP 2 · Make the input concrete
+"An Excel file" is not enough.
+
+| Record | Bad | Good |
+|---|---|---|
+| Format | Excel | Three \`.xlsx\` files, one per division |
+| Source | Each division | Emailed by the 5th of each month |
+| Volume | A lot | 30–80 rows each, ~200 total |
+| Columns | Several | Receipt no. / Division / Item / Amount / Status |
+| Same layout? | — | **No** — column order differs per division |
+
+**✅ Check** — did you list **every** column name? Those names are what you hand the AI.
+
+### STEP 3 · Break the processing into numbered lines
+One action per line. Replace "organize it" with the actual operations, including how blanks, duplicates and typos are handled.
+
+| Check | Meaning |
+|---|---|
+| One action per line | "Merge and clean" splits into two |
+| Exceptions present | Blanks, duplicates, typos |
+| Order matters | If reordering changes the result, the order is written correctly |
+
+> **A definition without exception handling is half a definition.** Real work always breaks on exceptions.
+
+### STEP 4 · Reviewer criteria — the most commonly skipped box
+Decide what a human looks at to trust the output.
+**✅ Check** — criteria must be **numerically verifiable.** "Check it looks right" is not a criterion.
+
+### STEP 5 · Judge the personal data
+
+| Verdict | Condition | Action |
+|---|---|---|
+| **Use as is** | No names, contacts or ID numbers | Proceed |
+| **Pseudonymize first** | Names present but not needed | Replace with A/B/C |
+| **Unsuitable task** | Personal data *is* the substance | **Pick a different task** |
+
+**✅ Check** — if it's the third, change tasks **now,** not this afternoon.
+
+### STEP 6 · Compare before and after
+Compute the saving **per year** — "3 hours a month" sounds small; "36 hours a year" persuades an approver. List the errors that disappear too.
+
+### STEP 7 · Have the AI review your definition
+Ask it to list missing information, ambiguous sentences, and unhandled exceptions. Fold the two or three findings back in.
+
+### Completion checklist
+All nine boxes filled · every input column named · processing numbered one action per line · blanks/duplicates/typos handled · criteria numerically verifiable · personal data judged · saving computed per year · AI review folded in.
+
+> Save this document — Sessions 3 and 4 use it continuously.`,
+    },
   ],
 };
