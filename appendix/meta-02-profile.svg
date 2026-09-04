@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 578" width="1000" height="578" role="img" aria-label="프로필 보정 메타 프롬프트 — 네 가지 질문, 배경·보정 요청문 두 개 산출">
+  <title>프로필 보정 메타 프롬프트 — 네 가지 질문, 배경·보정 요청문 두 개 산출</title>
+  <rect width="1000" height="578" fill="#FFFFFF"/>
+
+  <rect x="14" y="14" width="972" height="404" rx="16" fill="#FFFFFF" stroke="#D9DDE3" stroke-width="1.5"/>
+  <rect x="14" y="14" width="972" height="46" rx="16" fill="#F5FAFE"/>
+  <rect x="14" y="46" width="972" height="14" fill="#F5FAFE"/>
+  <text x="40" y="44" font-size="15" fill="#084D7C" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">메타 프롬프트 ② · 프로필 사진 보정·배경용</text>
+
+  <text x="60" y="92" font-size="13" fill="#6B7280" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">AI 가 순서대로 묻는 것</text>
+  
+  <rect x="60" y="108" width="430" height="58" rx="10" fill="#F5FAFE" stroke="#D7E9F7"/>
+  <circle cx="86" cy="137" r="13" fill="#0E6BA8"/>
+  <text x="86" y="142" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">1</text>
+  <text x="110" y="133" font-size="13.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">어디에 쓰실 건가요?</text>
+  <text x="110" y="153" font-size="12" fill="#5B6472" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">1 증명사진  2 명함  3 홈페이지·명부</text>
+  <path d="M275 166 v18" stroke="#B6C0CC" stroke-width="2"/>
+  <path d="M269 178 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="60" y="184" width="430" height="58" rx="10" fill="#F5FAFE" stroke="#D7E9F7"/>
+  <circle cx="86" cy="213" r="13" fill="#0E6BA8"/>
+  <text x="86" y="218" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">2</text>
+  <text x="110" y="209" font-size="13.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">배경은 무엇으로 할까요?</text>
+  <text x="110" y="229" font-size="12" fill="#5B6472" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">1 흰색  2 단색  3 흐린 사무실</text>
+  <path d="M275 242 v18" stroke="#B6C0CC" stroke-width="2"/>
+  <path d="M269 254 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="60" y="260" width="430" height="58" rx="10" fill="#F5FAFE" stroke="#D7E9F7"/>
+  <circle cx="86" cy="289" r="13" fill="#0E6BA8"/>
+  <text x="86" y="294" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">3</text>
+  <text x="110" y="285" font-size="13.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">어떤 인상을 원하세요?</text>
+  <text x="110" y="305" font-size="12" fill="#5B6472" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">1 단정하게  2 친근하게</text>
+  <path d="M275 318 v18" stroke="#B6C0CC" stroke-width="2"/>
+  <path d="M269 330 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="60" y="336" width="430" height="58" rx="10" fill="#F5FAFE" stroke="#D7E9F7"/>
+  <circle cx="86" cy="365" r="13" fill="#0E6BA8"/>
+  <text x="86" y="370" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">4</text>
+  <text x="110" y="361" font-size="13.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">어디까지 나오게 할까요?</text>
+  <text x="110" y="381" font-size="12" fill="#5B6472" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">1 얼굴 위주  2 상반신</text>
+
+  <text x="540" y="92" font-size="13" fill="#6B7280" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">나오는 것</text>
+  <rect x="540" y="108" width="400" height="34" rx="9" fill="#0E6BA8"/>
+  <text x="740" y="130" font-size="13.5" fill="#FFFFFF" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">요청문 2개 (배경 / 보정)</text>
+  
+  <path d="M740 142 v18" stroke="#B6C0CC" stroke-width="2"/>
+  <path d="M734 154 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="540" y="162" width="400" height="86" rx="10" fill="#FFF6ED" stroke="#F5D3AF"/>
+  <text x="556" y="186" font-size="12.5" fill="#9A5B12" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">이 요청문에 항상 들어가는 규칙</text>
+  <text x="556" y="210" font-size="12.5" fill="#8A5310" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">· 얼굴 생김새와 피부 결을 과하게 바꾸지 말 것</text><text x="556" y="236" font-size="12.5" fill="#8A5310" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">· 배경 경계가 머리카락에서 끊기지 않게 할 것</text>
+
+  
+  <circle cx="28" cy="132" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="28" y="137" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">A</text>
+  
+  <circle cx="508" cy="126" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="508" y="131" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">B</text>
+  
+  <circle cx="508" cy="190" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="508" y="195" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">C</text>
+  <line x1="14" y1="452" x2="986" y2="452" stroke="#E6E8EC" stroke-width="1.5"/>
+
+  <circle cx="34" cy="482" r="12" fill="#F97316"/>
+  <text x="34" y="487" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">1</text>
+  <text x="56" y="487" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">A — 쓸 곳부터 정한다. 증명사진과 홈페이지용은 배경도 인상도 달라진다</text>
+  <circle cx="34" cy="512" r="12" fill="#F97316"/>
+  <text x="34" y="517" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">2</text>
+  <text x="56" y="517" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">B — 배경 교체용과 얼굴 보정용 요청문이 따로 나온다. 한 번에 하나씩 쓴다</text>
+  <circle cx="34" cy="542" r="12" fill="#F97316"/>
+  <text x="34" y="547" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">3</text>
+  <text x="56" y="547" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">C — 과하게 보정해 본인이 아닌 사람이 되는 것을 막는 규칙이 자동으로 들어간다</text>
+</svg>

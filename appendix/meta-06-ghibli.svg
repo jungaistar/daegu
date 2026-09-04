@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 654" width="1000" height="654" role="img" aria-label="지브리풍 변환 메타 프롬프트 — 다섯 질문, 순서가 고정된 요청문 산출">
+  <title>지브리풍 변환 메타 프롬프트 — 다섯 질문, 순서가 고정된 요청문 산출</title>
+  <rect width="1000" height="654" fill="#FFFFFF"/>
+
+  <rect x="14" y="14" width="972" height="480" rx="16" fill="#FFFFFF" stroke="#D9DDE3" stroke-width="1.5"/>
+  <rect x="14" y="14" width="972" height="46" rx="16" fill="#F5FAFE"/>
+  <rect x="14" y="46" width="972" height="14" fill="#F5FAFE"/>
+  <text x="40" y="44" font-size="15" fill="#084D7C" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">메타 프롬프트 ⑥ · 지브리풍 변환용</text>
+
+  <text x="60" y="92" font-size="13" fill="#6B7280" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">AI 가 순서대로 묻는 것</text>
+  
+  <rect x="60" y="108" width="430" height="58" rx="10" fill="#F5FAFE" stroke="#D7E9F7"/>
+  <circle cx="86" cy="137" r="13" fill="#0E6BA8"/>
+  <text x="86" y="142" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">1</text>
+  <text x="110" y="133" font-size="13.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">사진에 몇 명이 나오나요?</text>
+  <text x="110" y="153" font-size="12" fill="#5B6472" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">1 혼자  2 둘  3 가족·단체</text>
+  <path d="M275 166 v18" stroke="#B6C0CC" stroke-width="2"/>
+  <path d="M269 178 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="60" y="184" width="430" height="58" rx="10" fill="#F5FAFE" stroke="#D7E9F7"/>
+  <circle cx="86" cy="213" r="13" fill="#0E6BA8"/>
+  <text x="86" y="218" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">2</text>
+  <text x="110" y="209" font-size="13.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">배경은 어디인가요?</text>
+  <text x="110" y="229" font-size="12" fill="#5B6472" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">1 실내  2 공원·자연  3 거리  4 바다·산</text>
+  <path d="M275 242 v18" stroke="#B6C0CC" stroke-width="2"/>
+  <path d="M269 254 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="60" y="260" width="430" height="58" rx="10" fill="#F5FAFE" stroke="#D7E9F7"/>
+  <circle cx="86" cy="289" r="13" fill="#0E6BA8"/>
+  <text x="86" y="294" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">3</text>
+  <text x="110" y="285" font-size="13.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">계절과 시간대는요?</text>
+  <text x="110" y="305" font-size="12" fill="#5B6472" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">1 봄 낮  2 여름 저녁  3 가을 낮  4 겨울 아침</text>
+  <path d="M275 318 v18" stroke="#B6C0CC" stroke-width="2"/>
+  <path d="M269 330 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="60" y="336" width="430" height="58" rx="10" fill="#F5FAFE" stroke="#D7E9F7"/>
+  <circle cx="86" cy="365" r="13" fill="#0E6BA8"/>
+  <text x="86" y="370" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">4</text>
+  <text x="110" y="361" font-size="13.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">얼마나 바꿀까요?</text>
+  <text x="110" y="381" font-size="12" fill="#5B6472" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">1 색감만  2 전체 그림체까지</text>
+  <path d="M275 394 v18" stroke="#B6C0CC" stroke-width="2"/>
+  <path d="M269 406 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="60" y="412" width="430" height="58" rx="10" fill="#F5FAFE" stroke="#D7E9F7"/>
+  <circle cx="86" cy="441" r="13" fill="#0E6BA8"/>
+  <text x="86" y="446" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">5</text>
+  <text x="110" y="437" font-size="13.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">어디에 쓰실 건가요?</text>
+  <text x="110" y="457" font-size="12" fill="#5B6472" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">1 개인 소장  2 카드·선물  3 대외 홍보</text>
+
+  <text x="540" y="92" font-size="13" fill="#6B7280" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">나오는 것</text>
+  <rect x="540" y="108" width="400" height="34" rx="9" fill="#0E6BA8"/>
+  <text x="740" y="130" font-size="13.5" fill="#FFFFFF" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">지브리풍 변환 요청문</text>
+  
+  <path d="M740 142 v18" stroke="#B6C0CC" stroke-width="2"/>
+  <path d="M734 154 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="540" y="162" width="400" height="86" rx="10" fill="#FFF6ED" stroke="#F5D3AF"/>
+  <text x="556" y="186" font-size="12.5" fill="#9A5B12" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">이 요청문에 항상 들어가는 규칙</text>
+  <text x="556" y="210" font-size="12.5" fill="#8A5310" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">· ① 지브리풍 요청 → ② 그대로 둘 것 → ③ 바꿀 것 순서로 쓸 것</text><text x="556" y="236" font-size="12.5" fill="#8A5310" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">· 얼굴 생김새·옷차림·구도는 그대로 둘 것</text>
+
+  
+  <circle cx="28" cy="132" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="28" y="137" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">A</text>
+  
+  <circle cx="508" cy="126" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="508" y="131" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">B</text>
+  
+  <circle cx="508" cy="190" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="508" y="195" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">C</text>
+  <line x1="14" y1="528" x2="986" y2="528" stroke="#E6E8EC" stroke-width="1.5"/>
+
+  <circle cx="34" cy="558" r="12" fill="#F97316"/>
+  <text x="34" y="563" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">1</text>
+  <text x="56" y="563" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">A — 다섯 가지를 답한다. 마지막 "쓸 곳" 이 대외 홍보면 안내 문구 예시가 함께 나온다</text>
+  <circle cx="34" cy="588" r="12" fill="#F97316"/>
+  <text x="34" y="593" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">2</text>
+  <text x="56" y="593" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">B — 요청문이 반드시 정해진 순서로 나온다. 순서가 바뀌면 얼굴까지 바뀐다</text>
+  <circle cx="34" cy="618" r="12" fill="#F97316"/>
+  <text x="34" y="623" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">3</text>
+  <text x="56" y="623" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">C — 무엇을 그대로 둘지가 요청문 앞쪽에 자동으로 들어간다</text>
+</svg>
