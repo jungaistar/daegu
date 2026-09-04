@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 808" width="980" height="808" role="img" aria-label="화풍 바꾸기 화면 — 사진 첨부, 유지할 것과 바꿀 것 구분, 원본 대조, 공개 시 주의">
-  <title>화풍 바꾸기 화면 — 사진 첨부, 유지할 것과 바꿀 것 구분, 원본 대조, 공개 시 주의</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 808" width="980" height="808" role="img" aria-label="지브리풍 이미지 만들기 화면 — 사진 첨부, 유지할 것과 바꿀 것 구분, 원본 대조">
+  <title>지브리풍 이미지 만들기 화면 — 사진 첨부, 유지할 것과 바꿀 것 구분, 원본 대조</title>
   <rect width="980" height="808" fill="#FFFFFF"/>
 
   <rect x="14" y="14" width="952" height="618" rx="16" fill="#FFFFFF" stroke="#D9DDE3" stroke-width="1.5"/>
@@ -15,16 +15,16 @@
   <text x="120" y="97" font-size="13.5" fill="#FFFFFF" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">+ 새 대화</text>
   
   <rect x="26" y="120" width="188" height="28" rx="8" fill="#EDF1F6"/>
-  <text x="40" y="139" font-size="12.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">화풍 바꾸기</text>
+  <text x="40" y="139" font-size="12.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">지브리풍 만들기</text>
   <rect x="26" y="158" width="188" height="28" rx="8" fill="none"/>
   <text x="40" y="177" font-size="12.5" fill="#7B828C" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">이모티콘 만들기</text>
   <rect x="26" y="196" width="188" height="28" rx="8" fill="none"/>
   <text x="40" y="215" font-size="12.5" fill="#7B828C" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">프로필 배경</text>
 
-  <text x="286" y="94" font-size="17" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">내 사진을 그림 화풍으로 바꾸기</text>
+  <text x="286" y="94" font-size="17" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">내 사진을 지브리풍 이미지로 만들기</text>
 
   <rect x="472" y="122" width="470" height="108" rx="12" fill="#EAF2FA" stroke="#CBDDEE"/>
-  <text x="488" y="148" font-size="13" fill="#374151" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">[첨부] 우리가족_공원.jpg</text><text x="488" y="169" font-size="13" fill="#374151" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">이 사진을 손으로 그린 듯한 수채화 애니메이션 화풍으로 바꿔 줘.</text><text x="488" y="190" font-size="13" fill="#374151" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">인물의 얼굴 생김새와 옷차림, 서 있는 위치는 그대로 두고</text><text x="488" y="211" font-size="13" fill="#374151" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">색감만 부드럽게, 배경의 나무와 하늘을 조금 더 풍성하게.</text>
+  <text x="488" y="148" font-size="13" fill="#374151" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">[첨부] 우리가족_공원.jpg</text><text x="488" y="169" font-size="13" fill="#374151" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">이 사진을 지브리풍 그림으로 바꿔 줘.</text><text x="488" y="190" font-size="13" fill="#374151" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">인물의 얼굴 생김새와 옷차림, 서 있는 위치는 그대로 두고</text><text x="488" y="211" font-size="13" fill="#374151" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">색감만 부드럽게, 배경의 나무와 하늘을 조금 더 풍성하게.</text>
   <rect x="466" y="116" width="482" height="120" rx="12" fill="none" stroke="#F97316" stroke-width="2" stroke-dasharray="7 5"/>
   
   <circle cx="236" cy="140" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>

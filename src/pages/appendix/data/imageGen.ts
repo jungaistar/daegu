@@ -494,30 +494,13 @@ Download all six, name them \`emoji_01_happy.png\` style, then send one in a mes
 > Keep the original photo — you will need it to regenerate.`,
     },
     {
-      title: '따라하기 ⑥ 내 사진을 그림 화풍으로 바꾸기',
-      titleEn: 'Walkthrough 6 — Convert Your Photo to an Illustrated Style',
+      title: '따라하기 ⑥ 내 사진을 지브리풍 이미지로 만들기',
+      titleEn: 'Walkthrough 6 — Turn Your Photo into a Ghibli-Style Image',
       content: `**소요 20분 · 준비물: 인물이 크게 나온 사진 1장**
 
-> **목표** — 사진을 손그림·수채화 같은 애니메이션 화풍으로 바꾸되, **얼굴이 다른 사람이 되지 않게** 통제한다.
+> **목표** — 사진을 지브리풍 그림으로 바꾸되, **얼굴이 다른 사람이 되지 않게** 통제한다.
 
-![화풍 바꾸기 화면 — 유지할 것과 바꿀 것 구분, 원본 대조, 공개 시 주의](~/appendix/image-style.svg)
-
----
-
-### 먼저 알아둘 것 — 화풍 요청은 이렇게 씁니다
-
-특정 스튜디오나 작가 이름(예: "지브리풍", "○○ 작가 화풍")을 그대로 넣는 요청은 도구에 따라 **거부되거나 결과가 들쭉날쭉**합니다. 그리고 그렇게 만든 이미지를 대외에 쓰면 저작권·표절 시비가 생길 수 있습니다.
-
-**이름 대신 화풍의 특징을 적으면** 더 안정적이고 안전합니다.
-
-| 대신 이렇게 적으세요 | 얻게 되는 느낌 |
-|---------------------|---------------|
-| 손으로 그린 듯한 **수채화 애니메이션** 화풍 | 부드러운 색번짐, 따뜻한 톤 |
-| 파스텔 색감, **부드러운 윤곽선**, 풍성한 배경 | 동화 같은 분위기 |
-| **연필 스케치**에 옅은 채색 | 담백한 손그림 |
-| 두꺼운 윤곽선의 **플랫 일러스트** | 단순하고 산뜻한 인포그래픽용 |
-
-> 이렇게 적으면 **원하는 결과는 그대로 얻으면서** 특정 저작물을 흉내 냈다는 문제를 피할 수 있습니다.
+![지브리풍 이미지 만들기 화면 — 유지할 것과 바꿀 것 구분, 원본 대조](~/appendix/image-style.svg)
 
 ---
 
@@ -532,7 +515,7 @@ Download all six, name them \`emoji_01_happy.png\` style, then send one in a mes
 **이 순서가 결과를 가릅니다.** 바꿀 것부터 쓰면 AI가 얼굴까지 바꿔 버립니다.
 
 \`\`\`text
-이 사진을 손으로 그린 듯한 수채화 애니메이션 화풍으로 바꿔 줘.
+이 사진을 지브리풍 그림으로 바꿔 줘.
 
 그대로 둘 것
 - 인물의 얼굴 생김새와 표정
@@ -546,6 +529,26 @@ Download all six, name them \`emoji_01_happy.png\` style, then send one in a mes
 \`\`\`
 
 **✅ 확인** — \`그대로 둘 것\` 이 \`바꿀 것\` 보다 **위에** 있나요? 순서를 바꾸면 결과가 달라집니다.
+
+---
+
+### 지브리풍이 잘 안 나올 때 덧붙이는 말
+
+"지브리풍"만으로 부족하거나, 도구가 요청을 받지 않을 때가 있습니다. 그럴 때는 **원하는 느낌을 풀어서 덧붙이면** 거의 같은 결과가 나옵니다.
+
+| 덧붙일 말 | 얻게 되는 느낌 |
+|-----------|---------------|
+| 손으로 그린 듯한 **수채화 애니메이션** 질감으로 | 부드러운 색번짐, 따뜻한 톤 |
+| **파스텔 색감**, 부드러운 윤곽선, 풍성한 배경 | 동화 같은 분위기 |
+| 맑은 하늘과 **풀·구름의 결**이 살아 있게 | 자연 배경이 살아나는 느낌 |
+| 인물은 **단순한 선**, 배경은 **정교하게** | 애니메이션 원화 같은 대비 |
+
+\`\`\`text
+지브리풍으로, 손으로 그린 듯한 수채화 질감에 파스텔 색감으로 만들어 줘.
+하늘과 나무의 결이 살아 있게, 인물의 선은 단순하게.
+\`\`\`
+
+**✅ 확인** — 이렇게 덧붙이면 **원하는 그림체를 훨씬 안정적으로** 얻습니다.
 
 ---
 
@@ -587,31 +590,19 @@ Download all six, name them \`emoji_01_happy.png\` style, then send one in a mes
 
 ---
 
-### 공개할 때 지킬 것 세 가지
+### 공개할 때 지킬 것 두 가지
 
 | # | 지킬 것 | 이유 |
 |---|---------|------|
 | 1 | **AI로 만든 그림임을 밝힌다** | 실제 사진으로 오해받지 않게 |
 | 2 | **다른 사람 얼굴은 동의부터** | 단체 사진 속 얼굴을 가공해 올리는 것은 당사자 권리 문제 |
-| 3 | **특정 작품·작가 이름을 결과물 설명에 쓰지 않는다** | 저작권·표절 시비를 부른다 |
 
 > 시정 홍보물처럼 **대외에 나가는 자료**라면 부서의 AI 이용 지침을 먼저 확인하세요. 지침이 이 문서보다 우선합니다.`,
       contentEn: `**20 minutes · You need one photo with the person large in frame**
 
 > **Goal** — Convert a photo into a hand-drawn / watercolor animation style **without the face becoming someone else.**
 
-![Style-conversion screen](~/appendix/image-style.svg)
-
-### First — how to word a style request
-
-Naming a specific studio or artist is **refused by some tools and inconsistent in others**, and using the result publicly invites copyright complaints. **Describe the style's characteristics instead of naming it** — safer and more reliable.
-
-| Write this instead | What you get |
-|---|---|
-| Hand-drawn **watercolor animation** style | Soft bleeding color, warm tone |
-| Pastel palette, **soft outlines**, lush background | A storybook feel |
-| **Pencil sketch** with light coloring | Plain hand-drawn |
-| Thick outlines, **flat illustration** | Clean, infographic-ready |
+![Ghibli-style conversion screen](~/appendix/image-style.svg)
 
 ### STEP 1 · Choose the photo
 **✅ Check** — does the person fill at least a third of the frame? Smaller and the face smears into no one.
@@ -619,7 +610,7 @@ Naming a specific studio or artist is **refused by some tools and inconsistent i
 ### STEP 2 · "Keep" first, "change" second — the order decides the result
 
 \`\`\`text
-Convert this photo into a hand-drawn watercolor animation style.
+Convert this photo into a Ghibli-style illustration.
 
 Keep unchanged
 - The person's facial features and expression
@@ -633,6 +624,21 @@ Change
 \`\`\`
 
 **✅ Check** — is "Keep unchanged" **above** "Change"? Reversing it changes the outcome.
+
+### When the Ghibli look doesn't come through
+Sometimes "Ghibli style" alone isn't enough, or a tool won't take the request. **Spell out the look** and you get nearly the same result.
+
+| Add this | What you get |
+|---|---|
+| Hand-drawn **watercolor** texture | Soft bleeding color, warm tone |
+| **Pastel palette**, soft outlines, lush background | A storybook feel |
+| Clear sky with visible **grain in grass and clouds** | Living natural backgrounds |
+| **Simple lines** on the figure, **detailed** background | Animation-cel contrast |
+
+\`\`\`text
+Ghibli style, with a hand-drawn watercolor texture and a pastel palette.
+Keep the grain in the sky and trees; keep the figure's lines simple.
+\`\`\`
 
 ### STEP 3 · Compare against the original — face first
 
@@ -652,15 +658,345 @@ Change
 ### STEP 5 · Save and record provenance
 Keep the original separately, mark \`AI\` in the output filename, and note which tool made it.
 
-### Three rules when publishing
+### Two rules when publishing
 
 | # | Rule | Why |
 |---|---|---|
 | 1 | **Say it is AI-generated** | So it isn't mistaken for a photograph |
 | 2 | **Get consent for anyone else's face** | Processing and posting someone's face is their right to decide |
-| 3 | **Don't name a specific work or artist in the caption** | It invites copyright disputes |
 
 > For anything public-facing, check your organization's AI-use policy first — it takes precedence over this page.`,
+    },
+    {
+      title: '따라하기 ⑦ 메타 프롬프트 — 프롬프트를 AI가 대신 써 주게 하기',
+      titleEn: 'Walkthrough 7 — Meta Prompts: Let the AI Write Your Prompt',
+      content: `**소요 15분 · 앞의 따라하기 ①~⑥을 한 번 해 본 뒤에 하면 가장 좋습니다**
+
+앞에서는 완성된 프롬프트를 **베껴 썼습니다.** 하지만 실제 업무는 예시와 다릅니다. 사진도, 쓸 곳도, 원하는 느낌도 사람마다 다릅니다.
+
+**메타 프롬프트는 "프롬프트를 만들어 주는 프롬프트"** 입니다. 이것 하나를 붙여넣으면 AI가 **나에게 필요한 것을 되물어** 완성된 프롬프트를 만들어 줍니다. 내가 프롬프트 쓰는 법을 외울 필요가 없어집니다.
+
+| | 지금까지 | 메타 프롬프트를 쓰면 |
+|---|---------|-------------------|
+| 내가 하는 일 | 예시를 보고 내 상황에 맞게 고쳐 쓴다 | **질문에 답만 한다** |
+| 빠뜨리는 것 | 조건을 자주 빠뜨린다 | AI가 빠진 것을 물어본다 |
+| 결과 | 사람마다 품질이 다르다 | 누가 해도 같은 품질 |
+
+### 전체 흐름 — 이 그림 하나만 기억하면 됩니다
+
+그림의 **주황 번호가 아래 STEP 번호**입니다.
+
+![메타 프롬프트 5단계 흐름 — 붙여넣기, 질문, 번호 답, 완성 프롬프트, 되돌아가 고치기](~/appendix/meta-prompt-flow.svg)
+
+---
+
+### STEP 1 · 만능 메타 프롬프트를 붙여넣습니다
+
+이미지 작업 **무엇이든** 이 하나로 시작합니다. 새 대화창에 **첫 메시지로** 붙여넣으세요.
+
+\`\`\`text
+너는 이미지 생성 AI에게 줄 프롬프트를 대신 써 주는 도우미야.
+나는 대구광역시에서 일하는 공무원이고, 프롬프트 쓰는 법은 잘 몰라.
+
+지금부터 아래 규칙대로 나를 도와 줘.
+
+[규칙]
+1. 나에게 한 번에 한 가지씩만 물어봐. 여러 개를 한꺼번에 묻지 마.
+2. 물어볼 때는 보기를 3~4개 제시하고 번호로 답할 수 있게 해 줘.
+   내가 "잘 모르겠다"고 하면 네가 가장 무난한 것을 골라 줘.
+3. 아래 다섯 가지가 다 채워질 때까지만 물어봐. 그 이상은 묻지 마.
+   - 무엇을 만드는지 (대상)
+   - 어디에 쓸 것인지 (용도)
+   - 어떤 느낌으로 (분위기)
+   - 어떤 모양으로 (비율·글자 자리)
+   - 무엇을 넣지 말지 (금지)
+4. 다 채워지면 완성된 프롬프트를 코드 블록 하나에 담아 출력해 줘.
+   설명은 코드 블록 밖에 따로 써 줘.
+5. 완성 프롬프트에는 아래 세 줄을 항상 넣어 줘.
+   - 글자는 넣지 말고 이미지만 만들 것
+   - 실제 인물 사진처럼 보이지 않게 할 것(그림임이 드러나게)
+   - 상표·로고는 넣지 말 것
+
+준비됐으면 첫 번째 질문부터 시작해 줘.
+\`\`\`
+
+**✅ 확인** — 설명을 늘어놓지 않고 **질문 하나**가 오면 성공입니다.
+
+\`\`\`text
+좋습니다. 첫 번째 질문입니다.
+
+무엇을 만드시겠어요?
+1. 프로필 사진 배경
+2. 안내·인사 카드
+3. 행사 포스터
+4. 그 외 (직접 알려주세요)
+\`\`\`
+
+---
+
+### STEP 2 · 번호로만 답합니다
+
+생각해서 문장을 쓰지 마세요. **번호만 눌러도 됩니다.**
+
+\`\`\`text
+3
+\`\`\`
+
+모르는 질문이 오면 이렇게 답하면 됩니다.
+
+\`\`\`text
+잘 모르겠어. 네가 무난한 걸로 골라 줘.
+\`\`\`
+
+**✅ 확인** — 질문이 **다섯 번 정도** 오간 뒤 프롬프트가 나오면 정상입니다. 열 번을 넘어가면 규칙 3이 안 먹은 것이니 "다섯 가지만 묻고 끝내 줘"라고 다시 보내세요.
+
+---
+
+### STEP 3 · 나온 프롬프트를 그대로 씁니다
+
+\`\`\`text
+[완성 프롬프트]
+
+가을 독서문화 행사를 알리는 포스터의 배경 이미지를 만들어 줘.
+따뜻하고 차분한 느낌으로, 도서관과 단풍이 어우러진 분위기.
+가운데를 크게 비워 제목과 날짜를 넣을 자리를 남겨 줘.
+비율은 세로(A4).
+글자는 넣지 말고 이미지만 만들어 줘.
+실제 사진처럼 보이지 않게, 그림임이 드러나게 해 줘.
+상표·로고는 넣지 말아 줘.
+\`\`\`
+
+이것을 복사해 **이미지 생성 도구에 붙여넣습니다.**
+
+**✅ 확인** — 내가 한 일은 **번호 몇 개 누른 것뿐**인데, 앞의 따라하기 ③에서 배운 요소가 전부 들어간 프롬프트가 나왔습니다.
+
+---
+
+### STEP 4 · 결과가 아쉬우면 메타 프롬프트에게 돌아갑니다
+
+이미지 도구가 아니라 **메타 프롬프트 대화창으로** 돌아가서 말합니다.
+
+\`\`\`text
+방금 프롬프트로 만들었더니 단풍색이 너무 진하고 가운데가 덜 비었어.
+프롬프트를 고쳐서 전체를 다시 줘.
+\`\`\`
+
+**✅ 확인** — 고친 **프롬프트 전체**가 다시 나오면 성공입니다. 부분만 알려주면 붙여넣기 어려우니 "전체를 다시"라고 하세요.
+
+> **왜 메타 프롬프트로 돌아가나요?** 이미지 도구에 대고 고치면 그 대화에서만 좋아집니다. **프롬프트를 고쳐 두면 다음에도 계속 씁니다.**
+
+---
+
+### STEP 5 · 내 프롬프트 모음을 만듭니다
+
+\`\`\`text
+지금까지 만든 프롬프트를 다음에도 쓸 수 있게
+[행사명] [계절] [분위기] 만 바꿔 넣으면 되는 템플릿으로 정리해 줘.
+\`\`\`
+
+**✅ 확인** — 대괄호 빈칸이 있는 템플릿이 나오면 메모장이나 부서 공유 문서에 저장합니다. **부서원과 나누면 누가 만들어도 같은 결의 이미지가 나옵니다.**
+
+---
+
+## 작업별 메타 프롬프트 6종
+
+앞의 따라하기 ①~⑥에 하나씩 대응합니다. **필요한 것 하나만 골라** 새 대화창 첫 메시지로 붙여넣으세요.
+
+여섯 개 모두 **그림 → 붙여넣을 프롬프트** 순서로 붙여 두었습니다. 그림에서 **AI가 무엇을 물을지, 무엇이 나올지, 어떤 규칙이 자동으로 들어가는지**를 먼저 보고 시작하세요.
+
+---
+
+### ① 옛날 사진 복원용
+
+![사진 복원 메타 프롬프트 — 네 가지 질문과 자동으로 들어가는 규칙](~/appendix/meta-01-restore.svg)
+
+\`\`\`text
+너는 사진 복원 요청문을 대신 써 주는 도우미야.
+나에게 한 번에 하나씩, 보기를 주고 번호로 답하게 물어봐 줘.
+
+물어볼 것 — 사진 상태(빛바램/흐림/손상/여러 개), 인물 유무,
+원하는 정도(자연스럽게/뚜렷하게), 쓸 곳(보관용/인쇄용).
+
+다 물었으면 복원 요청문을 코드 블록으로 출력해 줘.
+요청문에는 "얼굴 생김새는 바꾸지 말고 선명도만 올릴 것" 을 반드시 넣어 줘.
+\`\`\`
+
+### ② 프로필 사진 보정·배경용
+
+![프로필 보정 메타 프롬프트 — 네 질문, 배경·보정 요청문 두 개 산출](~/appendix/meta-02-profile.svg)
+
+\`\`\`text
+너는 프로필 사진 보정 요청문을 대신 써 주는 도우미야.
+한 번에 하나씩 보기를 주고 번호로 답하게 물어봐 줘.
+
+물어볼 것 — 쓸 곳(증명사진/명함/홈페이지), 원하는 배경(흰색/단색/사무실),
+표정 인상(단정/친근), 상·하반신 범위.
+
+다 물었으면 두 개를 나눠서 출력해 줘.
+(1) 배경 제거·교체 요청문  (2) 얼굴 보정 요청문
+두 요청문 모두 "얼굴 생김새와 피부 결은 과하게 바꾸지 말 것" 을 넣어 줘.
+\`\`\`
+
+### ③ 원하는 이미지를 얻는 설명문용
+
+![이미지 설명문 메타 프롬프트 — 대상·장면·분위기·비율 네 질문과 조절법 안내](~/appendix/meta-03-describe.svg)
+
+\`\`\`text
+너는 이미지 생성 프롬프트를 대신 써 주는 도우미야.
+대상·장면·분위기·비율 네 가지를 한 번에 하나씩 물어봐 줘.
+각 질문마다 보기를 3~4개 주고 번호로 답하게 해 줘.
+내가 "모르겠다"고 하면 네가 무난한 것을 골라 줘.
+
+네 가지가 다 채워지면 완성 프롬프트를 코드 블록으로 출력하고,
+그 아래에 "이 중 무엇을 바꾸면 어떻게 달라지는지" 를 세 줄로 알려 줘.
+프롬프트에는 "글자는 넣지 말고 이미지만" 을 항상 넣어 줘.
+\`\`\`
+
+### ④ 카드·포스터·홍보물용
+
+![카드·포스터 메타 프롬프트 — 다섯 질문, 프롬프트와 제목 문구 산출](~/appendix/meta-04-poster.svg)
+
+\`\`\`text
+너는 카드·포스터·홍보물의 배경 이미지 프롬프트를 대신 써 주는 도우미야.
+한 번에 하나씩 보기를 주고 번호로 답하게 물어봐 줘.
+
+물어볼 것 — 종류(인사카드/행사포스터/가게홍보), 행사나 대상,
+계절·분위기, 글자를 넣을 자리(위/가운데/왼쪽), 비율(세로/가로/정사각형).
+
+다 물었으면 완성 프롬프트를 코드 블록으로 출력해 줘.
+프롬프트에는 아래를 반드시 넣어 줘.
+- 글자를 넣을 자리를 비워 둘 것 (내가 답한 위치)
+- 글자·상표·사람 얼굴은 넣지 말 것
+
+그리고 프롬프트 아래에, 이 이미지에 얹을 제목 문구 3개를 제안해 줘.
+\`\`\`
+
+### ⑤ 이모티콘용
+
+![이모티콘 메타 프롬프트 — 네 질문, 그림체 통일 규칙 자동 포함](~/appendix/meta-05-emoji.svg)
+
+\`\`\`text
+너는 이모티콘 제작 요청문을 대신 써 주는 도우미야.
+한 번에 하나씩 보기를 주고 번호로 답하게 물어봐 줘.
+
+물어볼 것 — 쓸 곳(메신저/부서 안내물), 표정 목록(기본 6종을 쓸지 직접 고를지),
+그림체(굵은 선 단순/부드러운 파스텔/또렷한 만화체), 배경(투명/단색).
+
+다 물었으면 완성 요청문을 코드 블록으로 출력해 줘.
+요청문에는 아래를 반드시 넣어 줘.
+- 사진 속 인물의 얼굴 특징을 유지할 것
+- 모든 장을 완전히 같은 그림체로 그릴 것
+- 정사각형, 글자 없이
+
+그리고 "한 장만 고칠 때 쓰는 문장" 을 예시로 한 줄 알려 줘.
+\`\`\`
+
+### ⑥ 지브리풍 변환용
+
+![지브리풍 변환 메타 프롬프트 — 다섯 질문, 순서가 고정된 요청문 산출](~/appendix/meta-06-ghibli.svg)
+
+\`\`\`text
+너는 사진을 지브리풍 그림으로 바꾸는 요청문을 대신 써 주는 도우미야.
+한 번에 하나씩 보기를 주고 번호로 답하게 물어봐 줘.
+
+물어볼 것 — 사진 속 인물 수, 배경(실내/공원/거리/바다),
+계절과 시간대, 얼마나 바꿀지(색감만/전체 그림체),
+쓸 곳(개인 소장/카드/대외 홍보).
+
+다 물었으면 완성 요청문을 코드 블록으로 출력해 줘.
+요청문은 반드시 이 순서로 써 줘.
+1) "지브리풍 그림으로 바꿔 줘"
+2) 그대로 둘 것 — 얼굴 생김새, 옷차림, 구도
+3) 바꿀 것 — 내가 답한 내용
+
+쓸 곳이 "대외 홍보" 라면, 요청문 아래에
+AI로 만든 그림임을 밝히는 안내 문구 예시를 한 줄 덧붙여 줘.
+\`\`\`
+
+---
+
+### 이 실습으로 손에 남는 것
+
+- 어떤 이미지 작업이든 시작할 수 있는 **만능 메타 프롬프트 1개**
+- 작업별로 골라 쓰는 **전용 메타 프롬프트 6개**
+- 내 업무에 맞게 만들어진 **완성 프롬프트와 템플릿**
+
+> 메타 프롬프트를 부서 공유 문서에 저장해 두세요. **프롬프트를 잘 쓰는 사람이 없어도, 부서 전체가 같은 품질의 이미지를 만들 수 있습니다.**`,
+      contentEn: `**15 minutes · Best done after you have tried Walkthroughs 1–6 once**
+
+So far you **copied finished prompts.** But real work differs from the examples — different photos, different uses, different moods.
+
+**A meta prompt is a prompt that writes prompts.** Paste one in and the AI **asks you what it needs** and hands back a finished prompt. You no longer have to remember how to write prompts.
+
+| | Until now | With a meta prompt |
+|---|---|---|
+| What you do | Adapt an example to your case | **Just answer questions** |
+| What gets missed | You forget conditions | The AI asks for what's missing |
+| Result | Quality varies by person | Same quality whoever does it |
+
+### STEP 1 · Paste the universal meta prompt
+Use it as the **first message** of a new chat, for **any** image task.
+
+\`\`\`text
+You write prompts for image-generation AI on my behalf.
+I am a public servant in Daegu and I don't know how to write prompts.
+
+[Rules]
+1. Ask me one thing at a time. Never several at once.
+2. Offer 3-4 options so I can answer with a number.
+   If I say "I don't know", choose the safest option for me.
+3. Ask only until these five are filled, then stop:
+   - What to make (subject)
+   - Where it will be used (purpose)
+   - What feeling (mood)
+   - What shape (ratio, space for text)
+   - What to exclude
+4. Then output the finished prompt in a single code block.
+   Put explanations outside the block.
+5. Always include these three lines in the finished prompt:
+   - No text, image only
+   - It should not look like a real photograph
+   - No brand marks or logos
+
+Start with your first question.
+\`\`\`
+
+**✅ Check** — you get **one question**, not an essay.
+
+### STEP 2 · Answer with numbers
+Don't compose sentences — a number is enough. If a question stumps you: "I don't know, pick the safe one."
+**✅ Check** — a prompt should arrive after about five exchanges. Past ten, resend "ask only the five and finish."
+
+### STEP 3 · Use the prompt as-is
+Copy the finished prompt into your image tool.
+**✅ Check** — all you did was press a few numbers, yet the prompt contains everything Walkthrough 3 teaches.
+
+### STEP 4 · If the result disappoints, go back to the meta prompt
+Not to the image tool — to the **meta-prompt chat**: "The autumn colors came out too strong and the center wasn't empty enough. Revise the prompt and give me the whole thing again."
+
+> **Why go back?** Fixing it in the image tool improves that one conversation. **Fixing the prompt keeps paying off.**
+
+### STEP 5 · Build your prompt library
+"Turn this into a template where only [event] [season] [mood] need changing."
+**✅ Check** — save the bracketed template. **Share it and everyone produces consistent images.**
+
+## Six task-specific meta prompts
+
+One for each of Walkthroughs 1–6. Pick the one you need and paste it as the first message of a new chat. Each follows the same shape: ask one question at a time with numbered options, then output a finished request in a code block with the non-negotiable safety lines built in.
+
+| For | It always enforces |
+|---|---|
+| ① Photo restoration | "Do not change facial features — increase sharpness only" |
+| ② Profile retouch & background | "Do not overly alter facial features or skin texture" |
+| ③ General image prompt | "No text, image only" + what changing each element does |
+| ④ Card / poster / promo | Leave space for text at the position you chose; no text, marks or faces |
+| ⑤ Emoji set | Keep facial features; all frames in exactly one style; square, no text |
+| ⑥ Ghibli-style conversion | Order enforced: style request → keep unchanged → change |
+
+### What you end up with
+One universal meta prompt, six task-specific ones, and finished prompts and templates fitted to your own work.
+
+> Save them in a shared document. **Even with nobody on the team who is good at prompts, the whole team can produce consistent images.**`,
     },
     {
       title: '막힐 때 이렇게 해보세요',
