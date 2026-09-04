@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 646" width="1000" height="646" role="img" aria-label="웹폼 화면 — 시트 열 이름과 맞춘 질문, 질문 유형 지정, 응답 시트 연결">
+  <title>웹폼 화면 — 시트 열 이름과 맞춘 질문, 질문 유형 지정, 응답 시트 연결</title>
+  <rect width="1000" height="646" fill="#FFFFFF"/>
+
+  <rect x="14" y="14" width="972" height="486" rx="14" fill="#FFFFFF" stroke="#D9DDE3" stroke-width="1.5"/>
+  <path d="M14 28 a14 14 0 0 1 14 -14 h944 a14 14 0 0 1 14 14 v26 h-972 z" fill="#F3F5F8"/>
+  <circle cx="40" cy="40" r="6" fill="#FF5F57"/>
+  <circle cx="60" cy="40" r="6" fill="#FEBC2E"/>
+  <circle cx="80" cy="40" r="6" fill="#28C840"/>
+  <rect x="340" y="28" width="320" height="24" rx="12" fill="#E7EAEF"/>
+  <text x="500" y="45" font-size="13" fill="#6B7280" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">forms.google.com</text>
+
+
+  <rect x="150" y="70" width="700" height="34" rx="8" fill="#673AB7"/>
+  <text x="168" y="92" font-size="15" fill="#FFFFFF" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">경로당 보수 신청 접수</text>
+  <rect x="150" y="118" width="700" height="52" rx="8" fill="#FFFFFF" stroke="#DADCE0"/><text x="168" y="140" font-size="13.5" fill="#202124" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">접수번호 *</text><text x="168" y="160" font-size="12.5" fill="#9AA0A6" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">예: 2026-0142</text><rect x="700" y="130" width="132" height="26" rx="13" fill="#E8F0FE"/><text x="766" y="147" font-size="12" fill="#174EA6" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">단답형</text><rect x="150" y="180" width="700" height="52" rx="8" fill="#FFFFFF" stroke="#DADCE0"/><text x="168" y="202" font-size="13.5" fill="#202124" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">부서 *</text><text x="168" y="222" font-size="12.5" fill="#9AA0A6" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">복지정책과 · 어르신복지과 · 문화체육과 ▾</text><rect x="700" y="192" width="132" height="26" rx="13" fill="#E8F0FE"/><text x="766" y="209" font-size="12" fill="#174EA6" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">드롭다운</text><rect x="150" y="242" width="700" height="52" rx="8" fill="#FFFFFF" stroke="#DADCE0"/><text x="168" y="264" font-size="13.5" fill="#202124" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">항목 *</text><text x="168" y="284" font-size="12.5" fill="#9AA0A6" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">예: 경로당 보수</text><rect x="700" y="254" width="132" height="26" rx="13" fill="#E8F0FE"/><text x="766" y="271" font-size="12" fill="#174EA6" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">단답형</text><rect x="150" y="304" width="700" height="52" rx="8" fill="#FFFFFF" stroke="#DADCE0"/><text x="168" y="326" font-size="13.5" fill="#202124" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">금액(천원) *</text><text x="168" y="346" font-size="12.5" fill="#9AA0A6" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">숫자만 입력</text><rect x="700" y="316" width="132" height="26" rx="13" fill="#E8F0FE"/><text x="766" y="333" font-size="12" fill="#174EA6" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">숫자</text><rect x="150" y="366" width="700" height="52" rx="8" fill="#FFFFFF" stroke="#DADCE0"/><text x="168" y="388" font-size="13.5" fill="#202124" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">요청일</text><text x="168" y="408" font-size="12.5" fill="#9AA0A6" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">2026. 09. 05.</text><rect x="700" y="378" width="132" height="26" rx="13" fill="#E8F0FE"/><text x="766" y="395" font-size="12" fill="#174EA6" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">날짜</text>
+  <rect x="150" y="440" width="120" height="34" rx="8" fill="#673AB7"/>
+  <text x="210" y="462" font-size="13.5" fill="#FFFFFF" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">보내기</text>
+  <text x="292" y="462" font-size="12.5" fill="#5F6368" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">응답은 연결된 스프레드시트에 한 줄씩 쌓입니다</text>
+
+  <rect x="146" y="114" width="708" height="56" rx="8" fill="none" stroke="#F97316" stroke-width="2" stroke-dasharray="7 5"/>
+  <rect x="696" y="128" width="140" height="34" rx="17" fill="none" stroke="#F97316" stroke-width="2" stroke-dasharray="7 5"/>
+  <rect x="146" y="436" width="708" height="42" rx="8" fill="none" stroke="#F97316" stroke-width="2" stroke-dasharray="7 5"/>
+  
+  <circle cx="44" cy="142" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="44" y="147" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">1</text>
+  
+  <circle cx="44" cy="268" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="44" y="273" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">2</text>
+  
+  <circle cx="44" cy="457" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="44" y="462" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">3</text>
+
+
+  <line x1="14" y1="520" x2="986" y2="520" stroke="#E6E8EC" stroke-width="1.5"/>
+
+  <circle cx="34" cy="550" r="12" fill="#F97316"/>
+  <text x="34" y="555" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">1</text>
+  <text x="56" y="555" font-size="14.5" fill="#1F2937" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">질문 이름을 시트의 열 이름과 똑같이 맞춘다 — 이름이 다르면 나중에 손으로 옮겨야 한다</text>
+  <circle cx="34" cy="580" r="12" fill="#F97316"/>
+  <text x="34" y="585" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">2</text>
+  <text x="56" y="585" font-size="14.5" fill="#1F2937" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">질문 유형을 정확히 고른다. 금액은 숫자, 부서는 드롭다운 — 자유 입력이면 오타가 그대로 쌓인다</text>
+  <circle cx="34" cy="610" r="12" fill="#F97316"/>
+  <text x="34" y="615" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">3</text>
+  <text x="56" y="615" font-size="14.5" fill="#1F2937" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">[응답] 탭에서 스프레드시트로 연결하면, 제출될 때마다 시트에 한 줄씩 자동으로 쌓인다</text>
+</svg>
