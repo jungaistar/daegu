@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 630" width="1000" height="630" role="img" aria-label="사례를 내 업무로 바꾸기 — 시트 이름·열·규칙·결과 위치 네 군데만 고치고 나머지는 그대로">
+  <title>사례를 내 업무로 바꾸기 — 시트 이름·열·규칙·결과 위치 네 군데만 고치고 나머지는 그대로</title>
+  <rect width="1000" height="630" fill="#FFFFFF"/>
+
+  <text x="56" y="52" font-size="14" fill="#084D7C" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">사례집의 프롬프트 (그대로 복사)</text>
+  <rect x="56" y="68" width="470" height="290" rx="12" fill="#F7F8FA" stroke="#E6E8EC"/>
+  <rect x="66" y="97" width="444" height="21" rx="5" fill="#FDE9D5"/><text x="74" y="112" font-size="12.5" fill="#1F2937" font-weight="400" font-family="'D2Coding','Consolas','Menlo','Courier New',monospace">'제출자료' 시트: 1행 제목, 2행부터 데이터</text><rect x="66" y="121" width="444" height="21" rx="5" fill="#DCEBF8"/><text x="74" y="136" font-size="12.5" fill="#1F2937" font-weight="400" font-family="'D2Coding','Consolas','Menlo','Courier New',monospace">A열 팀명, B열 항목, C열 건수, D열 제출일</text><text x="74" y="160" font-size="12.5" fill="#1F2937" font-weight="400" font-family="'D2Coding','Consolas','Menlo','Courier New',monospace"></text><rect x="66" y="169" width="444" height="21" rx="5" fill="#E6F2E8"/><text x="74" y="184" font-size="12.5" fill="#1F2937" font-weight="400" font-family="'D2Coding','Consolas','Menlo','Courier New',monospace">1. C열이 비었거나 0인 행은 제외</text><rect x="66" y="193" width="444" height="21" rx="5" fill="#E6F2E8"/><text x="74" y="208" font-size="12.5" fill="#1F2937" font-weight="400" font-family="'D2Coding','Consolas','Menlo','Courier New',monospace">2. A열+B열이 같은 행은 첫 번째만 남김</text><text x="74" y="232" font-size="12.5" fill="#1F2937" font-weight="400" font-family="'D2Coding','Consolas','Menlo','Courier New',monospace">3. A열(팀명) 기준으로 C열 합계</text><text x="74" y="256" font-size="12.5" fill="#1F2937" font-weight="400" font-family="'D2Coding','Consolas','Menlo','Courier New',monospace">4. 합계 큰 순 정렬</text><rect x="66" y="265" width="444" height="21" rx="5" fill="#F0E6F8"/><text x="74" y="280" font-size="12.5" fill="#1F2937" font-weight="400" font-family="'D2Coding','Consolas','Menlo','Courier New',monospace">5. '요약' 시트에 결과 작성</text><text x="74" y="304" font-size="12.5" fill="#1F2937" font-weight="400" font-family="'D2Coding','Consolas','Menlo','Courier New',monospace"></text><text x="74" y="328" font-size="12.5" fill="#1F2937" font-weight="400" font-family="'D2Coding','Consolas','Menlo','Courier New',monospace">상단 메뉴에 '자료 취합' 을 추가해줘.</text>
+  <text x="552" y="52" font-size="14" fill="#084D7C" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">내 것으로 바꿀 곳 — 네 군데뿐</text>
+  
+  <rect x="552" y="104" width="392" height="72" rx="10" fill="#FFFFFF" stroke="#D9DDE3"/>
+  <rect x="552" y="104" width="8" height="72" rx="4" fill="#FDE9D5"/>
+  <circle cx="582" cy="128" r="11" fill="#FDE9D5"/>
+  <text x="582" y="132" font-size="12" fill="#5B4636" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">1</text>
+  <text x="602" y="132" font-size="13.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">시트 이름</text>
+  <text x="572" y="154" font-size="12" fill="#084D7C" font-weight="400" font-family="'D2Coding','Consolas','Menlo','Courier New',monospace">'제출자료' → '월간실적'</text>
+  <text x="572" y="170" font-size="11.5" fill="#6B7280" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">내 파일의 탭 이름 그대로</text>
+  <rect x="552" y="188" width="392" height="72" rx="10" fill="#FFFFFF" stroke="#D9DDE3"/>
+  <rect x="552" y="188" width="8" height="72" rx="4" fill="#DCEBF8"/>
+  <circle cx="582" cy="212" r="11" fill="#DCEBF8"/>
+  <text x="582" y="216" font-size="12" fill="#5B4636" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">2</text>
+  <text x="602" y="216" font-size="13.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">열 문자와 이름</text>
+  <text x="572" y="238" font-size="12" fill="#084D7C" font-weight="400" font-family="'D2Coding','Consolas','Menlo','Courier New',monospace">A 팀명 → A 과명 / C 건수 → D 금액</text>
+  <text x="572" y="254" font-size="11.5" fill="#6B7280" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">문자와 이름을 함께 바꾼다</text>
+  <rect x="552" y="272" width="392" height="72" rx="10" fill="#FFFFFF" stroke="#D9DDE3"/>
+  <rect x="552" y="272" width="8" height="72" rx="4" fill="#E6F2E8"/>
+  <circle cx="582" cy="296" r="11" fill="#E6F2E8"/>
+  <text x="582" y="300" font-size="12" fill="#5B4636" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">3</text>
+  <text x="602" y="300" font-size="13.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">규칙</text>
+  <text x="572" y="322" font-size="12" fill="#084D7C" font-weight="400" font-family="'D2Coding','Consolas','Menlo','Courier New',monospace">중복 기준을 A+B → A(접수번호) 로</text>
+  <text x="572" y="338" font-size="11.5" fill="#6B7280" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">내 자료에서 무엇이 중복인지</text>
+  <rect x="552" y="356" width="392" height="72" rx="10" fill="#FFFFFF" stroke="#D9DDE3"/>
+  <rect x="552" y="356" width="8" height="72" rx="4" fill="#F0E6F8"/>
+  <circle cx="582" cy="380" r="11" fill="#F0E6F8"/>
+  <text x="582" y="384" font-size="12" fill="#5B4636" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">4</text>
+  <text x="602" y="384" font-size="13.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">결과 위치</text>
+  <text x="572" y="406" font-size="12" fill="#084D7C" font-weight="400" font-family="'D2Coding','Consolas','Menlo','Courier New',monospace">'요약' → '부서별집계'</text>
+  <text x="572" y="422" font-size="11.5" fill="#6B7280" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">없으면 새로 만들게 한다</text>
+  <rect x="50" y="62" width="482" height="302" rx="10" fill="none" stroke="#F97316" stroke-width="2" stroke-dasharray="7 5"/>
+  
+  <circle cx="26" cy="210" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="26" y="215" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">A</text>
+  <text x="56" y="392" font-size="13" fill="#9A5B12" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">나머지 문장은 손대지 않는다 — 특히 "내가 안 적은 규칙은 만들지 마" 는 반드시 남긴다</text>
+  <rect x="50" y="374" width="900" height="30" rx="8" fill="none" stroke="#F0B27A" stroke-width="2" stroke-dasharray="6 4"/>
+  
+  <circle cx="26" cy="389" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="26" y="394" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">B</text>
+  <line x1="14" y1="444" x2="986" y2="444" stroke="#E6E8EC" stroke-width="1.5"/>
+
+  <circle cx="34" cy="474" r="12" fill="#F97316"/>
+  <text x="34" y="479" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">1</text>
+  <text x="56" y="479" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">A — 사례 프롬프트에서 색이 칠해진 네 줄만 내 것으로 바꾼다. 처음부터 새로 쓰지 않는다</text>
+  <circle cx="34" cy="504" r="12" fill="#F97316"/>
+  <text x="34" y="509" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">2</text>
+  <text x="56" y="509" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">열은 문자(A·B·C)와 이름을 함께 바꾼다. 하나만 바꾸면 AI 가 다른 열을 잡는다</text>
+  <circle cx="34" cy="534" r="12" fill="#F97316"/>
+  <text x="34" y="539" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">3</text>
+  <text x="56" y="539" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">중복·제외 규칙은 사례를 그대로 두지 말고 내 자료에서 무엇이 중복인지로 바꾼다</text>
+  <circle cx="34" cy="564" r="12" fill="#F97316"/>
+  <text x="34" y="569" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">4</text>
+  <text x="56" y="569" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">결과 시트 이름을 정하고, 없으면 새로 만들라는 문장을 남긴다</text>
+  <circle cx="34" cy="594" r="12" fill="#F97316"/>
+  <text x="34" y="599" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">5</text>
+  <text x="56" y="599" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">B — 나머지 문장, 특히 "내가 안 적은 규칙은 만들지 마" 는 절대 지우지 않는다</text>
+</svg>
