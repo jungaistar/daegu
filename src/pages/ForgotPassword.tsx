@@ -48,7 +48,7 @@ const ForgotPassword = (): ReactElement => {
                 background: 'rgba(34, 197, 94, 0.1)', display: 'flex',
                 alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px'
               }}>
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#22c55e" strokeWidth="2">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#1793E6" strokeWidth="2">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
               </div>

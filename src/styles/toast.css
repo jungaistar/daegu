@@ -72,11 +72,11 @@
 
 /* ── Type Colors ── */
 .toast-success {
-    border-left: 3px solid #22c55e;
+    border-left: 3px solid #1793E6;
 }
 
 .toast-success .toast-icon {
-    color: #22c55e;
+    color: #1793E6;
 }
 
 .toast-error {

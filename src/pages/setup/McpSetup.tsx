@@ -258,7 +258,7 @@ export default function McpSetup(): ReactElement {
                   <div className="mk-menu" style={{ maxWidth: '340px' }}>
                     <div className="mk-menu-item" style={{ justifyContent: 'space-between' }}>
                       <span style={{ fontWeight: 700 }}>법령 검색</span>
-                      <span style={{ fontSize: '12px', color: '#2f8f5b', fontWeight: 700 }}>연결됨</span>
+                      <span style={{ fontSize: '12px', color: '#0E6BA8', fontWeight: 700 }}>연결됨</span>
                     </div>
                   </div>
                 </Hot>
@@ -302,7 +302,7 @@ export default function McpSetup(): ReactElement {
                   <Pin n={2} top="-14px" right="-8px" />
                 </div>
                 <div style={{ marginTop: '16px', padding: '12px 14px', borderRadius: '10px', background: '#eef1f5', fontSize: '12.5px', position: 'relative' }}>
-                  <div style={{ fontWeight: 700, marginBottom: '6px', color: '#2f8f5b' }}>법령 검색 도구 사용함</div>
+                  <div style={{ fontWeight: 700, marginBottom: '6px', color: '#0E6BA8' }}>법령 검색 도구 사용함</div>
                   지방공무원 복무규정 제7조(연가) …
                   <div style={{ marginTop: '8px', fontSize: '11.5px', color: '#6b7280' }}>출처: 국가법령정보센터</div>
                   <Pin n={3} top="-10px" right="-10px" />

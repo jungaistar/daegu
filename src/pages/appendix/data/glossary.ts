@@ -72,39 +72,5 @@ export default {
 
 > Analysis starts with clean data — don't skimp on tidying.`,
     },
-    {
-      title: '연구·논문·행정 용어',
-      titleEn: 'Research / Writing / Admin',
-      content: `논문작성·연구지원·예산회계에서 등장하는 용어입니다.
-
-| 용어 | 쉬운 설명 |
-|------|-----------|
-| **IMRaD** | 논문의 표준 구조: 서론(Introduction)-방법(Methods)-결과(Results)-논의(Discussion). |
-| **선행연구(문헌검토)** | 내 주제에 대해 이미 나온 연구들을 정리·비교하는 일. |
-| **연구 갭(Gap)** | 아직 밝혀지지 않아 내 연구가 채울 수 있는 빈틈. |
-| **IRB(연구윤리심의)** | 사람을 대상으로 한 연구의 윤리성을 사전에 심의하는 절차. |
-| **프로토콜** | 다른 사람도 똑같이 재현할 수 있게 적은 실험 절차서. |
-| **초록(Abstract)** | 논문 전체를 200~300단어로 요약한 글. |
-| **산출 근거** | 예산 항목 금액이 왜 그 액수인지 설명하는 계산 근거. |
-| **정산·증빙** | 집행한 예산을 영수증 등 증거와 함께 정리·보고하는 일. |
-| **집행률** | 편성 예산 대비 실제로 쓴 비율. |
-
-> 용어가 헷갈리면 ChatGPT에 "이 용어를 신입 직원도 알게 쉽게 설명해줘"라고 물어보세요.`,
-      contentEn: `Terms for academic writing, research, and budgeting.
-
-| Term | Plain explanation |
-|------|-------------------|
-| **IMRaD** | Standard paper structure: Introduction-Methods-Results-Discussion. |
-| **Literature review** | Organizing/comparing prior studies on your topic. |
-| **Research gap** | The unexplored space your study can fill. |
-| **IRB** | Ethics review for human-subject research. |
-| **Protocol** | A reproducible written experiment procedure. |
-| **Abstract** | A 200–300 word summary of the whole paper. |
-| **Calculation basis** | Why a budget line is that exact amount. |
-| **Settlement/evidence** | Reporting spent budget with receipts. |
-| **Execution rate** | Share of budget actually spent vs planned. |
-
-> Stuck on a term? Ask ChatGPT to "explain this so a new staff member understands."`,
-    },
   ],
 };

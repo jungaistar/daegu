@@ -800,8 +800,8 @@
 }
 
 [data-theme="dark"] .admin-table .td-badge.green {
-    background: #064E3B;
-    color: #6EE7B7;
+    background: #06304F;
+    color: #8FD8FF;
 }
 
 [data-theme="dark"] .admin-table .td-badge.yellow {
@@ -1018,7 +1018,7 @@
 
 /* Order summary card status variants — softened borders for dark */
 [data-theme="dark"] .admin-order-summary-card.paid {
-    border-left-color: #10B981;
+    border-left-color: #1793E6;
 }
 
 [data-theme="dark"] .admin-order-summary-card.cancelled {
@@ -1232,7 +1232,7 @@
     color: #E6E8EB;
 }
 
-[data-theme="dark"] .td-badge.green { background: #064E3B; color: #6EE7B7; }
+[data-theme="dark"] .td-badge.green { background: #06304F; color: #8FD8FF; }
 [data-theme="dark"] .td-badge.yellow { background: #78350F; color: #FCD34D; }
 [data-theme="dark"] .td-badge.red { background: #7F1D1D; color: #FCA5A5; }
 [data-theme="dark"] .td-badge.blue { background: #1E3A5F; color: #93C5FD; }

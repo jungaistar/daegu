@@ -124,7 +124,7 @@
     margin-right: 12px;
     flex-shrink: 0;
 }
-.post-category.notice { background: #DCFCE7; color: #166534; }
+.post-category.notice { background: #DCEEFC; color: #084D7C; }
 .post-category.resource { background: #DBEAFE; color: #1E40AF; }
 .post-category.question { background: #FEF3C7; color: #92400E; }
 .post-category.free { background: #F3F4F6; color: #4B5563; }

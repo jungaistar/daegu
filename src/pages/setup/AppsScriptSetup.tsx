@@ -231,7 +231,7 @@ export default function AppsScriptSetup(): ReactElement {
               </div>
               <div style={{ marginTop: '16px', padding: '12px', borderRadius: '8px', background: '#eef1f5', fontSize: '12.5px', color: '#6b7280' }}>
                 실행 로그<br />
-                <span style={{ color: '#2f8f5b', fontWeight: 700 }}>실행이 시작됨</span>
+                <span style={{ color: '#0E6BA8', fontWeight: 700 }}>실행이 시작됨</span>
               </div>
             </Mockup>
           }

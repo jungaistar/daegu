@@ -147,7 +147,7 @@
 }
 
 .add-to-cart-btn.added {
-    background: #0891b2;
+    background: #1793E6;
 }
 
 .add-to-cart-btn.small {
@@ -594,7 +594,7 @@
 .order-success-icon svg {
     width: 64px;
     height: 64px;
-    color: #0891b2;
+    color: #1793E6;
 }
 
 .order-confirmation h2 {

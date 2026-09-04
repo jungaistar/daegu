@@ -194,7 +194,7 @@ function analyzePrompt(text: string): ScoreResult {
 function gradeColor(grade: string) {
   switch (grade) {
     case 'S': return '#d69e2e';
-    case 'A': return '#38a169';
+    case 'A': return '#0E6BA8';
     case 'B': return '#4299e1';
     case 'C': return '#ed8936';
     default: return '#a0aec0';
@@ -202,7 +202,7 @@ function gradeColor(grade: string) {
 }
 
 function scoreBarColor(score: number) {
-  if (score >= 16) return '#38a169';
+  if (score >= 16) return '#0E6BA8';
   if (score >= 10) return '#d69e2e';
   if (score >= 5) return '#ed8936';
   return '#e53e3e';

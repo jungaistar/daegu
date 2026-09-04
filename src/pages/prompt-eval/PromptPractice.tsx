@@ -387,7 +387,7 @@ function WritePhase({ isKo, texts, setTexts, scores, setScores }: {
 
 function gradeColor(grade: string) {
   if (grade === 'S') return '#d69e2e';
-  if (grade === 'A') return '#38a169';
+  if (grade === 'A') return '#0E6BA8';
   if (grade === 'B') return '#4299e1';
   if (grade === 'C') return '#ed8936';
   return '#a0aec0';
@@ -469,7 +469,7 @@ function ResultPhase({ isKo, scores, history, user, saving, quizAnswers, evalAns
           <div className="score">{scores.quiz}</div>
           <div className="max">/ 100</div>
           <div className="result-rate-bar">
-            <div className="result-rate-fill" style={{ width: `${quizRate}%`, background: quizRate >= 80 ? '#38a169' : quizRate >= 50 ? '#d69e2e' : '#e53e3e' }} />
+            <div className="result-rate-fill" style={{ width: `${quizRate}%`, background: quizRate >= 80 ? '#0E6BA8' : quizRate >= 50 ? '#d69e2e' : '#e53e3e' }} />
           </div>
           <div className="result-rate-text">{isKo ? `정답률 ${quizRate}% (${quizCorrect}/${quizTotal})` : `${quizRate}% correct (${quizCorrect}/${quizTotal})`}</div>
         </div>
@@ -481,19 +481,19 @@ function ResultPhase({ isKo, scores, history, user, saving, quizAnswers, evalAns
           <div className="score">{scores.eval}</div>
           <div className="max">/ 50</div>
           <div className="result-rate-bar">
-            <div className="result-rate-fill" style={{ width: `${evalRate}%`, background: evalRate >= 80 ? '#38a169' : evalRate >= 50 ? '#d69e2e' : '#e53e3e' }} />
+            <div className="result-rate-fill" style={{ width: `${evalRate}%`, background: evalRate >= 80 ? '#0E6BA8' : evalRate >= 50 ? '#d69e2e' : '#e53e3e' }} />
           </div>
           <div className="result-rate-text">{isKo ? `정답률 ${evalRate}% (${evalCorrect}/${evalTotal})` : `${evalRate}% correct (${evalCorrect}/${evalTotal})`}</div>
         </div>
         <div className="result-card">
-          <div className="result-card-icon" style={{ background: 'rgba(56,161,105,0.1)', color: '#38a169' }}>
+          <div className="result-card-icon" style={{ background: 'rgba(14, 107, 168,0.1)', color: '#0E6BA8' }}>
             <i className="fa-solid fa-pen-to-square" />
           </div>
           <h4>{isKo ? '프롬프트 작성' : 'Writing'}</h4>
           <div className="score">{scores.write}</div>
           <div className="max">/ 100</div>
           <div className="result-rate-bar">
-            <div className="result-rate-fill" style={{ width: `${writeAvgTotal}%`, background: writeAvgTotal >= 70 ? '#38a169' : writeAvgTotal >= 40 ? '#d69e2e' : '#e53e3e' }} />
+            <div className="result-rate-fill" style={{ width: `${writeAvgTotal}%`, background: writeAvgTotal >= 70 ? '#0E6BA8' : writeAvgTotal >= 40 ? '#d69e2e' : '#e53e3e' }} />
           </div>
           <div className="result-rate-text">{isKo ? `SCORE 평균 ${writeAvgTotal}/100` : `SCORE avg ${writeAvgTotal}/100`}</div>
         </div>
@@ -506,7 +506,7 @@ function ResultPhase({ isKo, scores, history, user, saving, quizAnswers, evalAns
             <i className="fa-solid fa-circle-question" style={{ color: '#4299e1', marginRight: 10 }} />
             {isKo ? '1단계: 선택형 퀴즈 상세 분석' : 'Step 1: Quiz Detailed Analysis'}
           </span>
-          <span className="result-detail-badge" style={{ background: quizRate >= 80 ? '#c6f6d5' : quizRate >= 50 ? '#fefcbf' : '#fed7d7', color: quizRate >= 80 ? '#276749' : quizRate >= 50 ? '#744210' : '#c53030' }}>
+          <span className="result-detail-badge" style={{ background: quizRate >= 80 ? '#D7E9F7' : quizRate >= 50 ? '#fefcbf' : '#fed7d7', color: quizRate >= 80 ? '#084D7C' : quizRate >= 50 ? '#744210' : '#c53030' }}>
             {quizCorrect}/{quizTotal} {isKo ? '정답' : 'correct'}
           </span>
           <i className={`fa-solid fa-chevron-${expandedSection === 'quiz' ? 'up' : 'down'}`} />
@@ -562,7 +562,7 @@ function ResultPhase({ isKo, scores, history, user, saving, quizAnswers, evalAns
             <i className="fa-solid fa-clipboard-check" style={{ color: '#805ad5', marginRight: 10 }} />
             {isKo ? '2단계: 프롬프트 평가 상세 분석' : 'Step 2: Evaluation Detailed Analysis'}
           </span>
-          <span className="result-detail-badge" style={{ background: evalRate >= 80 ? '#c6f6d5' : evalRate >= 50 ? '#fefcbf' : '#fed7d7', color: evalRate >= 80 ? '#276749' : evalRate >= 50 ? '#744210' : '#c53030' }}>
+          <span className="result-detail-badge" style={{ background: evalRate >= 80 ? '#D7E9F7' : evalRate >= 50 ? '#fefcbf' : '#fed7d7', color: evalRate >= 80 ? '#084D7C' : evalRate >= 50 ? '#744210' : '#c53030' }}>
             {evalCorrect}/{evalTotal} {isKo ? '정답' : 'correct'}
           </span>
           <i className={`fa-solid fa-chevron-${expandedSection === 'eval' ? 'up' : 'down'}`} />
@@ -618,10 +618,10 @@ function ResultPhase({ isKo, scores, history, user, saving, quizAnswers, evalAns
       <div className="result-detail-section">
         <button className="result-detail-toggle" onClick={() => toggleSection('write')}>
           <span>
-            <i className="fa-solid fa-pen-to-square" style={{ color: '#38a169', marginRight: 10 }} />
+            <i className="fa-solid fa-pen-to-square" style={{ color: '#0E6BA8', marginRight: 10 }} />
             {isKo ? '3단계: 프롬프트 작성 SCORE 분석' : 'Step 3: Writing SCORE Analysis'}
           </span>
-          <span className="result-detail-badge" style={{ background: 'rgba(56,161,105,0.15)', color: '#276749' }}>
+          <span className="result-detail-badge" style={{ background: 'rgba(14, 107, 168,0.15)', color: '#084D7C' }}>
             {isKo ? `평균 ${writeAvgTotal}/100` : `Avg ${writeAvgTotal}/100`}
           </span>
           <i className={`fa-solid fa-chevron-${expandedSection === 'write' ? 'up' : 'down'}`} />
@@ -646,7 +646,7 @@ function ResultPhase({ isKo, scores, history, user, saving, quizAnswers, evalAns
                       <strong>{c.key}</strong> {isKo ? c.label : c.labelEn}
                     </span>
                     <div className="result-write-bar-track">
-                      <div className="result-write-bar-fill" style={{ width: `${pct}%`, background: avg >= 14 ? '#38a169' : avg >= 8 ? '#d69e2e' : '#e53e3e' }} />
+                      <div className="result-write-bar-fill" style={{ width: `${pct}%`, background: avg >= 14 ? '#0E6BA8' : avg >= 8 ? '#d69e2e' : '#e53e3e' }} />
                     </div>
                     <span className="result-write-bar-value">{avg}/20</span>
                   </div>
@@ -676,7 +676,7 @@ function ResultPhase({ isKo, scores, history, user, saving, quizAnswers, evalAns
                     {(Object.entries(sc) as [string, number][]).map(([k, v]) => (
                       <div className="eval-score-item" key={k}>
                         <div className="label">{k}</div>
-                        <div className="value" style={{ color: v >= 14 ? '#38a169' : v >= 8 ? '#d69e2e' : '#e53e3e' }}>{v}</div>
+                        <div className="value" style={{ color: v >= 14 ? '#0E6BA8' : v >= 8 ? '#d69e2e' : '#e53e3e' }}>{v}</div>
                       </div>
                     ))}
                   </div>
@@ -823,7 +823,7 @@ function ResultPhase({ isKo, scores, history, user, saving, quizAnswers, evalAns
             )}
             {(weakS || weakC || weakO || weakR) && (
               <Link to="/prompt-eval/workshop" className="result-recommend-item">
-                <div className="result-recommend-icon" style={{ background: 'rgba(56,161,105,0.1)', color: '#38a169' }}>
+                <div className="result-recommend-icon" style={{ background: 'rgba(14, 107, 168,0.1)', color: '#0E6BA8' }}>
                   <i className="fa-solid fa-wand-magic-sparkles" />
                 </div>
                 <div>

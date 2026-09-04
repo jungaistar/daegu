@@ -133,8 +133,8 @@
     border-radius: var(--radius-full);
 }
 .api-key-status.valid {
-    background: #D1FAE5;
-    color: #065F46;
+    background: #D1E9FA;
+    color: #084D7C;
 }
 .api-key-status.invalid {
     background: #FEE2E2;

@@ -333,11 +333,11 @@
 
 .auth-message {
   padding: 10px 14px;
-  background: #f0fdf4;
-  border: 1px solid #86efac;
-  border-left: 4px solid #22c55e;
+  background: #F5FAFE;
+  border: 1px solid #8FD8FF;
+  border-left: 4px solid #1793E6;
   border-radius: var(--radius-sm);
-  color: #16a34a;
+  color: #0E6BA8;
   font-size: 13px;
   margin-top: 12px;
 }
@@ -387,7 +387,7 @@
 }
 
 .auth-success svg {
-  color: #22c55e;
+  color: #1793E6;
   margin-bottom: 16px;
 }
 
@@ -598,7 +598,7 @@
 }
 
 .mypage-log-icon .fa-circle-plus {
-  color: #10b981;
+  color: #1793E6;
 }
 
 .mypage-log-icon .fa-circle-minus {
@@ -634,7 +634,7 @@
 }
 
 .mypage-log-amount.positive {
-  color: #10b981;
+  color: #1793E6;
 }
 
 .mypage-log-amount.negative {
