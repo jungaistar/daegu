@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 676" width="1000" height="676" role="img" aria-label="오류 대응 루프 — 하나씩 실행, 오류는 통째로 전달, 고쳐질 때까지 반복, 결과 대조와 예외 시험">
+  <title>오류 대응 루프 — 하나씩 실행, 오류는 통째로 전달, 고쳐질 때까지 반복, 결과 대조와 예외 시험</title>
+  <rect width="1000" height="676" fill="#FFFFFF"/>
+
+  <rect x="290" y="30" width="420" height="60" rx="12" fill="#FFFFFF" stroke="#D9DDE3" stroke-width="1.5"/>
+  <rect x="290" y="30" width="6" height="60" rx="3" fill="#0E6BA8"/>
+  <text x="316" y="56" font-size="14" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">메뉴에서 기능 하나를 실행한다</text>
+  <text x="316" y="76" font-size="12" fill="#6B7280" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">한꺼번에 여러 개를 실행하지 않는다 — 어디서 틀렸는지 못 찾는다</text>
+  
+  <circle cx="44" cy="60" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="44" y="65" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">1</text>
+  
+  <path d="M500 90 v24" stroke="#B6C0CC" stroke-width="2"/>
+  <path d="M494 108 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <path d="M500 117 L630 148 L500 179 L370 148 Z" fill="#FFF6ED" stroke="#F0B27A" stroke-width="1.5"/>
+  <text x="500" y="153" font-size="13" fill="#9A5B12" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">오류 메시지가 떴나?</text>
+  <text x="330" y="190" font-size="13" fill="#C2410C" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">예</text>
+  <path d="M370 148 h-190 v52" stroke="#F0B27A" stroke-width="2" fill="none"/>
+  <path d="M174 194 l6 6 l6 -6" fill="none" stroke="#F0B27A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="60" y="206" width="240" height="72" rx="12" fill="#FEF2F2" stroke="#F5C2C2"/>
+  <text x="76" y="232" font-size="13.5" fill="#B42318" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">오류 문장을 통째로 복사</text>
+  <text x="76" y="254" font-size="12" fill="#9A3412" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">줄 번호·오류 이름까지 그대로.</text>
+  <text x="76" y="270" font-size="12" fill="#9A3412" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">요약하거나 고쳐 쓰지 않는다.</text>
+  
+  <circle cx="44" cy="242" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="44" y="247" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">2</text>
+  
+  <path d="M180 278 v22" stroke="#F0B27A" stroke-width="2"/>
+  <path d="M174 294 l6 6 l6 -6" fill="none" stroke="#F0B27A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="60" y="300" width="240" height="72" rx="12" fill="#F5FAFE" stroke="#D7E9F7"/>
+  <text x="76" y="326" font-size="13.5" fill="#084D7C" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">AI 에 붙여넣고 요청</text>
+  <text x="76" y="348" font-size="12" fill="#4B5563" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">"무슨 뜻이고 어떻게 고치는지,</text>
+  <text x="76" y="364" font-size="12" fill="#4B5563" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">고친 코드 전체로 다시 줘"</text>
+  
+  <circle cx="44" cy="336" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="44" y="341" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">3</text>
+  
+  <path d="M180 372 v22" stroke="#B6C0CC" stroke-width="2"/>
+  <path d="M174 388 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="60" y="394" width="240" height="56" rx="12" fill="#FFFFFF" stroke="#D9DDE3"/>
+  <text x="76" y="420" font-size="13.5" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">전체를 다시 붙여넣고</text>
+  <text x="76" y="440" font-size="12.5" fill="#4B5563" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">저장 → 다시 실행</text>
+  <path d="M300 422 h60 a10 10 0 0 0 10 -10 v-352 a10 10 0 0 0 -10 -10 h-64" stroke="#F5B37A" stroke-width="2" fill="none" stroke-dasharray="6 5"/>
+  <path d="M302 44 l-6 6 l6 6" fill="none" stroke="#F5B37A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="378" y="240" font-size="11.5" fill="#C2410C" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">고쳐질 때까지</text>
+  <text x="672" y="190" font-size="13" fill="#0E6BA8" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">아니오</text>
+  <path d="M630 148 h190 v52" stroke="#B6C0CC" stroke-width="2" fill="none"/>
+  <path d="M814 194 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="700" y="206" width="240" height="72" rx="12" fill="#F5FAFE" stroke="#D7E9F7"/>
+  <text x="716" y="232" font-size="13.5" fill="#084D7C" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">결과를 원본과 대조</text>
+  <text x="716" y="254" font-size="12" fill="#4B5563" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">행 개수 · 합계 · 빠진 항목.</text>
+  <text x="716" y="270" font-size="12" fill="#4B5563" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">오류가 없어도 틀릴 수 있다.</text>
+  
+  <circle cx="968" cy="242" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="968" y="247" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">4</text>
+  
+  <path d="M820 278 v22" stroke="#B6C0CC" stroke-width="2"/>
+  <path d="M814 294 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="700" y="300" width="240" height="72" rx="12" fill="#F5FAFE" stroke="#D7E9F7"/>
+  <text x="716" y="326" font-size="13.5" fill="#084D7C" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">예외 상황을 넣어 본다</text>
+  <text x="716" y="348" font-size="12" fill="#4B5563" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">빈 행 · 중복 · 숫자 자리 문자 ·</text>
+  <text x="716" y="364" font-size="12" fill="#4B5563" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">0건 · 아주 많은 행</text>
+  
+  <circle cx="968" cy="336" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="968" y="341" font-size="14" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">5</text>
+  
+  <path d="M820 372 v22" stroke="#B6C0CC" stroke-width="2"/>
+  <path d="M814 388 l6 6 l6 -6" fill="none" stroke="#B6C0CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="700" y="394" width="240" height="56" rx="12" fill="#E9F5FE" stroke="#B6D5EC"/>
+  <text x="716" y="428" font-size="13.5" fill="#084D7C" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">작동 가능한 도구 초안 완성</text>
+  <line x1="14" y1="490" x2="986" y2="490" stroke="#E6E8EC" stroke-width="1.5"/>
+
+  <circle cx="34" cy="520" r="12" fill="#F97316"/>
+  <text x="34" y="525" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">1</text>
+  <text x="56" y="525" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">기능을 하나씩 실행한다. 여러 개를 한꺼번에 돌리면 어느 기능이 틀렸는지 못 찾는다</text>
+  <circle cx="34" cy="550" r="12" fill="#F97316"/>
+  <text x="34" y="555" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">2</text>
+  <text x="56" y="555" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">오류 문장은 요약하지 말고 통째로 복사한다 — 줄 번호와 오류 이름이 해결의 열쇠다</text>
+  <circle cx="34" cy="580" r="12" fill="#F97316"/>
+  <text x="34" y="585" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">3</text>
+  <text x="56" y="585" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">"고친 코드 전체로 다시 줘" 라고 해야 붙여넣기 쉽다. 부분만 받으면 어디를 바꿀지 모른다</text>
+  <circle cx="34" cy="610" r="12" fill="#F97316"/>
+  <text x="34" y="615" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">4</text>
+  <text x="56" y="615" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">오류가 없어도 결과가 틀릴 수 있다. 행 개수와 합계는 사람이 원본과 대조한다</text>
+  <circle cx="34" cy="640" r="12" fill="#F97316"/>
+  <text x="34" y="645" font-size="13" fill="#fff" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">5</text>
+  <text x="56" y="645" font-size="14.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">실제 업무 자료에는 늘 예외가 있다. 빈 행·중복·0건을 일부러 넣어 봐야 안심하고 쓴다</text>
+</svg>
