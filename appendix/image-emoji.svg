@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 750" width="980" height="750" role="img" aria-label="이모티콘 만들기 화면 — 사진 첨부, 다섯 조건 지정, 표정 6종 결과, 한 장씩 수정">
+  <title>이모티콘 만들기 화면 — 사진 첨부, 다섯 조건 지정, 표정 6종 결과, 한 장씩 수정</title>
+  <rect width="980" height="750" fill="#FFFFFF"/>
+
+  <rect x="14" y="14" width="952" height="560" rx="16" fill="#FFFFFF" stroke="#D9DDE3" stroke-width="1.5"/>
+  <path d="M14 30 a16 16 0 0 1 16 -16 h920 a16 16 0 0 1 16 16 v26 h-952 z" fill="#F3F5F8"/>
+  <circle cx="40" cy="42" r="6" fill="#FF5F57"/>
+  <circle cx="60" cy="42" r="6" fill="#FEBC2E"/>
+  <circle cx="80" cy="42" r="6" fill="#28C840"/>
+  <rect x="336" y="30" width="308" height="24" rx="12" fill="#E7EAEF"/>
+  <text x="490" y="47" font-size="13" fill="#6B7280" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">이미지 생성 AI</text>
+
+  <line x1="234" y1="56" x2="234" y2="574" stroke="#E6E8EC" stroke-width="1.5"/>
+  <rect x="26" y="76" width="188" height="32" rx="9" fill="#0E6BA8"/>
+  <text x="120" y="97" font-size="13.5" fill="#FFFFFF" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif" text-anchor="middle">+ 새 대화</text>
+  
+  <rect x="26" y="120" width="188" height="28" rx="8" fill="#EDF1F6"/>
+  <text x="40" y="139" font-size="12.5" fill="#1F2937" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">이모티콘 만들기</text>
+  <rect x="26" y="158" width="188" height="28" rx="8" fill="none"/>
+  <text x="40" y="177" font-size="12.5" fill="#7B828C" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">프로필 배경</text>
+  <rect x="26" y="196" width="188" height="28" rx="8" fill="none"/>
+  <text x="40" y="215" font-size="12.5" fill="#7B828C" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">명절 카드</text>
+
+  <text x="286" y="94" font-size="17" fill="#111827" font-weight="700" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">내 사진으로 이모티콘 만들기</text>
+
+  <rect x="472" y="122" width="470" height="108" rx="12" fill="#EAF2FA" stroke="#CBDDEE"/>
+  <text x="488" y="148" font-size="13" fill="#374151" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">[첨부] 내사진.jpg</text><text x="488" y="169" font-size="13" fill="#374151" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">이 사진 속 인물의 얼굴 특징을 유지한 채 이모티콘용 캐릭터로 만들어 줘.</text><text x="488" y="190" font-size="13" fill="#374151" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">표정 6종(기쁨·슬픔·놀람·화남·졸림·좋아요), 배경은 투명하게,</text><text x="488" y="211" font-size="13" fill="#374151" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">선이 굵고 단순한 그림체로, 정사각형으로.</text>
+  <rect x="466" y="116" width="482" height="120" rx="12" fill="none" stroke="#F97316" stroke-width="2" stroke-dasharray="7 5"/>
+  
+  <circle cx="236" cy="140" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="236" y="145" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">2</text>
+
+  <rect x="286" y="232" width="632" height="128" rx="12" fill="#F7F8FA" stroke="#E6E8EC"/>
+  
+  <rect x="308" y="254" width="74" height="74" rx="13.32" fill="#FFF4E0" stroke="#DCE1E7"/>
+  <circle cx="345" cy="288.04" r="14.8" fill="#F3D9C6"/>
+  <path d="M330.2 285.08 a14.8 14.8 0 0 1 29.6 0 z" fill="#5B4636"/>
+  <path d="M322.8 317.64 a22.2 19.240000000000002 0 0 1 44.4 0 z" fill="#F3D9C6"/>
+  <text x="345" y="343" font-size="11.5" fill="#6B7280" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">기쁨</text>
+  <rect x="408" y="254" width="74" height="74" rx="13.32" fill="#E8F0FB" stroke="#DCE1E7"/>
+  <circle cx="445" cy="288.04" r="14.8" fill="#F3D9C6"/>
+  <path d="M430.2 285.08 a14.8 14.8 0 0 1 29.6 0 z" fill="#5B4636"/>
+  <path d="M422.8 317.64 a22.2 19.240000000000002 0 0 1 44.4 0 z" fill="#F3D9C6"/>
+  <text x="445" y="343" font-size="11.5" fill="#6B7280" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">슬픔</text>
+  <rect x="508" y="254" width="74" height="74" rx="13.32" fill="#FDECEF" stroke="#DCE1E7"/>
+  <circle cx="545" cy="288.04" r="14.8" fill="#F3D9C6"/>
+  <path d="M530.2 285.08 a14.8 14.8 0 0 1 29.6 0 z" fill="#5B4636"/>
+  <path d="M522.8 317.64 a22.2 19.240000000000002 0 0 1 44.4 0 z" fill="#F3D9C6"/>
+  <text x="545" y="343" font-size="11.5" fill="#6B7280" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">놀람</text>
+  <rect x="608" y="254" width="74" height="74" rx="13.32" fill="#FDE8E4" stroke="#DCE1E7"/>
+  <circle cx="645" cy="288.04" r="14.8" fill="#F3D9C6"/>
+  <path d="M630.2 285.08 a14.8 14.8 0 0 1 29.6 0 z" fill="#5B4636"/>
+  <path d="M622.8 317.64 a22.2 19.240000000000002 0 0 1 44.4 0 z" fill="#F3D9C6"/>
+  <text x="645" y="343" font-size="11.5" fill="#6B7280" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">화남</text>
+  <rect x="708" y="254" width="74" height="74" rx="13.32" fill="#EFEBF9" stroke="#DCE1E7"/>
+  <circle cx="745" cy="288.04" r="14.8" fill="#F3D9C6"/>
+  <path d="M730.2 285.08 a14.8 14.8 0 0 1 29.6 0 z" fill="#5B4636"/>
+  <path d="M722.8 317.64 a22.2 19.240000000000002 0 0 1 44.4 0 z" fill="#F3D9C6"/>
+  <text x="745" y="343" font-size="11.5" fill="#6B7280" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">졸림</text>
+  <rect x="808" y="254" width="74" height="74" rx="13.32" fill="#E6F6EC" stroke="#DCE1E7"/>
+  <circle cx="845" cy="288.04" r="14.8" fill="#F3D9C6"/>
+  <path d="M830.2 285.08 a14.8 14.8 0 0 1 29.6 0 z" fill="#5B4636"/>
+  <path d="M822.8 317.64 a22.2 19.240000000000002 0 0 1 44.4 0 z" fill="#F3D9C6"/>
+  <text x="845" y="343" font-size="11.5" fill="#6B7280" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">좋아요</text>
+  <rect x="280" y="226" width="644" height="140" rx="12" fill="none" stroke="#F97316" stroke-width="2" stroke-dasharray="7 5"/>
+  
+  <circle cx="236" cy="250" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="236" y="255" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">3</text>
+
+  <rect x="286" y="378" width="632" height="72" rx="12" fill="#F7F8FA" stroke="#E6E8EC"/>
+  <text x="302" y="404" font-size="13" fill="#374151" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">3번(놀람)만 눈을 더 크게, 나머지는 그대로 다시 만들어 줘.</text>
+  <text x="302" y="430" font-size="12.5" fill="#6B7280" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">→ 한 장씩 고쳐 나가면 여섯 장의 결이 흐트러지지 않습니다.</text>
+  <rect x="280" y="372" width="644" height="84" rx="12" fill="none" stroke="#F97316" stroke-width="2" stroke-dasharray="7 5"/>
+  
+  <circle cx="236" cy="396" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="236" y="401" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">4</text>
+
+  <rect x="286" y="482" width="656" height="60" rx="14" fill="#FFFFFF" stroke="#D3D8DF" stroke-width="1.5"/>
+  <circle cx="318" cy="512" r="15" fill="#EDF1F5"/>
+  <path d="M312 507 l7 -7 a4.5 4.5 0 0 1 6.4 6.4 l-9 9 a7 7 0 0 1 -10 -10 l9 -9"
+        fill="none" stroke="#4B5563" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="344" y="517" font-size="13.5" fill="#9AA1AB" font-weight="400" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">무엇이든 물어보세요</text>
+  <rect x="886" y="496" width="42" height="32" rx="9" fill="#0E6BA8"/>
+  <path d="M900 518 l7 -8 l7 8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="280" y="476" width="668" height="72" rx="12" fill="none" stroke="#F97316" stroke-width="2" stroke-dasharray="7 5"/>
+  
+  <circle cx="236" cy="512" r="13" fill="#F97316" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="236" y="517" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">1</text>
+
+  <line x1="14" y1="594" x2="966" y2="594" stroke="#E6E8EC" stroke-width="1.5"/>
+
+  <circle cx="34" cy="624" r="12" fill="#F97316"/>
+  <text x="34" y="629" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">1</text>
+  <text x="56" y="629" font-size="14.5" fill="#1F2937" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">얼굴이 정면으로 크게 나온 사진 한 장을 붙인다 — 옆모습·단체사진은 결과가 나쁘다</text>
+  <circle cx="34" cy="654" r="12" fill="#F97316"/>
+  <text x="34" y="659" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">2</text>
+  <text x="56" y="659" font-size="14.5" fill="#1F2937" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">"얼굴 특징 유지" · 표정 개수 · 배경 투명 · 그림체 · 정사각형 다섯 가지를 함께 적는다</text>
+  <circle cx="34" cy="684" r="12" fill="#F97316"/>
+  <text x="34" y="689" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">3</text>
+  <text x="56" y="689" font-size="14.5" fill="#1F2937" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">여섯 장의 그림체가 서로 같은지 먼저 본다. 다르면 "여섯 장을 같은 그림체로" 다시 요청</text>
+  <circle cx="34" cy="714" r="12" fill="#F97316"/>
+  <text x="34" y="719" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">4</text>
+  <text x="56" y="719" font-size="14.5" fill="#1F2937" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">고칠 곳은 번호를 집어 한 장씩 — 전체를 다시 만들면 앞의 마음에 든 장까지 바뀐다</text>
+</svg>
