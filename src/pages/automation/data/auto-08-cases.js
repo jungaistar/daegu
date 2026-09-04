@@ -5,6 +5,234 @@ export default {
   titleEn: 'Case Library by Division',
   sections: [
     {
+      title: '따라하기 실습 · 사례를 내 업무로 바꿔 쓰기',
+      titleEn: 'Hands-on — Adapting a Case to Your Own Work',
+      content: `**소요 40분 · 준비물: 내 부서의 실제 반복 업무 자료 1건(개인정보 지운 복사본)**
+**산출물: 내 업무로 바꾼 프롬프트와 돌아가는 도구**
+
+다음 절의 사례집에는 **그대로 복사해 쓰는 프롬프트**가 붙어 있습니다. 다만 시트 이름도 열 구성도 내 것과 다릅니다. 이 실습은 **그 차이를 메우는 절차**입니다.
+
+> **처음부터 새로 쓰지 마세요.** 사례를 고쳐 쓰는 것이 훨씬 빠르고, 사례에 이미 들어 있는 안전장치(중복 처리·총합 검증·"안 적은 규칙은 만들지 마")를 그대로 물려받습니다.
+
+---
+
+## 1부 · 사례 고르기 (STEP 1~2)
+
+그림의 **주황 번호가 STEP 번호**입니다.
+
+![사례 고르기 — 부서가 아니라 자료 모양·하는 일·규칙 명확성으로 고르고, 6종 중에서 선택](~/automation/auto-case-pick.svg)
+
+---
+
+### STEP 1 · 부서 이름이 아니라 세 가지로 고릅니다
+
+**"나는 민원 담당이니 민원 사례"** 로 고르지 마세요. 다른 과 사례가 더 맞는 일이 흔합니다.
+
+| 볼 것 | 내 업무는? |
+|-------|-----------|
+| **들어오는 자료의 모양** | 표 한 장 / 여러 파일 / 폼 응답 |
+| **하는 일의 종류** | 합치기 / 분류 / 계산 / 글 만들기 |
+| **규칙이 정해져 있나** | "이럴 땐 이렇게" 를 말로 쓸 수 있나 |
+
+**✅ 확인** — 세 칸을 채운 뒤 사례집을 훑습니다. 예를 들어 **교육 담당의 "수강 신청 정리"** 는 자료 모양·하는 일이 **총무의 "팀별 제출자료 취합"** 과 같습니다. 그 사례를 가져오면 됩니다.
+
+---
+
+### STEP 2 · 고른 사례의 프롬프트를 열어 열 이름을 대조합니다
+
+**✅ 확인** — 사례 프롬프트에 적힌 열이 **내 자료에 실제로 있는지** 봅니다.
+
+| 상태 | 판정 | 다음 |
+|------|------|------|
+| 이름만 다르고 다 있다 | **가장 좋은 경우** | 그대로 STEP 3으로 |
+| 내 자료에 없는 열이 있다 | 그 규칙을 빼면 된다 | STEP 3에서 해당 줄 삭제 |
+| 사례에 없는 열이 내게 더 있다 | 나중에 덧붙인다 | STEP 6에서 추가 |
+| 절반 이상이 안 맞는다 | 사례를 잘못 골랐다 | **STEP 1로 돌아간다** |
+
+> **절감시간이 큰 사례를 고르지 마세요.** 규칙이 가장 명확한 사례가 끝까지 갑니다.
+
+---
+
+## 2부 · 내 것으로 바꾸기 (STEP 3~5)
+
+![사례를 내 업무로 바꾸기 — 시트 이름·열·규칙·결과 위치 네 군데만 고치고 나머지는 그대로](~/automation/auto-case-adapt.svg)
+
+---
+
+### STEP 3 · 네 군데만 바꿉니다
+
+사례 프롬프트를 메모장에 붙여넣고 **아래 네 곳만** 고칩니다.
+
+| # | 바꿀 곳 | 예 (총무 사례 → 예산 담당) |
+|---|---------|------------------------|
+| 1 | **시트 이름** | \`'제출자료'\` → \`'월간실적'\` |
+| 2 | **열 문자와 이름** | \`A열 팀명\` → \`A열 과명\` · \`C열 건수\` → \`D열 금액\` |
+| 3 | **규칙** | 중복 기준을 \`A열+B열\` → \`A열(접수번호)\` |
+| 4 | **결과 위치** | \`'요약'\` → \`'부서별집계'\` |
+
+**✅ 확인** — 두 가지를 꼭 지키세요.
+
+- **열은 문자와 이름을 함께 바꿉니다.** \`C열 건수\` 를 \`금액\` 으로만 바꾸고 문자를 그대로 두면 AI가 엉뚱한 열을 잡습니다.
+- **나머지 문장은 손대지 않습니다.** 특히 마지막 줄 **\`내가 안 적은 규칙은 만들지 마\`** 는 반드시 남깁니다. 이 한 줄이 AI가 임의로 규칙을 지어내는 것을 막습니다.
+
+---
+
+### STEP 4 · 보내기 전에 스스로 읽어봅니다
+
+바꾼 프롬프트를 **처음 보는 사람 눈으로** 읽습니다.
+
+| 점검 | 통과 기준 |
+|------|----------|
+| 시트 이름 | 내 파일의 **탭 이름과 글자 하나까지 같은가** |
+| 열 문자 | \`A\` \`B\` \`C\` 가 실제 시트의 그 열인가 |
+| 남은 흔적 | 사례의 원래 단어(팀명·제출일 등)가 안 남아 있는가 |
+| 결과 시트 | 없을 때 새로 만들라는 문장이 있는가 |
+
+**✅ 확인** — 네 번째 항목이 자주 빠집니다. 없으면 이 문장을 덧붙이세요.
+
+\`\`\`text
+결과 시트가 없으면 새로 만들고, 있으면 내용을 지운 뒤 다시 채워 줘.
+\`\`\`
+
+---
+
+### STEP 5 · 보내고 실행해 봅니다
+
+AI에 보낸 뒤 **4교시와 같은 순서**로 진행합니다.
+
+1. 되물음이 오면 답한다
+2. 받은 코드를 \`[확장 프로그램] → [Apps Script]\` 에 붙여넣고 저장
+3. 시트 새로고침 → 새로 생긴 메뉴에서 실행
+4. **결과 탭과 원본 탭을 둘 다** 확인
+
+**✅ 확인** — 사례 프롬프트에는 대개 **총합 검증 알림**이 들어 있습니다.
+
+\`\`\`text
+총 3개 과, 26건 / 원본 총합 26건
+\`\`\`
+
+**두 숫자가 같은지** 보세요. 다르면 경고가 뜨도록 사례에 이미 들어 있습니다. 이것이 사례를 고쳐 쓰는 이유입니다 — **안전장치를 물려받습니다.**
+
+---
+
+## 3부 · 내 것으로 키우기 (STEP 6~7)
+
+### STEP 6 · 사례에 없던 내 규칙을 덧붙입니다
+
+기본형이 돌아간 뒤에 **하나씩** 추가합니다. 한꺼번에 여러 개를 넣지 마세요.
+
+\`\`\`text
+지금 코드에 아래 규칙 하나만 추가해 줘. 나머지 동작은 그대로 두고,
+고친 코드 전체를 다시 줘.
+
+- 금액이 10,000천원을 넘는 행은 비고 열에 "검토대상" 이라고 표시한다.
+\`\`\`
+
+**✅ 확인** — 규칙 하나를 추가할 때마다 **다시 실행해 총합이 그대로인지** 봅니다. 규칙을 추가하다 집계가 틀어지는 일이 자주 있습니다.
+
+---
+
+### STEP 7 · 우리 부서 사례집에 등록합니다
+
+내가 고친 프롬프트를 **부서 공유 문서에 사례 형식으로** 남깁니다. 다음 사람이 또 처음부터 하지 않게 됩니다.
+
+\`\`\`text
+| 항목 | 내용 |
+|------|------|
+| 업무 이름 | 월간 부서별 실적 취합 |
+| 원본 사례 | 사례집 「총무·서무 · 팀별 제출자료 취합」 |
+| 바꾼 곳 | 시트명, 열 이름 4개, 중복 기준, 결과 시트명 |
+| 시트 구조 | A 과명 / B 항목 / C 건수 / D 금액 / E 상태 |
+| 프롬프트 | (바꾼 전체 프롬프트 붙여넣기) |
+| 주의 | 과 이름 띄어쓰기가 섞이면 따로 집계됨 |
+\`\`\`
+
+**✅ 확인** — 마지막 **주의** 칸이 핵심입니다. 내가 겪은 함정을 적어 두면 다음 사람이 같은 자리에서 안 넘어집니다.
+
+---
+
+### 완성 점검표
+
+| # | 항목 | 확인 |
+|---|------|------|
+| 1 | 부서가 아니라 **자료 모양·하는 일·규칙**으로 사례를 골랐다 | |
+| 2 | 사례의 열이 내 자료에 있는지 대조했다 | |
+| 3 | 네 군데(시트명·열·규칙·결과 위치)만 바꿨다 | |
+| 4 | 열은 **문자와 이름을 함께** 바꿨다 | |
+| 5 | \`내가 안 적은 규칙은 만들지 마\` 문장을 남겼다 | |
+| 6 | 실행 후 **총합 검증 숫자 두 개가 같았다** | |
+| 7 | 원본 시트가 수정되지 않았다 | |
+| 8 | 추가 규칙은 하나씩 넣고 매번 다시 확인했다 | |
+| 9 | 부서 공유 문서에 사례로 등록했다 | |
+
+> 9개가 채워지면 **사례집이 내 부서 사례집이 됩니다.** 다음 절에서 6개 부서 사례를 골라 이 절차를 적용하세요.`,
+      contentEn: `**40 minutes · You need one real recurring work file (a copy with personal data removed)**
+**Deliverable: an adapted prompt and a working tool**
+
+The case library gives you **copy-and-paste prompts** — but with different sheet names and columns from yours. This walkthrough is **the procedure for closing that gap.**
+
+> **Don't start from scratch.** Adapting a case is faster, and you inherit the safety features already baked into it — duplicate handling, total reconciliation, and "don't invent rules I didn't state."
+
+## Part 1 · Choosing a case
+![Choosing a case](~/automation/auto-case-pick.svg)
+
+**STEP 1 · Choose by three things, not by division name.** "I'm in civil affairs so I'll take the civil affairs case" is wrong — another division's case often fits better.
+
+| Look at | Yours? |
+|---|---|
+| **Shape of the input** | One table / several files / form responses |
+| **Kind of work** | Merging / classifying / calculating / writing |
+| **Are the rules fixed?** | Can you write "when X, do Y" in words? |
+
+**✅ Check** — training's "course registration cleanup" has the same shape and work as general affairs' "team submission consolidation." Take that one.
+
+**STEP 2 · Open the case prompt and compare the columns.**
+
+| State | Verdict | Next |
+|---|---|---|
+| Same columns, different names | **Best case** | STEP 3 |
+| A column in the case is missing here | Drop that rule | Delete that line in STEP 3 |
+| You have extra columns | Add later | STEP 6 |
+| More than half don't match | Wrong case | **Back to STEP 1** |
+
+> Don't pick the case with the biggest time saving. **The one with the clearest rules is the one that finishes.**
+
+## Part 2 · Adapting it
+![Adapting a case](~/automation/auto-case-adapt.svg)
+
+**STEP 3 · Change exactly four things** — sheet name, column letters *and* names, the rules, the destination sheet.
+
+**✅ Check** — two things matter:
+- **Change the letter and the name together.** Renaming \`C 건수\` to \`금액\` while leaving the letter makes the AI read the wrong column.
+- **Leave everything else alone** — especially \`내가 안 적은 규칙은 만들지 마\` ("don't invent rules I didn't state"). That single line is what stops the model making things up.
+
+**STEP 4 · Re-read it as a stranger would**
+
+| Check | Pass |
+|---|---|
+| Sheet name | Character-for-character identical to your tab |
+| Column letters | Actually those columns in your sheet |
+| Leftovers | No original case words remain |
+| Destination | A line saying to create it if missing |
+
+The fourth is the one people forget: "Create the destination sheet if it doesn't exist; if it does, clear it and refill."
+
+**STEP 5 · Send it and run it** — same order as Session 4. Answer any questions, paste into Apps Script, save, refresh, run from the menu, and check **both the result tab and the source tab.**
+
+**✅ Check** — case prompts usually include a **total reconciliation notice**: "3 divisions, 26 records / source total 26." Confirm the two numbers match. That warning is already in the case — **this is why you adapt rather than rewrite: you inherit the safeguards.**
+
+## Part 3 · Growing it
+
+**STEP 6 · Add your own rules one at a time.** After each addition, re-run and confirm the totals still match — adding rules is where aggregates quietly break.
+
+**STEP 7 · Register it in your division's own case library** — task name, which case it came from, what you changed, your sheet structure, the full prompt, and **the pitfalls you hit.** That last field is the valuable one: it stops the next person tripping in the same place.
+
+### Completion checklist
+Chose by shape/work/rules · compared columns · changed only four things · letters and names together · kept the "don't invent rules" line · totals reconciled · source untouched · added rules one at a time · registered in the shared library.
+
+> Nine checks turn the case library into **your division's case library.**`,
+    },
+    {
       title: '내 부서 업무로 골라 쓰기',
       titleEn: 'Pick the Case That Matches Your Work',
       content: `2교시에 고를 업무가 떠오르지 않으면 여기서 찾으세요. **대구시 부서에서 실제로 반복되는 업무**를 기준으로 정리했습니다.
