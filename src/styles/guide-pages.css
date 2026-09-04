@@ -405,6 +405,22 @@
 .code-block-content .token.decorator { color: #FFAB91; }
 .code-block-content .code-line-highlight { background: var(--accent-soft); display: block; }
 
+/* ── 본문 강조(<mark>) — 표 안의 분류 라벨에 쓴다 ── */
+.markdown-body mark {
+    background: var(--bg-medium-gray);
+    color: var(--primary-blue-dark);
+    padding: 1px 7px;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 0.94em;
+    white-space: nowrap;
+}
+
+[data-theme="dark"] .markdown-body mark {
+    background: rgba(14, 107, 168, 0.22);
+    color: var(--primary-blue-light);
+}
+
 /* ── TipBox ── */
 .tip-box {
     display: flex;
