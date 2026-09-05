@@ -122,12 +122,40 @@ export default function RecommendedSites(): ReactElement {
         path="/recommended"
       />
 
-      <section className="page-header">
+      {/* 고급 · 데이터분석 및 활용 과정과 같은 program-hero 디자인 */}
+      <section className="program-hero" style={{ borderBottom: '3px solid #C8A04A' }}>
         <div className="container">
-          <h1>{isKo ? '추천사이트' : 'Recommended Sites'}</h1>
-          <p>{isKo
-            ? '교육과 업무에 유용한 AI 서비스와 관련 사이트를 소개합니다.'
-            : 'Useful AI services and related sites for education and work.'}</p>
+          <div className="program-hero-inner">
+            <div className="program-hero-icon" style={{ background: '#C8A04A' }}>
+              <i className="fa-solid fa-star" />
+            </div>
+            <div className="program-hero-text">
+              <div className="eyebrow">
+                {isKo ? '추천사이트 · 엄선한 AI 서비스' : 'Recommended · Curated AI Services'}
+              </div>
+              <h1>{isKo ? '추천사이트' : 'Recommended Sites'}</h1>
+              <p className="program-hero-tagline">
+                {isKo ? '업무에 바로 쓸 수 있는 AI 서비스 모음' : 'AI services you can use at work today'}
+              </p>
+              <p className="program-hero-desc">
+                {isKo
+                  ? '교육과 업무에 유용한 AI 서비스와 관련 사이트를 골라 소개합니다. 각 카드를 누르면 해당 서비스로 바로 이동합니다.'
+                  : 'A curated set of AI services and related sites for education and work. Select a card to open the service directly.'}
+              </p>
+              <div className="program-hero-meta">
+                <span><i className="fa-solid fa-user-check" /> {isKo ? '대구광역시 공무원' : 'Daegu city officials'}</span>
+                <span><i className="fa-solid fa-layer-group" /> {SITES.length}{isKo ? '개 사이트' : ' sites'}</span>
+                <span><i className="fa-solid fa-arrow-up-right-from-square" /> {isKo ? '새 창으로 열림' : 'Opens in a new tab'}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="program-platform-note">
+            <i className="fa-solid fa-shield-halved" />
+            <span>{isKo
+              ? '외부 AI 서비스입니다. 개인정보·비공개 문서를 입력하기 전에 소속 기관의 보안 지침을 반드시 확인하세요.'
+              : 'These are external AI services. Check your agency security policy before entering personal or non-public information.'}</span>
+          </div>
         </div>
       </section>
 

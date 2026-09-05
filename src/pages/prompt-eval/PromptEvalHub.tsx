@@ -19,6 +19,25 @@ export default function PromptEvalHub() {
         seoTitleEn="Prompt Lab"
         seoDescription="프롬프트 작성 기법, 평가 기준, 실전 예시 및 실습 가이드"
         path="/prompt-eval"
+        hero={{
+          icon: 'fa-wand-magic-sparkles',
+          color: '#6D28D9',
+          eyebrow: '프롬프트 실습 · 작성부터 평가까지',
+          eyebrowEn: 'Prompt Lab · From Writing to Scoring',
+          title: '프롬프트 실습',
+          titleEn: 'Prompt Lab',
+          tagline: '좋은 프롬프트를 쓰고, 스스로 채점해보는 훈련장',
+          taglineEn: 'Write better prompts, then score them yourself',
+          desc: '프롬프트 작성 기법과 평가 기준을 익히고 실전 예시로 확인한 뒤, 직접 작성한 프롬프트를 SCORE 기준으로 자동 채점받아 고쳐 나갑니다.',
+          descEn: 'Learn prompt-writing techniques and evaluation criteria, study real examples, then write your own and get auto-scored against the SCORE rubric.',
+          meta: [
+            { icon: 'fa-user-check', text: '대구광역시 공무원', textEn: 'Daegu city officials' },
+            { icon: 'fa-layer-group', text: '4개 주제 + 실습 2종', textEn: '4 topics + 2 labs' },
+            { icon: 'fa-clipboard-check', text: '종합 실습 250점', textEn: '250-point practice' },
+          ],
+          note: '읽기만 해서는 늘지 않습니다. 각 주제를 본 뒤 오른쪽 아래 실습으로 반드시 한 번씩 써보세요.',
+          noteEn: 'Reading alone will not build the skill — after each topic, write at least one prompt in the labs.',
+        }}
         dataFiles={[promptBasics, promptEvaluation, promptTechniques, promptExamples]}
         sidebarHeader={<PromptEvalNav />}
         sidebarFooter={
