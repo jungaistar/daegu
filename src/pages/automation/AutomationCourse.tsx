@@ -28,6 +28,25 @@ export default function AutomationCourse(): ReactElement {
       seoTitleEn="Administrative Automation"
       seoDescription="바이브코딩 기반 행정업무 자동화 도구 제작 — 1일 8시간 과정. 교시별 따라하기 실습과 대구시 부서별 사례집"
       path="/automation"
+      hero={{
+        icon: 'fa-gears',
+        color: '#0E6BA8',
+        eyebrow: '행정업무 자동화 · 1일 8시간',
+        eyebrowEn: 'Administrative Automation · 1 Day, 8 Hours',
+        title: '행정업무 자동화',
+        titleEn: 'Administrative Automation',
+        tagline: '반복 업무 하나를 골라 버튼 하나로 도는 도구 만들기',
+        taglineEn: 'Turn one repetitive task into a one-click tool',
+        desc: '코딩을 배우는 과정이 아닙니다. 매주 반복하는 업무를 AI에게 말로 설명해 자동화 도구로 만들고, 부서에 적용할 계획서까지 완성하는 1일 과정입니다.',
+        descEn: 'This is not a coding course. Describe a weekly repetitive task to AI, turn it into a working tool, and finish with a rollout plan for your department — all in one day.',
+        meta: [
+          { icon: 'fa-user-check', text: '대구광역시 공무원', textEn: 'Daegu city officials' },
+          { icon: 'fa-layer-group', text: '8교시 · 사례집 포함', textEn: '8 sessions + case book' },
+          { icon: 'fa-signal', text: '입문 (코딩 지식 불필요)', textEn: 'Beginner (no coding needed)' },
+        ],
+        note: '프로그래밍을 몰라도 됩니다. 화면에 나오는 순서를 그대로 따라 하시면 되고, 막히면 그 자리에서 손을 드세요.',
+        noteEn: 'No programming background required — follow the on-screen steps in order, and raise your hand whenever you get stuck.',
+      }}
       dataFiles={[overview, s1, s2, s3, s4, s5, s6, s7, cases]}
       ctaBanner={
         <div className="prompt-practice-cta">
