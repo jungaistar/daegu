@@ -1,0 +1,3345 @@
+import{C as n,l as e,L as a}from"./index-wrE8ELh9.js";import{G as i}from"./GuidePage-CGFYUn4Y.js";/* empty css                 */import"./SEOHead-3CVz-_Rn.js";import"./index-B8TbASPE.js";import"./index-CBa7UOLN.js";const s={id:"auto-overview",icon:"fa-map",title:"과정 개요 · 시간표",titleEn:"Overview & Schedule",sections:[{title:"이 과정은 이렇게 진행됩니다",titleEn:"How This Course Runs",content:`**바이브코딩 기반 행정업무 자동화 도구 제작** — 하루 8시간, 강사 정동엽.
+
+코딩을 배우는 과정이 **아닙니다.** 내가 매주 반복하는 업무 하나를 골라, AI에게 말로 설명해서 **버튼 하나로 도는 도구**를 만들어 퇴근하는 과정입니다.
+
+> 프로그래밍을 몰라도 됩니다. 화면에 나오는 순서를 그대로 따라 하시면 됩니다. 막히면 그 자리에서 손을 드세요.
+
+### 하루 시간표
+
+| 시간 | 교과목명 | 주요 학습 내용 | 산출물 |
+|------|---------|--------------|--------|
+| 09:00~10:00 | 바이브코딩과 행정업무 자동화 이해 | 자연어로 업무 흐름을 설명하면 AI가 코드·자동화 구조를 생성하는 방식 이해 / 자동화 가능 업무 사례 | — (강의·실습) |
+| 10:00~11:00 | 자동화 대상 업무 선정 | 반복·비효율 업무 1개 선정, 입력자료·처리과정·출력결과·검토 기준 정리, 전후 비교 | 자동화 대상 업무 정의서 |
+| 11:00~12:00 | 업무흐름 및 화면구성 설계 | 입력값·버튼·처리절차·결과 화면 설계, AI에게 전달할 요구사항 명세서 작성 | 자동화 도구 설계서 및 프롬프트 |
+| 12:00~13:00 | *중식* | — | — |
+| 13:00~14:00 | 자동화 코드·템플릿 생성 | ChatGPT/Claude로 Apps Script·함수·프롬프트 생성, 실제 시트에 적용 | 1차 자동화 템플릿 |
+| 14:00~15:00 | 자동화 도구 구현 및 테스트 | 버튼 실행·자동 분류·요약문 생성 기능 테스트, 오류 수정 프롬프트, 재실행 루틴 | 작동 가능한 자동화 도구 초안 |
+| 15:00~16:00 | 보안·오류 대응 및 개선 | 개인정보·보안·저작권·내부자료 입력 제한 기준, 담당자 검토 절차 설계 | 오류 대응 체크리스트 및 보안 유의사항 |
+| 16:00~17:00 | 부서 적용계획 작성 ① | 실행계획 작성, 적용 업무·사용 대상·예상 절감시간·확산 가능성 정리 | 자동화 도구 적용계획서 |
+| 17:00~18:00 | 부서 적용계획 작성 ② | 경진대회·혁신과제 발전 아이디어, 결과물 공유 및 강사 피드백 | 적용계획서 및 개선사항 |
+
+### 오늘 손에 남는 것 4가지
+
+| # | 산출물 | 어디에 쓰나 |
+|---|--------|-----------|
+| 1 | 자동화 대상 업무 정의서 | 무엇을 자동화할지 부서에 설명할 때 |
+| 2 | 자동화 도구 설계서 + 프롬프트 | 다음에 다른 업무를 자동화할 때 그대로 재사용 |
+| 3 | **작동하는 자동화 도구** | 내일부터 실제 업무에 사용 |
+| 4 | 오류 대응 체크리스트 + 적용계획서 | 부서 확산·혁신과제 제출 |
+
+### 화면 그림 따라하기 (혼자서도 됩니다)
+
+강의를 놓쳤거나 집에서 다시 해보실 때 씁니다. **화면 그림 위의 파란 번호를 그대로 짚어가며** 진행하고, 단계마다 체크하면 어디까지 했는지 저장됩니다.
+
+| 따라하기 | 무엇을 | 걸리는 시간 |
+|---------|-------|-----------|
+| [구글 시트 자동화 첫 실행](/setup/apps-script) | 시트 만들기 → 코드 붙여넣기 → 권한 승인 → 결과 확인 (7단계) | 약 10분 |
+| [Claude에 공공데이터 연결하기](/setup/mcp) | 앱 설치 → 커넥터 등록 → 첫 질문 (7단계) | 약 15분 |
+
+> 두 가지 모두 **설치할 프로그램이 없고 비용이 들지 않습니다.** 막히는 지점마다 "이 화면이 안 나오면" 안내를 붙여 두었습니다.
+
+### 교육 전 준비
+
+| 항목 | 확인 |
+|------|------|
+| 구글 계정 | 로그인이 되는지 미리 확인 (개인 계정도 무방) |
+| 노트북 | 크롬(Chrome) 브라우저 권장 |
+| ChatGPT 또는 Claude | 무료 계정으로도 실습 가능 |
+| **내 업무 자료 1건** | 매주 반복하는 업무의 엑셀 파일 하나 — **개인정보는 지우거나 가명으로 바꿔서** |
+
+> **개인정보는 반드시 지우고 오세요.** 이름은 '홍길동/김철수', 연락번호는 '010-0000-0000' 처럼 바꾸면 됩니다. 실습에는 아무 지장이 없습니다.
+
+### 왜 '바이브코딩'인가
+
+말로 설명하면 AI가 코드를 만들어 주는 방식을 바이브코딩이라 부릅니다. 예전에는 이런 도구를 만들려면 개발 부서에 요청하고 몇 달을 기다려야 했습니다. 지금은 **업무를 가장 잘 아는 담당자가 직접** 만듭니다.
+
+실제로 그렇게 하고 있는 공무원이 있습니다. 광진구 류승인 주무관은 현직 공무원 신분으로 12개 이상의 실무 도구를 만들어 공개하고 있습니다. 이 과정 마지막에 그 사례를 함께 봅니다.
+→ [참고사이트에서 보기](/reference)`,contentEn:`**Building administrative automation tools with vibe coding** — one full day, 8 hours. Instructor: Jeong Dong-yeop.
+
+This is **not** a programming course. You pick one task you repeat every week, describe it to an AI in plain language, and leave with **a tool that runs at the press of a button**.
+
+### Daily schedule
+
+| Time | Module | Content | Deliverable |
+|------|--------|---------|-------------|
+| 09:00-10:00 | Understanding vibe coding | How describing a workflow in plain language produces code | — |
+| 10:00-11:00 | Choosing the task | Pick one repetitive task; map inputs, process, outputs, review criteria | Task definition |
+| 11:00-12:00 | Flow and screen design | Inputs, buttons, steps, result screen; write the AI requirement spec | Design and prompt |
+| 12:00-13:00 | *Lunch* | — | — |
+| 13:00-14:00 | Generating code and templates | Produce Apps Script and functions with ChatGPT/Claude; apply to a real sheet | First template |
+| 14:00-15:00 | Building and testing | Button runs, auto-classification, summaries; error fixing and re-run routine | Working draft tool |
+| 15:00-16:00 | Security and error handling | Personal data, security, copyright limits; reviewer checkpoints | Checklist |
+| 16:00-17:00 | Rollout plan I | Target tasks, users, time saved, spread potential | Rollout plan |
+| 17:00-18:00 | Rollout plan II | Innovation-contest ideas, sharing and feedback | Final plan |
+
+### What you take home
+
+A task definition, a reusable design and prompt, **a working tool**, and a rollout plan.
+
+### Before you come
+
+A Google account, a laptop (Chrome recommended), a ChatGPT or Claude account, and **one real work file with personal data removed**.`}]},r={id:"auto-01",icon:"fa-lightbulb",title:"1교시 09:00~10:00 · 바이브코딩 이해",titleEn:"Session 1 — Understanding Vibe Coding",sections:[{title:"말로 설명하면 도구가 만들어집니다",titleEn:"Describe It, and the Tool Appears",content:`### 이 시간에 하는 일
+
+| 학습 목표 | 말로 설명한 업무 흐름이 어떻게 실행 가능한 도구가 되는지 이해한다 |
+|---|---|
+| 형태 | 강의 + 따라하기 실습 |
+| 산출물 | 없음 (다음 시간부터 만들기 시작) |
+
+### 바이브코딩이 뭔가
+
+예전 방식과 지금 방식의 차이는 이것뿐입니다.
+
+| | 예전 | 지금 |
+|---|------|------|
+| 누가 | 개발자에게 요청 | **업무 담당자가 직접** |
+| 무엇을 | 요구사항 문서 작성 | 말로 설명 |
+| 얼마나 | 몇 주~몇 달 | 몇 분~몇 시간 |
+| 고칠 때 | 다시 요청 | 그 자리에서 다시 말함 |
+
+핵심은 **업무를 가장 잘 아는 사람이 도구를 만든다**는 점입니다. 우리 부서 업무의 예외 상황을 개발자는 모릅니다. 담당자는 압니다.
+
+### 자동화하기 좋은 업무 — 실제 사례
+
+대구시 부서에서 실제로 자동화되는 업무들입니다. 이 중에 내 업무가 있는지 보세요.
+
+| 업무 | 지금 걸리는 시간 | 자동화 후 |
+|------|---------------|----------|
+| 신청자 명단 정리 (여러 시트 합치고 중복 제거) | 30분~1시간 | 버튼 1회, 5초 |
+| 민원 분류 (유형별·소관 부서별) | 건당 1~2분 | 전체 일괄, 10초 |
+| 부서별 실적 취합 (제출 파일 모으기) | 2시간 | 버튼 1회, 10초 |
+| 안내문 생성 (명단에서 개인별 안내문) | 건당 3분 | 전체 일괄 |
+| 집행률 계산 + 요약표 | 1시간 | 버튼 1회 |
+| 파일명 정리 (규칙에 맞게 일괄 변경) | 30분 | 즉시 |
+
+### 자동화에 맞지 않는 업무
+
+솔직하게 말씀드립니다. 아래는 오늘 대상으로 고르지 마세요.
+
+| 이런 업무 | 왜 |
+|----------|-----|
+| 1년에 한두 번 하는 일 | 도구 만드는 시간이 더 듭니다 |
+| 매번 판단이 달라지는 일 | 규칙이 없으면 자동화가 안 됩니다 |
+| 결재·승인 자체 | 사람이 책임지는 절차입니다 |
+| 개인정보가 핵심인 원본 처리 | 외부 AI에 올릴 수 없습니다 |
+
+### 따라하기 — 5분 만에 첫 자동화 맛보기
+
+> ### 화면 그림을 보며 따라 하시려면
+> **[▶ 구글 시트 자동화 첫 실행 — 따라하기](/setup/apps-script)** 로 가세요.
+> 시트 만들기부터 결과 확인까지 **7단계**를 화면 그림과 함께 안내합니다. 가장 많이 막히는 **구글 권한 승인 화면**을 특히 자세히 다룹니다. 단계마다 체크하면 진도가 저장됩니다.
+
+아래는 요약입니다. **아무것도 설치하지 않습니다.**
+
+1. 브라우저에서 **[sheets.new](https://sheets.new)** 를 주소창에 입력합니다 — 새 구글 시트가 열립니다
+2. A1 칸에 \`부서\`, B1 칸에 \`금액\` 을 입력합니다
+3. A2부터 아래처럼 아무 값이나 넣습니다
+
+   | 부서 | 금액 |
+   |------|------|
+   | 총무과 | 1000 |
+   | 총무과 | 2000 |
+   | 청년정책과 | 1500 |
+   | 도로과 | 3000 |
+
+4. 상단 메뉴 **확장 프로그램 → Apps Script** 를 클릭합니다 (새 탭이 열립니다)
+5. 열린 편집기의 코드를 **전부 지우고**, 아래를 붙여넣습니다
+
+\`\`\`javascript
+function 부서별합계() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const data = sheet.getDataRange().getValues();
+  const 합계 = {};
+
+  // 1행은 제목이므로 2행부터 읽는다
+  for (let i = 1; i < data.length; i++) {
+    const 부서 = data[i][0];
+    const 금액 = Number(data[i][1]) || 0;
+    if (!부서) continue;
+    합계[부서] = (합계[부서] || 0) + 금액;
+  }
+
+  const 결과 = [['부서', '합계']];
+  for (const 부서 in 합계) 결과.push([부서, 합계[부서]]);
+
+  sheet.getRange(1, 4, 결과.length, 2).setValues(결과);
+  SpreadsheetApp.getUi().alert('부서별 합계를 D열에 넣었습니다.');
+}
+\`\`\`
+
+6. 상단 **저장(디스크 모양)** 을 누릅니다
+7. **실행(▶)** 을 누릅니다 → 권한 요청 창이 뜨면 **권한 검토 → 내 계정 선택 → 고급 → (프로젝트 이름)(으)로 이동 → 허용**
+8. 시트 탭으로 돌아가면 **D열에 부서별 합계가 들어가 있습니다**
+
+> 방금 코드를 한 줄도 쓰지 않았습니다. 붙여넣고 실행했을 뿐입니다. 오늘 하루는 **이 코드를 AI에게 말로 시켜서 받아내는 법**을 배웁니다.
+
+### 권한 요청 창이 무섭게 나오는데요
+
+정상입니다. 구글은 "내가 만든 스크립트가 내 시트를 건드려도 되는지" 를 매번 묻습니다.
+
+| 화면에 나오는 말 | 눌러야 할 것 |
+|----------------|------------|
+| "이 앱은 Google에서 확인하지 않았습니다" | **고급** → **(프로젝트명)(으)로 이동** |
+| "○○에 대한 액세스 권한 요청" | **허용** |
+
+이 스크립트는 **내 계정의 내 시트 안에서만** 돕니다. 외부로 나가지 않습니다.
+
+### 오늘 만들 결과물 미리보기
+
+| 시간 | 만드는 것 |
+|------|----------|
+| 2교시 | 무엇을 자동화할지 정한 **업무 정의서** |
+| 3교시 | 도구 화면과 순서를 그린 **설계서 + AI에게 줄 프롬프트** |
+| 4~5교시 | **실제로 도는 자동화 도구** |
+| 6교시 | **오류·보안 체크리스트** |
+| 7~8교시 | **부서 적용계획서** |
+
+### 이 방향의 끝에는 무엇이 있나
+
+광진구 류승인 주무관은 같은 방식으로 시작해 **12개 이상의 도구**를 만들어 공개했습니다. 법령 검색, 통계 조회, 한글 문서 변환, 주소 표준화 같은 것들입니다.
+
+처음부터 12개를 만든 것이 아닙니다. **매주 30분씩 잡아먹는 일 하나**부터 시작했습니다. 오늘 우리가 하는 것도 그것입니다.
+→ [류승인 주무관 사례 보기](/reference)`,contentEn:`### This session
+
+Understand how a workflow described in plain language becomes a runnable tool. Lecture plus hands-on. No deliverable yet.
+
+### What vibe coding changes
+
+| | Before | Now |
+|---|--------|-----|
+| Who | Ask a developer | **The person who does the work** |
+| What | Write a requirements document | Describe it in words |
+| How long | Weeks to months | Minutes to hours |
+| To change it | Request again | Just say it again |
+
+### Tasks worth automating
+
+Merging applicant lists, classifying complaints, collecting department submissions, generating individual notices, computing execution rates, renaming files in bulk.
+
+### Tasks not worth automating
+
+Once-a-year work, judgment-heavy decisions, approvals themselves, and raw personal-data processing.
+
+### Hands-on — your first automation in 5 minutes
+
+1. Open **[sheets.new](https://sheets.new)**
+2. Enter \`Department\` in A1 and \`Amount\` in B1, then some rows
+3. Menu **Extensions → Apps Script**
+4. Replace the code with the sample, **Save**, then **Run**
+5. Approve the permission prompt (Advanced → Go to project → Allow)
+6. Back in the sheet, column D now holds the totals
+
+> You wrote no code. Today you learn to get that code from an AI by describing what you want.`},{title:"따라하기 실습 · 말로 설명해서 도구 만들기",titleEn:"Hands-on — Build a Tool by Describing It",content:`**소요 25분 · 준비물: 구글 계정, 브라우저**
+
+말로 설명한 업무 흐름이 실제로 도는 도구가 되는 과정을 **처음부터 끝까지 한 번** 통과합니다. 코드는 한 줄도 쓰지 않습니다.
+
+> **실제 업무 파일로 하지 마세요.** 이 실습은 **가짜 데이터로 만든 연습용 시트**로만 합니다. 실제 데이터는 4교시에서 개인정보를 지운 뒤에 씁니다.
+
+---
+
+### STEP 0 · 연습용 시트 만들기
+
+\`sheets.new\` 를 주소창에 입력해 빈 시트를 열고, 아래를 그대로 입력합니다.
+
+| | A | B | C | D |
+|---|---|---|---|---|
+| **1** | 접수번호 | 부서 | 항목 | 금액 |
+| **2** | 2026-0142 | 복지정책과 | 경로당 보수 | 12000 |
+| **3** | 2026-0143 | 어르신복지과 | 냉난방 교체 | 8400 |
+| **4** | 2026-0144 | 문화체육과 | 시설 점검 | 3200 |
+
+시트 이름(아래쪽 탭)을 **\`신청접수\`** 로 바꿉니다.
+
+**✅ 확인** — 1행에 제목이 있고, 2~4행에 데이터가 있고, 탭 이름이 \`신청접수\` 면 준비 완료입니다.
+
+---
+
+### STEP 1 · 업무 흐름을 네 문장으로 적기
+
+**이 단계가 오늘 하루 전체에서 가장 중요합니다.** 아래 네 칸을 종이나 메모장에 채웁니다.
+
+| 칸 | 질문 | 이 실습의 답 |
+|----|------|-------------|
+| **들어오는 것** | 무엇이 입력으로 들어오나? | \`신청접수\` 시트의 표 (접수번호·부서·항목·금액) |
+| **하는 일** | 그걸로 무엇을 하나? | 부서별로 묶어서 건수와 금액 합계를 낸다 |
+| **나오는 것** | 결과가 어디에 어떤 모양으로 나오나? | 새 시트 \`부서별집계\` 에 부서·건수·합계 표로 |
+| **사람이 볼 것** | 담당자가 무엇을 확인해야 하나? | 합계가 원본과 맞는지, 부서 이름이 빠지지 않았는지 |
+
+**✅ 확인** — 네 칸이 다 채워졌나요? **한 칸이라도 비면 AI는 그 부분을 자기 마음대로 정합니다.** 비어 있으면 다시 채우세요.
+
+---
+
+### STEP 2 · 코드 말고 "구조"부터 물어봅니다
+
+AI에게 바로 코드를 시키지 않습니다. 먼저 **이해한 게 맞는지** 확인합니다.
+
+\`\`\`text
+나는 구글 스프레드시트로 행정 업무를 자동화하려는 공무원이야. 코딩은 못 해.
+
+들어오는 것 — "신청접수" 시트의 표. 1행이 제목 행이고 열은
+             접수번호(A) / 부서(B) / 항목(C) / 금액(D) 이야.
+하는 일 —    부서별로 묶어서 건수와 금액 합계를 낸다.
+나오는 것 —  새 시트 "부서별집계"에 부서 / 건수 / 합계 표로.
+사람이 볼 것 — 합계가 원본과 맞는지.
+
+아직 코드는 쓰지 마.
+네가 이해한 처리 순서를 번호 목록으로 5단계 이내로 먼저 알려 줘.
+내가 빠뜨린 조건이 있으면 그것도 질문해 줘.
+\`\`\`
+
+**✅ 확인** — 코드가 아니라 **번호 목록**이 나와야 합니다. 그리고 이런 되물음이 오면 아주 좋은 신호입니다.
+
+\`\`\`text
+확인이 필요한 것
+1. 금액이 비어 있는 행은 0으로 볼까요, 건너뛸까요?
+2. "부서별집계" 시트가 이미 있으면 덮어쓸까요, 새로 만들까요?
+\`\`\`
+
+> **왜 구조부터 보나요?** 여기서 틀린 걸 잡으면 한 문장으로 고칩니다. 코드를 받은 뒤에 발견하면 처음부터 다시 해야 합니다.
+
+---
+
+### STEP 3 · 되물음에 답하고 코드를 받습니다
+
+\`\`\`text
+1번 — 금액이 비어 있으면 0으로 계산해 줘.
+2번 — 이미 있으면 내용을 지우고 다시 채워 줘.
+
+이제 Google Apps Script 코드를 만들어 줘.
+- 붙여넣고 바로 실행되는 완성된 코드로
+- 각 줄 위에 이게 무슨 일을 하는지 한글 주석
+- 함수 이름은 부서별집계_만들기
+\`\`\`
+
+**✅ 확인** — \`function 부서별집계_만들기() {\` 로 시작하는 코드 한 덩어리가 나오면 성공입니다.
+
+---
+
+### STEP 4 · 붙여넣고 실행합니다
+
+1. 시트 상단 **[확장 프로그램] → [Apps Script]** 를 누릅니다.
+2. 편집기에 있던 내용을 **모두 지우고**, 받은 코드를 붙여넣습니다.
+3. **저장**(💾) 을 누릅니다.
+4. 함수 이름이 \`부서별집계_만들기\` 인지 확인하고 **[▶ 실행]** 을 누릅니다.
+5. 처음 한 번은 권한 창이 뜹니다 — **고급 → 프로젝트로 이동 → 허용**.
+
+**✅ 확인** — 아래쪽 실행 로그에 **"실행이 완료됨"** 이 보이면 성공입니다.
+
+---
+
+### STEP 5 · 결과를 확인합니다
+
+시트로 돌아가 **\`부서별집계\`** 탭이 새로 생겼는지 봅니다.
+
+| 결과 | 판정 | 다음 |
+|------|------|------|
+| 부서·건수·합계 표가 생김 | **성공** | STEP 6으로 |
+| 빨간 오류 줄이 나옴 | 정상적인 과정 | 아래 방법으로 |
+| 표는 생겼는데 숫자가 이상함 | 조건 누락 | STEP 2의 네 칸을 다시 보기 |
+
+**오류가 났을 때** — 고치려 하지 말고 **오류 문장을 그대로 복사해** 대화창에 붙여넣습니다.
+
+\`\`\`text
+실행했더니 이런 오류가 났어. 무슨 뜻이고 어떻게 고치면 되는지
+고친 코드 전체로 다시 줘.
+
+(오류 문장 그대로 붙여넣기)
+\`\`\`
+
+> 오류는 실패가 아닙니다. **오류 문장을 붙여넣는 것이 정식 절차**입니다. 두세 번 주고받으면 대부분 해결됩니다.
+
+---
+
+### STEP 6 · 내 업무를 대입해 봅니다
+
+방금 흐름에 **내 업무**를 넣어 봅니다. 아래는 실제로 자동화가 잘 되는 유형입니다.
+
+| 업무 유형 | 들어오는 것 | 나오는 것 | 난이도 |
+|-----------|------------|----------|--------|
+| **신청자 명단 정리** | 여러 부서가 낸 신청 파일 | 중복 제거·정렬된 한 개 명단 | 쉬움 |
+| **민원 분류** | 민원 접수 목록 | 유형별로 나뉘고 담당과가 붙은 표 | 보통 |
+| **실적 취합** | 부서별 월간 실적 파일 | 부서·항목별 집계표와 전월 대비 | 보통 |
+| **안내문 생성** | 대상자 명단 + 안내문 틀 | 대상자별로 이름·일자가 채워진 안내문 | 쉬움 |
+
+**✅ 확인** — 이 중 하나에 내 업무가 걸리나요? **그것이 다음 시간에 고를 후보**입니다. 지금 메모해 두세요.
+
+---
+
+## 이 과정에서 완성하는 결과물 3가지
+
+오늘 하루가 끝나면 **손에 남는 것이 세 가지**입니다. 지금 무엇을 만드는지 알고 시작해야 중간에 길을 잃지 않습니다.
+
+### 1. 자동화 템플릿
+
+내가 고른 업무를 **다음 달에도 그대로 돌릴 수 있는 한 벌**입니다.
+
+| 구성 | 내용 |
+|------|------|
+| 입력 시트 | 열 이름과 순서가 고정된 표 |
+| 실행 코드 | Apps Script 에 붙여넣어 둔 코드 |
+| 사용 설명 | 다음 사람이 읽고 그대로 돌릴 수 있는 3~5줄 |
+
+> 템플릿의 가치는 **다음 달에 다시 안 만들어도 되는 것**입니다.
+
+### 2. 업무지원 도구
+
+실제로 **버튼을 눌러 쓰는 도구**입니다. 시트의 메뉴나 버튼, 또는 폼 하나입니다.
+
+| 구성 | 내용 |
+|------|------|
+| 입력 방법 | 시트에 붙여넣기 / 폼으로 제출 |
+| 실행 방법 | 시트 메뉴의 버튼 하나 |
+| 결과 위치 | 어느 시트 어느 탭에 나오는지 |
+| 검토 지점 | 사람이 눈으로 확인할 항목 |
+
+### 3. 적용계획서
+
+만든 도구를 **실제 업무에 언제·어떻게 넣을지** 적은 한 장입니다.
+
+| 항목 | 무엇을 적나 |
+|------|------------|
+| 적용 업무 | 어떤 업무에 쓰는지 |
+| 적용 시점 | 언제부터 |
+| 사용자 | 나만 / 우리 팀 / 부서 전체 |
+| 검토 절차 | 결과를 누가 어떻게 확인하는지 |
+| 개인정보 | 어떤 정보를 어떻게 처리했는지 |
+| 인수인계 | 담당자가 바뀌면 누가 이어받는지 |
+
+> 셋 중 **적용계획서가 가장 중요합니다.** 도구는 만들었는데 계획서가 없으면, 담당자가 바뀌는 순간 아무도 못 씁니다.`,contentEn:`**25 minutes · You need a Google account and a browser**
+
+Pass once through the whole path — from describing a workflow in words to a tool that actually runs. You will not write a single line of code.
+
+> **Do not use real work files.** This practice uses a **dummy sheet only.** Real data comes in Session 4, after personal information is removed.
+
+### STEP 0 · Make a practice sheet
+Open \`sheets.new\` and enter a small table: header row (접수번호 / 부서 / 항목 / 금액) plus three data rows. Rename the tab \`신청접수\`.
+**✅ Check** — header in row 1, data in rows 2–4, tab renamed.
+
+### STEP 1 · Write the workflow in four sentences
+This is **the single most important step of the day.**
+
+| Box | Question |
+|---|---|
+| **Input** | What comes in? |
+| **Processing** | What is done with it? |
+| **Output** | Where and in what shape does the result appear? |
+| **Human check** | What must the officer verify? |
+
+**✅ Check** — all four filled. **Any blank box is a decision the AI will make for you.**
+
+### STEP 2 · Ask for the structure, not the code
+Give the four boxes, then: "Don't write code yet. List the processing steps you understood, in five numbered steps. Ask me about anything I left out."
+**✅ Check** — you get a numbered list, and ideally follow-up questions like "should blank amounts count as zero or be skipped?"
+
+> **Why structure first?** A mistake caught here costs one sentence. Caught after the code, it costs the whole attempt.
+
+### STEP 3 · Answer the questions, then request the code
+Answer, then ask for complete, paste-and-run Apps Script with Korean comments on each line and a specific function name.
+
+### STEP 4 · Paste and run
+**Extensions → Apps Script**, clear the editor, paste, **Save**, pick the function, **Run**. Approve the permission prompt on first run (Advanced → Go to project → Allow).
+**✅ Check** — the execution log says the run completed.
+
+### STEP 5 · Verify the result
+
+| Result | Verdict | Next |
+|---|---|---|
+| The summary tab appeared | **Success** | STEP 6 |
+| A red error line | Normal | Paste the error text back to the AI verbatim |
+| Table appeared but numbers look wrong | Missing condition | Revisit the four boxes |
+
+> Errors are not failure. **Pasting the error text back is the standard procedure.**
+
+### STEP 6 · Map your own work onto it
+
+| Task type | Input | Output | Difficulty |
+|---|---|---|---|
+| **Consolidating applicant lists** | Files from several departments | One deduplicated, sorted list | Easy |
+| **Classifying citizen requests** | The intake list | Sorted by type with the owning division | Medium |
+| **Aggregating performance figures** | Monthly departmental files | Totals by department and item, vs last month | Medium |
+| **Generating notices** | Recipient list + a template | One filled notice per recipient | Easy |
+
+**✅ Check** — does one of these match your work? **That is your candidate for the next session.**
+
+## The three things you finish the course with
+
+**1. An automation template** — input sheet with fixed columns, the script, and 3–5 lines of usage notes. Its value is *not having to rebuild it next month.*
+
+**2. A work-support tool** — something you actually press a button to use: how data goes in, the one button that runs it, where the result lands, what a human checks.
+
+**3. An adoption plan** — one page: which task, from when, who uses it, who reviews the output, how personal data was handled, who takes over when you move on.
+
+> Of the three, **the adoption plan matters most.** A tool without one stops being used the moment its owner changes desks.`}]},l={id:"auto-02",icon:"fa-crosshairs",title:"2교시 10:00~11:00 · 자동화 대상 업무 선정",titleEn:"Session 2 — Choosing the Task",sections:[{title:"내 업무 중 하나를 고릅니다",titleEn:"Pick One of Your Own Tasks",content:`### 이 시간에 하는 일
+
+| 학습 목표 | 개인 또는 부서 업무 중 반복·비효율 업무 1개를 골라 정의한다 |
+|---|---|
+| 형태 | 실습 |
+| **산출물** | **자동화 대상 업무 정의서** |
+
+> 오늘 하루 종일 이 업무 하나만 붙잡습니다. **욕심내지 마세요.** 작고 명확한 것이 끝까지 갑니다.
+
+### 1단계 · 후보 3개 적기 (5분)
+
+종이나 시트에 **내가 매주 반복하는 일** 3개를 적습니다. 아래 질문에 걸리는 것을 찾으세요.
+
+| 질문 | 예 |
+|------|-----|
+| 매주·매월 똑같이 반복하는가? | 주간 실적 취합, 월간 집행 현황 |
+| 엑셀을 열어 손으로 옮기는가? | 여러 부서 제출 파일 합치기 |
+| 규칙이 정해져 있는가? | "A열이 비면 제외", "○○과 것만" |
+| 하다가 자주 틀리는가? | 복사·붙여넣기 하다 행이 밀림 |
+
+### 2단계 · 하나만 고르기 (5분)
+
+3개 중 **아래 표에서 점수가 가장 높은 것**을 고릅니다.
+
+| 기준 | 3점 | 2점 | 1점 |
+|------|-----|-----|-----|
+| 반복 주기 | 매주 이상 | 매월 | 분기 이하 |
+| 한 번에 걸리는 시간 | 1시간 이상 | 30분~1시간 | 30분 미만 |
+| 규칙 명확성 | 규칙이 딱 정해짐 | 대체로 정해짐 | 그때그때 다름 |
+| 개인정보 | 없음 | 가명 처리 가능 | 원본 필수 |
+
+> **개인정보 항목이 1점이면 오늘 대상에서 빼세요.** 다른 후보로 바꿉니다.
+
+### 3단계 · 업무 정의서 작성 (30분)
+
+시트를 새로 하나 열어 아래 표를 그대로 만들고 채웁니다. **이것이 첫 번째 산출물입니다.**
+
+| 항목 | 무엇을 적나 | 작성 예시 |
+|------|-----------|----------|
+| 업무명 | 한 줄로 | 주간 부서별 실적 취합 |
+| 담당 | 부서·직위 | 총무과 주무관 |
+| 주기 | 얼마나 자주 | 매주 금요일 |
+| 현재 소요시간 | 솔직하게 | 약 90분 |
+| **입력자료** | 무엇이 들어오나 | 각 팀 제출 시트 6개 (팀명/항목/건수/비고) |
+| **처리과정** | 지금 손으로 하는 순서 | ① 6개 파일 열기 ② 한 시트에 복사 ③ 중복 행 삭제 ④ 팀별 합계 ⑤ 요약표 작성 |
+| **출력결과** | 무엇이 나와야 하나 | 팀별 건수 합계표 + 전주 대비 증감 |
+| **담당자 검토 기준** | 사람이 꼭 봐야 할 것 | 합계가 원본 총합과 일치하는지, 누락 팀 없는지 |
+| 예외 상황 | 가끔 생기는 일 | 팀이 양식을 다르게 제출, 값이 빈 행 |
+
+### 4단계 · 자동화 전/후 비교 (10분)
+
+| 항목 | 자동화 전 | 자동화 후 (예상) |
+|------|----------|----------------|
+| 소요시간 | 90분 | 5분 (실행 1분 + 검토 4분) |
+| 오류 가능성 | 복사 중 행 누락 | 규칙대로 처리, 대신 규칙 자체가 틀리면 전부 틀림 |
+| 다른 사람이 할 수 있나 | 인수인계 필요 | 버튼만 누르면 됨 |
+| 기대효과 | — | 주 85분 × 4주 = **월 약 5.7시간** |
+
+> **월 절감시간을 꼭 계산해 두세요.** 7교시 적용계획서와 혁신과제 제출에 그대로 씁니다.
+
+### 5단계 · AI에게 검토받기 (10분)
+
+작성한 정의서를 ChatGPT나 Claude에 붙여넣고 아래를 그대로 물어보세요.
+
+\`\`\`text
+너는 행정업무 자동화를 돕는 컨설턴트야. 아래는 내가 자동화하려는 업무 정의서야.
+
+(정의서 붙여넣기)
+
+1. 이 업무가 자동화에 적합한지 판단하고 이유를 알려줘.
+2. 정의서에서 빠진 정보가 있으면 무엇인지 알려줘.
+3. 자동화했을 때 생길 수 있는 문제 3가지를 알려줘.
+4. 이 업무를 더 작게 쪼갤 수 있다면 어떻게 쪼갤지 제안해줘.
+
+내가 적지 않은 사실을 지어내지 말고, 모르는 건 물어봐줘.
+\`\`\`
+
+### 잘 고른 예 / 잘못 고른 예
+
+| 구분 | 업무 | 판단 |
+|------|------|------|
+| 좋음 | 매주 6개 팀 제출 시트 합치고 중복 제거 | 반복·규칙 명확·시간 큼 |
+| 좋음 | 민원 접수 내용을 유형별로 분류 | 규칙화 가능, 예시로 학습 가능 |
+| 좋음 | 명단에서 개인별 안내문 일괄 생성 | 양식 고정, 반복 |
+| **나쁨** | 예산 편성 방향 결정 | 판단 업무 — 자동화 대상 아님 |
+| **나쁨** | 민원인에게 최종 답변 발송 | 책임이 따르는 결재 행위 |
+| **나쁨** | 인사 자료 정리 | 개인정보 원본이 필수 |
+
+### 산출물 확인
+
+- [ ] 업무 정의서 9개 항목이 모두 채워졌다
+- [ ] 처리과정이 **번호 순서**로 적혀 있다
+- [ ] 담당자 검토 기준이 적혀 있다
+- [ ] 월 절감시간이 숫자로 계산되어 있다
+- [ ] 개인정보가 없거나 가명 처리 방법이 정해졌다
+
+> 다섯 개 모두 체크되면 3교시로 넘어갑니다. 하나라도 비면 그 항목을 먼저 채우세요. **여기서 흐릿하면 뒤가 전부 흐려집니다.**`,contentEn:`### This session
+
+Pick one repetitive task and define it. **Deliverable: task definition sheet.**
+
+### Step 1 — List three candidates
+
+Anything you repeat weekly, move by hand in Excel, that follows fixed rules, and that you often get wrong.
+
+### Step 2 — Score and choose one
+
+Score each on frequency, time taken, rule clarity, and personal-data exposure. **If personal data scores lowest, drop that candidate today.**
+
+### Step 3 — Write the definition
+
+Task name, owner, frequency, current time, **inputs**, **current manual steps**, **required output**, **reviewer criteria**, exceptions.
+
+### Step 4 — Before/after comparison
+
+Compute the monthly time saved — you will reuse this number in the rollout plan.
+
+### Step 5 — Have the AI review it
+
+Paste the definition and ask whether it suits automation, what is missing, what could go wrong, and how to split it smaller.
+
+### Checklist
+
+All nine fields filled, steps numbered, reviewer criteria written, monthly saving calculated, personal data resolved.`},{title:"따라하기 실습 · 자동화 대상 업무 정의서 채우기",titleEn:"Hands-on — Fill In the Task Definition",content:`**소요 40분 · 산출물: 자동화 대상 업무 정의서 1부**
+
+앞에서 고른 업무 하나를 **문서 한 장으로 확정**합니다. 이 정의서가 3교시 설계와 4교시 코드 요청의 재료가 됩니다.
+
+> **여기서 대충 적으면 오후 내내 헤맵니다.** 반대로 여기가 정확하면 나머지는 거의 자동으로 굴러갑니다.
+
+---
+
+### STEP 1 · 표를 그대로 옮겨 적습니다
+
+빈 문서나 시트를 열고 아래 표를 **그대로 만듭니다.** 오른쪽 칸은 비워 둡니다.
+
+| 항목 | 내가 적을 것 |
+|------|-------------|
+| ① 업무 이름 | |
+| ② 얼마나 자주 | |
+| ③ 한 번에 걸리는 시간 | |
+| ④ 들어오는 자료(입력) | |
+| ⑤ 처리 과정 | |
+| ⑥ 나오는 결과(출력) | |
+| ⑦ 담당자 검토 기준 | |
+| ⑧ 개인정보 | |
+| ⑨ 자동화 후 예상 시간 | |
+
+**✅ 확인** — 아홉 칸짜리 빈 표가 만들어졌으면 다음으로.
+
+---
+
+### STEP 2 · ④ 들어오는 자료를 아주 구체적으로
+
+가장 많이 대충 적는 칸입니다. **"엑셀 파일"** 이라고만 쓰면 안 됩니다.
+
+| 적어야 할 것 | 나쁜 예 | 좋은 예 |
+|-------------|---------|---------|
+| 파일 형태 | 엑셀 | \`.xlsx\` 파일 3개 (과별 1개씩) |
+| 어디서 오나 | 각 과 | 매월 5일까지 메일로 수신 |
+| 몇 건 | 많음 | 과당 30~80행, 합계 약 200행 |
+| 열 이름 | 여러 개 | 접수번호 / 부서 / 항목 / 금액 / 처리상태 |
+| 서식이 같은가 | — | **다름** — 과마다 열 순서가 제각각 |
+
+**✅ 확인** — 열 이름을 **하나도 빠짐없이** 적었나요? 열 이름이 곧 AI에게 줄 항목 이름입니다.
+
+---
+
+### STEP 3 · ⑤ 처리 과정을 번호로 쪼갭니다
+
+머릿속으로 하던 일을 **한 줄에 하나씩** 번호로 적습니다. "정리한다" 같은 뭉뚱그린 표현은 쪼갭니다.
+
+**나쁜 예**
+
+\`\`\`text
+1. 파일들을 정리해서 합친다
+2. 보고서를 만든다
+\`\`\`
+
+**좋은 예**
+
+\`\`\`text
+1. 과별 파일 3개를 연다.
+2. 열 순서를 접수번호 / 부서 / 항목 / 금액 / 처리상태 로 통일한다.
+3. 세 파일의 데이터를 한 시트 아래로 이어 붙인다.
+4. 접수번호가 같은 행이 있으면 나중 것만 남긴다.
+5. 부서별로 묶어 건수와 금액 합계를 낸다.
+6. 금액이 비어 있는 행은 0으로 본다.
+7. 결과를 "부서별집계" 시트에 표로 넣는다.
+\`\`\`
+
+**✅ 확인** — 아래 세 가지를 점검하세요.
+
+| 점검 | 뜻 |
+|------|-----|
+| 한 줄에 동작이 하나뿐인가 | "합치고 정리한다" 는 두 줄로 쪼갠다 |
+| 예외 처리가 들어 있나 | 빈 값·중복·오타를 어떻게 할지 (위의 4·6번) |
+| 순서를 바꾸면 결과가 달라지나 | 그렇다면 순서가 맞게 적힌 것이다 |
+
+> **예외 처리가 없는 정의서는 반쪽입니다.** 실제 업무가 막히는 곳은 늘 예외입니다.
+
+---
+
+### STEP 4 · ⑦ 담당자 검토 기준 — 가장 자주 빠지는 칸
+
+자동화의 결과를 **사람이 무엇을 보고 믿을지** 정합니다. 이게 없으면 "AI가 만든 거라 못 믿겠다"로 끝납니다.
+
+\`\`\`text
+검토 기준 (예)
+- 합계 행의 총액이 원본 세 파일의 총액과 같은가
+- 결과 행 개수가 원본 행 수에서 중복 제거분을 뺀 수와 같은가
+- 부서 이름이 5개 과 모두 나왔는가 (빠진 과가 없는가)
+- [확인 필요] 로 표시된 항목이 몇 건인가
+\`\`\`
+
+**✅ 확인** — 검토 기준은 **숫자로 확인 가능한 문장**이어야 합니다. "잘 됐는지 본다"는 기준이 아닙니다.
+
+---
+
+### STEP 5 · ⑧ 개인정보를 판정합니다
+
+| 판정 | 조건 | 조치 |
+|------|------|------|
+| **그대로 가능** | 이름·연락처·고유번호가 아예 없다 | 그대로 진행 |
+| **가명 처리 후 가능** | 이름은 있지만 없어도 일이 된다 | 이름 열을 A·B·C로 바꾼 뒤 진행 |
+| **이 업무는 부적합** | 개인정보가 업무의 본질이다 | **다른 업무로 바꾼다** |
+
+**✅ 확인** — 세 번째에 해당하면 **지금 업무를 바꾸세요.** 오후에 가서 바꾸면 하루를 버립니다.
+
+---
+
+### STEP 6 · 자동화 전/후를 비교합니다
+
+\`\`\`text
+자동화 전 — 월 1회 × 3시간 = 연 36시간
+자동화 후 — 월 1회 × 20분(붙여넣기 + 검토) = 연 4시간
+절감 — 연 32시간
+
+줄어드는 오류
+- 복사·붙여넣기 중 행이 밀리는 실수
+- 과별 열 순서를 잘못 맞춘 실수
+- 중복 접수건을 두 번 센 실수
+\`\`\`
+
+**✅ 확인** — 시간은 **연 단위**로 계산하세요. "월 3시간"은 작아 보이지만 "연 36시간"은 결재선을 설득합니다.
+
+---
+
+### STEP 7 · AI에게 정의서를 검토시킵니다
+
+다 채웠으면 스스로 점검하지 말고 AI에게 시킵니다.
+
+\`\`\`text
+아래는 내가 작성한 자동화 대상 업무 정의서야.
+자동화 도구를 만들기에 정보가 충분한지 검토해 줘.
+
+1. 빠진 정보가 있으면 무엇을 더 물어봐야 하는지 목록으로
+2. 처리 과정 중 애매해서 사람마다 다르게 해석할 문장이 있으면 지적
+3. 예외 상황(빈 값·중복·오타) 처리가 빠진 곳이 있으면 지적
+
+--- 정의서 ---
+(위에서 채운 아홉 칸을 붙여넣기)
+\`\`\`
+
+**✅ 확인** — 지적받은 항목을 **정의서에 반영해 고칩니다.** 보통 2~3개가 나옵니다. 고치고 나면 이 정의서로 3교시에 들어갑니다.
+
+---
+
+### 완성 점검표
+
+| # | 항목 | 확인 |
+|---|------|------|
+| 1 | 아홉 칸이 모두 채워졌다 | |
+| 2 | 입력 자료의 **열 이름**이 빠짐없이 적혔다 | |
+| 3 | 처리 과정이 한 줄에 동작 하나로 번호가 매겨졌다 | |
+| 4 | 빈 값·중복·오타 처리가 들어 있다 | |
+| 5 | 검토 기준이 **숫자로 확인 가능한** 문장이다 | |
+| 6 | 개인정보 판정이 끝났다 | |
+| 7 | 절감 시간이 **연 단위**로 계산됐다 | |
+| 8 | AI 검토 지적사항을 반영했다 | |
+
+> 8개가 다 채워지면 **자동화 대상 업무 정의서 완성**입니다. 이 문서를 저장해 두세요 — 3교시와 4교시에서 계속 씁니다.`,contentEn:`**40 minutes · Deliverable: one Task Definition document**
+
+Lock down the task you picked into **a single page.** This document is the raw material for the Session 3 design and the Session 4 code request.
+
+> **Sloppy here means a lost afternoon.** Precise here and the rest almost rolls itself.
+
+### STEP 1 · Draw the nine-row table
+Nine rows: task name, frequency, time per run, input, processing, output, reviewer criteria, personal data, expected time after automation. Leave the right column blank.
+
+### STEP 2 · Make the input concrete
+"An Excel file" is not enough.
+
+| Record | Bad | Good |
+|---|---|---|
+| Format | Excel | Three \`.xlsx\` files, one per division |
+| Source | Each division | Emailed by the 5th of each month |
+| Volume | A lot | 30–80 rows each, ~200 total |
+| Columns | Several | Receipt no. / Division / Item / Amount / Status |
+| Same layout? | — | **No** — column order differs per division |
+
+**✅ Check** — did you list **every** column name? Those names are what you hand the AI.
+
+### STEP 3 · Break the processing into numbered lines
+One action per line. Replace "organize it" with the actual operations, including how blanks, duplicates and typos are handled.
+
+| Check | Meaning |
+|---|---|
+| One action per line | "Merge and clean" splits into two |
+| Exceptions present | Blanks, duplicates, typos |
+| Order matters | If reordering changes the result, the order is written correctly |
+
+> **A definition without exception handling is half a definition.** Real work always breaks on exceptions.
+
+### STEP 4 · Reviewer criteria — the most commonly skipped box
+Decide what a human looks at to trust the output.
+**✅ Check** — criteria must be **numerically verifiable.** "Check it looks right" is not a criterion.
+
+### STEP 5 · Judge the personal data
+
+| Verdict | Condition | Action |
+|---|---|---|
+| **Use as is** | No names, contacts or ID numbers | Proceed |
+| **Pseudonymize first** | Names present but not needed | Replace with A/B/C |
+| **Unsuitable task** | Personal data *is* the substance | **Pick a different task** |
+
+**✅ Check** — if it's the third, change tasks **now,** not this afternoon.
+
+### STEP 6 · Compare before and after
+Compute the saving **per year** — "3 hours a month" sounds small; "36 hours a year" persuades an approver. List the errors that disappear too.
+
+### STEP 7 · Have the AI review your definition
+Ask it to list missing information, ambiguous sentences, and unhandled exceptions. Fold the two or three findings back in.
+
+### Completion checklist
+All nine boxes filled · every input column named · processing numbered one action per line · blanks/duplicates/typos handled · criteria numerically verifiable · personal data judged · saving computed per year · AI review folded in.
+
+> Save this document — Sessions 3 and 4 use it continuously.`}]},h={id:"auto-03",icon:"fa-pen-ruler",title:"3교시 11:00~12:00 · 업무흐름 및 화면구성 설계",titleEn:"Session 3 — Flow and Screen Design",sections:[{title:"만들기 전에 그림을 그립니다",titleEn:"Draw It Before You Build It",content:`### 이 시간에 하는 일
+
+| 학습 목표 | 도구의 입력값·버튼·처리절차·결과 화면을 설계하고, AI에게 줄 요구사항 명세서를 쓴다 |
+|---|---|
+| 형태 | 실습 |
+| **산출물** | **자동화 도구 설계서 + AI 프롬프트** |
+
+> 여기가 오늘의 **가장 중요한 시간**입니다. 설계서가 좋으면 4교시에 AI가 한 번에 만들어 줍니다. 설계서가 부실하면 오후 내내 고칩니다.
+
+### 도구는 이 네 부분으로 이뤄집니다
+
+| 부분 | 무엇인가 | 우리 업무에서는 |
+|------|---------|---------------|
+| **입력** | 어디에 무엇이 들어오나 | '원본' 시트, A열 팀명 / B열 항목 / C열 건수 |
+| **버튼** | 무엇을 누르면 시작되나 | 메뉴에 '실적 취합' 항목 추가 |
+| **처리** | 무슨 순서로 도나 | 읽기 → 중복 제거 → 팀별 합계 → 정렬 |
+| **결과** | 어디에 무엇이 남나 | '요약' 시트에 팀별 합계표, 완료 알림 |
+
+### 1단계 · 시트 구조 정하기 (10분)
+
+**AI에게 시트 구조를 정확히 알려주지 않으면 반드시 다시 물어봅니다.** 미리 정합니다.
+
+| 정할 것 | 적는 법 | 예시 |
+|--------|--------|------|
+| 시트 이름 | 실제 탭 이름 그대로 | 원본 / 요약 |
+| 열 구성 | 열 문자 + 제목 | A열 팀명, B열 항목, C열 건수, D열 비고 |
+| 데이터 시작 행 | 제목이 몇 행인지 | 1행 제목, 2행부터 데이터 |
+| 결과 위치 | 어느 시트 어디에 | '요약' 시트 A1부터 |
+
+> 구글 시트 아래쪽 탭 이름을 지금 **원본**, **요약** 으로 바꿔 두세요. 이름이 다르면 코드가 못 찾습니다.
+
+### 2단계 · 처리 순서를 번호로 쓰기 (10분)
+
+2교시 정의서의 '처리과정'을 **컴퓨터가 할 수 있는 말**로 다시 씁니다.
+
+| 사람 말 | 컴퓨터가 할 수 있는 말 |
+|--------|---------------------|
+| "대충 정리해서" | "A열 기준으로 오름차순 정렬하고" |
+| "중복은 빼고" | "A열+B열이 같은 행은 첫 번째만 남기고" |
+| "빈 건 제외" | "C열이 비었거나 0인 행은 제외하고" |
+| "합쳐서" | "A열 값이 같은 행끼리 C열을 더해서" |
+| "보기 좋게" | "제목 행은 굵게, 숫자는 천 단위 쉼표로" |
+
+### 3단계 · 설계서 작성 (20분)
+
+아래 표를 그대로 채웁니다. **이것이 두 번째 산출물입니다.**
+
+| 항목 | 내용 (예시) |
+|------|-----------|
+| 도구 이름 | 주간 실적 취합 도구 |
+| 입력 시트 | '원본' — 1행 제목, 2행부터 데이터 |
+| 입력 열 | A: 팀명 / B: 항목 / C: 건수 / D: 비고 |
+| 실행 방법 | 상단 메뉴에 '실적 취합' 메뉴 추가, 클릭 시 실행 |
+| 처리 순서 | ① C열이 비었거나 0인 행 제외 ② A+B 중복 행은 첫 번째만 ③ A열 기준 C열 합계 ④ 합계 큰 순 정렬 |
+| 결과 시트 | '요약' — 기존 내용 지우고 새로 작성 |
+| 결과 형식 | A1 제목 행(팀명/건수합계), A2부터 데이터, 숫자 천 단위 쉼표 |
+| 완료 표시 | "취합 완료: ○개 팀, ○건" 알림창 |
+| 예외 처리 | '원본' 시트가 없으면 안내 후 중단 / 데이터가 0건이면 안내 |
+
+### 4단계 · AI 요구사항 명세서(프롬프트) 만들기 (20분)
+
+설계서를 **그대로 프롬프트로 바꿉니다.** 아래 틀에 내 설계서를 채워 넣으세요.
+
+\`\`\`text
+너는 Google Apps Script 전문가야. 공무원이 쓸 자동화 도구를 만들어줘.
+나는 코딩을 모르니, 코드와 함께 설치 방법을 단계별로 알려줘.
+
+## 만들 도구
+주간 실적 취합 도구
+
+## 시트 구조
+- '원본' 시트: 1행이 제목, 2행부터 데이터
+  - A열: 팀명
+  - B열: 항목
+  - C열: 건수
+  - D열: 비고
+- '요약' 시트: 결과를 여기에 작성
+
+## 처리 순서
+1. C열이 비었거나 0인 행은 제외한다
+2. A열+B열 값이 같은 행은 첫 번째만 남긴다
+3. A열(팀명) 기준으로 C열(건수)을 합산한다
+4. 합계가 큰 순서로 정렬한다
+
+## 결과
+- '요약' 시트의 기존 내용을 지우고 새로 작성
+- A1: '팀명', B1: '건수합계' (굵게)
+- A2부터 데이터, 숫자는 천 단위 쉼표
+- 완료되면 "취합 완료: ○개 팀, ○건" 알림창 표시
+
+## 실행 방법
+- 시트 상단 메뉴에 '실적 취합' 메뉴를 추가하고, 클릭하면 실행되게 해줘
+
+## 예외 처리
+- '원본' 시트가 없으면 안내 메시지를 띄우고 중단
+- 처리할 데이터가 0건이면 안내 메시지 표시
+
+## 요청
+1. 전체 코드를 한 덩어리로 보여줘 (부분 수정이 아니라 통째로)
+2. 코드에 한국어 주석을 달아줘
+3. 시트에 붙여넣고 실행하는 방법을 1번부터 순서대로 알려줘
+4. 내가 적지 않은 규칙을 임의로 만들지 마. 애매하면 먼저 물어봐줘.
+\`\`\`
+
+### 이 프롬프트가 좋은 이유
+
+| 요소 | 어디에 있나 | 없으면 생기는 일 |
+|------|-----------|---------------|
+| 역할 | "Apps Script 전문가야" | 일반적인 설명만 옴 |
+| 수준 | "코딩을 모르니" | 개발자용 설명이 옴 |
+| 데이터 구조 | 시트 이름·열 구성 | "어느 열인가요?" 되물음 |
+| 처리 순서 | 번호 목록 | 순서가 뒤바뀜 |
+| 결과 위치 | '요약' 시트 A1 | 엉뚱한 곳에 씀 |
+| 실행 방법 | 메뉴 추가 | 편집기에서만 돌아감 |
+| 예외 | 시트 없음·0건 | 오류 화면이 그대로 뜸 |
+| **날조 금지** | "임의로 만들지 마" | 없는 규칙을 지어냄 |
+
+> 이 여덟 가지는 [프롬프트 학습](/prompt-eval) 에서 배운 **역할·맥락·지시·형식** 그대로입니다.
+
+### 산출물 확인
+
+- [ ] 시트 탭 이름을 실제로 '원본', '요약' 으로 바꿨다
+- [ ] 열 구성을 A열부터 문자로 적었다
+- [ ] 처리 순서가 번호로, 컴퓨터가 할 수 있는 말로 적혔다
+- [ ] 결과가 어느 시트 어디에 들어갈지 적혀 있다
+- [ ] 프롬프트를 복사할 수 있게 한 덩어리로 만들어 뒀다
+
+> 점심 식사 후 4교시에 이 프롬프트를 **그대로 붙여넣기만** 하면 됩니다.`,contentEn:`### This session
+
+Design the tool's inputs, button, steps, and result screen, then write the requirement spec for the AI. **Deliverables: design sheet and prompt.**
+
+### A tool has four parts
+
+Input (where data arrives), button (what starts it), processing (the ordered steps), result (what is left where).
+
+### Step 1 — Fix the sheet structure
+
+Sheet names, column letters and titles, first data row, and where results go. Rename your tabs now.
+
+### Step 2 — Rewrite the steps in machine-doable language
+
+"Tidy it up" becomes "sort ascending by column A". "No duplicates" becomes "keep only the first row where A+B match".
+
+### Step 3 — Write the design sheet
+
+Tool name, input sheet and columns, how it runs, ordered steps, result sheet and format, completion message, exception handling.
+
+### Step 4 — Turn the design into a prompt
+
+Role, your skill level, sheet structure, numbered steps, result format, run method, exceptions, and an explicit instruction not to invent rules.
+
+### Checklist
+
+Tabs renamed, columns listed by letter, steps numbered and concrete, result location specified, prompt ready to paste.`},{title:"따라하기 실습 ① 네 가지 도구 화면 익히기",titleEn:"Hands-on 1 — Learn the Four Tool Screens",content:`**소요 30분 · 준비물: 구글 계정**
+
+설계서를 쓰기 전에, **내가 만들 도구가 어느 화면에서 도는지**를 먼저 봅니다. 네 화면의 역할이 다릅니다.
+
+| 도구 | 하는 일 | 언제 쓰나 |
+|------|---------|-----------|
+| **Google Sheets** | 자료를 담는 그릇 | 거의 모든 자동화의 출발점 |
+| **Apps Script** | 실제로 일을 하는 부분 | 계산·정리·문서 생성 |
+| **웹폼** | 자료를 받아오는 입구 | 여러 사람에게서 자료를 모을 때 |
+| **노코드 도구** | 조건에 따라 자동으로 잇는 것 | 사람 손 없이 계속 돌려야 할 때 |
+
+> 넷을 다 쓸 필요는 없습니다. **대부분의 행정 업무는 Sheets + Apps Script 둘로 끝납니다.** 폼과 노코드는 필요할 때만 붙입니다.
+
+---
+
+## 1. Google Sheets — 자료를 담는 그릇
+
+![Google Sheets 화면 — 제목 행, 표 하나 규칙, 확장 프로그램 메뉴](~/automation/auto-google-sheets.svg)
+
+그림의 **주황 번호가 아래 STEP 번호**입니다.
+
+### STEP 1 · 1행을 제목 행으로 만듭니다
+
+**✅ 확인** — 1행에 적은 열 이름이 **그대로 AI에게 주는 항목 이름**이 됩니다. \`금액\` 이라 적었으면 프롬프트에도 \`금액\` 이라고 씁니다. 다르게 쓰면 AI가 다른 열을 잡습니다.
+
+### STEP 2 · 한 시트에는 표를 하나만 둡니다
+
+자동화를 깨뜨리는 3대 원인입니다.
+
+| 하지 말 것 | 왜 |
+|-----------|-----|
+| 빈 행으로 표를 나누기 | 표가 어디서 끝나는지 프로그램이 못 찾는다 |
+| 병합된 셀 | 값이 한 칸에만 있고 나머지는 빈칸으로 읽힌다 |
+| 중간에 소계 행 넣기 | 소계를 데이터로 세어 합계가 두 배가 된다 |
+
+**✅ 확인** — 표를 아래로 쭉 훑어 위 세 가지가 없으면 통과입니다.
+
+### STEP 3 · 시트 탭 이름을 정합니다
+
+탭 이름은 **띄어쓰기 없이 짧게** — \`신청접수\`, \`부서별집계\`. 이 이름을 프롬프트에 그대로 씁니다.
+
+**✅ 확인** — **[확장 프로그램] → [Apps Script]** 를 눌러 다음 화면이 열리면 준비 완료입니다.
+
+---
+
+## 2. Apps Script — 실제로 일을 하는 부분
+
+![Apps Script 화면 — 코드 붙여넣기, 함수 선택 후 실행, 실행 로그 확인](~/automation/auto-apps-script.svg)
+
+### STEP 1 · 받은 코드를 통째로 붙여넣습니다
+
+편집기에 원래 있던 \`function myFunction() {}\` 를 **모두 지우고** 붙여넣습니다.
+
+**✅ 확인** — **코드를 이해할 필요는 없습니다.** 한 글자도 고치지 마세요. 고쳐야 할 곳이 있으면 AI에게 다시 시킵니다.
+
+### STEP 2 · 함수를 고르고 실행합니다
+
+상단 드롭다운에서 **실행할 함수 이름**을 고른 뒤 **[▶ 실행]** 을 누릅니다.
+
+**✅ 확인** — 첫 실행 때만 권한 창이 뜹니다.
+
+\`\`\`text
+"이 앱은 확인되지 않았습니다" 창이 뜨면
+→ [고급] → [프로젝트 이름(안전하지 않음)으로 이동] → [허용]
+\`\`\`
+
+> 내가 만든 스크립트에 **내 시트를 만질 권한**을 주는 절차입니다. 한 번만 하면 됩니다.
+
+### STEP 3 · 실행 로그를 봅니다
+
+| 로그 | 뜻 | 다음 |
+|------|-----|------|
+| \`실행이 완료됨\` | **성공** | 시트로 돌아가 결과 확인 |
+| 빨간 오류 줄 | 정상적인 과정 | 오류 문장을 **그대로 복사**해 AI에게 |
+| 아무것도 안 나옴 | 저장을 안 했다 | 💾 저장 후 다시 실행 |
+
+**✅ 확인** — 오류 문장을 고쳐 쓰지 말고 **그대로** 붙여넣으세요. 줄 번호와 오류 이름이 해결의 열쇠입니다.
+
+---
+
+## 3. 웹폼 — 자료를 받아오는 입구
+
+![웹폼 화면 — 시트 열 이름과 맞춘 질문, 질문 유형 지정, 응답 시트 연결](~/automation/auto-web-form.svg)
+
+여러 사람에게 **메일로 파일을 받아 손으로 옮기던 일**을 없앱니다.
+
+### STEP 1 · 질문 이름을 시트 열 이름과 똑같이 맞춥니다
+
+**✅ 확인** — 시트 열이 \`접수번호\` 면 질문도 \`접수번호\` 입니다. 하나라도 다르면 나중에 손으로 옮겨야 하고, 그러면 자동화한 의미가 없습니다.
+
+### STEP 2 · 질문 유형을 정확히 고릅니다
+
+| 받을 값 | 고를 유형 | 이유 |
+|---------|----------|------|
+| 부서 이름 | **드롭다운** | 자유 입력이면 "복지정책과"와 "복지 정책과"가 섞인다 |
+| 금액 | **숫자** | 글자가 섞이면 합계가 안 된다 |
+| 날짜 | **날짜** | \`9/5\`, \`9월 5일\`, \`2026-09-05\` 가 섞이지 않는다 |
+| 접수번호 | **단답형** + 필수 | 빠지면 중복 제거가 안 된다 |
+
+**✅ 확인** — 자유 입력(단답형)은 **꼭 필요할 때만** 씁니다. 자유 입력 칸이 많을수록 나중에 손이 갑니다.
+
+### STEP 3 · 응답을 시트로 연결합니다
+
+**[응답] 탭 → 스프레드시트 아이콘** 을 누르면 응답이 쌓이는 시트가 만들어집니다.
+
+**✅ 확인** — 폼을 **직접 한 번 제출해 보고**, 시트에 한 줄이 늘어나는지 눈으로 봅니다. 이걸 확인하지 않고 배포하면 나중에 응답이 안 들어와 있는 일이 생깁니다.
+
+---
+
+## 4. 노코드 도구 — 조건에 따라 자동으로 잇기
+
+![노코드 자동화 흐름 — 트리거 하나, 조건 하나, 동작 순서. 켜기 전 시험 실행](~/automation/auto-nocode-flow.svg)
+
+**"○○하면 △△한다"** 를 사람 손 없이 계속 돌립니다.
+
+### STEP 1 · 트리거는 하나만
+
+무슨 일이 생기면 시작할지 정합니다.
+
+| 트리거 종류 | 예 |
+|------------|-----|
+| 폼 응답 제출 | 신청서가 접수되면 |
+| 특정 시각 | 매월 1일 오전 9시에 |
+| 파일 추가 | 지정 폴더에 파일이 올라오면 |
+| 시트 행 추가 | 시트에 새 줄이 생기면 |
+
+**✅ 확인** — 트리거가 두 개 필요하면 **흐름을 두 개로 나눕니다.**
+
+### STEP 2 · 조건도 되도록 하나만
+
+**✅ 확인** — 조건이 세 개를 넘어가면, 그건 흐름이 아니라 **사람이 판단할 일**입니다. 그 부분은 자동화하지 말고 담당자에게 알림만 보내세요.
+
+### STEP 3 · 켜기 전에 반드시 시험 실행합니다
+
+> **가장 위험한 단계입니다.** 흐름을 켜는 순간 실제로 메일이 나가고 문서가 만들어집니다.
+
+| 시험 방법 | 왜 |
+|-----------|-----|
+| 받는 사람을 **내 메일로** 바꿔 둔다 | 민원인에게 잘못 나가는 것을 막는다 |
+| 시험용 가짜 데이터 1건으로 돌린다 | 실제 건이 중복 처리되는 것을 막는다 |
+| 결과를 확인한 뒤 받는 사람을 원래대로 | 확인 전에는 절대 켜지 않는다 |
+
+**✅ 확인** — 시험 1건이 의도대로 끝났을 때만 **[흐름 켜기]** 를 누릅니다.
+
+---
+
+### 내 업무에는 무엇이 필요한가
+
+**✅ 확인** — 2교시 정의서를 펴고 아래에 대 봅니다.
+
+| 정의서의 "들어오는 자료" | 필요한 것 |
+|------------------------|-----------|
+| 내가 시트에 직접 붙여넣는다 | Sheets + Apps Script |
+| 여러 사람이 제출한다 | **웹폼** + Sheets + Apps Script |
+| 정해진 시각마다 저절로 돌아야 한다 | 위 + **노코드 도구**(또는 Apps Script 트리거) |
+| 조건에 따라 다른 사람에게 알림이 가야 한다 | 위 + **노코드 도구** |
+
+여기서 고른 조합을 다음 실습의 설계서에 적습니다.`,contentEn:`**30 minutes · You need a Google account**
+
+Before writing the design, see **which screens your tool actually runs on.** The four have different jobs.
+
+| Tool | Its job | When |
+|---|---|---|
+| **Google Sheets** | The container for the data | The starting point of almost every automation |
+| **Apps Script** | The part that does the work | Calculating, consolidating, generating documents |
+| **Web form** | The intake | Collecting data from many people |
+| **No-code tool** | Connecting things conditionally | When it must keep running without a human |
+
+> You don't need all four. **Most administrative work ends with Sheets + Apps Script.**
+
+## 1. Google Sheets
+![Google Sheets screen](~/automation/auto-google-sheets.svg)
+
+**STEP 1 · Row 1 is the header row.** Those column names are exactly what you hand the AI — write them identically in the prompt.
+
+**STEP 2 · One table per sheet.** The three things that break automation: blank rows splitting the table, merged cells, and subtotal rows in the middle (counted as data, doubling totals).
+
+**STEP 3 · Name the tab** — short, no spaces. Then **Extensions → Apps Script.**
+
+## 2. Apps Script
+![Apps Script screen](~/automation/auto-apps-script.svg)
+
+**STEP 1 · Paste the whole thing.** You do not need to understand the code. Change nothing — if something needs changing, ask the AI.
+
+**STEP 2 · Pick the function, press Run.** On first run: "app isn't verified" → Advanced → Go to project → Allow. It grants your own script access to your own sheet, once.
+
+**STEP 3 · Read the execution log.**
+
+| Log | Meaning | Next |
+|---|---|---|
+| Run completed | **Success** | Check the sheet |
+| A red error line | Normal | Copy the error text **verbatim** to the AI |
+| Nothing at all | You didn't save | Save, run again |
+
+## 3. Web form
+![Web form screen](~/automation/auto-web-form.svg)
+
+**STEP 1 · Question names must match the sheet column names exactly.** One mismatch means manual re-entry, which defeats the point.
+
+**STEP 2 · Pick the right question type.** Dropdown for divisions (free text gives you two spellings of the same office), number for amounts, date for dates, required short answer for the key.
+
+**STEP 3 · Link responses to a sheet,** then **submit the form yourself once** and watch a row appear. Skipping this check is how you discover later that nothing was recorded.
+
+## 4. No-code tool
+![No-code flow screen](~/automation/auto-nocode-flow.svg)
+
+**STEP 1 · Exactly one trigger.** Form submitted, a set time, a file added, a row added. Need two? Split into two flows.
+
+**STEP 2 · Preferably one condition.** More than three conditions means it is **a human judgment**, not a flow — send a notification instead.
+
+**STEP 3 · Always test before switching it on.** Point the recipient at **your own address**, run one dummy record, verify, then restore the recipient. Turning it on sends real mail to real people.
+
+### What does your task need?
+
+| Your "input" | What you need |
+|---|---|
+| I paste it into the sheet myself | Sheets + Apps Script |
+| Several people submit it | **Web form** + Sheets + Apps Script |
+| It must run on a schedule | The above + **no-code tool** (or an Apps Script trigger) |
+| Notifications must branch by condition | The above + **no-code tool** |`},{title:"따라하기 실습 ② 설계서와 요구사항 명세서 쓰기",titleEn:"Hands-on 2 — Write the Design and the Spec",content:`**소요 40분 · 산출물: 자동화 도구 설계서 + AI에게 줄 요구사항 명세서**
+
+2교시 정의서와 방금 익힌 화면 지식을 합쳐, **AI에게 그대로 건넬 문서**를 만듭니다.
+
+> 4교시에 코드를 받는 품질은 **여기서 쓴 명세서의 품질과 정확히 같습니다.** 여기서 애매하면 거기서 엉뚱한 게 나옵니다.
+
+---
+
+### STEP 1 · 설계서 뼈대를 만듭니다
+
+빈 문서에 아래 네 덩어리를 만듭니다.
+
+| 덩어리 | 무엇을 적나 |
+|--------|------------|
+| **① 입력값** | 사람이 무엇을 어디에 넣는가 |
+| **② 버튼·실행** | 어떻게 실행시키는가 |
+| **③ 처리 절차** | 안에서 무슨 일이 순서대로 일어나는가 |
+| **④ 결과 화면** | 결과가 어디에 어떤 모양으로 나오는가 |
+
+**✅ 확인** — 네 덩어리가 만들어졌으면 하나씩 채웁니다.
+
+---
+
+### STEP 2 · ① 입력값을 표로 적습니다
+
+\`\`\`text
+입력 위치 — "신청접수" 시트
+입력 방법 — 각 과 제출 파일을 열 순서 맞춰 붙여넣기
+\`\`\`
+
+| 열 | 이름 | 형식 | 필수 | 비어 있으면 |
+|----|------|------|------|------------|
+| A | 접수번호 | 문자 (2026-0000) | 필수 | 그 행은 건너뜀 |
+| B | 부서 | 문자 (5개 과 중 하나) | 필수 | \`[확인 필요]\` 표시 |
+| C | 항목 | 문자 | 필수 | \`[확인 필요]\` 표시 |
+| D | 금액 | 숫자 (천원) | 선택 | 0으로 계산 |
+| E | 처리상태 | 접수 / 검토중 / 완료 | 선택 | 빈칸 그대로 |
+
+**✅ 확인** — **"비어 있으면"** 칸이 이 표의 핵심입니다. 이 칸이 비면 AI가 마음대로 정합니다.
+
+---
+
+### STEP 3 · ② 실행 방법을 정합니다
+
+| 방식 | 어떻게 | 언제 고르나 |
+|------|--------|------------|
+| **시트 메뉴 버튼** | 시트 상단에 \`자동화 ▾\` 메뉴가 생기고 거기서 실행 | 나 또는 우리 팀이 쓸 때 (권장) |
+| Apps Script 실행 | 편집기를 열어 ▶ 실행 | 나 혼자 쓸 때 |
+| 시각 트리거 | 매월 1일 9시에 저절로 | 사람이 없어도 돌아야 할 때 |
+| 폼 제출 트리거 | 폼이 제출될 때마다 | 여러 사람이 제출할 때 |
+
+**✅ 확인** — 처음이라면 **시트 메뉴 버튼**을 고르세요. 동료에게 넘기기 가장 쉽습니다.
+
+---
+
+### STEP 4 · ③ 처리 절차를 옮겨 적습니다
+
+2교시 정의서의 ⑤번을 그대로 가져오되, **화면 이름을 붙입니다.**
+
+\`\`\`text
+1. "신청접수" 시트에서 1행을 제외한 전체 데이터를 읽는다.
+2. 접수번호(A)가 비어 있는 행은 건너뛴다.
+3. 접수번호가 중복이면 아래쪽(나중) 행만 남긴다.
+4. 금액(D)이 비어 있으면 0으로 본다.
+5. 부서(B)별로 묶어 건수와 금액 합계를 낸다.
+6. 부서(B)가 비어 있는 행은 "[확인 필요]" 부서로 따로 묶는다.
+7. "부서별집계" 시트를 비우고 결과를 다시 채운다.
+8. 마지막 행에 전체 합계 행을 넣는다.
+\`\`\`
+
+**✅ 확인** — 각 줄에 **어느 시트의 어느 열**인지가 들어 있나요? \`부서별로 묶는다\` 가 아니라 \`부서(B)별로 묶는다\` 입니다.
+
+---
+
+### STEP 5 · ④ 결과 화면을 그립니다
+
+\`\`\`text
+결과 위치 — "부서별집계" 시트 (없으면 새로 만들고, 있으면 내용을 비우고 다시 채움)
+\`\`\`
+
+| | A | B | C |
+|---|---|---|---|
+| **1** | 부서 | 건수 | 합계(천원) |
+| **2** | 복지정책과 | 12 | 42,300 |
+| **3** | … | … | … |
+| **끝행** | **합계** | **200** | **512,400** |
+
+\`\`\`text
+서식 — 1행은 굵게, 금액 열은 천 단위 쉼표, 마지막 합계 행은 굵게
+\`\`\`
+
+**✅ 확인** — 결과 표의 **열 이름과 순서**까지 적었나요? 여기까지 적어야 4교시에 다시 안 고칩니다.
+
+---
+
+### STEP 6 · 요구사항 명세서로 합칩니다
+
+네 덩어리를 **하나의 프롬프트**로 이어 붙입니다. 아래 틀을 그대로 쓰세요.
+
+\`\`\`text
+나는 구글 스프레드시트로 업무를 자동화하려는 공무원이야. 코딩은 못 해.
+아래 설계대로 Google Apps Script 코드를 만들어 줘.
+
+[입력]
+- 시트 이름: 신청접수
+- 1행은 제목 행
+- 열: A 접수번호(문자·필수) / B 부서(문자·필수) / C 항목(문자·필수)
+      / D 금액(숫자·선택) / E 처리상태(문자·선택)
+
+[처리 절차]
+1. 1행을 제외한 전체 데이터를 읽는다.
+2. A열이 비어 있는 행은 건너뛴다.
+3. A열이 중복이면 나중 행만 남긴다.
+4. D열이 비어 있으면 0으로 본다.
+5. B열별로 묶어 건수와 D열 합계를 낸다.
+6. B열이 비어 있는 행은 "[확인 필요]" 부서로 묶는다.
+7. "부서별집계" 시트를 비우고 결과를 채운다.
+8. 마지막에 전체 합계 행을 넣는다.
+
+[결과]
+- 시트 이름: 부서별집계 (없으면 새로 만들기)
+- 열: 부서 / 건수 / 합계(천원)
+- 1행 굵게, 금액은 천 단위 쉼표, 합계 행 굵게
+
+[실행 방법]
+- 시트 상단에 "자동화" 메뉴를 만들고 그 안에 "부서별 집계" 항목을 넣어 줘.
+
+[지켜 줄 것]
+- 붙여넣고 바로 실행되는 완성된 코드로 줘.
+- 각 줄 위에 무슨 일을 하는지 한글 주석을 달아 줘.
+- 원본 "신청접수" 시트는 절대 수정하지 마.
+- 내가 알려주지 않은 조건은 임의로 정하지 말고 먼저 물어봐 줘.
+\`\`\`
+
+**✅ 확인** — 마지막 \`[지켜 줄 것]\` 네 줄은 **어떤 업무든 그대로** 씁니다. 특히 마지막 두 줄이 사고를 막습니다.
+
+---
+
+### STEP 7 · 명세서를 AI에게 검토시킵니다
+
+바로 코드를 시키지 말고 한 번 걸러냅니다.
+
+\`\`\`text
+위 요구사항 명세서로 코드를 만들기 전에,
+애매하거나 빠진 조건이 있으면 질문 목록으로 먼저 알려 줘.
+질문이 없으면 "질문 없음"이라고만 답해 줘.
+\`\`\`
+
+**✅ 확인**
+
+| 답 | 뜻 | 다음 |
+|----|-----|------|
+| 질문 2~3개 | **정상** — 명세서가 구체적이라 진짜 빈틈만 짚은 것 | 답해 주고 명세서에 반영 |
+| "질문 없음" | 명세서가 충분하다 | 4교시로 |
+| 질문 10개 이상 | 명세서가 아직 성글다 | STEP 2~5를 다시 |
+
+---
+
+### 완성 점검표
+
+| # | 항목 | 확인 |
+|---|------|------|
+| 1 | 시트 이름과 탭 이름이 실제와 똑같이 적혔다 | |
+| 2 | 열을 **A·B·C 문자와 이름**으로 함께 적었다 | |
+| 3 | 각 열의 **"비어 있으면"** 처리가 적혔다 | |
+| 4 | 처리 절차가 번호로, 한 줄에 동작 하나로 적혔다 | |
+| 5 | 결과 표의 **열 이름과 순서**가 적혔다 | |
+| 6 | 실행 방법(메뉴·버튼·트리거)이 정해졌다 | |
+| 7 | \`[지켜 줄 것]\` 네 줄이 들어 있다 | |
+| 8 | AI 검토 질문에 답해 반영했다 | |
+
+> 8개가 채워지면 **자동화 도구 설계서 및 프롬프트 완성**입니다. 이 명세서를 그대로 들고 4교시로 갑니다.`,contentEn:`**40 minutes · Deliverables: a tool design and the requirement spec for the AI**
+
+Combine the Session 2 definition with the screens you just learned into **a document you hand straight to the AI.**
+
+> The quality of the code you get in Session 4 **exactly equals** the quality of this spec.
+
+### STEP 1 · Four blocks
+① Inputs ② Button/trigger ③ Processing ④ Result screen.
+
+### STEP 2 · Inputs as a table
+Sheet name, how data gets in, then per column: letter, name, format, required, **and what happens when it is blank.**
+**✅ Check** — the "when blank" column is the heart of this table. Leave it out and the AI decides for you.
+
+### STEP 3 · Choose how it runs
+
+| Method | How | When |
+|---|---|---|
+| **Sheet menu button** | A \`자동화 ▾\` menu appears in the sheet | You or your team (recommended) |
+| Run from the editor | Open Apps Script, press Run | Just you |
+| Time trigger | 9am on the 1st, automatically | Must run unattended |
+| Form trigger | On every submission | Many submitters |
+
+### STEP 4 · Copy the processing steps in, with screen names
+Not "group by department" but "group by Department (column B)."
+
+### STEP 5 · Draw the result table
+Sheet name, column names **and order**, plus formatting (bold header, thousands separators, bold total row).
+
+### STEP 6 · Merge into one requirement spec
+One prompt containing [Input] [Processing] [Result] [How it runs] [Rules to follow].
+
+The four **rules to follow** are reusable for any task:
+- Give complete, paste-and-run code
+- Korean comments above each line
+- Never modify the source sheet
+- Ask before deciding any condition I didn't specify
+
+### STEP 7 · Have the AI review the spec first
+"Before writing code, list anything ambiguous or missing. If nothing, reply 'no questions'."
+
+| Answer | Meaning | Next |
+|---|---|---|
+| 2–3 questions | **Healthy** — only real gaps remain | Answer, fold in |
+| "No questions" | The spec is sufficient | Go to Session 4 |
+| 10+ questions | Still too loose | Redo STEPs 2–5 |
+
+### Completion checklist
+Real sheet/tab names · columns given by letter **and** name · blank-handling per column · numbered processing, one action per line · result columns and order · run method chosen · the four rules present · AI review folded in.
+
+> Take this spec straight into Session 4.`}]},c={id:"auto-04",icon:"fa-wand-magic-sparkles",title:"4교시 13:00~14:00 · 자동화 코드·템플릿 생성",titleEn:"Session 4 — Generating Code",sections:[{title:"프롬프트를 넣고 코드를 받습니다",titleEn:"Paste the Prompt, Get the Code",content:`### 이 시간에 하는 일
+
+| 학습 목표 | ChatGPT 또는 Claude로 Apps Script를 생성하고 실제 시트에 적용한다 |
+|---|---|
+| 형태 | 실습 |
+| **산출물** | **1차 자동화 템플릿** |
+
+### 따라하기 — 순서대로 하세요
+
+#### 1. AI 열기
+
+ChatGPT([chatgpt.com](https://chatgpt.com)) 또는 Claude([claude.ai](https://claude.ai)) 중 하나를 엽니다. 둘 다 무료 계정으로 됩니다.
+
+> 이 실습에서는 **Claude 를 권합니다.** 코드를 통째로 주고, 오류 설명이 친절합니다.
+
+#### 2. 3교시 프롬프트 붙여넣기
+
+3교시에 만든 프롬프트를 **그대로** 붙여넣고 Enter 를 누릅니다.
+
+#### 3. 답변에서 코드만 골라내기
+
+답변에 코드 상자가 나옵니다. 상자 **오른쪽 위 복사 버튼**을 누릅니다.
+
+| 이런 게 보이면 | 뜻 |
+|-------------|-----|
+| \`function onOpen() {\` | 메뉴를 만드는 부분 — 있어야 합니다 |
+| \`function 어떤이름() {\` | 실제 작업을 하는 부분 |
+| \`// 한국어 설명\` | 주석 — 컴퓨터는 무시하고 사람만 읽습니다 |
+
+#### 4. 시트에 붙여넣기
+
+1. 구글 시트 탭으로 갑니다
+2. 상단 **확장 프로그램 → Apps Script**
+3. 편집기에 있던 내용을 **전부 지웁니다** (Ctrl+A → Delete)
+4. 복사한 코드를 붙여넣습니다 (Ctrl+V)
+5. **저장** (디스크 모양 또는 Ctrl+S)
+
+#### 5. 시트 새로고침
+
+시트 탭으로 돌아가 **브라우저 새로고침(F5)** 을 합니다.
+잠시 뒤 상단 메뉴에 **'실적 취합'** 같은 새 메뉴가 생깁니다.
+
+> 메뉴가 안 보이면 10초쯤 기다렸다가 다시 새로고침하세요. 그래도 없으면 5교시 오류 대응표를 보세요.
+
+#### 6. 실행
+
+새로 생긴 메뉴를 클릭합니다. 처음이면 권한 요청이 뜹니다.
+
+**권한 검토 → 내 계정 선택 → 고급 → (프로젝트명)(으)로 이동 → 허용**
+
+#### 7. 결과 확인
+
+'요약' 시트에 결과가 들어갔는지 봅니다.
+
+### 업무 유형별 프롬프트 예제
+
+내 업무가 아래에 해당하면 그대로 가져다 쓰세요. **시트 이름과 열 구성만 내 것으로 바꾸면 됩니다.**
+
+#### ① 신청자 명단 정리 (여러 시트 합치고 중복 제거)
+
+\`\`\`text
+너는 Google Apps Script 전문가야. 나는 코딩을 모르니 코드와 설치 방법을 단계별로 알려줘.
+
+'1팀', '2팀', '3팀' 시트에 같은 양식의 신청자 명단이 있어.
+각 시트: 1행 제목, 2행부터 데이터, A열 성명, B열 소속, C열 신청일, D열 연락처
+
+아래 순서로 처리하는 Apps Script를 만들어줘.
+1. 세 시트의 데이터를 하나로 합친다
+2. A열(성명)과 B열(소속)이 모두 같은 행은 첫 번째만 남긴다
+3. C열(신청일) 오름차순으로 정렬한다
+4. '통합명단' 시트에 결과를 쓴다 (기존 내용 지우고)
+5. 완료되면 "총 ○명, 중복 ○건 제거" 알림을 띄운다
+
+상단 메뉴에 '명단 통합' 메뉴를 만들어 실행되게 해줘.
+전체 코드를 한 덩어리로 주고, 한국어 주석을 달아줘.
+내가 적지 않은 규칙을 임의로 만들지 마.
+\`\`\`
+
+#### ② 민원 분류 (유형·소관 부서 자동 지정)
+
+\`\`\`text
+너는 Google Apps Script 전문가야. 나는 코딩을 모르니 단계별로 알려줘.
+
+'민원' 시트: 1행 제목, 2행부터 데이터, A열 접수일, B열 민원내용
+B열 내용에 아래 단어가 들어가면 C열에 유형, D열에 소관을 자동으로 채워줘.
+
+| 포함 단어 | 유형 | 소관 |
+|---|---|---|
+| 가로등, 도로, 포트홀 | 시설물 유지보수 | 도로과 |
+| 주차, 단속, 견인 | 단속 이의 | 교통과 |
+| 지원금, 신청, 자격 | 제도 문의 | 해당 사업부서 |
+| 공원, 벤치, 화단 | 시설물 유지보수 | 공원녹지과 |
+
+어디에도 해당하지 않으면 C열에 '분류 필요', D열에 '확인 필요'라고 써줘.
+상단 메뉴에 '민원 분류' 메뉴를 만들어줘.
+전체 코드를 한 덩어리로, 한국어 주석과 함께 줘.
+\`\`\`
+
+#### ③ 명단에서 개인별 안내문 일괄 생성
+
+\`\`\`text
+너는 Google Apps Script 전문가야. 나는 코딩을 모르니 단계별로 알려줘.
+
+'명단' 시트: 1행 제목, 2행부터 데이터, A열 성명, B열 교육과정, C열 일시, D열 장소
+아래 양식으로 개인별 안내문을 만들어 E열에 넣어줘.
+
+양식:
+"○○○ 님, 안녕하십니까. 신청하신 [교육과정] 교육이 [일시] [장소]에서 진행됩니다. 참석에 착오 없으시기 바랍니다."
+
+- 대괄호 부분은 각 행의 값으로 바꾼다
+- 값이 빈 행은 건너뛴다
+- 상단 메뉴에 '안내문 생성' 메뉴를 만든다
+전체 코드를 한 덩어리로, 한국어 주석과 함께 줘.
+\`\`\`
+
+#### ④ 집행률 계산 + 조건부 서식
+
+\`\`\`text
+너는 Google Apps Script 전문가야. 나는 코딩을 모르니 단계별로 알려줘.
+
+'집행현황' 시트: 1행 제목, 2행부터 데이터, A열 부서명, B열 예산액, C열 집행액
+아래를 처리하는 Apps Script를 만들어줘.
+
+1. D열에 집행률(C/B)을 백분율로 계산해 넣는다 (소수점 1자리)
+2. 집행률 90% 초과면 해당 행 D칸을 빨강, 50% 미만이면 노랑으로 칠한다
+3. B열이 0이거나 비어 있으면 D열에 '계산 불가'라고 쓴다
+4. '요약' 시트에 전체 평균 집행률과 부서 수를 쓴다
+5. 상단 메뉴에 '집행률 계산' 메뉴를 만든다
+
+전체 코드를 한 덩어리로, 한국어 주석과 함께 줘.
+\`\`\`
+
+### AI가 되물으면
+
+좋은 신호입니다. **모르는 걸 지어내지 않고 묻는 것**이 맞습니다.
+
+| AI가 묻는 것 | 답하는 법 |
+|------------|----------|
+| "시트 이름이 뭔가요?" | 실제 탭 이름 그대로 |
+| "제목 행이 몇 행인가요?" | "1행이 제목, 2행부터 데이터" |
+| "중복 판단 기준은?" | "A열과 B열이 모두 같으면 중복" |
+| "결과를 어디에 쓸까요?" | "'요약' 시트 A1부터, 기존 내용은 지우고" |
+
+### 첫 결과가 마음에 안 들면
+
+**처음부터 다시 쓰지 마세요.** 이어서 고쳐 달라고 하면 됩니다.
+
+\`\`\`text
+방금 준 코드에서 아래만 고쳐줘. 나머지는 그대로 두고 전체 코드를 다시 보여줘.
+
+- 결과를 '요약' 시트가 아니라 '주간요약' 시트에 써줘
+- 합계 옆에 전주 대비 증감도 계산해서 넣어줘
+\`\`\`
+
+### 산출물 확인
+
+- [ ] AI에게서 코드를 받았다
+- [ ] 시트의 Apps Script 편집기에 붙여넣고 저장했다
+- [ ] 새로고침 후 상단에 새 메뉴가 생겼다
+- [ ] 메뉴를 눌러 실행했다 (오류가 나도 괜찮습니다 — 5교시에서 잡습니다)
+- [ ] **받은 프롬프트와 코드를 따로 저장해 뒀다** (다음에 재사용)
+
+> 여기까지 오셨으면 오늘의 절반은 끝났습니다. 오류가 났다면 그것도 정상입니다. 5교시가 그걸 잡는 시간입니다.`,contentEn:`### This session
+
+Generate Apps Script with ChatGPT or Claude and apply it to a real sheet. **Deliverable: first template.**
+
+### Walkthrough
+
+1. Open ChatGPT or Claude (Claude recommended — it returns whole code and explains errors kindly)
+2. Paste your session-3 prompt as-is
+3. Copy the code block
+4. Sheet → **Extensions → Apps Script**, clear everything, paste, **Save**
+5. Return to the sheet and **refresh (F5)** — a new menu appears
+6. Click it; approve permissions (Advanced → Go to project → Allow)
+7. Check the result sheet
+
+### Ready-made prompts by task type
+
+Merging applicant lists, auto-classifying complaints, generating individual notices, computing execution rates with conditional formatting. Change only sheet names and columns.
+
+### If the AI asks a question
+
+That is the right behavior — answer with the exact sheet name, header row, duplicate criteria, and result location.
+
+### If the first result is wrong
+
+Do not start over — ask it to change only the specific part and show the whole code again.`},{title:"따라하기 실습 · 코드를 받아 시트에 붙이기",titleEn:"Hands-on — Get the Code and Put It in the Sheet",content:`**소요 55분 · 준비물: 3교시에서 만든 요구사항 명세서, 구글 계정**
+**산출물: 1차 자동화 템플릿**
+
+3교시 명세서를 AI에게 건네 코드를 받고, **실제 시트에서 돌아가게** 만듭니다. 코드는 한 줄도 직접 쓰지 않습니다.
+
+---
+
+## 1부 · 코드 받기 (STEP 1~3)
+
+그림의 **주황 번호가 STEP 번호**입니다.
+
+![자동화 코드 받기 화면 — 명세서 붙여넣기, 되물음에 답하기, 완성 코드 한 덩어리 수령](~/automation/auto-code-gen.svg)
+
+---
+
+### STEP 1 · 명세서를 통째로 붙여넣고, 코드보다 먼저 질문을 받습니다
+
+ChatGPT나 Claude에 **새 대화**를 열고, 3교시 명세서 전체를 붙여넣은 뒤 이어서 보냅니다.
+
+\`\`\`text
+위 명세서로 코드를 만들기 전에,
+애매하거나 빠진 조건이 있으면 질문 목록으로 먼저 알려 줘.
+질문이 없으면 "질문 없음"이라고만 답해 줘.
+\`\`\`
+
+**✅ 확인**
+
+| 답 | 뜻 | 다음 |
+|----|-----|------|
+| 질문 2~3개 | **정상** — 명세서가 구체적이라 진짜 빈틈만 짚었다 | STEP 2로 |
+| "질문 없음" | 명세서가 충분하다 | 바로 STEP 3으로 |
+| 질문 10개 이상 | 명세서가 아직 성글다 | **3교시로 돌아가** 다시 채운다 |
+
+---
+
+### STEP 2 · 되물음에 답합니다
+
+\`\`\`text
+1번 — 있으면 내용을 지우고 다시 채워 줘.
+2번 — 0으로 계산해 줘.
+\`\`\`
+
+**✅ 확인** — 답한 내용을 **명세서에도 적어 두세요.** 다음 달에 다시 만들 때 같은 질문을 안 받습니다.
+
+---
+
+### STEP 3 · 코드를 받습니다
+
+\`\`\`text
+이제 Google Apps Script 코드를 만들어 줘.
+
+- 붙여넣고 바로 실행되는 완성된 코드로
+- 각 줄 위에 무슨 일을 하는지 한글 주석
+- 함수 이름은 부서별집계_만들기
+- 원본 "신청접수" 시트는 절대 수정하지 마
+- 시트 상단에 "자동화" 메뉴를 만들고 그 안에 실행 항목을 넣어 줘
+\`\`\`
+
+**✅ 확인** — \`function\` 으로 시작하는 코드가 **한 덩어리로** 나오면 성공입니다. 코드를 이해할 필요는 없습니다. **한 글자도 고치지 마세요.**
+
+---
+
+## 2부 · 시트에 적용하기 (STEP 4~6)
+
+![시트 적용 결과 화면 — 자동화 메뉴 생성, 메뉴 실행, 결과 탭과 원본 탭 확인](~/automation/auto-sheet-apply.svg)
+
+---
+
+### STEP 4 · 붙여넣고 저장합니다
+
+1. 시트에서 **[확장 프로그램] → [Apps Script]**
+2. 편집기 내용을 **모두 지우고** 받은 코드를 붙여넣기
+3. **저장**(💾)
+4. **시트로 돌아가 브라우저를 새로고침**(F5)
+
+**✅ 확인** — 상단 메뉴에 **\`자동화\`** 가 새로 생겼나요? 안 생겼다면 ① 저장을 안 했거나 ② 새로고침을 안 한 것입니다.
+
+---
+
+### STEP 5 · 메뉴에서 실행합니다
+
+**[자동화] → [부서별 집계 실행]**
+
+첫 실행에는 권한 창이 뜹니다 — **고급 → 프로젝트로 이동 → 허용**.
+
+**✅ 확인** — 이제 **동료도 코드를 몰라도 메뉴만 누르면 됩니다.** 이것이 "도구"가 된 순간입니다.
+
+---
+
+### STEP 6 · 결과와 원본을 둘 다 확인합니다
+
+**✅ 확인** — 두 가지를 모두 봅니다.
+
+| 봐야 할 것 | 통과 기준 |
+|-----------|----------|
+| 결과 탭 | \`부서별집계\` 탭이 새로 생기고 표가 채워졌다 |
+| **원본 탭** | \`신청접수\` 탭의 내용이 **하나도 바뀌지 않았다** |
+| 합계 행 | 마지막 행 합계가 원본을 더한 값과 같다 |
+
+> **원본 확인을 빠뜨리지 마세요.** 결과가 잘 나와도 원본을 건드렸다면 그 도구는 못 씁니다.
+
+---
+
+## 3부 · 예제 세 가지로 넓혀 보기 (STEP 7)
+
+집계 하나가 돌았다면, 같은 방식으로 **다른 기능을 덧붙입니다.** 아래 세 가지를 각각 새 요청으로 보내세요.
+
+### ① 신청자 명단 정리
+
+\`\`\`text
+"자동화" 메뉴에 "명단 정리" 항목을 추가해 줘.
+
+- "신청접수" 시트에서 접수번호가 중복이면 나중 행만 남긴다.
+- 접수번호가 비어 있는 행은 제외한다.
+- 부서 → 접수번호 순으로 정렬한다.
+- 결과를 "정리명단" 시트에 넣는다. 원본은 수정하지 마.
+\`\`\`
+
+**✅ 확인** — 원본 행 수보다 결과 행 수가 **적거나 같아야** 정상입니다. 많아졌다면 중복 제거가 반대로 된 것입니다.
+
+### ② 데이터 분류
+
+\`\`\`text
+"자동화" 메뉴에 "금액대 분류" 항목을 추가해 줘.
+
+- 금액이 10,000천원 이상이면 "대규모",
+  3,000 이상 10,000 미만이면 "중규모", 그 미만이면 "소규모"로 분류한다.
+- 금액이 비어 있으면 "확인필요"로 분류한다.
+- 결과를 "분류결과" 시트에 접수번호·부서·금액·구분 네 열로 넣는다.
+\`\`\`
+
+**✅ 확인** — **경계값을 직접 확인하세요.** 정확히 10,000인 행이 "대규모"로 갔는지, 3,000인 행이 "중규모"로 갔는지. 경계에서 틀리는 일이 가장 잦습니다.
+
+### ③ 보고 문장 생성
+
+\`\`\`text
+"자동화" 메뉴에 "보고문 만들기" 항목을 추가해 줘.
+
+- "부서별집계" 시트의 숫자를 읽어 보고용 문장 한 문단을 만든다.
+- 문장에는 총 건수, 총 금액, 가장 많은 부서만 넣는다.
+- 시트에 없는 숫자는 절대 만들어 넣지 마.
+- 결과를 "보고문" 시트 A1 칸에 넣는다.
+\`\`\`
+
+**✅ 확인** — 나온 문장의 **모든 숫자가 집계표에 있는 숫자인지** 눈으로 대조합니다. 없는 숫자가 하나라도 있으면 그 기능은 쓰지 마세요.
+
+---
+
+### 완성 점검표 — 1차 자동화 템플릿
+
+| # | 항목 | 확인 |
+|---|------|------|
+| 1 | 시트 상단에 \`자동화\` 메뉴가 생겼다 | |
+| 2 | 메뉴에서 실행하면 결과 탭이 채워진다 | |
+| 3 | 원본 시트가 수정되지 않았다 | |
+| 4 | 합계·행 개수를 원본과 대조했다 | |
+| 5 | 예제 3가지 중 최소 1개를 더 붙였다 | |
+| 6 | 받은 코드를 별도 문서에도 보관했다 | |
+| 7 | 되물음에 답한 내용을 명세서에 반영했다 | |
+
+> 7개가 채워지면 **1차 자동화 템플릿 완성**입니다. 5교시에서 이걸 본격적으로 시험합니다.`,contentEn:`**55 minutes · You need the Session 3 spec and a Google account**
+**Deliverable: a first automation template**
+
+Hand your spec to the AI, get code, and make it run in a real sheet. You will not write a line of code.
+
+## Part 1 · Getting the code
+![Code-generation screen](~/automation/auto-code-gen.svg)
+
+**STEP 1 · Paste the whole spec, ask for questions before code.**
+
+| Answer | Meaning | Next |
+|---|---|---|
+| 2–3 questions | **Healthy** — only real gaps remain | STEP 2 |
+| "No questions" | The spec is sufficient | STEP 3 |
+| 10+ questions | The spec is still loose | **Go back to Session 3** |
+
+**STEP 2 · Answer them** — and record the answers in the spec so you never get asked again.
+
+**STEP 3 · Request the code** — complete and paste-and-run, Korean comments per line, a named function, never modify the source sheet, and add an "자동화" menu to the sheet.
+**✅ Check** — one block starting with \`function\`. You don't need to understand it. **Change nothing.**
+
+## Part 2 · Putting it in the sheet
+![Sheet application screen](~/automation/auto-sheet-apply.svg)
+
+**STEP 4 · Paste, save, refresh the sheet.**
+**✅ Check** — a new \`자동화\` menu appears. If not, you skipped the save or the refresh.
+
+**STEP 5 · Run it from the menu.** Approve the permission prompt once.
+**✅ Check** — a colleague who knows no code can now use it. That is the moment it became a *tool*.
+
+**STEP 6 · Check the result **and** the source.**
+
+| Check | Pass |
+|---|---|
+| Result tab | A new tab appeared and is filled |
+| **Source tab** | The original is **completely unchanged** |
+| Total row | Matches the sum of the source |
+
+> Never skip the source check. A correct result from a tool that modified the original is still unusable.
+
+## Part 3 · Three more examples (STEP 7)
+Add each as a new request: **① applicant-list cleanup** (deduplicate, drop blanks, sort), **② data classification** (bands by amount, "needs checking" for blanks), **③ report-sentence generation** (only numbers present in the sheet).
+
+**✅ Checks** — for ①, result rows must be fewer than or equal to the source. For ②, verify the **boundary values** yourself. For ③, confirm every number in the sentence appears in the table.
+
+### Completion checklist
+Menu created · runs from the menu · source untouched · totals reconciled · at least one extra example added · code saved elsewhere · answers folded into the spec.
+
+> Seven checks make your **first automation template.** Session 5 puts it under real testing.`}]},d={id:"auto-05",icon:"fa-bug",title:"5교시 14:00~15:00 · 구현 및 테스트",titleEn:"Session 5 — Build and Test",sections:[{title:"돌려보고, 틀리면 AI에게 다시 시킵니다",titleEn:"Run It, and Send Errors Back to the AI",content:`### 이 시간에 하는 일
+
+| 학습 목표 | 기능을 테스트하고, 오류를 AI에게 보내 고치는 루틴을 익힌다 |
+|---|---|
+| 형태 | 실습 |
+| **산출물** | **작동 가능한 자동화 도구 초안** |
+
+> 오류는 실패가 아닙니다. **오류 메시지를 AI에게 그대로 보내는 것**이 이 시간의 핵심 기술입니다.
+
+### 기능 테스트 5가지
+
+내 도구에 해당하는 것만 확인하세요.
+
+| # | 확인할 것 | 어떻게 |
+|---|---------|--------|
+| 1 | 버튼(메뉴) 실행 | 메뉴를 눌렀을 때 도는가 |
+| 2 | 자동 분류 | 규칙대로 값이 채워지는가 |
+| 3 | 요약문 생성 | 문장이 제대로 만들어지는가 |
+| 4 | 파일명·서식 정리 | 형식이 지정한 대로인가 |
+| 5 | 안내문 생성 | 빈 값 행에서 이상한 문장이 안 나오는가 |
+
+### 오류 수정 루틴 — 이 3단계만 반복합니다
+
+#### 1단계 · 오류 메시지 전체 복사
+
+빨간 오류 창이 뜨면 **텍스트를 전부 드래그해서 복사**합니다. 일부만 복사하면 AI가 원인을 못 찾습니다.
+
+#### 2단계 · AI에게 그대로 보내기
+
+\`\`\`text
+방금 준 코드를 실행했더니 아래 오류가 났어.
+
+(오류 메시지 전체 붙여넣기)
+
+1. 왜 이런 오류가 났는지 초보자가 알아듣게 설명해줘.
+2. 고친 전체 코드를 다시 보여줘. 일부만 말고 통째로.
+3. 같은 오류가 다시 안 나게 하려면 뭘 조심해야 하는지 알려줘.
+\`\`\`
+
+#### 3단계 · 다시 붙여넣고 실행
+
+편집기 내용을 **전부 지우고** 새 코드를 붙여넣습니다 → 저장 → 시트 새로고침 → 실행.
+
+> 이 3단계를 두세 번 돌리면 대개 해결됩니다. 다섯 번을 넘어가면 손을 드세요 — 설계가 잘못됐을 수 있습니다.
+
+### 자주 나오는 오류와 원인
+
+| 오류 메시지 | 실제 원인 | 해결 |
+|-----------|---------|------|
+| \`시트를 찾을 수 없습니다\` / \`getSheetByName(...) is null\` | 시트 탭 이름이 코드와 다름 | 탭 이름을 코드와 **똑같이** (공백·괄호 주의) |
+| \`권한이 필요합니다\` | 최초 실행 승인을 안 함 | 고급 → 프로젝트로 이동 → 허용 |
+| 메뉴가 안 생김 | \`onOpen\` 이 없거나 새로고침 안 함 | F5 새로고침, 그래도 없으면 "onOpen 함수를 추가해줘" |
+| \`Cannot read properties of undefined\` | 빈 행·빈 칸을 계산에 넣음 | "빈 값은 건너뛰게 해줘" 라고 요청 |
+| 결과가 엉뚱한 열에 | 열 번호를 다르게 셈 | "A열이 1번, D열이 4번" 이라고 명시 |
+| 숫자가 문자로 계산됨 | 시트 값이 텍스트 형식 | "숫자로 변환한 뒤 계산해줘" |
+| 실행은 되는데 아무 일도 없음 | 데이터 시작 행이 다름 | "1행이 제목, 2행부터 데이터" 다시 명시 |
+| \`시간 초과\` | 데이터가 너무 많음 | "한 번에 처리할 행 수를 나눠서" 요청 |
+
+### 예외 상황 — 실제 행정업무에서 꼭 확인할 것
+
+테스트가 성공해도 **아래 상황을 일부러 만들어서** 다시 돌려보세요. 실제 업무에서 반드시 생깁니다.
+
+| 만들어 볼 상황 | 왜 |
+|--------------|-----|
+| 빈 행을 중간에 넣기 | 제출 파일에는 항상 빈 행이 있습니다 |
+| 숫자 칸에 '-' 나 '해당없음' 입력 | 담당자마다 다르게 씁니다 |
+| 팀명 앞뒤에 공백 넣기 | 복사·붙여넣기 하면 공백이 붙습니다 |
+| 같은 팀명을 '총무과' / '총무 과' 로 | 표기가 통일되지 않습니다 |
+| 데이터가 0건인 상태로 실행 | 아직 제출 전에 실행하는 일이 생깁니다 |
+| 결과 시트에 이미 옛 데이터가 있는 상태 | 지난주 결과가 남아 있습니다 |
+
+각각에서 이상하게 동작하면 AI에게 이렇게 말합니다.
+
+\`\`\`text
+팀명 앞뒤에 공백이 있으면 다른 팀으로 계산돼. 공백을 없앤 뒤에 비교하도록 고쳐줘.
+그리고 숫자 칸에 '-'나 '해당없음' 같은 글자가 있으면 0으로 처리해줘.
+고친 전체 코드를 다시 보여줘.
+\`\`\`
+
+### 실행 편하게 만들기 — 버튼 붙이기
+
+메뉴 대신 시트 위에 **누를 수 있는 버튼**을 만들 수 있습니다.
+
+1. 시트 상단 **삽입 → 그림** 을 클릭합니다
+2. 도형으로 사각형을 그리고 안에 "실적 취합" 이라고 씁니다 → **저장 후 닫기**
+3. 시트에 놓인 그림을 클릭 → 오른쪽 위 **⋮ → 스크립트 할당**
+4. 함수 이름(예: \`실적취합\`)을 입력 → 확인
+5. 이제 그 그림을 누르면 실행됩니다
+
+> 40~50대 동료에게 넘길 때는 **메뉴보다 버튼이 훨씬 낫습니다.** 눈에 보이니까요.
+
+### 산출물 확인
+
+- [ ] 메뉴 또는 버튼을 눌러 도구가 끝까지 돈다
+- [ ] 결과가 지정한 시트·위치에 나온다
+- [ ] 빈 행·이상한 값을 넣어도 멈추지 않는다
+- [ ] 0건일 때 안내 메시지가 뜬다
+- [ ] 두 번 연속 실행해도 결과가 중복되지 않는다
+- [ ] 최종 코드를 따로 저장해 뒀다
+
+> 여섯 개가 모두 체크되면 **오늘 목표를 달성한 것입니다.** 남은 시간은 이 도구를 안전하고 남에게 넘길 수 있게 다듬습니다.`,contentEn:`### This session
+
+Test the functions and learn the routine for sending errors back to the AI. **Deliverable: working draft tool.**
+
+### The three-step fix routine
+
+1. **Copy the entire error message** — partial copies hide the cause
+2. **Send it back**: explain in beginner terms, show the corrected whole code, and how to avoid it next time
+3. **Paste, save, refresh, run**
+
+Two or three rounds usually settles it. Past five, raise your hand — the design may be wrong.
+
+### Common errors
+
+Sheet not found (tab name mismatch), permission needed (first-run approval), no menu (onOpen missing or no refresh), undefined property (empty rows), wrong column (index off), numbers as text, nothing happens (wrong start row), timeout (too much data).
+
+### Deliberately test these
+
+Blank rows mid-data, "-" in a number cell, whitespace around names, inconsistent spellings, zero rows, and stale data in the result sheet.
+
+### Attach a button
+
+Insert → Drawing → draw a rectangle with a label → Save → click the image → ⋮ → Assign script → enter the function name. Buttons beat menus when handing the tool to a colleague.`},{title:"따라하기 실습 · 기능 시험과 오류 대응 루틴",titleEn:"Hands-on — Testing Features and the Error Routine",content:`**소요 55분 · 준비물: 4교시에서 만든 1차 템플릿**
+**산출물: 작동 가능한 자동화 도구 초안**
+
+만든 도구를 **일부러 괴롭혀서** 실제 업무에 견디는지 확인합니다. 오류는 실패가 아니라 **정상적인 절차**입니다.
+
+그림의 **주황 번호가 STEP 번호**입니다.
+
+![오류 대응 루프 — 하나씩 실행, 오류는 통째로 전달, 고쳐질 때까지 반복, 결과 대조와 예외 시험](~/automation/auto-error-loop.svg)
+
+---
+
+### STEP 1 · 기능을 하나씩 실행합니다
+
+**여러 개를 한꺼번에 돌리지 마세요.** 어느 기능이 틀렸는지 못 찾습니다.
+
+붙여 둔 기능을 표로 만들고 하나씩 눌러 봅니다.
+
+| 기능 | 실행 결과 | 결과가 맞나 |
+|------|----------|------------|
+| 부서별 집계 | | |
+| 명단 정리 | | |
+| 금액대 분류 | | |
+| 보고문 만들기 | | |
+
+**✅ 확인** — 네 칸이 다 채워질 때까지 다음으로 넘어가지 않습니다.
+
+---
+
+### STEP 2 · 오류가 나면 문장을 통째로 복사합니다
+
+**요약하지 말고, 고쳐 쓰지 말고, 그대로** 복사합니다. **줄 번호와 오류 이름이 해결의 열쇠**입니다.
+
+\`\`\`text
+TypeError: Cannot read properties of null (reading 'getDataRange')
+    at 부서별집계_만들기(코드:4:31)
+\`\`\`
+
+**✅ 확인** — 빨간 글씨 전체를 드래그해 복사했나요? 첫 줄만 복사하면 AI가 어디인지 모릅니다.
+
+---
+
+### STEP 3 · AI에게 붙여넣고 "전체를 다시" 요청합니다
+
+\`\`\`text
+실행했더니 이런 오류가 났어.
+무슨 뜻이고 어떻게 고치면 되는지 알려 주고,
+고친 코드 전체를 다시 줘.
+
+(오류 문장 그대로 붙여넣기)
+\`\`\`
+
+**✅ 확인** — **"전체를 다시 줘"** 를 꼭 넣으세요. 부분만 받으면 어디를 바꿔야 할지 모릅니다.
+
+받은 코드를 다시 붙여넣고 → 저장 → 다시 실행. **고쳐질 때까지 이 고리를 돕니다.** 보통 두세 번이면 끝납니다.
+
+**자주 나오는 오류 세 가지**
+
+| 오류 문구에 보이는 말 | 대개 이런 뜻 | 이렇게 답하면 빨리 끝난다 |
+|---------------------|------------|------------------------|
+| \`null\`, \`getSheetByName\` | 시트 이름이 다르다 | "시트 이름은 정확히 \`신청접수\` 야" |
+| \`NaN\`, \`Number\` | 숫자 칸에 문자가 섞였다 | "숫자가 아닌 값은 0으로 처리해 줘" |
+| \`out of range\`, \`length\` | 데이터가 없거나 행이 모자란다 | "데이터가 0건일 때도 오류 없이 끝나게 해 줘" |
+
+---
+
+### STEP 4 · 오류가 없어도 결과를 대조합니다
+
+**오류가 안 났다고 맞는 게 아닙니다.** 조용히 틀린 결과가 가장 위험합니다.
+
+| 대조 항목 | 방법 |
+|-----------|------|
+| 행 개수 | 결과 행 수 = 원본 행 수 − 제외한 행 수 인가 |
+| 합계 | 결과 합계 = 원본 금액 열의 합인가 (원본에서 \`=SUM()\` 으로 직접 계산) |
+| 빠진 항목 | 5개 과가 모두 나왔는가 |
+| 경계값 | 정확히 10,000인 행이 어느 구분으로 갔는가 |
+
+**✅ 확인** — 네 가지 중 **하나라도 어긋나면 그 기능은 아직 못 씁니다.** 어긋난 내용을 그대로 AI에게 알려 고칩니다.
+
+---
+
+### STEP 5 · 예외 상황을 일부러 넣어 봅니다 — 이 실습의 핵심
+
+실제 업무 자료에는 **늘 예외가 있습니다.** 연습 시트를 복사해서 아래를 하나씩 넣고 돌려 보세요.
+
+| # | 넣어 볼 예외 | 기대하는 동작 | 나쁜 동작 |
+|---|-------------|-------------|----------|
+| 1 | 중간에 **빈 행** 한 줄 | 건너뛰고 계속 | 거기서 멈춤 |
+| 2 | 접수번호 **중복** 2건 | 규칙대로 하나만 남김 | 둘 다 세어 합계가 늘어남 |
+| 3 | 금액 칸에 **"미정"** 이라고 입력 | 0으로 보거나 \`[확인 필요]\` 표시 | 오류로 멈춤 |
+| 4 | 데이터가 **0건**(제목 행만) | "처리할 자료가 없습니다" 안내 | 오류 메시지 |
+| 5 | 행이 **1,000줄** | 조금 느려도 끝까지 완료 | 중간에 끊김 |
+| 6 | 부서 이름에 **띄어쓰기 차이**(\`복지정책과\` / \`복지 정책과\`) | 같은 부서로 묶이거나, 최소한 따로 표시 | 조용히 둘로 나뉨 |
+
+**✅ 확인** — 나쁜 동작이 나온 항목은 **그대로 AI에게 알립니다.**
+
+\`\`\`text
+빈 행이 중간에 있으면 거기서 멈춰. 빈 행은 건너뛰고 계속 처리하도록
+고친 코드 전체를 다시 줘.
+\`\`\`
+
+> 6번(띄어쓰기 차이)은 실제 부서 취합에서 **가장 자주 사고가 나는 곳**입니다. 반드시 시험하세요.
+
+---
+
+### STEP 6 · 동료에게 넘길 수 있게 다듬습니다
+
+\`\`\`text
+지금 도구를 처음 쓰는 동료가 읽고 그대로 따라 할 수 있게
+사용 설명을 5줄 이내로 만들어 줘.
+어디에 붙여넣고, 무엇을 누르고, 결과를 어디서 보고,
+무엇을 확인해야 하는지 순서로.
+\`\`\`
+
+**✅ 확인** — 그 5줄을 **시트의 새 탭(\`사용법\`)에 붙여 넣으세요.** 도구와 설명이 같은 파일에 있어야 인수인계가 됩니다.
+
+---
+
+### 완성 점검표 — 작동 가능한 자동화 도구 초안
+
+| # | 항목 | 확인 |
+|---|------|------|
+| 1 | 모든 기능을 하나씩 실행해 봤다 | |
+| 2 | 오류가 났을 때 문장 전체를 복사해 해결했다 | |
+| 3 | 행 개수·합계를 원본과 대조했다 | |
+| 4 | 경계값을 직접 확인했다 | |
+| 5 | 예외 6가지를 넣어 돌려 봤다 | |
+| 6 | 나쁜 동작을 고쳐 다시 시험했다 | |
+| 7 | \`사용법\` 탭에 5줄 설명을 넣었다 | |
+
+> 7개가 채워지면 **작동 가능한 자동화 도구 초안 완성**입니다. 6교시에서 보안과 검토 절차를 붙입니다.`,contentEn:`**55 minutes · You need the Session 4 template**
+**Deliverable: a working draft automation tool**
+
+Deliberately stress the tool to see whether it survives real work. **Errors are procedure, not failure.**
+
+![Error-handling loop](~/automation/auto-error-loop.svg)
+
+**STEP 1 · Run one feature at a time.** Running several at once hides which one broke. Fill a table: feature / result / is it correct.
+
+**STEP 2 · Copy the error text whole** — don't summarize or rewrite. The line number and error name are the key.
+
+**STEP 3 · Paste it back and ask for the whole corrected file.**
+
+| Words in the error | Usually means | Fastest reply |
+|---|---|---|
+| \`null\`, \`getSheetByName\` | The sheet name differs | "The sheet name is exactly 신청접수" |
+| \`NaN\`, \`Number\` | Text in a numeric column | "Treat non-numeric values as 0" |
+| \`out of range\`, \`length\` | No data / too few rows | "Finish without error when there are 0 records" |
+
+**STEP 4 · Reconcile even when there is no error.** A quietly wrong result is the dangerous one — row count, totals (compute \`=SUM()\` yourself on the source), missing categories, boundary values.
+
+**STEP 5 · Inject exceptions on purpose — the point of this session**
+
+| # | Inject | Expected | Bad |
+|---|---|---|---|
+| 1 | A blank row in the middle | Skip and continue | Stops there |
+| 2 | Two duplicate keys | Keeps one per the rule | Counts both |
+| 3 | "TBD" in a number field | Treats as 0 or flags it | Crashes |
+| 4 | 0 records (header only) | "No data to process" | Error |
+| 5 | 1,000 rows | Slower but completes | Cuts off |
+| 6 | Same department spelled with/without a space | Grouped together, or at least flagged | **Silently split in two** |
+
+> #6 is where real departmental consolidation goes wrong most often. Always test it.
+
+**STEP 6 · Make it handover-ready.** Ask for a five-line usage note and **paste it into a \`사용법\` tab** in the same file. A tool and its instructions must live together.
+
+### Completion checklist
+Each feature run individually · errors resolved by pasting them whole · counts and totals reconciled · boundaries verified · six exceptions injected · bad behavior fixed and retested · usage tab added.
+
+> That is your **working draft tool.** Session 6 adds security and the review procedure.`}]},u={id:"auto-06",icon:"fa-shield-halved",title:"6교시 15:00~16:00 · 보안·오류 대응 및 개선",titleEn:"Session 6 — Security and Error Handling",sections:[{title:"공공업무에 쓸 수 있게 다듬습니다",titleEn:"Make It Safe for Public Service",content:`### 이 시간에 하는 일
+
+| 학습 목표 | 개인정보·보안·저작권 기준을 점검하고, 담당자 검토 절차와 사용 안내문을 만든다 |
+|---|---|
+| 형태 | 실습 |
+| **산출물** | **오류 대응 체크리스트 + 보안 유의사항** |
+
+> 도구가 도는 것과 **공공업무에 쓸 수 있는 것**은 다릅니다. 이 시간이 그 차이를 메웁니다.
+
+### 1단계 · 입력 제한 기준 점검 (15분)
+
+내 도구가 다루는 자료를 아래 표에 대보세요.
+
+| 자료 유형 | 외부 AI 입력 | 어떻게 |
+|----------|------------|--------|
+| 공개된 통계·법령·보도자료 | **가능** | 그대로 |
+| 부서 내부 집계 (개인 식별 불가) | **가능** | 그대로 |
+| 이름·연락처·주소가 든 명단 | **불가** | 가명·더미로 바꾼 뒤 |
+| 주민등록번호·계좌·카드번호 | **절대 불가** | 열 자체를 삭제 |
+| 대외비·내부 검토 중 문서 | **불가** | 요약만, 원문은 금지 |
+| 인사·징계·심의 자료 | **절대 불가** | 대상에서 제외 |
+
+> **여기서 중요한 구분** — Apps Script 코드는 **내 구글 계정 안에서만** 돕니다. 시트 데이터가 외부로 나가지 않습니다. 위험한 것은 **ChatGPT·Claude 창에 자료를 붙여넣는 순간**입니다. 코드를 만들 때는 **자료가 아니라 구조만** 알려주면 됩니다.
+
+### 가명 처리 3분 만에 하기
+
+\`\`\`text
+'명단' 시트의 A열 성명을 '민원인1', '민원인2' 순서로 바꾸고,
+D열 연락처를 전부 '010-0000-0000' 으로 바꾸는 Apps Script를 만들어줘.
+원본은 그대로 두고 '가명명단' 시트에 결과를 써줘.
+상단 메뉴에 '가명 처리' 메뉴를 만들어줘.
+전체 코드를 한국어 주석과 함께 한 덩어리로 줘.
+\`\`\`
+
+### 2단계 · 저작권·내부자료 기준 (10분)
+
+| 상황 | 판단 |
+|------|------|
+| AI가 만든 코드를 부서에서 쓴다 | **가능** — 업무용 사용에 제약 없음 |
+| AI가 만든 이미지를 홍보물에 쓴다 | **확인 필요** — 실존 인물·상표·기관 캐릭터가 들어갔는지 점검 |
+| 타 기관 서식을 그대로 넣어 학습시킨다 | **주의** — 공개 자료인지 확인 |
+| 도구를 다른 부서에 공유한다 | **가능** — 오히려 권장 |
+| 도구를 외부에 공개한다 | **사전 협의** — 내부 규정 확인 |
+
+### 3단계 · 담당자 검토 절차 설계 (15분)
+
+**자동화의 가장 큰 위험은 "AI가 만들었으니 맞겠지" 입니다.** 사람이 볼 지점을 정해 둡니다.
+
+| 단계 | 누가 | 무엇을 확인 |
+|------|------|-----------|
+| 실행 전 | 담당자 | 입력 자료가 최신인가, 빠진 팀이 없는가 |
+| 실행 직후 | 담당자 | **원본 총합과 결과 총합이 일치하는가** |
+| 결과 활용 전 | 담당자 | 이상한 값(음수·0·과다)이 없는가 |
+| 대외 발송 전 | 팀장 | 개인정보가 결과에 남지 않았는가 |
+
+> **총합 대조가 가장 강력한 검증입니다.** 원본 합계와 도구 결과 합계가 다르면 어딘가 빠진 것입니다.
+
+AI에게 검증 기능을 추가로 요청하세요.
+
+\`\`\`text
+결과가 맞는지 확인할 수 있게, 실행이 끝나면 아래를 함께 알려주도록 고쳐줘.
+- 원본 데이터 행 수
+- 제외된 행 수와 그 이유
+- 원본 금액 총합과 결과 금액 총합 (둘이 다르면 경고 표시)
+고친 전체 코드를 다시 보여줘.
+\`\`\`
+
+### 4단계 · 사용 안내문 만들기 (10분)
+
+내가 없을 때 동료가 쓸 수 있어야 합니다.
+
+\`\`\`text
+방금 만든 자동화 도구를, 컴퓨터에 익숙하지 않은 동료 공무원이 쓸 수 있도록
+비전문가용 사용 설명서를 작성해줘.
+
+- 화면에서 무엇을 클릭하는지 순서대로 번호를 붙여서
+- 전문 용어는 쓰지 말고
+- 실행 전에 확인할 것과 실행 후에 확인할 것을 나눠서
+- 오류가 났을 때 누구에게 연락하면 되는지 적을 자리를 남겨서
+- A4 한 장 분량으로
+\`\`\`
+
+### 5단계 · 오류 대응 체크리스트 완성 (10분)
+
+아래를 시트에 만들어 도구와 함께 보관합니다. **이것이 산출물입니다.**
+
+| 증상 | 먼저 확인할 것 | 그래도 안 되면 |
+|------|-------------|--------------|
+| 메뉴가 안 보인다 | 브라우저 새로고침(F5) | 담당자 연락 |
+| 권한 창이 뜬다 | 고급 → 프로젝트로 이동 → 허용 | 담당자 연락 |
+| 결과가 비어 있다 | 원본 시트에 데이터가 있는지 | 담당자 연락 |
+| 합계가 원본과 다르다 | 빈 행·이상한 값이 있는지 | **사용 중단** 후 담당자 연락 |
+| 결과가 두 번 겹쳤다 | 결과 시트를 지우고 재실행 | 담당자 연락 |
+| 오류 창이 떴다 | **오류 메시지 전체를 캡처** | 캡처와 함께 담당자 연락 |
+
+### 보안 유의사항 (도구와 함께 배포)
+
+| # | 지킬 것 |
+|---|--------|
+| 1 | 개인정보가 든 원본을 ChatGPT·Claude 창에 붙여넣지 않는다 |
+| 2 | 도구 수정이 필요하면 **자료가 아니라 구조**(시트명·열 구성)만 AI에게 말한다 |
+| 3 | 결과를 대외 발송하기 전 개인정보가 남지 않았는지 확인한다 |
+| 4 | 원본 파일은 항상 사본을 두고 도구를 돌린다 |
+| 5 | 합계가 원본과 다르면 즉시 사용을 멈추고 담당자에게 알린다 |
+| 6 | 도구를 공유할 때 사용 설명서를 함께 준다 |
+
+### 산출물 확인
+
+- [ ] 내 자료가 외부 AI에 넣어도 되는 것인지 표로 확인했다
+- [ ] 개인정보가 있다면 가명 처리 방법을 정했다
+- [ ] 담당자 검토 지점 4개를 정했다
+- [ ] 도구에 **총합 대조 기능**을 넣었다
+- [ ] A4 한 장짜리 사용 설명서를 받았다
+- [ ] 오류 대응 체크리스트를 시트로 만들었다`,contentEn:`### This session
+
+Check personal-data, security and copyright limits; design reviewer checkpoints and write a user guide. **Deliverable: error-handling checklist and security notes.**
+
+### Input limits
+
+Public statistics and internal aggregates are fine. Name/contact lists must be pseudonymized. ID and account numbers, confidential drafts, and HR records must never go in.
+
+> **Key distinction** — Apps Script runs inside your own Google account; sheet data does not leave. The risk is **pasting material into the ChatGPT or Claude window**. When building the tool, describe the **structure, not the data**.
+
+### Reviewer checkpoints
+
+Before running (is the input current), right after (**does the total match the source**), before use (any impossible values), before external release (any personal data left).
+
+> Total reconciliation is the strongest check. Ask the AI to report source rows, excluded rows with reasons, and source-versus-result totals with a warning on mismatch.
+
+### User guide
+
+Ask for a one-page, jargon-free, numbered guide for a colleague who is not comfortable with computers.
+
+### Security notes to ship with the tool
+
+Never paste raw personal data; describe structure not data; check results before external release; always work on a copy; stop immediately if totals disagree; ship the guide with the tool.`},{title:"따라하기 실습 · 보안 판정과 검토 절차 설계",titleEn:"Hands-on — Security Screening and the Review Procedure",content:`**소요 55분 · 준비물: 5교시에서 만든 도구 초안, 실제 업무 자료 1건**
+**산출물: 오류 대응 체크리스트 및 보안 유의사항**
+
+지금까지는 **연습용 가짜 자료**로 만들었습니다. 이제 실제 자료를 넣기 전에 **관문 세 개**를 통과시킵니다.
+
+---
+
+## 1부 · 입력 자료 보안 판정 (STEP 1~4)
+
+그림의 **주황 번호가 STEP 번호**입니다.
+
+![자료 입력 판정 흐름 — 고유식별정보, 이름·연락처, 대외비 세 관문과 각 조치](~/automation/auto-security-gate.svg)
+
+---
+
+### STEP 1 · 첫 관문 · 고유식별정보
+
+실제 업무 파일을 열고 **열 이름을 하나씩** 봅니다.
+
+| 찾을 것 | 예 |
+|---------|-----|
+| 주민등록번호 | 신청자 명부, 지급 대상자 |
+| 외국인등록번호 | 외국인 주민 관련 |
+| 운전면허번호·여권번호 | 자격 확인 자료 |
+
+**✅ 확인 · 판정**
+
+| 상태 | 조치 |
+|------|------|
+| 없음 | STEP 2로 |
+| 있는데 **업무에 불필요** | 해당 열을 **삭제한 복사본**으로 진행 |
+| 있고 **업무의 본질** | **이 업무는 자동화 대상에서 뺀다.** 다른 업무로 바꾼다 |
+
+> 고유식별정보는 **가명 처리로도 안 됩니다.** 지우거나, 못 지우면 멈춥니다.
+
+---
+
+### STEP 2 · 둘째 관문 · 이름·연락처·주소
+
+**✅ 확인 · 판정** — 이건 대부분 **가명 처리로 해결됩니다.**
+
+| 원래 | 바꾼 뒤 | 집계 결과 |
+|------|---------|----------|
+| 홍길동 | 민원인A | **똑같음** |
+| 010-1234-5678 | (열 삭제) | **똑같음** |
+| 대구시 ○○구 ○○동 | ○○구 (구 단위만) | **똑같음** |
+
+**실무 요령** — 시트에서 이름 열을 선택하고 \`A1\`, \`A2\`… 로 바꾸는 데 1분이면 됩니다. 원본은 따로 두고 **복사본에서** 작업하세요.
+
+---
+
+### STEP 3 · 셋째 관문 · 대외비·직무상 비밀
+
+| 판정 | 조치 |
+|------|------|
+| 공개 자료이거나 내부 통계 | 진행 |
+| **대외비 표시**, 미공개 감사자료, 진행 중 수사·심의 | **외부 AI를 쓰지 않는다** |
+| 애매하다 | **상급자에게 묻는다** — 혼자 판단하지 않는다 |
+
+**✅ 확인** — 애매할 때 혼자 결정하지 않는 것이 이 관문의 전부입니다.
+
+---
+
+### STEP 4 · 기관 지침을 확인합니다
+
+**✅ 확인** — 소속 기관에 생성형 AI 이용 지침이 있는지 찾아보고, 있으면 **그 지침이 이 문서보다 우선**합니다. 없다면 위 세 관문을 기준으로 삼습니다.
+
+---
+
+## 2부 · 담당자 검토 절차 설계 (STEP 5~6)
+
+도구가 낸 결과를 **사람이 무엇을 보고 통과시킬지** 정합니다. 이게 없으면 "AI가 만든 거라 못 믿겠다"로 끝납니다.
+
+---
+
+### STEP 5 · 검토 항목을 숫자로 만듭니다
+
+\`\`\`text
+아래는 내가 만든 자동화 도구야.
+(도구가 하는 일과 결과 형태를 3~4줄로 설명)
+
+이 결과를 담당자가 검토할 때 볼 항목을 만들어 줘.
+조건은 이렇게.
+1. 각 항목은 숫자로 맞는지 틀리는지 판정할 수 있어야 한다.
+2. "잘 됐는지 본다" 같은 애매한 표현은 쓰지 마.
+3. 3분 안에 끝낼 수 있는 분량으로, 5개 이내.
+4. 각 항목마다 틀렸을 때 무엇을 해야 하는지 함께 써 줘.
+\`\`\`
+
+**✅ 확인** — 이런 형태가 나오면 성공입니다.
+
+| 검토 항목 | 통과 기준 | 틀렸을 때 |
+|-----------|----------|----------|
+| 결과 행 개수 | 원본 행 수 − 제외 행 수 와 같다 | 원본에서 제외 규칙을 다시 확인 |
+| 총 금액 | 원본 금액 열 \`=SUM()\` 값과 같다 | **결과를 쓰지 말고** 담당자에게 알림 |
+| 부서 개수 | 5개 과가 모두 나온다 | 빠진 과의 원본 자료 확인 |
+| \`[확인 필요]\` 건수 | 0건이거나, 있으면 목록으로 확인 | 해당 과에 회신 요청 |
+
+---
+
+### STEP 6 · 사용 안내문 한 장을 만듭니다
+
+\`\`\`text
+이 도구를 처음 쓰는 동료를 위한 안내문을 한 장으로 만들어 줘.
+아래 순서로, 각 항목은 세 줄 이내로.
+
+1. 이 도구가 하는 일
+2. 쓰기 전에 반드시 지울 정보
+3. 실행 방법 (어디를 눌러 어디서 결과를 보는지)
+4. 결과를 믿기 전에 확인할 것 (위 검토 항목)
+5. 오류가 났을 때 할 일
+6. 담당자가 바뀌면 누구에게 물어볼지
+
+행정 문서 어투로, 어려운 용어는 괄호로 풀어 써 줘.
+\`\`\`
+
+**✅ 확인** — 안내문을 **시트의 \`사용법\` 탭에 붙여넣고**, 검토 항목 표는 \`검토표\` 탭에 넣습니다. 도구·설명·검토표가 **한 파일 안에** 있어야 인수인계가 됩니다.
+
+---
+
+### 완성 점검표 — 오류 대응 체크리스트 및 보안 유의사항
+
+| # | 항목 | 확인 |
+|---|------|------|
+| 1 | 실제 자료에서 고유식별정보 유무를 확인했다 | |
+| 2 | 이름·연락처를 가명 처리하거나 열을 삭제했다 | |
+| 3 | 대외비 여부를 판정했다 (애매하면 물었다) | |
+| 4 | 기관의 AI 이용 지침을 확인했다 | |
+| 5 | 검토 항목이 **숫자로 판정 가능**하다 | |
+| 6 | 각 검토 항목에 "틀렸을 때 할 일"이 있다 | |
+| 7 | 사용 안내문을 \`사용법\` 탭에 넣었다 | |
+| 8 | 검토표를 \`검토표\` 탭에 넣었다 | |
+| 9 | **원본이 아닌 복사본**에서 작업했다 | |
+
+> 9개가 채워지면 **오류 대응 체크리스트 및 보안 유의사항 완성**입니다.
+
+> **한 줄 요약** — 넣지 말 것을 넣지 않고, 나온 것을 사람이 숫자로 확인하면 대부분의 사고는 막힙니다. 도구를 만든 사람이 아니라 **그 결과로 결재를 올리는 사람이 책임**을 집니다.`,contentEn:`**55 minutes · You need the Session 5 draft tool and one real work file**
+**Deliverable: an error checklist and security notes**
+
+Until now you used dummy data. Before real data goes in, pass **three gates.**
+
+## Part 1 · Screening the input
+![Input screening flow](~/automation/auto-security-gate.svg)
+
+**STEP 1 · Gate one — national identifiers.** Resident/foreigner registration, licence, passport numbers.
+
+| State | Action |
+|---|---|
+| None | Go to STEP 2 |
+| Present but unnecessary | Work from a **copy with that column deleted** |
+| Present and *essential to the task* | **Drop this task from automation.** Pick another |
+
+> National identifiers cannot be pseudonymized away. Delete, or stop.
+
+**STEP 2 · Gate two — names, contacts, addresses.** These are solved by pseudonymization: 홍길동 → Citizen A, phone column deleted, address truncated to district. **The aggregate result is identical.** Always work on a copy.
+
+**STEP 3 · Gate three — confidential material.** Confidential markings, unpublished audits, ongoing investigations → **do not use an external AI.** If unsure, **ask your supervisor** — never decide alone.
+
+**STEP 4 · Check your organization's policy.** It takes precedence over this page.
+
+## Part 2 · Designing the review procedure
+
+**STEP 5 · Make review items numeric.** Ask the AI for at most five items, each verifiable as pass/fail by a number, each with what to do when it fails, finishable in three minutes.
+
+| Item | Pass | On failure |
+|---|---|---|
+| Result row count | Source rows − excluded rows | Re-check the exclusion rule |
+| Total amount | Equals \`=SUM()\` on the source | **Do not use the result**; notify |
+| Department count | All five appear | Check the missing one's source file |
+| \`[TO VERIFY]\` count | Zero, or listed and confirmed | Request a reply from that division |
+
+**STEP 6 · Write a one-page user guide** — what it does, what to strip first, how to run it, what to verify, what to do on error, who to ask after handover. **Paste it into a \`사용법\` tab and the review table into a \`검토표\` tab.** Tool, instructions and checklist must live in one file.
+
+### Completion checklist
+Identifiers checked · names pseudonymized · confidentiality judged (asked when unsure) · organizational policy checked · review items numerically verifiable · each with a failure action · guide tab · checklist tab · **worked on a copy, not the original.**
+
+> **In one line** — don't put in what shouldn't go in, and have a person verify the output numerically. The accountability sits with whoever submits the result, not whoever built the tool.`}]},p={id:"auto-07",icon:"fa-diagram-project",title:"7·8교시 16:00~18:00 · 부서 적용계획 작성",titleEn:"Sessions 7-8 — Rollout Plan",sections:[{title:"7교시 16:00~17:00 · 적용계획서 작성",titleEn:"Session 7 — Writing the Plan",content:`### 이 시간에 하는 일
+
+| 학습 목표 | 만든 도구를 부서 업무에 적용하기 위한 실행계획을 작성한다 |
+|---|---|
+| 형태 | 실습 |
+| **산출물** | **자동화 도구 적용계획서** |
+
+> 오늘 만든 도구가 **내 서랍에만 남으면** 하루가 아깝습니다. 부서에 퍼뜨리는 계획까지 써야 끝입니다.
+
+### 1단계 · 적용계획서 작성 (30분)
+
+아래 표를 시트에 만들고 채웁니다.
+
+| 항목 | 무엇을 적나 | 작성 예시 |
+|------|-----------|----------|
+| 도구명 | 만든 도구 이름 | 주간 실적 취합 도구 |
+| 적용 업무 | 어떤 업무에 쓰나 | 매주 금요일 팀별 실적 취합 |
+| 사용 대상 | 누가 쓰나 | 총무과 서무 담당 2명 |
+| 적용 시점 | 언제부터 | 다음 주 금요일부터 시범, 2주 뒤 정식 |
+| **예상 절감시간** | 2교시에서 계산한 값 | 회당 85분 × 주 1회 × 4주 = **월 5.7시간** |
+| 검토 절차 | 누가 무엇을 확인 | 실행 후 담당자 총합 대조, 발송 전 팀장 확인 |
+| 필요 지원 | 무엇이 있어야 하나 | 구글 계정, 사용 설명서 배포 |
+| **확산 가능성** | 다른 데도 되나 | 같은 구조의 월간 집계, 타 부서 제출자료 취합 |
+| 위험 요소 | 무엇이 걱정인가 | 팀별 양식 변경 시 재수정 필요 |
+
+### 2단계 · 확산 가능성 따져보기 (15분)
+
+내 도구가 **몇 군데에 더 쓰일 수 있는지** 세어봅니다. 여기서 혁신과제 아이디어가 나옵니다.
+
+| 확산 방향 | 질문 | 예시 |
+|----------|------|------|
+| 같은 부서 다른 업무 | 구조가 비슷한 업무가 또 있나? | 주간 → 월간·분기 집계 |
+| 다른 부서 같은 업무 | 다른 과도 같은 걸 손으로 하나? | 모든 과의 제출자료 취합 |
+| 대상만 바꾸기 | 입력 자료만 바꾸면 되나? | 실적 → 예산 집행 → 민원 건수 |
+| 앞뒤로 잇기 | 앞이나 뒤 단계도 자동화되나? | 취합 → 요약문 생성 → 보고서 초안 |
+
+### 3단계 · AI에게 계획 검토받기 (15분)
+
+\`\`\`text
+너는 공공기관 업무혁신 담당자야. 아래는 내가 만든 자동화 도구의 부서 적용계획이야.
+
+(적용계획서 붙여넣기)
+
+1. 이 계획에서 빠진 항목이 있으면 알려줘.
+2. 실제로 부서에 적용할 때 생길 수 있는 저항이나 장벽 3가지와, 각각에 대한 현실적인 대응 방안을 표로 제안해줘.
+3. 예상 절감시간 계산이 합리적인지 검토해줘.
+4. 이 도구를 다른 업무로 확산할 수 있는 방향 3가지를 제안해줘.
+
+내가 적지 않은 사실을 지어내지 말고, 추정은 추정이라고 표시해줘.
+\`\`\`
+
+### 부서 도입 장벽과 대응
+
+실제로 자주 나오는 반응들입니다. 미리 답을 준비해 두세요.
+
+| 나오는 말 | 대응 |
+|----------|------|
+| "잘못되면 누가 책임지나" | 담당자 검토 절차 4단계를 보여줍니다. 총합 대조로 오류를 잡습니다 |
+| "AI에 자료 올려도 되나" | 시트 데이터는 외부로 안 나갑니다. AI에는 구조만 알려줬음을 설명합니다 |
+| "나는 못 쓸 것 같은데" | 버튼 하나입니다. A4 한 장 설명서를 함께 줍니다 |
+| "지금도 잘 되는데" | 회당 85분, 월 5.7시간이라는 **숫자**로 말합니다 |
+| "만든 사람이 가면 어떡하나" | 프롬프트와 설계서를 함께 보관합니다. 다시 만들 수 있습니다 |`,contentEn:`### Session 7
+
+Write the plan to put your tool into department use. **Deliverable: rollout plan.**
+
+### The plan sheet
+
+Tool name, target task, users, start date, **estimated time saved** (from session 2), review procedure, support needed, **spread potential**, risks.
+
+### Assessing spread
+
+Same department other tasks, other departments same task, swap the input data, extend the chain forward or backward.
+
+### Have the AI review the plan
+
+Ask what is missing, what resistance to expect with realistic responses, whether the savings estimate is reasonable, and three directions to expand.
+
+### Common objections
+
+"Who is responsible if it's wrong" — show the four review checkpoints and total reconciliation. "Is it safe to upload data" — sheet data never leaves; only structure was shared. "I couldn't use it" — one button plus a one-page guide. "It works fine now" — answer with the number.`},{title:"7교시 따라하기 실습 · 적용계획서 여덟 칸 채우기",titleEn:"Session 7 Hands-on — Fill In the Eight Boxes",content:`**소요 55분 · 준비물: 지금까지 만든 도구와 검토표**
+**산출물: 자동화 도구 적용계획서**
+
+도구는 만들었습니다. 하지만 **계획서가 없으면 담당자가 바뀌는 순간 아무도 못 씁니다.** 오늘 만든 것을 실제 업무에 넣는 한 장을 씁니다.
+
+그림의 **주황 번호가 아래 묶음 번호**입니다.
+
+![자동화 도구 적용계획서 양식 — 여덟 칸과 각 칸에 적을 것](~/automation/auto-plan-form.svg)
+
+---
+
+### STEP 1 · 양식을 그대로 만듭니다
+
+빈 문서에 여덟 줄짜리 표를 만듭니다.
+
+| 항목 | 내가 적을 것 |
+|------|-------------|
+| ① 적용 업무 | |
+| ② 사용 대상 | |
+| ③ 적용 시점 | |
+| ④ 예상 절감시간 | |
+| ⑤ 검토 절차 | |
+| ⑥ 개인정보 처리 | |
+| ⑦ 확산 가능성 | |
+| ⑧ 인수인계 | |
+
+---
+
+### STEP 2 · ①~④ — 전부 숫자로 씁니다
+
+**"많이 줄어듦" 은 결재가 안 납니다.**
+
+| 칸 | 나쁜 예 | 좋은 예 |
+|----|---------|---------|
+| ① 적용 업무 | 실적 취합 업무 | **월간 부서별 실적 취합** (매월 5~10일) |
+| ② 사용 대상 | 우리 과 | **기획예산과 실적 담당 3명** → 2차로 5개 과 확대 |
+| ③ 적용 시점 | 곧 | **2026년 10월 정기 취합부터** |
+| ④ 예상 절감시간 | 많이 줄어듦 | 월 3시간 → 20분 · **연 32시간 절감** |
+
+**✅ 확인** — ④는 **연 단위**로 환산하세요. "월 3시간"은 작아 보이지만 "연 32시간"은 설득이 됩니다.
+
+---
+
+### STEP 3 · ⑤⑥ — 결재선이 가장 먼저 보는 두 칸
+
+\`\`\`text
+⑤ 검토 절차 (예)
+1. 담당자가 [자동화] 메뉴로 실행한다.
+2. "검토표" 탭의 4개 항목을 대조한다. (행 개수·총 금액·부서 개수·확인필요 건수)
+3. 4개가 모두 통과하면 팀장에게 보고한다.
+4. 하나라도 어긋나면 결과를 쓰지 않고 원본을 재확인한다.
+
+⑥ 개인정보 처리 (예)
+- 고유식별정보 없음
+- 이름 열은 삭제한 복사본으로 처리
+- 원본 파일은 부서 공유 폴더에만 보관하고 외부에 올리지 않음
+\`\`\`
+
+**✅ 확인** — 검토 절차는 **사람 이름이 아니라 역할**로 적습니다. "김○○ 주무관"이 아니라 "실적 담당자". 사람이 바뀌어도 문서가 살아남습니다.
+
+---
+
+### STEP 4 · ⑦⑧ — 도구를 오래 살리는 두 칸
+
+| 칸 | 무엇을 적나 | 예 |
+|----|------------|-----|
+| ⑦ 확산 가능성 | 같은 구조의 다른 업무 | 「월간 민원 통계」도 열 이름만 바꾸면 그대로 적용 가능 |
+| ⑧ 인수인계 | 무엇을 어디에 남기나 | 코드·명세서·사용법·검토표를 부서 공유 폴더 \`/자동화\` 에 보관 |
+
+**✅ 확인** — ⑦은 **경진대회 출품이나 혁신리더 과제의 핵심 칸**이기도 합니다. "우리 과에서만 쓰는 것"과 "다른 과도 쓸 수 있는 것"은 평가가 다릅니다.
+
+---
+
+### STEP 5 · AI에게 계획서를 검토시킵니다
+
+\`\`\`text
+아래는 내가 작성한 자동화 도구 적용계획서야.
+결재선에 올리기 전에 검토해 줘.
+
+1. 숫자로 쓰지 않아 애매한 표현이 있으면 지적해 줘.
+2. 결재권자가 물어볼 만한 질문 3가지를 예상해서 알려 줘.
+3. 개인정보·보안 관점에서 빠진 것이 있으면 알려 줘.
+
+내용을 대신 써 주지는 말고, 지적만 해 줘.
+
+--- 계획서 ---
+(여덟 칸 붙여넣기)
+\`\`\`
+
+**✅ 확인** — 예상 질문 3가지에 **내가 답할 수 있는지** 스스로 확인합니다. 답이 막히는 질문이 있으면 그 칸을 더 채웁니다.
+
+---
+
+### STEP 6 · 확산 아이디어를 뽑아 둡니다
+
+\`\`\`text
+이 도구를 바탕으로 발전시킬 수 있는 아이디어를 3가지 알려 줘.
+각각 (1) 무엇을 더하는지 (2) 어느 부서에 도움이 되는지
+(3) 만드는 데 얼마나 걸릴지 순서로.
+지금 도구에서 조금만 더하면 되는 것 위주로.
+\`\`\`
+
+**✅ 확인** — **"조금만 더하면 되는 것"** 이 핵심입니다. 크게 벌이면 8교시 안에 못 끝냅니다. 나온 3가지를 계획서 아래에 메모해 두었다가 8교시에서 씁니다.
+
+---
+
+### 완성 점검표 — 자동화 도구 적용계획서
+
+| # | 항목 | 확인 |
+|---|------|------|
+| 1 | 여덟 칸이 모두 채워졌다 | |
+| 2 | ①~④가 **숫자**로 적혔다 | |
+| 3 | 절감시간이 **연 단위**로 환산됐다 | |
+| 4 | 검토 절차가 **역할**로 적혔다 (사람 이름 아님) | |
+| 5 | 개인정보 처리 방식이 구체적이다 | |
+| 6 | 확산 가능성에 **다른 업무 이름**이 적혔다 | |
+| 7 | 인수인계 보관 위치가 적혔다 | |
+| 8 | AI 검토 지적사항을 반영했다 | |
+| 9 | 확산 아이디어 3가지를 메모해 뒀다 | |`,contentEn:`**55 minutes · You need the tool and checklist built so far**
+**Deliverable: the rollout plan**
+
+The tool exists. But **without a plan it dies the day its owner moves desks.**
+
+![Rollout plan form](~/automation/auto-plan-form.svg)
+
+**STEP 1 · Draw the eight-row table** — task, users, start date, time saved, review procedure, personal data handling, scalability, handover.
+
+**STEP 2 · Boxes 1–4 in numbers.** "Much faster" does not get approved.
+
+| Box | Bad | Good |
+|---|---|---|
+| Task | Consolidation work | **Monthly departmental figures** (5th–10th each month) |
+| Users | Our division | **Three staff in Planning** → five divisions in phase 2 |
+| Start | Soon | **From the October 2026 cycle** |
+| Time saved | A lot | 3 h → 20 min monthly · **32 h a year** |
+
+**✅ Check** — convert to a **yearly** figure. "3 hours a month" sounds small; "32 hours a year" persuades.
+
+**STEP 3 · Boxes 5–6 — what an approver reads first.** Write the review procedure as numbered steps tied to your checklist tab, and state exactly how personal data is handled.
+**✅ Check** — write **roles, not names.** "The figures officer", not a person. The document then outlives the person.
+
+**STEP 4 · Boxes 7–8 — what keeps the tool alive.** Name a *specific* other task it could serve, and where the code, spec, guide and checklist are stored.
+**✅ Check** — box 7 is also the decisive box for competitions and innovation projects.
+
+**STEP 5 · Have the AI critique the plan** — ambiguous non-numeric phrases, three questions an approver would ask, anything missing on privacy and security. **Critique only, no rewriting.**
+**✅ Check** — can you answer all three questions? Where you stall, fill that box in further.
+
+**STEP 6 · Extract three scaling ideas** — each with what is added, which division benefits, and how long it takes. **Only things that are a small step from what you have** — anything larger won't finish in Session 8.
+
+### Completion checklist
+Eight boxes filled · 1–4 numeric · yearly conversion · review procedure by role · concrete privacy handling · a named second task · storage location · AI critique folded in · three ideas noted.`},{title:"8교시 17:00~18:00 · 발전 아이디어 · 공유 · 피드백",titleEn:"Session 8 — Ideas, Sharing, Feedback",content:`### 이 시간에 하는 일
+
+| 학습 목표 | 경진대회·혁신과제로 발전 가능한 아이디어를 도출하고, 결과물을 공유해 피드백을 받는다 |
+|---|---|
+| 형태 | 실습 + 발표 |
+| **산출물** | **적용계획서 및 개선사항** |
+
+### 1단계 · 혁신과제로 키우기 (20분)
+
+오늘 만든 도구가 **경진대회 출품작이나 부서 혁신과제**가 될 수 있는지 봅니다.
+
+| 심사에서 보는 것 | 내 도구는 |
+|---------------|----------|
+| 실제 문제인가 | 매주 90분씩 쓰던 일 — 실측값이 있음 |
+| 효과가 숫자로 나오나 | 월 5.7시간, 연 68시간 절감 |
+| 남이 따라 할 수 있나 | 프롬프트와 설계서가 있어 재현 가능 |
+| 확산성이 있나 | 같은 구조의 업무 ○곳에 적용 가능 |
+| 지속되나 | 담당자 바뀌어도 설명서로 인계 가능 |
+
+\`\`\`text
+너는 공공부문 업무혁신 경진대회 심사위원이야.
+아래는 내가 만든 행정업무 자동화 도구와 적용계획이야.
+
+(도구 설명 + 적용계획서 붙여넣기)
+
+1. 이 사례를 혁신과제로 제출한다면 어떤 점이 강점이고 어떤 점이 약한지 알려줘.
+2. 심사위원이 물어볼 만한 질문 5가지와 준비할 답변을 알려줘.
+3. 효과를 더 설득력 있게 보여주려면 어떤 수치를 추가로 모아야 하는지 알려줘.
+4. 제목을 3개 제안해줘.
+
+내가 적지 않은 성과를 지어내지 마.
+\`\`\`
+
+### 2단계 · 결과물 공유 (20분)
+
+옆자리와 서로 보여줍니다. 아래를 물어보세요.
+
+| 물어볼 것 | 왜 |
+|----------|-----|
+| "이거 우리 과에도 쓸 수 있을까요?" | 확산 가능성 확인 |
+| "설명서만 보고 쓸 수 있겠어요?" | 인계 가능성 확인 |
+| "여기서 뭐가 틀릴 것 같아요?" | 내가 못 본 예외 발견 |
+
+### 3단계 · 개선사항 정리 (10분)
+
+받은 피드백을 적용계획서 아래에 덧붙입니다.
+
+| 지적받은 것 | 어떻게 고칠지 | 언제 |
+|-----------|-------------|------|
+| | | |
+
+### 4단계 · 오늘 이후 3주 계획 (10분)
+
+\`\`\`text
+오늘 배운 행정업무 자동화를 실제 업무에 정착시키기 위한
+3주 실행계획을 주차별 목표·할 일·점검 항목 표로 만들어줘.
+
+내 상황:
+- 만든 도구: (도구명과 하는 일)
+- 적용 부서: (부서명, 사용 인원)
+- 주당 가용 시간: 2시간 정도
+
+현실적으로 지킬 수 있는 분량으로 짜줘.
+\`\`\`
+
+### 오늘 가져가는 것 최종 점검
+
+- [ ] 자동화 대상 업무 정의서 (2교시)
+- [ ] 자동화 도구 설계서 + 프롬프트 (3교시)
+- [ ] **작동하는 자동화 도구** (4~5교시)
+- [ ] 오류 대응 체크리스트 + 보안 유의사항 (6교시)
+- [ ] 사용 설명서 A4 1장 (6교시)
+- [ ] 부서 적용계획서 (7교시)
+- [ ] 개선사항 + 3주 실행계획 (8교시)
+
+### 여기서 멈추지 않으려면
+
+오늘 만든 도구 하나로 끝내지 마세요. **다음 주에 하나 더** 만들면 됩니다. 프롬프트 틀은 이미 있습니다.
+
+광진구 류승인 주무관도 그렇게 12개를 만들었습니다. 다음 장에서 **그 사례를 직접 따라 해봅니다.**
+→ [실습 사례집으로](/automation)`,contentEn:`### Session 8
+
+Develop contest or innovation-project ideas, share results, and collect feedback. **Deliverable: final plan with improvements.**
+
+### Growing it into an innovation project
+
+Judges look for a real measured problem, numeric effect, reproducibility, spread potential, and durability. Ask an AI acting as a judge for strengths, weaknesses, likely questions, and title options.
+
+### Sharing
+
+Ask a neighbor: could your division use this, could you run it from the guide alone, what do you think would break.
+
+### Final checklist
+
+Task definition, design and prompt, **working tool**, error checklist and security notes, one-page user guide, rollout plan, improvements and a three-week plan.`},{title:"8교시 따라하기 실습 · 시연·피드백·최종본 만들기",titleEn:"Session 8 Hands-on — Demo, Feedback, Final Version",content:`**소요 55분 · 준비물: 도구, 적용계획서, 확산 아이디어 3가지**
+**산출물: 자동화 도구 적용계획서(최종) 및 개선사항**
+
+만든 것을 **동료 앞에서 돌려 보이고**, 받은 피드백을 계획서에 반영해 최종본으로 만듭니다.
+
+그림의 **주황 번호가 STEP 번호**입니다.
+
+![공유·피드백 흐름 — 3분 발표 구성과 피드백을 개선사항·계획서로 옮기는 순서](~/automation/auto-share-feedback.svg)
+
+---
+
+### STEP 1 · 3분 발표를 이 비율로 준비합니다
+
+| 시간 | 무엇을 | 하지 말 것 |
+|------|--------|-----------|
+| **30초** | 어떤 업무가 왜 불편했나 | 배경 설명을 길게 |
+| **60초** | **실제로 돌려 보이기** (화면 공유) | 코드 설명 |
+| **60초** | 무엇이 얼마나 줄었나 (숫자) | "편해졌습니다" 같은 감상 |
+| **30초** | 다음에 무엇을 할까 | 안 될 계획 나열 |
+
+**✅ 확인** — **절반이 시연입니다.** 말로만 설명하면 무엇이 좋아졌는지 전달되지 않습니다. 실행 버튼을 누르는 장면을 반드시 보여주세요.
+
+발표문이 막히면 AI에게 시킵니다.
+
+\`\`\`text
+아래 계획서를 바탕으로 3분 발표 대본을 만들어 줘.
+30초 문제 → 60초 시연 → 60초 효과(숫자) → 30초 다음 계획 구성으로.
+읽으면 3분이 되도록 분량을 맞춰 줘.
+
+--- 계획서 ---
+(적용계획서 붙여넣기)
+\`\`\`
+
+---
+
+### STEP 2 · 동료 질문을 그대로 받아 적습니다
+
+**"우리 과 자료는 열이 다른데 되나요?"** 같은 질문이 가장 값집니다. 확산할 때 실제로 부딪힐 문제이기 때문입니다.
+
+**✅ 확인** — 질문을 **방어하지 말고 그대로 적으세요.** "그건 안 됩니다"라고 답하기 전에 메모부터 합니다.
+
+---
+
+### STEP 3 · 강사 피드백을 셋으로 나눠 적습니다
+
+| 구분 | 뜻 |
+|------|-----|
+| **고칠 것** | 지금 안 고치면 실제 업무에서 사고가 나는 것 |
+| **지금은 둘 것** | 있으면 좋지만 없어도 되는 것 |
+| **다음에 할 것** | 확산·발전 단계에서 할 것 |
+
+**✅ 확인** — 세 칸으로 나누지 않으면 **전부 고쳐야 할 것처럼 보여** 아무것도 못 끝냅니다.
+
+---
+
+### STEP 4 · 오늘 안에 되는 개선 3개만 고릅니다
+
+\`\`\`text
+아래는 내 도구에 대해 받은 피드백 목록이야.
+지금 남은 시간 40분 안에 고칠 수 있는 것 3개를 골라 주고,
+각각 어떤 순서로 고쳐야 하는지 알려 줘.
+나머지는 "다음에 할 것"으로 따로 묶어 줘.
+
+--- 피드백 ---
+(받아 적은 것 붙여넣기)
+\`\`\`
+
+고를 것을 정했으면 **5교시 오류 루프와 같은 방식**으로 고칩니다 — AI에게 요청 → 코드 전체 받기 → 붙여넣기 → 실행 → 확인.
+
+**✅ 확인** — 고친 뒤에는 반드시 **\`검토표\` 탭의 항목을 다시 돌려** 이전에 되던 것이 깨지지 않았는지 봅니다.
+
+---
+
+### STEP 5 · 계획서를 최종본으로 갱신합니다
+
+적용계획서에 두 칸을 덧붙입니다.
+
+| 항목 | 적을 것 |
+|------|---------|
+| ⑨ 개선사항 | 오늘 고친 3가지와 그 이유 |
+| ⑩ 다음 3주 계획 | 1주차: 내 업무에 실제 적용 / 2주차: 팀 내 1명에게 전달 / 3주차: 다음에 할 것 중 1개 착수 |
+
+그리고 확산 아이디어 중 **하나를 골라** 한 줄로 정리합니다.
+
+\`\`\`text
+[발전 방향] 「월간 민원 통계」에 같은 구조를 적용해 5개 과가 공용으로 쓰는
+          취합 도구로 확장 — 경진대회 출품 후보
+\`\`\`
+
+**✅ 확인** — 마지막으로 **부서 공유 폴더에 다섯 가지를 함께 보관**했는지 봅니다.
+
+| 보관물 | 어디서 만들었나 |
+|--------|----------------|
+| 자동화 대상 업무 정의서 | 2교시 |
+| 설계서·요구사항 명세서 | 3교시 |
+| 도구 파일 (코드 + \`사용법\` + \`검토표\` 탭) | 4~6교시 |
+| 적용계획서 최종본 | 7~8교시 |
+| 개선사항·다음 3주 계획 | 8교시 |
+
+---
+
+### 완성 점검표 — 적용계획서 최종본 및 개선사항
+
+| # | 항목 | 확인 |
+|---|------|------|
+| 1 | 3분 발표에서 **실제로 도구를 돌려 보였다** | |
+| 2 | 동료 질문을 받아 적었다 | |
+| 3 | 피드백을 고칠 것 / 둘 것 / 다음 것 셋으로 나눴다 | |
+| 4 | 오늘 개선 3개를 골라 실제로 고쳤다 | |
+| 5 | 고친 뒤 검토표를 다시 돌렸다 | |
+| 6 | 계획서에 ⑨ 개선사항을 추가했다 | |
+| 7 | 계획서에 ⑩ 다음 3주 계획을 추가했다 | |
+| 8 | 발전 방향 한 줄을 정리했다 | |
+| 9 | 다섯 가지 산출물을 공유 폴더에 함께 보관했다 | |
+
+> 9개가 채워지면 오늘 과정의 **모든 산출물이 완성**됩니다.
+
+> **마지막 한 마디** — 오늘 만든 도구보다 중요한 것은 **"말로 설명하면 도구가 된다"는 경험**입니다. 다음 업무에서 막힐 때, 개발자를 찾기 전에 먼저 네 문장으로 적어 보세요 — 들어오는 것 / 하는 일 / 나오는 것 / 사람이 확인할 것.`,contentEn:`**55 minutes · You need the tool, the plan and your three scaling ideas**
+**Deliverable: the final rollout plan and improvements**
+
+Demo what you built, then fold the feedback back into the plan.
+
+![Sharing and feedback flow](~/automation/auto-share-feedback.svg)
+
+**STEP 1 · Structure the three minutes**
+
+| Time | What | Not |
+|---|---|---|
+| **30s** | Which task, and why it hurt | A long background |
+| **60s** | **Actually run it** (share your screen) | Explaining code |
+| **60s** | What shrank, by how much (numbers) | "It feels easier" |
+| **30s** | What comes next | A list of things that won't happen |
+
+**✅ Check** — **half of it is the demo.** Show yourself pressing the button.
+
+**STEP 2 · Write down colleagues' questions verbatim.** "Our division's columns are different — would it work?" is the most valuable one: that is exactly what rollout will hit. Note it before defending.
+
+**STEP 3 · Split the instructor's feedback three ways** — fix now / leave for now / do later. Without the split, everything looks mandatory and nothing gets finished.
+
+**STEP 4 · Pick three fixes you can finish today.** Ask the AI which three fit the remaining 40 minutes and in what order, then use the Session 5 error loop. **After fixing, re-run the \`검토표\` items** to confirm nothing that worked has broken.
+
+**STEP 5 · Update the plan to final** — add ⑨ improvements made today and why, and ⑩ a three-week plan (week 1: use it for real; week 2: hand it to one colleague; week 3: start one "do later" item). Add a one-line direction of development, e.g. a shared consolidation tool for five divisions — a competition candidate.
+
+**✅ Check** — five artifacts stored together in the shared folder: the task definition (S2), the design and spec (S3), the tool file with its usage and checklist tabs (S4–6), the final plan (S7–8), and the improvements and three-week plan (S8).
+
+### Completion checklist
+Demo actually run · questions recorded · feedback split three ways · three fixes made · checklist re-run · ⑨ and ⑩ added · direction of development written · all five artifacts stored together.
+
+> **One last thing** — more valuable than today's tool is the experience that **describing something in words turns it into a tool.** Next time you're stuck, before looking for a developer, write the four sentences: what comes in, what happens, what comes out, what a human checks.`}]},m={id:"auto-08",icon:"fa-list-check",title:"실습 사례집 · 부서별 적용",titleEn:"Case Library by Division",sections:[{title:"따라하기 실습 · 사례를 내 업무로 바꿔 쓰기",titleEn:"Hands-on — Adapting a Case to Your Own Work",content:`**소요 40분 · 준비물: 내 부서의 실제 반복 업무 자료 1건(개인정보 지운 복사본)**
+**산출물: 내 업무로 바꾼 프롬프트와 돌아가는 도구**
+
+다음 절의 사례집에는 **그대로 복사해 쓰는 프롬프트**가 붙어 있습니다. 다만 시트 이름도 열 구성도 내 것과 다릅니다. 이 실습은 **그 차이를 메우는 절차**입니다.
+
+> **처음부터 새로 쓰지 마세요.** 사례를 고쳐 쓰는 것이 훨씬 빠르고, 사례에 이미 들어 있는 안전장치(중복 처리·총합 검증·"안 적은 규칙은 만들지 마")를 그대로 물려받습니다.
+
+---
+
+## 1부 · 사례 고르기 (STEP 1~2)
+
+그림의 **주황 번호가 STEP 번호**입니다.
+
+![사례 고르기 — 부서가 아니라 자료 모양·하는 일·규칙 명확성으로 고르고, 6종 중에서 선택](~/automation/auto-case-pick.svg)
+
+---
+
+### STEP 1 · 부서 이름이 아니라 세 가지로 고릅니다
+
+**"나는 민원 담당이니 민원 사례"** 로 고르지 마세요. 다른 과 사례가 더 맞는 일이 흔합니다.
+
+| 볼 것 | 내 업무는? |
+|-------|-----------|
+| **들어오는 자료의 모양** | 표 한 장 / 여러 파일 / 폼 응답 |
+| **하는 일의 종류** | 합치기 / 분류 / 계산 / 글 만들기 |
+| **규칙이 정해져 있나** | "이럴 땐 이렇게" 를 말로 쓸 수 있나 |
+
+**✅ 확인** — 세 칸을 채운 뒤 사례집을 훑습니다. 예를 들어 **교육 담당의 "수강 신청 정리"** 는 자료 모양·하는 일이 **총무의 "팀별 제출자료 취합"** 과 같습니다. 그 사례를 가져오면 됩니다.
+
+---
+
+### STEP 2 · 고른 사례의 프롬프트를 열어 열 이름을 대조합니다
+
+**✅ 확인** — 사례 프롬프트에 적힌 열이 **내 자료에 실제로 있는지** 봅니다.
+
+| 상태 | 판정 | 다음 |
+|------|------|------|
+| 이름만 다르고 다 있다 | **가장 좋은 경우** | 그대로 STEP 3으로 |
+| 내 자료에 없는 열이 있다 | 그 규칙을 빼면 된다 | STEP 3에서 해당 줄 삭제 |
+| 사례에 없는 열이 내게 더 있다 | 나중에 덧붙인다 | STEP 6에서 추가 |
+| 절반 이상이 안 맞는다 | 사례를 잘못 골랐다 | **STEP 1로 돌아간다** |
+
+> **절감시간이 큰 사례를 고르지 마세요.** 규칙이 가장 명확한 사례가 끝까지 갑니다.
+
+---
+
+## 2부 · 내 것으로 바꾸기 (STEP 3~5)
+
+![사례를 내 업무로 바꾸기 — 시트 이름·열·규칙·결과 위치 네 군데만 고치고 나머지는 그대로](~/automation/auto-case-adapt.svg)
+
+---
+
+### STEP 3 · 네 군데만 바꿉니다
+
+사례 프롬프트를 메모장에 붙여넣고 **아래 네 곳만** 고칩니다.
+
+| # | 바꿀 곳 | 예 (총무 사례 → 예산 담당) |
+|---|---------|------------------------|
+| 1 | **시트 이름** | \`'제출자료'\` → \`'월간실적'\` |
+| 2 | **열 문자와 이름** | \`A열 팀명\` → \`A열 과명\` · \`C열 건수\` → \`D열 금액\` |
+| 3 | **규칙** | 중복 기준을 \`A열+B열\` → \`A열(접수번호)\` |
+| 4 | **결과 위치** | \`'요약'\` → \`'부서별집계'\` |
+
+**✅ 확인** — 두 가지를 꼭 지키세요.
+
+- **열은 문자와 이름을 함께 바꿉니다.** \`C열 건수\` 를 \`금액\` 으로만 바꾸고 문자를 그대로 두면 AI가 엉뚱한 열을 잡습니다.
+- **나머지 문장은 손대지 않습니다.** 특히 마지막 줄 **\`내가 안 적은 규칙은 만들지 마\`** 는 반드시 남깁니다. 이 한 줄이 AI가 임의로 규칙을 지어내는 것을 막습니다.
+
+---
+
+### STEP 4 · 보내기 전에 스스로 읽어봅니다
+
+바꾼 프롬프트를 **처음 보는 사람 눈으로** 읽습니다.
+
+| 점검 | 통과 기준 |
+|------|----------|
+| 시트 이름 | 내 파일의 **탭 이름과 글자 하나까지 같은가** |
+| 열 문자 | \`A\` \`B\` \`C\` 가 실제 시트의 그 열인가 |
+| 남은 흔적 | 사례의 원래 단어(팀명·제출일 등)가 안 남아 있는가 |
+| 결과 시트 | 없을 때 새로 만들라는 문장이 있는가 |
+
+**✅ 확인** — 네 번째 항목이 자주 빠집니다. 없으면 이 문장을 덧붙이세요.
+
+\`\`\`text
+결과 시트가 없으면 새로 만들고, 있으면 내용을 지운 뒤 다시 채워 줘.
+\`\`\`
+
+---
+
+### STEP 5 · 보내고 실행해 봅니다
+
+AI에 보낸 뒤 **4교시와 같은 순서**로 진행합니다.
+
+1. 되물음이 오면 답한다
+2. 받은 코드를 \`[확장 프로그램] → [Apps Script]\` 에 붙여넣고 저장
+3. 시트 새로고침 → 새로 생긴 메뉴에서 실행
+4. **결과 탭과 원본 탭을 둘 다** 확인
+
+**✅ 확인** — 사례 프롬프트에는 대개 **총합 검증 알림**이 들어 있습니다.
+
+\`\`\`text
+총 3개 과, 26건 / 원본 총합 26건
+\`\`\`
+
+**두 숫자가 같은지** 보세요. 다르면 경고가 뜨도록 사례에 이미 들어 있습니다. 이것이 사례를 고쳐 쓰는 이유입니다 — **안전장치를 물려받습니다.**
+
+---
+
+## 3부 · 내 것으로 키우기 (STEP 6~7)
+
+### STEP 6 · 사례에 없던 내 규칙을 덧붙입니다
+
+기본형이 돌아간 뒤에 **하나씩** 추가합니다. 한꺼번에 여러 개를 넣지 마세요.
+
+\`\`\`text
+지금 코드에 아래 규칙 하나만 추가해 줘. 나머지 동작은 그대로 두고,
+고친 코드 전체를 다시 줘.
+
+- 금액이 10,000천원을 넘는 행은 비고 열에 "검토대상" 이라고 표시한다.
+\`\`\`
+
+**✅ 확인** — 규칙 하나를 추가할 때마다 **다시 실행해 총합이 그대로인지** 봅니다. 규칙을 추가하다 집계가 틀어지는 일이 자주 있습니다.
+
+---
+
+### STEP 7 · 우리 부서 사례집에 등록합니다
+
+내가 고친 프롬프트를 **부서 공유 문서에 사례 형식으로** 남깁니다. 다음 사람이 또 처음부터 하지 않게 됩니다.
+
+\`\`\`text
+| 항목 | 내용 |
+|------|------|
+| 업무 이름 | 월간 부서별 실적 취합 |
+| 원본 사례 | 사례집 「총무·서무 · 팀별 제출자료 취합」 |
+| 바꾼 곳 | 시트명, 열 이름 4개, 중복 기준, 결과 시트명 |
+| 시트 구조 | A 과명 / B 항목 / C 건수 / D 금액 / E 상태 |
+| 프롬프트 | (바꾼 전체 프롬프트 붙여넣기) |
+| 주의 | 과 이름 띄어쓰기가 섞이면 따로 집계됨 |
+\`\`\`
+
+**✅ 확인** — 마지막 **주의** 칸이 핵심입니다. 내가 겪은 함정을 적어 두면 다음 사람이 같은 자리에서 안 넘어집니다.
+
+---
+
+### 완성 점검표
+
+| # | 항목 | 확인 |
+|---|------|------|
+| 1 | 부서가 아니라 **자료 모양·하는 일·규칙**으로 사례를 골랐다 | |
+| 2 | 사례의 열이 내 자료에 있는지 대조했다 | |
+| 3 | 네 군데(시트명·열·규칙·결과 위치)만 바꿨다 | |
+| 4 | 열은 **문자와 이름을 함께** 바꿨다 | |
+| 5 | \`내가 안 적은 규칙은 만들지 마\` 문장을 남겼다 | |
+| 6 | 실행 후 **총합 검증 숫자 두 개가 같았다** | |
+| 7 | 원본 시트가 수정되지 않았다 | |
+| 8 | 추가 규칙은 하나씩 넣고 매번 다시 확인했다 | |
+| 9 | 부서 공유 문서에 사례로 등록했다 | |
+
+> 9개가 채워지면 **사례집이 내 부서 사례집이 됩니다.** 다음 절에서 6개 부서 사례를 골라 이 절차를 적용하세요.`,contentEn:`**40 minutes · You need one real recurring work file (a copy with personal data removed)**
+**Deliverable: an adapted prompt and a working tool**
+
+The case library gives you **copy-and-paste prompts** — but with different sheet names and columns from yours. This walkthrough is **the procedure for closing that gap.**
+
+> **Don't start from scratch.** Adapting a case is faster, and you inherit the safety features already baked into it — duplicate handling, total reconciliation, and "don't invent rules I didn't state."
+
+## Part 1 · Choosing a case
+![Choosing a case](~/automation/auto-case-pick.svg)
+
+**STEP 1 · Choose by three things, not by division name.** "I'm in civil affairs so I'll take the civil affairs case" is wrong — another division's case often fits better.
+
+| Look at | Yours? |
+|---|---|
+| **Shape of the input** | One table / several files / form responses |
+| **Kind of work** | Merging / classifying / calculating / writing |
+| **Are the rules fixed?** | Can you write "when X, do Y" in words? |
+
+**✅ Check** — training's "course registration cleanup" has the same shape and work as general affairs' "team submission consolidation." Take that one.
+
+**STEP 2 · Open the case prompt and compare the columns.**
+
+| State | Verdict | Next |
+|---|---|---|
+| Same columns, different names | **Best case** | STEP 3 |
+| A column in the case is missing here | Drop that rule | Delete that line in STEP 3 |
+| You have extra columns | Add later | STEP 6 |
+| More than half don't match | Wrong case | **Back to STEP 1** |
+
+> Don't pick the case with the biggest time saving. **The one with the clearest rules is the one that finishes.**
+
+## Part 2 · Adapting it
+![Adapting a case](~/automation/auto-case-adapt.svg)
+
+**STEP 3 · Change exactly four things** — sheet name, column letters *and* names, the rules, the destination sheet.
+
+**✅ Check** — two things matter:
+- **Change the letter and the name together.** Renaming \`C 건수\` to \`금액\` while leaving the letter makes the AI read the wrong column.
+- **Leave everything else alone** — especially \`내가 안 적은 규칙은 만들지 마\` ("don't invent rules I didn't state"). That single line is what stops the model making things up.
+
+**STEP 4 · Re-read it as a stranger would**
+
+| Check | Pass |
+|---|---|
+| Sheet name | Character-for-character identical to your tab |
+| Column letters | Actually those columns in your sheet |
+| Leftovers | No original case words remain |
+| Destination | A line saying to create it if missing |
+
+The fourth is the one people forget: "Create the destination sheet if it doesn't exist; if it does, clear it and refill."
+
+**STEP 5 · Send it and run it** — same order as Session 4. Answer any questions, paste into Apps Script, save, refresh, run from the menu, and check **both the result tab and the source tab.**
+
+**✅ Check** — case prompts usually include a **total reconciliation notice**: "3 divisions, 26 records / source total 26." Confirm the two numbers match. That warning is already in the case — **this is why you adapt rather than rewrite: you inherit the safeguards.**
+
+## Part 3 · Growing it
+
+**STEP 6 · Add your own rules one at a time.** After each addition, re-run and confirm the totals still match — adding rules is where aggregates quietly break.
+
+**STEP 7 · Register it in your division's own case library** — task name, which case it came from, what you changed, your sheet structure, the full prompt, and **the pitfalls you hit.** That last field is the valuable one: it stops the next person tripping in the same place.
+
+### Completion checklist
+Chose by shape/work/rules · compared columns · changed only four things · letters and names together · kept the "don't invent rules" line · totals reconciled · source untouched · added rules one at a time · registered in the shared library.
+
+> Nine checks turn the case library into **your division's case library.**`},{title:"내 부서 업무로 골라 쓰기",titleEn:"Pick the Case That Matches Your Work",content:`2교시에 고를 업무가 떠오르지 않으면 여기서 찾으세요. **대구시 부서에서 실제로 반복되는 업무**를 기준으로 정리했습니다.
+
+각 사례는 그대로 복사해 쓸 수 있는 프롬프트가 붙어 있습니다. **시트 이름과 열 구성만 내 것으로 바꾸면 됩니다.**
+
+### 총무·서무
+
+| 업무 | 자동화 내용 | 예상 절감 |
+|------|-----------|----------|
+| 팀별 제출자료 취합 | 여러 시트 합치기 + 중복 제거 + 팀별 합계 | 회당 60~90분 |
+| 물품 대장 정리 | 분류·정렬·재고 부족 표시 | 회당 30분 |
+| 출장·연가 집계 | 월별·개인별 집계표 자동 생성 | 회당 40분 |
+
+\`\`\`text
+너는 Google Apps Script 전문가야. 나는 코딩을 모르니 단계별로 알려줘.
+
+'제출자료' 시트: 1행 제목, 2행부터 데이터
+A열 팀명, B열 항목, C열 건수, D열 제출일
+
+1. C열이 비었거나 0인 행은 제외
+2. A열+B열이 같은 행은 첫 번째만 남김
+3. A열(팀명) 기준으로 C열 합계
+4. 합계 큰 순 정렬
+5. '요약' 시트에 결과 작성 (기존 내용 지우고), A1 '팀명' B1 '건수합계' 굵게
+6. 완료 시 "총 O개 팀, O건 / 원본 총합 O건" 알림 (총합이 다르면 경고)
+
+상단 메뉴에 '자료 취합' 을 추가해줘.
+전체 코드를 한 덩어리로, 한국어 주석과 함께. 내가 안 적은 규칙은 만들지 마.
+\`\`\`
+
+### 민원 담당
+
+| 업무 | 자동화 내용 | 예상 절감 |
+|------|-----------|----------|
+| 민원 유형 분류 | 키워드로 유형·소관 부서 자동 지정 | 건당 1~2분 |
+| 민원 통계 | 월별·유형별 건수와 추이 | 회당 60분 |
+| 반복 민원 답변 | 유형별 답변 초안 일괄 생성 | 건당 3분 |
+
+\`\`\`text
+너는 Google Apps Script 전문가야. 나는 코딩을 모르니 단계별로 알려줘.
+
+'민원' 시트: 1행 제목, 2행부터 데이터, A열 접수일, B열 민원내용
+B열에 아래 단어가 있으면 C열에 유형, D열에 소관을 채워줘.
+
+- 가로등, 도로, 포트홀, 보도블럭 → 시설물 유지보수 / 도로과
+- 주차, 단속, 견인, 과태료 → 단속 이의 / 교통과
+- 지원금, 신청, 자격, 대상 → 제도 문의 / 해당 사업부서
+- 공원, 벤치, 화단, 가로수 → 시설물 유지보수 / 공원녹지과
+- 소음, 악취, 폐기물 → 생활환경 / 환경과
+
+어디에도 없으면 C열 '분류 필요', D열 '확인 필요'.
+여러 개에 걸리면 먼저 나온 규칙을 적용하고 E열에 '중복해당' 표시.
+상단 메뉴에 '민원 분류' 를 추가해줘.
+전체 코드를 한 덩어리로, 한국어 주석과 함께.
+\`\`\`
+
+> **주의** — 민원 원문에 민원인 이름·연락처가 있으면 그 열을 지운 사본으로 작업하세요. 분류는 내용만 있으면 됩니다.
+
+### 예산·회계
+
+| 업무 | 자동화 내용 | 예상 절감 |
+|------|-----------|----------|
+| 집행률 계산 | 부서별 집행률 + 색상 표시 + 요약 | 회당 60분 |
+| 예산 대비 실적 | 월별 비교표와 증감 자동 계산 | 회당 45분 |
+| 정산 검산 | 항목 합계와 총액 대조, 불일치 표시 | 회당 30분 |
+
+\`\`\`text
+너는 Google Apps Script 전문가야. 나는 코딩을 모르니 단계별로 알려줘.
+
+'집행현황' 시트: 1행 제목, 2행부터 데이터
+A열 부서명, B열 예산액, C열 집행액
+
+1. D열에 집행률(C/B)을 백분율 소수점 1자리로 계산
+2. 집행률 90% 초과면 D칸 배경 빨강, 50% 미만이면 노랑
+3. B열이 0이거나 비면 D열에 '계산 불가'
+4. '요약' 시트에 전체 평균 집행률, 부서 수, 90% 초과 부서 목록, 50% 미만 부서 목록 작성
+5. 완료 시 "부서 O곳 / 평균 집행률 O%" 알림
+
+상단 메뉴에 '집행률 계산' 을 추가해줘.
+전체 코드를 한 덩어리로, 한국어 주석과 함께.
+\`\`\`
+
+### 홍보·공보
+
+| 업무 | 자동화 내용 | 예상 절감 |
+|------|-----------|----------|
+| 개인별 안내문 생성 | 명단에서 일괄 생성 | 건당 3분 |
+| 채널별 문구 변환 | 보도자료 → 인스타·카카오·블로그 | 건당 20분 |
+| 홍보 실적 집계 | 채널별 게시 건수·반응 집계 | 회당 40분 |
+
+\`\`\`text
+너는 Google Apps Script 전문가야. 나는 코딩을 모르니 단계별로 알려줘.
+
+'명단' 시트: 1행 제목, 2행부터 데이터
+A열 성명, B열 교육과정, C열 일시, D열 장소
+
+E열에 아래 양식으로 개인별 안내문을 만들어줘.
+"[성명] 님, 안녕하십니까. 신청하신 [교육과정] 교육이 [일시] [장소]에서 진행됩니다. 참석에 착오 없으시기 바랍니다."
+
+- 대괄호는 각 행 값으로 치환
+- A~D 중 하나라도 비면 그 행은 건너뛰고 E열에 '자료 부족' 표시
+- 상단 메뉴에 '안내문 생성' 추가
+전체 코드를 한 덩어리로, 한국어 주석과 함께.
+\`\`\`
+
+### 교육·인재개발
+
+| 업무 | 자동화 내용 | 예상 절감 |
+|------|-----------|----------|
+| 수강 신청자 정리 | 중복 제거 + 부서별 인원 집계 | 회당 60분 |
+| 이수 현황 관리 | 미이수자 자동 추출 + 안내문 생성 | 회당 45분 |
+| 만족도 집계 | 문항별 평균·분포 자동 계산 | 회당 40분 |
+
+### 시설·건축
+
+| 업무 | 자동화 내용 | 예상 절감 |
+|------|-----------|----------|
+| 점검 결과 정리 | 시설별 이력 정리 + 조치 필요 항목 추출 | 회당 50분 |
+| 인허가 진행 현황 | 단계별 현황판 자동 갱신 | 회당 30분 |
+
+> 위에 없는 업무라도 **입력 → 규칙 → 출력** 이 정해져 있으면 같은 방식으로 됩니다. 3교시 프롬프트 틀에 내 업무를 넣으면 됩니다.`,contentEn:`If nothing comes to mind in session 2, pick from here. Each case ships a ready prompt — change only the sheet names and columns.
+
+### General affairs
+
+Merging team submissions, inventory tidying, travel and leave aggregation.
+
+### Civil affairs
+
+Complaint classification by keyword, monthly statistics, repeat-reply drafting.
+
+> Work on a copy with name and contact columns removed — classification only needs the content.
+
+### Budget and accounting
+
+Execution rate with color coding, budget-versus-actual comparison, reconciliation checks.
+
+### Public relations
+
+Individual notice generation, channel-specific rewriting, PR performance aggregation.
+
+### Training and facilities
+
+Applicant tidying, completion tracking, satisfaction aggregation, inspection history, permit status boards.
+
+> Any task with a fixed **input → rule → output** works the same way.`},{title:"따라하기 — 류승인 주무관 도구 직접 써보기",titleEn:"Walkthrough — A Serving Officer Tools",content:`오늘 만든 도구가 **어디까지 갈 수 있는지** 직접 확인합니다. 광진구 류승인 주무관이 현직 공무원 신분으로 만들어 공개한 도구들입니다.
+
+> 아래 접속 상태는 **2026-08-26 기준으로 직접 확인한 것**입니다. 공개 서비스라 상태가 바뀔 수 있으니, 안 열리면 [github.com/chrisryugj](https://github.com/chrisryugj) 에서 최신 상태를 확인하세요.
+
+### 따라하기 ① · 주소 표준화 (설치 없음, 3분)
+
+민원 서식에 들어온 주소가 제각각일 때 쓰는 도구입니다.
+
+| 확인 | 상태 |
+|------|------|
+| gjdong.vercel.app | **정상 (200)** |
+
+1. [gjdong.vercel.app](https://gjdong.vercel.app) 을 엽니다
+2. 정리할 주소 텍스트를 붙여넣습니다 — 실제 민원 자료 말고 **아무 주소나** 넣어보세요
+3. 표준주소로 정리된 결과를 확인합니다
+
+> **여기서 볼 것** — 이 도구도 "주소가 제각각이라 매번 손으로 고친다"는 **한 가지 불편**에서 출발했습니다. 오늘 여러분이 고른 업무와 같은 크기입니다.
+
+### 따라하기 ② · 법령 비교 (설치 없음, 3분)
+
+개정 전후 조문을 눈으로 대조하던 일을 대신합니다.
+
+| 확인 | 상태 |
+|------|------|
+| lexdiff.gomdori.app | **정상 (200)** |
+
+1. [lexdiff.gomdori.app](https://lexdiff.gomdori.app) 접속
+2. 비교할 법령을 선택하거나 조문을 붙여넣기
+3. 바뀐 부분이 표시된 결과 확인
+
+### 따라하기 ③ · 프로젝트 12종 둘러보기 (2분)
+
+| 확인 | 상태 |
+|------|------|
+| chris.gomdori.app | **정상 (200)** |
+
+[chris.gomdori.app](https://chris.gomdori.app) 에서 12개 도구를 한눈에 봅니다. **각 도구가 어떤 업무 불편에서 나왔는지** 를 보세요.
+
+| 도구 | 출발한 불편 |
+|------|-----------|
+| korean-law-mcp | 법령·판례·자치법규를 사이트마다 따로 찾아야 함 |
+| korean-stats-mcp | 통계 수치를 KOSIS에서 직접 뒤져야 함 |
+| kordoc | 한글 공문서를 AI가 읽지 못함 |
+| gjdong | 민원 서식 주소가 제각각 |
+| lexdiff | 개정 전후 법령 비교를 눈으로 함 |
+| Docufinder | 예전 문서를 파일명으로만 찾음 |
+
+### 심화 · AI에 공공데이터 연결하기 (선택, 15분)
+
+시간이 남는 분만 하세요. **MCP** 는 AI에게 바깥 도구를 붙여주는 규격입니다. 연결하면 Claude가 법제처·KOSIS를 **직접 조회해서** 답합니다.
+
+| 서버 | 주소 | 확인 상태 |
+|------|------|----------|
+| 법령 | \`https://mcp.gomdori.app/law\` | **정상 동작** (GET 405 = POST 전용) |
+| 통계 | \`https://mcp.gomdori.app/stats\` | **정상 동작** |
+| 특허 | \`https://mcp.gomdori.app/patent\` | **정상 동작** |
+| 건축HUB | \`https://mcp.gomdori.app/archhub\` | **정상 동작** |
+| 학교알리미 | \`https://mcp.gomdori.app/school\` | **정상 동작** |
+
+**Claude 데스크톱 앱에서 연결하는 법**
+
+1. Claude 데스크톱 앱을 엽니다
+2. **설정(Settings) → 커넥터(Connectors)**
+3. **커스텀 커넥터 추가**
+4. 이름 \`법령 검색\`, 주소 \`https://mcp.gomdori.app/law\` 입력
+5. 저장 후 물어봅니다 — "지방공무원 복무규정에서 연가 관련 조문을 원문과 함께 알려줘"
+
+> **업무 자료 주의** — 공개된 외부 서버입니다. 개인정보나 대외비를 넣지 마세요. 공개 데이터 조회에만 씁니다.
+
+더 자세한 연결 방법은 [참고사이트](/reference) 에 정리해 뒀습니다.
+
+### 확인 못 한 것도 그대로 적습니다
+
+| 항목 | 상태 |
+|------|------|
+| school.gomdori.app (학교알리미 웹앱) | **접속 불가 (서버 오류 500)** — 같은 기능을 MCP로는 쓸 수 있습니다 |
+
+### 오늘 얻어갈 결론
+
+| 류승인 주무관 | 오늘 여러분 |
+|-------------|-----------|
+| 업무 불편 하나에서 시작 | 반복 업무 하나 선정 (2교시) |
+| 도구로 만듦 | 자동화 도구 제작 (3~5교시) |
+| 남이 쓸 수 있게 공개 | 사용 설명서 + 부서 배포 (6~7교시) |
+| 12개로 쌓임 | 다음 주에 하나 더 |
+
+> 처음부터 12개를 만든 사람은 없습니다. **매주 30분씩 잡아먹는 일 하나**부터입니다. 오늘 그 하나를 만들었습니다.`,contentEn:`See how far this goes — tools built and published by Ryu Seung-in, a serving public officer in Gwangjin-gu.
+
+> Availability below was **checked directly on 2026-08-26**. These are public services; if one fails, check [github.com/chrisryugj](https://github.com/chrisryugj).
+
+### Walkthrough 1 — Address standardization (no install, 3 min)
+
+[gjdong.vercel.app](https://gjdong.vercel.app) — **live (200)**. Paste any address text and see it normalized.
+
+> Note this started from **one inconvenience** — the same size as the task you chose today.
+
+### Walkthrough 2 — Statute comparison (no install, 3 min)
+
+[lexdiff.gomdori.app](https://lexdiff.gomdori.app) — **live (200)**.
+
+### Walkthrough 3 — Browse the 12 projects
+
+[chris.gomdori.app](https://chris.gomdori.app) — **live (200)**. Look at which inconvenience each tool came from.
+
+### Optional — Connect public data to your AI (15 min)
+
+Five MCP servers, all **confirmed working** (GET 405 means POST-only, which is correct). In the Claude desktop app: Settings → Connectors → Add custom connector → paste the address.
+
+> Public servers — never enter personal or confidential data.
+
+### Reported as-is
+
+school.gomdori.app returns a **server error (500)**; the same capability works over MCP.
+
+### The takeaway
+
+Nobody built twelve at once. It starts with **the one task that eats 30 minutes a week** — which you built today.`}]};function b(){const{language:o}=n(),t=o==="ko";return e.jsx(i,{seoTitle:"행정업무 자동화",seoTitleEn:"Administrative Automation",seoDescription:"바이브코딩 기반 행정업무 자동화 도구 제작 — 1일 8시간 과정. 교시별 따라하기 실습과 대구시 부서별 사례집",path:"/automation",hero:{icon:"fa-gears",color:"#0E6BA8",eyebrow:"행정업무 자동화 · 1일 8시간",eyebrowEn:"Administrative Automation · 1 Day, 8 Hours",title:"행정업무 자동화",titleEn:"Administrative Automation",tagline:"반복 업무 하나를 골라 버튼 하나로 도는 도구 만들기",taglineEn:"Turn one repetitive task into a one-click tool",desc:"코딩을 배우는 과정이 아닙니다. 매주 반복하는 업무를 AI에게 말로 설명해 자동화 도구로 만들고, 부서에 적용할 계획서까지 완성하는 1일 과정입니다.",descEn:"This is not a coding course. Describe a weekly repetitive task to AI, turn it into a working tool, and finish with a rollout plan for your department — all in one day.",meta:[{icon:"fa-user-check",text:"대구광역시 공무원",textEn:"Daegu city officials"},{icon:"fa-layer-group",text:"8교시 · 사례집 포함",textEn:"8 sessions + case book"},{icon:"fa-signal",text:"입문 (코딩 지식 불필요)",textEn:"Beginner (no coding needed)"}],note:"프로그래밍을 몰라도 됩니다. 화면에 나오는 순서를 그대로 따라 하시면 되고, 막히면 그 자리에서 손을 드세요.",noteEn:"No programming background required — follow the on-screen steps in order, and raise your hand whenever you get stuck."},dataFiles:[s,r,l,h,c,d,u,p,m],ctaBanner:e.jsxs("div",{className:"prompt-practice-cta",children:[e.jsxs("div",{className:"prompt-practice-cta-text",children:[e.jsx("h3",{children:t?"이 과정을 처음 보신다면":"New to this course?"}),e.jsx("p",{children:t?"위 목차의 「과정 개요 · 시간표」부터 순서대로 보세요. 각 교시는 그대로 따라 하면 되는 단계로 되어 있습니다.":'Start with "Overview & Schedule" above. Each session is written as steps you can follow directly.'})]}),e.jsxs(a,{to:"/prompt-eval",className:"prompt-practice-cta-btn",children:[e.jsx("i",{className:"fa-solid fa-keyboard"}),t?"프롬프트 기초 먼저 보기":"Prompt basics first"]})]})})}export{b as default};
