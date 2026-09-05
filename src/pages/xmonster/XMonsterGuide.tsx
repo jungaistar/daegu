@@ -20,7 +20,7 @@ export default function XMonsterGuide(): ReactElement {
       path="/xmonster"
       hero={{
         icon: 'fa-robot',
-        color: '#1793E6',
+        color: '#BE185D',
         eyebrow: '엑스몬스터 · 공식 사용자 매뉴얼',
         eyebrowEn: 'X-Monster · Official User Guide',
         title: '엑스몬스터 매뉴얼',
