@@ -936,3 +936,112 @@
 @media (max-width: 560px) {
     .tool-guide-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   히어로 변형 — `/courses/:category`(고급 · 데이터분석 및 활용)의
+   program-hero + 카드형 사이드바 디자인을 가이드 페이지에 적용한다.
+   `hero` prop 을 넘긴 페이지에만 붙으므로 기존 페이지는 그대로다.
+   ───────────────────────────────────────────────────────────── */
+
+/* .program-hero 가 이미 nav 높이만큼 상단 패딩을 갖는다 — 중복 제거 */
+.guide-page--hero {
+    padding-top: 0;
+}
+.guide-page--hero .guide-layout {
+    min-height: 0;
+    padding-top: 28px;
+    padding-bottom: 56px;
+    gap: 40px;
+}
+
+/* 사이드바를 course-sidebar 와 같은 카드로 */
+.guide-page--hero .guide-sidebar {
+    width: 248px;
+    height: auto;
+    max-height: calc(100vh - var(--nav-height) - 48px);
+    top: calc(var(--nav-height) + 20px);
+    padding: 18px;
+    border-right: none;
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.guide-page--hero .guide-sidebar-title--hero {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.35;
+    padding: 0 0 14px;
+    margin-bottom: 4px;
+    border-bottom: 2px solid var(--primary-blue);
+}
+.guide-page--hero .guide-sidebar-title--hero i {
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+/* course-sidebar-label 과 같은 소제목 */
+.guide-page--hero .guide-sidebar-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    padding: 12px 10px 8px;
+}
+
+/* 목차 링크를 course-sidebar-link 와 같은 알약형으로 */
+.guide-page--hero .guide-nav-link,
+.guide-page--hero .guide-nav-group-toggle {
+    border-radius: var(--radius-sm);
+    padding: 9px 12px;
+    font-size: 14px;
+}
+.guide-page--hero .guide-nav-link:hover,
+.guide-page--hero .guide-nav-group-toggle:hover {
+    background: var(--bg-light-gray);
+    color: var(--primary-blue);
+}
+.guide-page--hero .guide-nav-link.active,
+.guide-page--hero .guide-nav-group-toggle.active {
+    background: var(--primary-light);
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+.guide-page--hero .guide-nav-link.guide-nav-sub {
+    font-size: 13px;
+    padding-left: 22px;
+}
+.guide-page--hero .guide-sidebar-footer {
+    border-top: 1px solid var(--border-light);
+    margin-top: 12px;
+    padding-top: 12px;
+}
+
+/* 히어로가 h1 을 가지므로 본문 제목은 h2 — 기존 h1 과 같은 무게로 보이게 */
+.guide-page--hero .guide-content-header h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--primary-blue);
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--accent);
+}
+
+@media (max-width: 900px) {
+    .guide-page--hero .guide-sidebar {
+        width: 100%;
+        position: static;
+        max-height: none;
+    }
+    .guide-page--hero .guide-layout {
+        padding-top: 20px;
+    }
+}

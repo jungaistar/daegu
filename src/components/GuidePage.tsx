@@ -27,12 +27,34 @@ interface DataFile {
   sections: Section[];
 }
 
+/**
+ * GuideHero — `/courses/:category`(고급 · 데이터분석 및 활용)의 program-hero 와
+ * 동일한 화면 디자인을 가이드 페이지에도 쓰기 위한 선택적 헤더.
+ * 넘기지 않으면 기존 모습 그대로다(= /automation 은 영향 없음).
+ */
+export interface GuideHero {
+  icon: string;                 // Font Awesome 클래스 (예: 'fa-chart-line')
+  color: string;                // 아이콘 배경 · 하단 보더 색
+  eyebrow: string;
+  eyebrowEn?: string;
+  title: string;
+  titleEn?: string;
+  tagline: string;
+  taglineEn?: string;
+  desc: string;
+  descEn?: string;
+  meta?: { icon: string; text: string; textEn?: string }[];
+  note?: string;
+  noteEn?: string;
+}
+
 interface GuidePageProps {
   seoTitle: string;
   seoTitleEn?: string;
   seoDescription?: string;
   path: string;
   dataFiles: DataFile[];
+  hero?: GuideHero;
   ctaBanner?: React.ReactNode;
   sidebarHeader?: React.ReactNode;
   sidebarFooter?: React.ReactNode;
@@ -60,7 +82,7 @@ const markdownComponents = {
   },
 };
 
-export default function GuidePage({ seoTitle, seoTitleEn, seoDescription, path, dataFiles, ctaBanner, sidebarHeader, sidebarFooter }: GuidePageProps) {
+export default function GuidePage({ seoTitle, seoTitleEn, seoDescription, path, dataFiles, hero, ctaBanner, sidebarHeader, sidebarFooter }: GuidePageProps) {
   const { language } = useLanguage();
   const isKo = language === 'ko';
 
@@ -90,16 +112,57 @@ export default function GuidePage({ seoTitle, seoTitleEn, seoDescription, path, 
   });
 
   return (
-    <div className="guide-page">
+    <div className={`guide-page${hero ? ' guide-page--hero' : ''}`}>
       <SEOHead
         title={isKo ? seoTitle : (seoTitleEn || seoTitle)}
         description={seoDescription}
         path={path}
       />
+
+      {hero && (
+        <section className="program-hero" style={{ borderBottom: `3px solid ${hero.color}` }}>
+          <div className="container">
+            <div className="program-hero-inner">
+              <div className="program-hero-icon" style={{ background: hero.color }}>
+                <i className={`fa-solid ${hero.icon}`} />
+              </div>
+              <div className="program-hero-text">
+                <div className="eyebrow">{isKo ? hero.eyebrow : (hero.eyebrowEn || hero.eyebrow)}</div>
+                <h1>{isKo ? hero.title : (hero.titleEn || hero.title)}</h1>
+                <p className="program-hero-tagline">{isKo ? hero.tagline : (hero.taglineEn || hero.tagline)}</p>
+                <p className="program-hero-desc">{isKo ? hero.desc : (hero.descEn || hero.desc)}</p>
+                {hero.meta && hero.meta.length > 0 && (
+                  <div className="program-hero-meta">
+                    {hero.meta.map((m, i) => (
+                      <span key={i}><i className={`fa-solid ${m.icon}`} /> {isKo ? m.text : (m.textEn || m.text)}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {hero.note && (
+              <div className="program-platform-note">
+                <i className="fa-solid fa-shield-halved" />
+                <span>{isKo ? hero.note : (hero.noteEn || hero.note)}</span>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
       <div className="guide-layout">
         <aside className="guide-sidebar">
           {sidebarHeader}
-          <div className="guide-sidebar-title">{isKo ? '목차' : 'Contents'}</div>
+          {hero ? (
+            <div className="guide-sidebar-title guide-sidebar-title--hero" style={{ borderColor: hero.color }}>
+              <i className={`fa-solid ${hero.icon}`} style={{ color: hero.color }} />
+              <span>{isKo ? hero.title : (hero.titleEn || hero.title)}</span>
+            </div>
+          ) : (
+            <div className="guide-sidebar-title">{isKo ? '목차' : 'Contents'}</div>
+          )}
+          {hero && <span className="guide-sidebar-label">{isKo ? '목차' : 'Contents'}</span>}
           <ul className="guide-nav">
             {hasMultipleFiles ? (
               dataFiles.map((df, dfIdx) => {
@@ -155,7 +218,10 @@ export default function GuidePage({ seoTitle, seoTitleEn, seoDescription, path, 
         </aside>
         <div className="guide-content">
           <div className="guide-content-header">
-            <h1>{isKo ? active.section.title : active.section.titleEn}</h1>
+            {/* 히어로가 있으면 h1 은 히어로가 갖는다 — 본문 제목은 h2 로 내려 문서 구조를 지킨다 */}
+            {hero
+              ? <h2>{isKo ? active.section.title : active.section.titleEn}</h2>
+              : <h1>{isKo ? active.section.title : active.section.titleEn}</h1>}
           </div>
           <div className="guide-section">
             <div className="markdown-body">
