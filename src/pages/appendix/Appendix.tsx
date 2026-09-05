@@ -17,7 +17,7 @@ export default function Appendix(): ReactElement {
       path="/appendix"
       hero={{
         icon: 'fa-book-open',
-        color: '#2E7D32',
+        color: '#0F766E',
         eyebrow: '부록 · 보충 학습자료',
         eyebrowEn: 'Appendix · Supplementary Materials',
         title: '부록',
