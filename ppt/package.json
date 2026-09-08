@@ -1,0 +1,15 @@
+{
+  "name": "daegu-automation-pptx",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "행정업무 자동화(1~8교시) 강의용 PPTX 생성기 — /automation 콘텐츠를 따라하기 스타일 슬라이드로 만든다",
+  "scripts": {
+    "assets": "node render-svg.mjs",
+    "build": "node build.mjs",
+    "all": "node render-svg.mjs && node build.mjs"
+  },
+  "dependencies": {
+    "pptxgenjs": "^3.12.0"
+  }
+}

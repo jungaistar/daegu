@@ -12,3 +12,7 @@ tsconfig.tsbuildinfo
 # 로컬 전용 (공개 저장소 제외)
 *.zip
 doc/
+
+# 강의교안 빌드 중간물 (SVG·소스에서 다시 만들 수 있다)
+ppt/assets/
+ppt/preview/
