@@ -1088,18 +1088,19 @@ function box([x, y, w, h], n, where = 'right', pad = 8) {
     [['김민수', '복지정책과', '010-****-1234', '경로당 보수'],
      ['이서연', '문화체육과', '010-****-5678', '시설 점검'],
      ['김민수', '복지정책과', '010-****-1234', '경로당 보수']],
-    { x: 60, y: 136, cw: [150, 200, 210, 210], tabs: ['신청접수'],
+    { x: 60, y: 150, cw: [150, 200, 210, 210], tabs: ['신청접수'],
       menu: ['파일', '수정', '보기', '삽입', '서식', '데이터', '도구', '확장 프로그램', '자동화'], mark: ['3,0', '3,1', '3,2', '3,3'] });
   P({
     file: 's4-5-menu.svg',
     alt: '4교시 5단계 — 시트 상단에 자동화 메뉴가 새로 생긴 화면',
-    url: null, frameH: 400,
+    url: null, frameH: 388,
     body: g.s
-      + r(700, 96, 190, 60, { rx: 6, fill: '#FFFFFF', stroke: C.grayLine })
-      + t(714, 120, '명단 정리 실행', { size: 12.5, fill: C.ink2 })
-      + t(714, 142, '사용 설명 보기', { size: 12.5, fill: C.dim })
-      + box([636, 84, 60, 22], 1, 'top')
-      + box([700, 96, 190, 30], 2, 'right')
+      // 펼쳐진 메뉴는 표 위에 겹쳐 그린다 (실제 화면과 같게)
+      + r(516, 136, 200, 64, { rx: 6, fill: '#FFFFFF', stroke: C.grayLine, sw: 1.2 })
+      + t(530, 160, '명단 정리 실행', { size: 12.5, fill: C.ink2 })
+      + t(530, 184, '사용 설명 보기', { size: 12.5, fill: C.dim })
+      + box([516, 110, 52, 22], 1, 'top')
+      + box([516, 136, 200, 64], 2, 'right')
       + box([g.colX(0), g.rowY(3), g.totalW - 40, g.rh], 3, 'left'),
     legends: [
       '시트를 새로 고치면 상단에 자동화 메뉴가 생긴다 — 안 보이면 저장을 안 한 것이다',
@@ -1180,11 +1181,11 @@ function box([x, y, w, h], n, where = 'right', pad = 8) {
   P({
     file: 's5-2-error.svg',
     alt: '5교시 2단계 — 실행 오류 메시지가 나온 화면과 복사해야 할 범위',
-    url: 'script.google.com', frameH: 400,
+    url: 'script.google.com', frameH: 448,
     body: e.s
-      + box([60, 292, 860, 114], 1, 'left')
-      + box([60, 336, 620, 22], 2, 'right')
-      + pillNote(60, 424, 800, '오류는 실패가 아니라 안내문이다 — 무엇이 없는지 이미 적혀 있다'),
+      + box([60, 316, 860, 62], 1, 'left')
+      + box([60, 338, 400, 20], 2, 'right')
+      + pillNote(60, 396, 800, '오류는 실패가 아니라 안내문이다 — 무엇이 없는지 이미 적혀 있다'),
     legends: [
       '빨간 줄 전체를 마우스로 긁어 복사한다. 한 줄만 복사하면 AI 가 원인을 못 찾는다',
       '줄 번호(코드.gs:3)까지 함께 복사한다. 어디를 고쳐야 하는지 알려 주는 표시다',
@@ -1374,12 +1375,12 @@ function box([x, y, w, h], n, where = 'right', pad = 8) {
   P({
     file: 's6-3-sharing.svg',
     alt: '6교시 3단계 — 시트 공유 범위를 제한됨으로 바꾸는 화면',
-    url: null, frameH: 380,
+    url: null, frameH: 404,
     body: d.s
-      + box([274, 214, 452, 22], 1, 'right')
+      + box([274, 198, 452, 46], 1, 'right')
       + box(d.btn(1), 2, 'bottom')
-      + pillNote(150, 318, 760, '링크 공유로 만든 도구는 검색에도 잡힌다 — 업무 자료가 든 시트는 반드시 제한됨')
-      + pin(936, 333, 3),
+      + pillNote(150, 350, 760, '링크 공유로 만든 도구는 검색에도 잡힌다 — 업무 자료가 든 시트는 반드시 제한됨')
+      + pin(936, 365, 3),
     legends: [
       '"링크가 있는 모든 사용자" 로 되어 있으면 주소만 알면 누구나 연다 — 업무 시트에 쓰면 안 된다',
       '제한됨으로 바꾸고, 같이 쓸 사람만 한 명씩 추가한다. 부서 단위 공유도 명단으로 한다',
@@ -1695,11 +1696,11 @@ function box([x, y, w, h], n, where = 'right', pad = 8) {
   P({
     file: 's8-3-feedback.svg',
     alt: '8교시 3단계 — 받은 피드백을 표로 받아 적는 화면',
-    url: null, frameH: 390,
+    url: null, frameH: 356,
     body: t(50, 108, '들은 말을 그 자리에서 표로 옮긴다 — 기억에 의존하지 않는다', { size: 15, fill: C.ink2, w: 700 })
       + g.s
       + box([g.colX(0), g.rowY(1), g.colW(0), g.rh * 4], 1, 'left')
-      + box([g.colX(2), g.rowY(1), g.colW(2), g.rh * 4], 2, 'top')
+      + box([g.colX(2), g.rowY(1), g.colW(2), g.rh * 4], 2, 'bottom')
       + box([g.colX(3), g.rowY(1), g.colW(3), g.rh * 4], 3, 'right'),
     legends: [
       '들은 말을 고치지 말고 그대로 적는다. 해석은 나중에 한다',
