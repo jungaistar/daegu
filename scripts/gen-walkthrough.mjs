@@ -1,5 +1,5 @@
 /**
- * 1~8교시 「따라하기」 섹션 본문 생성기.
+ * 「따라하기」 섹션 본문 생성기 — 교시별(automation)과 참고사이트(reference) 둘 다.
  *
  * 각 교시의 두 번째 섹션을 hufs26 /setup 과 같은 단계형으로 만든다.
  *   전체 흐름 띠 → STEP 카드(화면 그림 + 목표 + 할 일 + 막히면) → 마무리 확인
@@ -13,8 +13,7 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const OUT = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'src', 'pages', 'automation', 'data', 'walk');
-mkdirSync(OUT, { recursive: true });
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
 /* ── HTML 조각 ── */
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -30,7 +29,7 @@ const flowStrip = items => `<div class="guide-walk-flow">
 ${items.map((s, i) => `  <span class="guide-walk-flow-item"><span class="guide-walk-flow-no">${i + 1}</span>${rich(s)}</span>`).join('\n')}
 </div>`;
 
-function stepCard(st, lang) {
+function stepCard(st, lang, shotDir) {
   const L = st[lang];
   const stuck = (L.stuck || []).length ? `
       <div class="setup-note setup-note-stuck">
@@ -56,7 +55,7 @@ ${L.stuck.map(s => `            <li><b>${rich(s.when)}</b><span>${rich(s.then)}<
   <div class="setup-step-grid">
     <div class="setup-step-visual">
       <figure class="guide-walk-shot">
-        <img src="~/automation/steps/${st.svg}" alt="${esc(L.alt)}" loading="lazy" />
+        <img src="~/${shotDir}/${st.svg}" alt="${esc(L.alt)}" loading="lazy" />
       </figure>
     </div>
     <div class="setup-step-side">
@@ -72,12 +71,12 @@ ${L.actions.map((a, i) => `        <li><span class="setup-action-no">${i + 1}</s
 </section>`;
 }
 
-function render(sess, lang) {
+function render(sess, lang, shotDir) {
   const L = sess[lang];
   const head = `${L.lead}
 
 ${flowStrip(L.flow)}`;
-  const steps = sess.steps.map(st => stepCard(st, lang)).join('\n\n');
+  const steps = sess.steps.map(st => stepCard(st, lang, shotDir)).join('\n\n');
   const tail = `
 ### ${lang === 'ko' ? '여기까지 하면' : 'When you finish'}
 
@@ -87,7 +86,9 @@ ${L.done.map(d => `- ${d}`).join('\n')}
 }
 
 /* ── 산출 ── */
-export function emit(sessions) {
+export function emit(sessions, outRel, shotDir) {
+  const OUT = resolve(ROOT, outRel);
+  mkdirSync(OUT, { recursive: true });
   sessions.forEach(sess => {
     const body = `/**
  * ${sess.file} — ${sess.ko.title}
@@ -96,8 +97,8 @@ export function emit(sessions) {
 export default {
   title: ${JSON.stringify(sess.ko.title)},
   titleEn: ${JSON.stringify(sess.en.title)},
-  content: ${JSON.stringify(render(sess, 'ko'))},
-  contentEn: ${JSON.stringify(render(sess, 'en'))},
+  content: ${JSON.stringify(render(sess, 'ko', shotDir))},
+  contentEn: ${JSON.stringify(render(sess, 'en', shotDir))},
 };
 `;
     writeFileSync(resolve(OUT, sess.file), body, 'utf8');
@@ -106,5 +107,10 @@ export default {
 }
 
 import sessions from './walkthrough-content.mjs';
-emit(sessions);
-console.log(`\n따라하기 본문 ${sessions.length}개 생성 → src/pages/automation/data/walk/`);
+import refSessions from './ref-walkthrough-content.mjs';
+
+emit(sessions, 'src/pages/automation/data/walk', 'automation/steps');
+console.log(`  교시 본문 ${sessions.length}개 → src/pages/automation/data/walk/`);
+
+emit(refSessions, 'src/pages/reference/data/walk', 'reference/steps');
+console.log(`  참고사이트 본문 ${refSessions.length}개 → src/pages/reference/data/walk/`);

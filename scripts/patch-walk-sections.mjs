@@ -8,26 +8,34 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const DATA = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'src', 'pages', 'automation', 'data');
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
-/* 갈아 끼울 대상 — [파일, [{ 변수명, walk 모듈, 바꿀 섹션 제목 }]] */
+/* 갈아 끼울 대상 — [폴더, 파일, [{ 변수명, walk 모듈, 바꿀 섹션 제목 }]] */
+const AUTO = 'src/pages/automation/data';
+const REF = 'src/pages/reference/data';
 const TARGETS = [
-  ['auto-01-understand.js', [{ v: 'walk1', m: 'auto-01-walk', title: '따라하기 실습 · 말로 설명해서 도구 만들기' }]],
-  ['auto-02-select.js', [{ v: 'walk2', m: 'auto-02-walk', title: '따라하기 실습 · 자동화 대상 업무 정의서 채우기' }]],
-  ['auto-03-design.js', [{ v: 'walk3', m: 'auto-03-walk', title: '따라하기 실습 ① 네 가지 도구 화면 익히기',
+  [AUTO, 'auto-01-understand.js', [{ v: 'walk1', m: 'auto-01-walk', title: '따라하기 실습 · 말로 설명해서 도구 만들기' }]],
+  [AUTO, 'auto-02-select.js', [{ v: 'walk2', m: 'auto-02-walk', title: '따라하기 실습 · 자동화 대상 업무 정의서 채우기' }]],
+  [AUTO, 'auto-03-design.js', [{ v: 'walk3', m: 'auto-03-walk', title: '따라하기 실습 ① 네 가지 도구 화면 익히기',
     also: ['따라하기 실습 ② 설계서와 요구사항 명세서 쓰기'] }]],
-  ['auto-04-generate.js', [{ v: 'walk4', m: 'auto-04-walk', title: '따라하기 실습 · 코드를 받아 시트에 붙이기' }]],
-  ['auto-05-test.js', [{ v: 'walk5', m: 'auto-05-walk', title: '따라하기 실습 · 기능 시험과 오류 대응 루틴' }]],
-  ['auto-06-security.js', [{ v: 'walk6', m: 'auto-06-walk', title: '따라하기 실습 · 보안 판정과 검토 절차 설계' }]],
-  ['auto-07-plan.js', [
+  [AUTO, 'auto-04-generate.js', [{ v: 'walk4', m: 'auto-04-walk', title: '따라하기 실습 · 코드를 받아 시트에 붙이기' }]],
+  [AUTO, 'auto-05-test.js', [{ v: 'walk5', m: 'auto-05-walk', title: '따라하기 실습 · 기능 시험과 오류 대응 루틴' }]],
+  [AUTO, 'auto-06-security.js', [{ v: 'walk6', m: 'auto-06-walk', title: '따라하기 실습 · 보안 판정과 검토 절차 설계' }]],
+  [AUTO, 'auto-07-plan.js', [
     { v: 'walk7', m: 'auto-07-walk', title: '7교시 따라하기 실습 · 적용계획서 여덟 칸 채우기' },
     { v: 'walk8', m: 'auto-08-walk', title: '8교시 따라하기 실습 · 시연·피드백·최종본 만들기' },
+  ]],
+  // 참고사이트 — 직접 따라 해보기 세 단계
+  [REF, 'ref-try.js', [
+    { v: 'refWalk1', m: 'ref-01-walk', title: '1단계 · 설치 없이 바로 열어보기' },
+    { v: 'refWalk2', m: 'ref-02-walk', title: '2단계 · AI에 MCP 도구 연결하기' },
+    { v: 'refWalk3', m: 'ref-03-walk', title: '3단계 · 내 PC에 설치해 쓰기' },
   ]],
 ];
 
 let changed = 0;
-for (const [file, specs] of TARGETS) {
-  const path = resolve(DATA, file);
+for (const [dir, file, specs] of TARGETS) {
+  const path = resolve(ROOT, dir, file);
   let lines = readFileSync(path, 'utf8').split('\n');
 
   for (const spec of specs) {

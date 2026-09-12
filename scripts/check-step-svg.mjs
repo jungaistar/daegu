@@ -2,10 +2,13 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-const SRC = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'public', 'automation', 'steps');
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const DIRS = ['public/automation/steps', 'public/reference/steps'].map(d => resolve(ROOT, d));
 const L = 14, R = 986;            // 창틀 좌·우 안쪽
-let bad = 0;
-for (const f of readdirSync(SRC).filter(n => n.endsWith('.svg')).sort()) {
+let bad = 0, seen = 0;
+const files = DIRS.flatMap(d => readdirSync(d).filter(n => n.endsWith('.svg')).sort().map(n => [d, n]));
+for (const [SRC, f] of files) {
+  seen++;
   const svg = readFileSync(resolve(SRC, f), 'utf8');
   const [, , H] = svg.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/);
   const bottom = Number(H);
@@ -31,4 +34,6 @@ for (const f of readdirSync(SRC).filter(n => n.endsWith('.svg')).sort()) {
   const uniq = [...new Set(issues)];
   if (uniq.length) { bad++; console.log(`✗ ${f}\n    ${uniq.join('\n    ')}`); }
 }
-console.log(bad ? `\n넘침 ${bad}건` : '\n모두 창틀 안에 들어옴');
+console.log(bad ? `
+넘침 ${bad}건 / ${seen}장` : `
+${seen}장 모두 창틀 안에 들어옴`);
