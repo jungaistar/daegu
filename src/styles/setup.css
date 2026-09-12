@@ -438,3 +438,62 @@
   .setup-progress { position: static; }
   .setup-stuck-list li { grid-template-columns: 1fr; }
 }
+
+/* ============================================
+   따라하기 단계 — 가이드 본문(/automation) 안에 넣는 판
+   전용 페이지(/setup/*)와 같은 부품을 쓰되, 화면 그림을 가로 전체로 크게 둔다.
+   40~50대가 그림 속 글자를 읽을 수 있어야 하므로 2단으로 쪼개지 않는다.
+   ============================================ */
+.markdown-body .guide-walk { margin: 4px 0 0; }
+
+.markdown-body .guide-walk-step {
+  margin-bottom: 28px; padding: 26px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-lg, 16px);
+  background: var(--card-bg, #fff);
+}
+
+.markdown-body .guide-walk-step .setup-step-title {
+  font-size: 23px; margin-top: 0;
+}
+
+/* 그림은 가로 전체, 설명은 그 아래 */
+.markdown-body .guide-walk-step .setup-step-grid {
+  grid-template-columns: 1fr; gap: 20px;
+}
+
+.guide-walk-shot {
+  margin: 0; overflow: hidden;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-md, 12px);
+  background: #fff;
+}
+.guide-walk-shot img { display: block; width: 100%; height: auto; }
+[data-theme="dark"] .guide-walk-shot { background: #f7f8fa; }
+
+/* 전체 흐름 띠 */
+.markdown-body .guide-walk-flow {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin: 0 0 24px; padding: 18px 20px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-lg, 16px);
+  background: var(--bg-light-gray, #fbf9f4);
+}
+.guide-walk-flow-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 14px; border-radius: 999px;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  font-size: 14.5px;
+}
+.guide-walk-flow-no {
+  width: 22px; height: 22px; flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: #f97316; color: #fff;
+  font-size: 12.5px; font-weight: 800;
+}
+
+@media (max-width: 720px) {
+  .markdown-body .guide-walk-step { padding: 18px; }
+  .markdown-body .guide-walk-step .setup-step-title { font-size: 20px; }
+}
